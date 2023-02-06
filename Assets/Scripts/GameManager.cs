@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void Shuffle(){
-        if(discardPile.Count >= 3){
+        if(discardPile.Count >= 1){
             foreach(Card card in discardPile){
                 deck.Add(card);
             }
