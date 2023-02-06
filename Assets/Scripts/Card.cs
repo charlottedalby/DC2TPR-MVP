@@ -9,7 +9,6 @@ public class Card : MonoBehaviour
     public Text damageText;
     public bool hasBeenPlayed;
     public int handIndex;
-
     private GameManager gameManager;
     
     void Start()
@@ -17,10 +16,12 @@ public class Card : MonoBehaviour
         damage = Random.Range(1,6);
         damageText.text = damage.ToString();
         gameManager = FindObjectOfType<GameManager>();
+        
     }
 
     void OnMouseDown(){
         if(hasBeenPlayed == false){
+            gameManager.attackEnemy(damage);
             transform.position += Vector3.up * 5;
             hasBeenPlayed = true;
             gameManager.availableCardSlots[handIndex] = true;
@@ -28,7 +29,7 @@ public class Card : MonoBehaviour
         }
     }
 
-    void MoveToDiscardPile(){
+    public void MoveToDiscardPile(){
         gameManager.discardPile.Add(this);
         gameObject.SetActive(false);
     }

@@ -139,6 +139,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4010235834557536159, guid: cb39fd4c3e8743149bc6cf996d52362d, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 989758196}
+    - target: {fileID: 4010235834557536159, guid: cb39fd4c3e8743149bc6cf996d52362d, type: 3}
       propertyPath: damageText
       value: 
       objectReference: {fileID: 763806742}
@@ -615,7 +619,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 447178003}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1042665089}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: Shuffle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &447178003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -903,8 +919,8 @@ Canvas:
   m_GameObject: {fileID: 539606567}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -1024,6 +1040,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4010235834557536159, guid: cb39fd4c3e8743149bc6cf996d52362d, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 989758196}
     - target: {fileID: 4010235834557536159, guid: cb39fd4c3e8743149bc6cf996d52362d, type: 3}
       propertyPath: damageText
       value: 
@@ -1343,6 +1363,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4010235834557536159, guid: cb39fd4c3e8743149bc6cf996d52362d, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 989758196}
+    - target: {fileID: 4010235834557536159, guid: cb39fd4c3e8743149bc6cf996d52362d, type: 3}
       propertyPath: damageText
       value: 
       objectReference: {fileID: 893440432}
@@ -1506,6 +1530,7 @@ MonoBehaviour:
   availableCardSlots: 01010101
   deckSizeText: {fileID: 776096697}
   discardSizeText: {fileID: 2052941380}
+  enemy: {fileID: 989758196}
 --- !u!1 &1119093249
 GameObject:
   m_ObjectHideFlags: 0
@@ -1715,6 +1740,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4010235834557536159, guid: cb39fd4c3e8743149bc6cf996d52362d, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 989758196}
     - target: {fileID: 4010235834557536159, guid: cb39fd4c3e8743149bc6cf996d52362d, type: 3}
       propertyPath: damageText
       value: 

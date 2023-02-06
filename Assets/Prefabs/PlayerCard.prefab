@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 804927386233320693}
   - component: {fileID: 2546205791676360059}
   - component: {fileID: 4010235834557536159}
-  - component: {fileID: 2207675652170277008}
+  - component: {fileID: 1699087119235864077}
   m_Layer: 5
   m_Name: PlayerCard
   m_TagString: Untagged
@@ -95,7 +95,7 @@ MonoBehaviour:
   damageText: {fileID: 0}
   hasBeenPlayed: 0
   handIndex: 0
---- !u!61 &2207675652170277008
+--- !u!61 &1699087119235864077
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,9 +117,9 @@ BoxCollider2D:
     adaptiveTilingThreshold: 0
     drawMode: 0
     adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_AutoTiling: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 200, y: 300}
   m_EdgeRadius: 0
 --- !u!1 &4150150614730388141
 GameObject:

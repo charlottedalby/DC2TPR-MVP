@@ -9,14 +9,24 @@ public class Enemy : MonoBehaviour
 
     public Text healthText;
 
+    private GameManager gameManager;
+
     void Start()
     {
-        
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        healthText.text = health.ToString();
+        if(health <= 0){
+            healthText.text = "DEFEATED";
+            gameManager.GameOver();
+        }
+        else{
+            healthText.text = health.ToString();
+        }
+
+        
     }
 }
