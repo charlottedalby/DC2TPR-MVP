@@ -30,6 +30,10 @@ public class Card : MonoBehaviour
     }
 
     public void MoveToDiscardPile(){
+        Debug.Log(this.gameManager);
+        if (gameManager == null) {
+            gameManager = FindObjectOfType<GameManager>();
+        }
         gameManager.discardPile.Add(this);
         gameObject.SetActive(false);
     }

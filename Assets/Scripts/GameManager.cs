@@ -59,6 +59,9 @@ public class GameManager : MonoBehaviour
             deck[i].MoveToDiscardPile();
             deck[i].gameObject.SetActive(false);
         }
+
+        deck.Clear();
+        
         /*
         for(int i = 0; i < availableCardSlots.GetLength; i++){
             availableCardSlots[i].
