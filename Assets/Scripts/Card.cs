@@ -30,6 +30,7 @@ public class Card : MonoBehaviour
     }
 
     public void MoveToDiscardPile(){
+        //Fix for the nullReference errors
         Debug.Log(this.gameManager);
         if (gameManager == null) {
             gameManager = FindObjectOfType<GameManager>();

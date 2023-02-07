@@ -21,7 +21,13 @@ public class Enemy : MonoBehaviour
     {
         if(health <= 0){
             healthText.text = "DEFEATED";
-            gameManager.GameOver();
+            //gameManager.GameOver();
+
+            //Delaying by a second so we can still see the enemy being defeated
+            gameManager.Invoke("GameOver", 1);
+
+            //Note to self - to use if we have a better solution to the menu buttons
+            //gameManager.Restart();
         }
         else{
             healthText.text = health.ToString();

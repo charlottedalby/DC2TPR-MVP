@@ -1345,7 +1345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ee703e2b1eaeb34dab5ca4102a2325e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 7
   healthText: {fileID: 245523144}
 --- !u!1001 &994238193
 PrefabInstance:

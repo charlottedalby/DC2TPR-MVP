@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -60,12 +61,22 @@ public class GameManager : MonoBehaviour
             deck[i].gameObject.SetActive(false);
         }
 
+        //Fix for the discard pile duplication bug
         deck.Clear();
-        
+
+        //Goes to the Winning Screen
+        SceneManager.LoadScene("YouWin");
+
         /*
         for(int i = 0; i < availableCardSlots.GetLength; i++){
             availableCardSlots[i].
         }
         */
     }
+
+    /*
+    public void Restart(){
+        SceneManager.LoadScene("BattleScreen");
+    }
+    */
 }
