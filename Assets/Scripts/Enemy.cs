@@ -11,6 +11,14 @@ public class Enemy : MonoBehaviour
 
     private GameManager gameManager;
 
+     //Testing Purposes Only 
+    public void Initialize()
+    {
+        gameManager = FindObjectOfType<GameManager>();
+    }
+
+    //End of Testing Purpose
+
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();

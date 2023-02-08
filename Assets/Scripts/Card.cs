@@ -25,6 +25,7 @@ public class Card : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
     }
     OnMouseDown();
+    Debug.Log("Deck: " + gameManager.deck.Count);
     MoveToDiscardPile();
 }
     //End of Testing Purpose
@@ -49,11 +50,13 @@ public class Card : MonoBehaviour
 
     public void MoveToDiscardPile(){
         //Fix for the nullReference errors
-        Debug.Log(this.gameManager);
+        Debug.Log(gameManager);
         if (gameManager == null) {
-            gameManager = FindObjectOfType<GameManager>();
+            this.gameManager = FindObjectOfType<GameManager>();
         }
+        Debug.Log(this);
         gameManager.discardPile.Add(this);
         gameObject.SetActive(false);
+        Debug.Log("Discard pile: " +gameManager.discardPile.Count);
     }
 }
