@@ -6,8 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public int playerHealth;
+    public Text playerHealthText;
     public List<Card> deck = new List<Card>();
     public List<Card> discardPile = new List<Card>();
+    public List<Card> enemyCards = new List<Card>();
     public Transform[] cardSlots;
     public bool[] availableCardSlots;
     public Text deckSizeText;
@@ -26,6 +29,11 @@ public class GameManager : MonoBehaviour
 
     void Start(){
         enemy = FindObjectOfType<Enemy>();
+        
+        foreach(Card enemyCard in enemyCards){
+            enemyCard.gameObject.SetActive(true);
+        }
+
     }
     
     public void DrawCard(){
@@ -58,10 +66,17 @@ public class GameManager : MonoBehaviour
     {
         deckSizeText.text = deck.Count.ToString();
         discardSizeText.text = discardPile.Count.ToString();
+        playerHealthText.text = playerHealth.ToString();
     }
 
     public void attackEnemy(int damage){
         enemy.health -= damage;
+    }
+
+    public void attackPlayer(){
+        Card selectedCard = enemyCards[Random.Range(0, enemyCards.Count)];
+        playerHealth -= selectedCard.damage;
+        Debug.Log("Enemy Card Used " + selectedCard.damage);
     }
 
     public void GameOver(){

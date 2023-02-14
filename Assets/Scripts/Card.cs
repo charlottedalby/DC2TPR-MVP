@@ -26,7 +26,7 @@ public class Card : MonoBehaviour
     }
     OnMouseDown();
     Debug.Log("Deck: " + gameManager.deck.Count);
-    MoveToDiscardPile();
+    //MoveToDiscardPile();
 }
     //End of Testing Purpose
 
@@ -57,6 +57,7 @@ public class Card : MonoBehaviour
         Debug.Log(this);
         gameManager.discardPile.Add(this);
         gameObject.SetActive(false);
+        gameManager.attackPlayer();
         Debug.Log("Discard pile: " +gameManager.discardPile.Count);
     }
 }
