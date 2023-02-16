@@ -50,7 +50,9 @@ public class Card : MonoBehaviour
         Debug.Log(this);
         gameManager.discardPile.Add(this);
         gameObject.SetActive(false);
-        gameManager.attackPlayer();
+        gameManager.Invoke("attackPlayer", 2f);
+        //gameManager.attackPlayer();
         Debug.Log("Discard pile: " +gameManager.discardPile.Count);
     }
+
 }

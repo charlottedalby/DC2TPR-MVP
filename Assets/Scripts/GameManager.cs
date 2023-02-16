@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public List<Card> discardPile = new List<Card>();
     public List<Card> enemyCards = new List<Card>();
     public Transform[] cardSlots;
+    public Transform enemyCardDisplay;
     public bool[] availableCardSlots;
     public Text deckSizeText;
     public Text discardSizeText;
@@ -76,7 +77,17 @@ public class GameManager : MonoBehaviour
     public void attackPlayer(){
         Card selectedCard = enemyCards[Random.Range(0, enemyCards.Count)];
         playerHealth -= selectedCard.damage;
-        Debug.Log("Enemy Card Used " + selectedCard.damage);
+        Vector3 initialPosition = selectedCard.transform.position;
+        selectedCard.transform.position = enemyCardDisplay.position;
+        StartCoroutine(MoveAfterWait(selectedCard, initialPosition));
+        Debug.Log("Enemy Card Damage " + selectedCard.damage);
+    }
+
+    public IEnumerator MoveAfterWait(Card card, Vector3 position){
+        
+        yield return new WaitForSeconds(2f);
+        Debug.Log("Reached wait");
+        card.transform.position = position;
     }
 
     public void GameOver(){
