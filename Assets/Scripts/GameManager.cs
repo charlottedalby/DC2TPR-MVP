@@ -68,6 +68,10 @@ public class GameManager : MonoBehaviour
         deckSizeText.text = deck.Count.ToString();
         discardSizeText.text = discardPile.Count.ToString();
         playerHealthText.text = playerHealth.ToString();
+
+        if(playerHealth <= 0){
+            GameOver();
+        }
     }
 
     public void attackEnemy(int damage){
@@ -100,7 +104,14 @@ public class GameManager : MonoBehaviour
         deck.Clear();
 
         //Goes to the Winning Screen
-        SceneManager.LoadScene("YouWin");
+
+        if(enemy.health <= 0){
+            SceneManager.LoadScene("YouWin");
+        }
+        else if(playerHealth <= 0){
+            SceneManager.LoadScene("GameOver");
+        }
+        
 
         /*
         for(int i = 0; i < availableCardSlots.GetLength; i++){
