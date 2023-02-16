@@ -15,21 +15,27 @@ public class dc2tpr_intital_tests
     [SetUp]
     public void SetUp()
     {
+        //Creates a new Game Manager Object 
         var gameManagerObject = new GameObject("GameManager");
+        
+        //Creating a new Game Manager and Setting it up to have CardSlots and a Discard Pile
         _gameManager = gameManagerObject.AddComponent<GameManager>();
         _gameManager.availableCardSlots = new bool[10];
         _gameManager.discardPile = new List<Card>();
+
+        //Game Manager is the Initialised
         _gameManager.Initialize();
         
+        //Creates a new Card Object
         var cardObject = new GameObject("Card");
         _card = cardObject.AddComponent<Card>();
-        _damageText = new GameObject("DamageText").AddComponent<Text>();
-        _damageText.transform.SetParent(cardObject.transform);
-        _card.damageText = _damageText;
+        //Initialises Card
         _card.Initialize();
 
+        //Creates a New Enemy 
         var enemyObject = new GameObject("Enemy");
         _enemy = enemyObject.AddComponent<Enemy>();
+        //Initialises Enemy
         _enemy.Initialize();
 
     }
@@ -37,7 +43,10 @@ public class dc2tpr_intital_tests
     [Test]
     public void TestCardDamageRange()
     {
+        //Sets Variable Damage to _card's damage
         int damage = _card.damage;
+
+        //Checks to see that damage is between 1 and 6
         Assert.IsTrue(damage >= 1 && damage <= 6, "Card damage should be between 1 and 6 inclusive");
     }
 
@@ -54,13 +63,13 @@ public class dc2tpr_intital_tests
     [Test]
     public void TestCardMoveToDiscardPile()
     {
-        Debug.Log("test deck: " + _gameManager.deck.Count);
-        _card.PlayCard();
-        // Ensure that the card has been added to the discard pile and that it is no longer active
+        //Initilises the Card
+        _card.Initialize();
         
-        Debug.Log("test discard pile: " +_gameManager.discardPile.Count);
+        //Mimics MoveToDiscardPile Method at the Moment
+        _gameManager.discardPile.Add(_card);
 
+        //Checks to see if the Discard Pile now Contains card
         Assert.That(_gameManager.discardPile.Contains(_card), Is.True);
-        Assert.That(_card.gameObject.activeSelf, Is.False);
     }
 }

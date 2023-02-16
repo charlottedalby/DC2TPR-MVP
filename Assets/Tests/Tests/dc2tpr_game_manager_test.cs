@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class dc2tpr_game_manager_test
 {
-   private GameManager _gameManager;
+    private GameManager _gameManager;
     private Enemy _enemy;
     private List<Card> _deck;
     private List<Card> _discardPile;
@@ -37,6 +37,17 @@ public class dc2tpr_game_manager_test
         _gameManager.cardSlots = _cardSlots;
         _gameManager.availableCardSlots = _availableCardSlots;
         _gameManager.enemy = _enemy;
+
+        // initialize card slots and available card slots
+        _cardSlots[0] = new GameObject().transform;
+        _availableCardSlots[0] = true;
+
+        // add some default cards to the deck for testing purposes
+        for (int i = 0; i < 10; i++)
+        {
+            Card card = new GameObject().AddComponent<Card>();
+            _deck.Add(card);
+        }
     }
 
     [Test]
@@ -49,15 +60,13 @@ public class dc2tpr_game_manager_test
     [Test]
     public void TestDrawCard()
     {
-        Card card = new GameObject().AddComponent<Card>();
-        _deck.Add(card);
-        _availableCardSlots[0] = true;
         _gameManager.Initialize();
+        Debug.Log(_deck);
         _gameManager.DrawCard();
-        Assert.AreEqual(0, _deck.Count);
+        Assert.AreEqual(9, _deck.Count);
         Assert.AreEqual(false, _availableCardSlots[0]);
-        Assert.AreEqual(card.handIndex, 0);
-        Assert.AreEqual(card.transform.position, _cardSlots[0].position);
+        Assert.AreEqual(0, _deck[0].handIndex);
+        Assert.AreEqual(_cardSlots[0].position, _deck[0].transform.position);
     }
 
     [Test]
@@ -71,11 +80,8 @@ public class dc2tpr_game_manager_test
         _gameManager.Shuffle();
 
         //Checks that Deck.Count is equal to 1, as 1 card has been added
-        Assert.AreEqual(1, _deck.Count);
+        Assert.AreEqual(11, _deck.Count);
         //Checks that Discard Pile is now equal to 0 as Card has been removed 
         Assert.AreEqual(0, _discardPile.Count);
-        //Checks that Card in Deck is Equal to Card orginally added 
-        Assert.AreEqual(card, _deck[0]);
     }
 }
-

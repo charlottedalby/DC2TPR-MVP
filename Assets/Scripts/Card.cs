@@ -11,23 +11,16 @@ public class Card : MonoBehaviour
     public int handIndex;
     private GameManager gameManager;
     
-     //Testing Purposes Only 
+    //Testing Purpose
+    //Method initilises Card 
     public void Initialize()
     {
+        //Sets Damage between 1 and 6
         damage = Random.Range(1,6);
-        damageText.text = damage.ToString();
+        
+        //Initilises GameManager
         gameManager = FindObjectOfType<GameManager>();
     }
-
-    public void PlayCard() {
-    if (!gameManager)
-    {
-        gameManager = FindObjectOfType<GameManager>();
-    }
-    OnMouseDown();
-    Debug.Log("Deck: " + gameManager.deck.Count);
-    //MoveToDiscardPile();
-}
     //End of Testing Purpose
 
     void Start()
