@@ -13,6 +13,7 @@ public class Card : MonoBehaviour
 
     public void Start()
     {
+        //Randomly assign damage value to Card when initialised
         damage = Random.Range(1,6);
         if (damageText != null) 
         {
@@ -23,11 +24,17 @@ public class Card : MonoBehaviour
     }
 
     void OnMouseDown(){
+        //If the Card has been clicked on and hasn't been played yet
         if(hasBeenPlayed == false){
+            //Attack the enemy
             gameManager.attackEnemy(damage);
+            //Move the card up so we can see that it has been played
             transform.position += Vector3.up * 5;
+            //Set hasBeenPlayed to true
             hasBeenPlayed = true;
+            //Make the slot the card was in available again
             gameManager.availableCardSlots[handIndex] = true;
+            //Move the card to the discardPile
             Invoke("MoveToDiscardPile", 2f);
         }
     }
@@ -39,8 +46,10 @@ public class Card : MonoBehaviour
             this.gameManager = FindObjectOfType<GameManager>();
         }
         Debug.Log(this);
+        //Add the Card to the discardPile and set the card to inactive
         gameManager.discardPile.Add(this);
         gameObject.SetActive(false);
+        //Invoke the enemy to attack the player
         gameManager.Invoke("attackPlayer", 2f);
         Debug.Log("Discard pile: " +gameManager.discardPile.Count);
     }
