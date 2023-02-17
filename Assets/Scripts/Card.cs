@@ -10,23 +10,14 @@ public class Card : MonoBehaviour
     public bool hasBeenPlayed;
     public int handIndex;
     private GameManager gameManager;
-    
-    //Testing Purpose
-    //Method initilises Card 
-    public void Initialize()
-    {
-        //Sets Damage between 1 and 6
-        damage = Random.Range(1,6);
-        
-        //Initilises GameManager
-        gameManager = FindObjectOfType<GameManager>();
-    }
-    //End of Testing Purpose
 
-    void Start()
+    public void Start()
     {
         damage = Random.Range(1,6);
-        damageText.text = damage.ToString();
+        if (damageText != null) 
+        {
+            damageText.text = damage.ToString();
+        }
         gameManager = FindObjectOfType<GameManager>();
         
     }

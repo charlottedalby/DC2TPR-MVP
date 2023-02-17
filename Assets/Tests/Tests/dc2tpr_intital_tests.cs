@@ -24,24 +24,31 @@ public class dc2tpr_intital_tests
         _gameManager.discardPile = new List<Card>();
 
         //Game Manager is the Initialised
-        _gameManager.Initialize();
+        _gameManager.Start();
         
         //Creates a new Card Object
         var cardObject = new GameObject("Card");
         _card = cardObject.AddComponent<Card>();
         //Initialises Card
-        _card.Initialize();
+        _card.Start();
 
         //Creates a New Enemy 
         var enemyObject = new GameObject("Enemy");
         _enemy = enemyObject.AddComponent<Enemy>();
         //Initialises Enemy
-        _enemy.Initialize();
+        _enemy.Start();
 
     }
 
     [Test]
-    public void TestCardDamageRange()
+
+    /*
+    TestCardDamage() will be testing a created cards damage range is between
+    1 and 6. This is executed by creating a Card (done in set-up) and then 
+    checking damage is between 1 and 6
+    */
+
+    public void TestCardDamage()
     {
         //Sets Variable Damage to _card's damage
         int damage = _card.damage;
@@ -51,7 +58,12 @@ public class dc2tpr_intital_tests
     }
 
     [Test]
-    public void TestCardHasBeenPlayed()
+
+    /*
+    TestCardPlayed() will be testing a whether a created card has been played
+    once it has been selected by the user. 
+    */
+    public void TestCardPlayed()
     {
     // Ensure that the card's hasBeenPlayed property is false when the card is first created
     Assert.That(_card.hasBeenPlayed, Is.False);
@@ -61,10 +73,16 @@ public class dc2tpr_intital_tests
     }
 
     [Test]
-    public void TestCardMoveToDiscardPile()
+
+    /*
+    TestCardDiscardPile() will be testing whether a card can be added to the discard pile
+    once it has been played
+    */
+
+    public void TestCardDiscardPile()
     {
         //Initilises the Card
-        _card.Initialize();
+        _card.Start();
         
         //Mimics MoveToDiscardPile Method at the Moment
         _gameManager.discardPile.Add(_card);

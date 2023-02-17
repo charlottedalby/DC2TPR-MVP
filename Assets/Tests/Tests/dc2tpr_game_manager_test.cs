@@ -53,23 +53,45 @@ public class dc2tpr_game_manager_test
     [Test]
     public void TestInitialize()
     {
-        _gameManager.Initialize();
+        //Initilaises the card
+        _gameManager.Start();
         Assert.AreEqual(_gameManager.enemy, _enemy);
     }
 
     [Test]
+
+    /*
+    TestDrawCard() will be testing to see that the draw card functionality of the game works. 
+    The test will check that the Deck decreases when a card is drawn and the card is put in 
+    the correct position. 
+    */
+
     public void TestDrawCard()
     {
-        _gameManager.Initialize();
+        //Initilises the card
+        _gameManager.Start();
+        //Logs the Deck
         Debug.Log(_deck);
+        //Draws a Card from the Deck
         _gameManager.DrawCard();
+        //Checks to see the card Deck has decreased by 1
         Assert.AreEqual(9, _deck.Count);
+        //Checks the position in the Deck is false and the handIndex is 0
         Assert.AreEqual(false, _availableCardSlots[0]);
         Assert.AreEqual(0, _deck[0].handIndex);
+        //Checks the Card is in the correct position
         Assert.AreEqual(_cardSlots[0].position, _deck[0].transform.position);
     }
 
     [Test]
+
+    /*
+    TestShuffleCard() will be testing the shuffle functionality in our game.
+    Cards are added to the discard pile, and the game manager shuffles the 
+    cards to the Deck. We check to see the Deck has increased and the discard 
+    pile has decreased. 
+    */
+
     public void TestShuffleCard()
     {
         //Creates a New Card

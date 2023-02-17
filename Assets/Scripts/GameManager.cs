@@ -19,16 +19,8 @@ public class GameManager : MonoBehaviour
 
     public Enemy enemy;
 
-    //Testing Purposes Only 
-    public void Initialize()
-    {
-        enemy = FindObjectOfType<Enemy>();
-    }
 
-    //End of Testing Purpose
-
-
-    void Start(){
+    public void Start(){
         enemy = FindObjectOfType<Enemy>();
         
         foreach(Card enemyCard in enemyCards){
