@@ -208,8 +208,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 290813772}
-        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: NextBattle
+        m_TargetAssemblyTypeName: Menu, Scripts
+        m_MethodName: loadMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -328,7 +328,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Start Over
+  m_Text: Exit
 --- !u!222 &95085030
 CanvasRenderer:
   m_ObjectHideFlags: 0

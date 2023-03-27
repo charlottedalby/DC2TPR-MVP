@@ -22,4 +22,10 @@ public class Menu : MonoBehaviour
         //Goes to load the BattleScreen
         SceneManager.LoadScene("BattleScreen");
     }
+
+    public void loadMainMenu()
+    {
+        //Loads Main Menu
+        SceneManager.LoadScene("MainMenu");
+    }
 }
