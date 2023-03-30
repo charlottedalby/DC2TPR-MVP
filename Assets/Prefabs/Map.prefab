@@ -1,0 +1,1452 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1076404064
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1076404065}
+  m_Layer: 0
+  m_Name: Nodes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1076404065
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1076404064}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1636146664963233625}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1233727579
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1233727581}
+  - component: {fileID: 1233727580}
+  m_Layer: 0
+  m_Name: MapBackground
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1233727581
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233727579}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.08722845, y: 0.30772442, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1636146664963233625}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1233727580
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233727579}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: -5
+  m_Sprite: {fileID: 21300000, guid: 37f2259be80b91340bf877eece60a874, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 19.2, y: 10.8}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!1 &1636146664963233622
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1636146664963233625}
+  - component: {fileID: 1636146664963233624}
+  m_Layer: 0
+  m_Name: Map
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1636146664963233625
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1636146664963233622}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1636146666360902028}
+  - {fileID: 1233727581}
+  - {fileID: 1076404065}
+  - {fileID: 7055786142025781742}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1636146664963233624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1636146664963233622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b32ba764ebdea92408694517ea8e722e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodePrefab: {fileID: 491325060764273583, guid: b7cc0afa88d70474893e6deaacaf391a,
+    type: 3}
+  genStartPos: {fileID: 1636146666360902028}
+  nodesParent: {fileID: 1076404065}
+  linesParent: {fileID: 7055786142025781742}
+  minColumns: 15
+  maxColumns: 15
+  minRows: 15
+  maxRows: 15
+  rowDist: 2.2
+  colDist: 2.5
+  minXDeviation: -0.5
+  maxXDeviation: 0.5
+  minYDeviation: -0.5
+  maxYDeviation: 0.5
+  cullNodesChance: 25
+  bottomNodesCullChance: 0
+  topNodesCullChance: 0
+  lineZPosition: 5
+  userEnteredRowAmount: []
+  topRowNodes:
+    rowNum: 0
+    nodeNum: 4
+    cullable: 0
+  nodeConnectionChanceDefault: 25
+  nThColumnAwayConnectionChance: []
+  nThPlus:
+    columnNumberAway: 3
+    chanceToConnect: 0
+  alwaysConnectUpwards: 1
+  nodesAlwaysHaveAtLeastOneForwardConnection: 1
+  squashRowsInIfLargerThanColumns: 1
+  centerTopNodes: 1
+  noCrossover: 1
+  nodes:
+  - id: 0
+    row: 0
+    column: 0
+    forwardConnections: 100000000f000000
+    backwardConnections: 
+    position: {x: -6.764033, y: -3.293111, z: 0}
+    cullable: 1
+  - id: 1
+    row: 0
+    column: 1
+    forwardConnections: 10000000
+    backwardConnections: 
+    position: {x: -4.2989025, y: -2.7697015, z: 0}
+    cullable: 1
+  - id: 2
+    row: 0
+    column: 2
+    forwardConnections: 11000000
+    backwardConnections: 
+    position: {x: -1.3780837, y: -3.256962, z: 0}
+    cullable: 1
+  - id: 3
+    row: 0
+    column: 3
+    forwardConnections: 1100000021000000
+    backwardConnections: 
+    position: {x: 1.4744575, y: -3.177515, z: 0}
+    cullable: 1
+  - id: 4
+    row: 0
+    column: 4
+    forwardConnections: 22000000
+    backwardConnections: 
+    position: {x: 3.61349, y: -3.4430292, z: 0}
+    cullable: 1
+  - id: 5
+    row: 0
+    column: 5
+    forwardConnections: 14000000
+    backwardConnections: 
+    position: {x: 6.2517667, y: -3.1169298, z: 0}
+    cullable: 1
+  - id: 6
+    row: 0
+    column: 6
+    forwardConnections: 15000000
+    backwardConnections: 
+    position: {x: 8.104041, y: -3.2133849, z: 0}
+    cullable: 1
+  - id: 7
+    row: 0
+    column: 7
+    forwardConnections: 16000000
+    backwardConnections: 
+    position: {x: 11.289313, y: -2.925177, z: 0}
+    cullable: 1
+  - id: 8
+    row: 0
+    column: 8
+    forwardConnections: 26000000
+    backwardConnections: 
+    position: {x: 13.30699, y: -2.7967815, z: 0}
+    cullable: 1
+  - id: 9
+    row: 0
+    column: 9
+    forwardConnections: 36000000
+    backwardConnections: 
+    position: {x: 16.568737, y: -3.3454876, z: 0}
+    cullable: 1
+  - id: 10
+    row: 0
+    column: 10
+    forwardConnections: 28000000
+    backwardConnections: 
+    position: {x: 18.557945, y: -3.5563564, z: 0}
+    cullable: 1
+  - id: 11
+    row: 0
+    column: 11
+    forwardConnections: 29000000
+    backwardConnections: 
+    position: {x: 21.528816, y: -3.2570128, z: 0}
+    cullable: 1
+  - id: 12
+    row: 0
+    column: 12
+    forwardConnections: 1b000000
+    backwardConnections: 
+    position: {x: 23.818876, y: -2.8837254, z: 0}
+    cullable: 1
+  - id: 13
+    row: 0
+    column: 13
+    forwardConnections: 1c000000
+    backwardConnections: 
+    position: {x: 26.011467, y: -3.4790897, z: 0}
+    cullable: 1
+  - id: 14
+    row: 0
+    column: 14
+    forwardConnections: 1d000000
+    backwardConnections: 
+    position: {x: 28.756329, y: -3.3711317, z: 0}
+    cullable: 1
+  - id: 15
+    row: 1
+    column: 0
+    forwardConnections: 1e000000
+    backwardConnections: 00000000
+    position: {x: -6.3003554, y: -0.6267648, z: 0}
+    cullable: 1
+  - id: 16
+    row: 1
+    column: 1
+    forwardConnections: 3d000000
+    backwardConnections: 0000000001000000
+    position: {x: -3.5186892, y: -0.7619786, z: 0}
+    cullable: 1
+  - id: 17
+    row: 1
+    column: 2
+    forwardConnections: 2f000000
+    backwardConnections: 0300000002000000
+    position: {x: -1.4292614, y: -0.9711742, z: 0}
+    cullable: 1
+  - id: 20
+    row: 1
+    column: 5
+    forwardConnections: 23000000
+    backwardConnections: 05000000
+    position: {x: 6.189377, y: -1.2689517, z: 0}
+    cullable: 1
+  - id: 21
+    row: 1
+    column: 6
+    forwardConnections: 2300000024000000
+    backwardConnections: 06000000
+    position: {x: 8.583118, y: -0.73330367, z: 0}
+    cullable: 1
+  - id: 22
+    row: 1
+    column: 7
+    forwardConnections: 2400000025000000
+    backwardConnections: 07000000
+    position: {x: 11.515965, y: -1.1350298, z: 0}
+    cullable: 1
+  - id: 27
+    row: 1
+    column: 12
+    forwardConnections: 2a000000
+    backwardConnections: 0c000000
+    position: {x: 23.321198, y: -1.060893, z: 0}
+    cullable: 1
+  - id: 28
+    row: 1
+    column: 13
+    forwardConnections: 2b000000
+    backwardConnections: 0d000000
+    position: {x: 26.20402, y: -1.4047867, z: 0}
+    cullable: 1
+  - id: 29
+    row: 1
+    column: 14
+    forwardConnections: 2c000000
+    backwardConnections: 0e000000
+    position: {x: 28.325949, y: -0.7093712, z: 0}
+    cullable: 1
+  - id: 30
+    row: 2
+    column: 0
+    forwardConnections: 2d000000
+    backwardConnections: 0f000000
+    position: {x: -6.4278584, y: 1.0553751, z: 0}
+    cullable: 1
+  - id: 33
+    row: 2
+    column: 3
+    forwardConnections: 30000000
+    backwardConnections: 03000000
+    position: {x: 1.2294307, y: 0.9534871, z: 0}
+    cullable: 1
+  - id: 34
+    row: 2
+    column: 4
+    forwardConnections: 300000003200000040000000
+    backwardConnections: 04000000
+    position: {x: 3.2857282, y: 0.974641, z: 0}
+    cullable: 1
+  - id: 35
+    row: 2
+    column: 5
+    forwardConnections: 32000000
+    backwardConnections: 1500000014000000
+    position: {x: 5.872721, y: 1.1127915, z: 0}
+    cullable: 1
+  - id: 36
+    row: 2
+    column: 6
+    forwardConnections: 33000000
+    backwardConnections: 1600000015000000
+    position: {x: 8.144005, y: 1.5669752, z: 0}
+    cullable: 1
+  - id: 37
+    row: 2
+    column: 7
+    forwardConnections: 34000000
+    backwardConnections: 16000000
+    position: {x: 10.9226885, y: 1.4990106, z: 0}
+    cullable: 1
+  - id: 38
+    row: 2
+    column: 8
+    forwardConnections: 3400000044000000
+    backwardConnections: 08000000
+    position: {x: 13.490988, y: 1.2923026, z: 0}
+    cullable: 1
+  - id: 40
+    row: 2
+    column: 10
+    forwardConnections: 37000000
+    backwardConnections: 0a000000
+    position: {x: 18.091602, y: 1.6304923, z: 0}
+    cullable: 1
+  - id: 41
+    row: 2
+    column: 11
+    forwardConnections: 38000000
+    backwardConnections: 0b000000
+    position: {x: 20.78451, y: 1.4015607, z: 0}
+    cullable: 1
+  - id: 42
+    row: 2
+    column: 12
+    forwardConnections: 3800000039000000
+    backwardConnections: 1b000000
+    position: {x: 23.894312, y: 1.2442863, z: 0}
+    cullable: 1
+  - id: 43
+    row: 2
+    column: 13
+    forwardConnections: 3b00000049000000
+    backwardConnections: 1c000000
+    position: {x: 25.975922, y: 0.8585663, z: 0}
+    cullable: 1
+  - id: 44
+    row: 2
+    column: 14
+    forwardConnections: 3b000000
+    backwardConnections: 1d000000
+    position: {x: 28.57212, y: 0.9080243, z: 0}
+    cullable: 1
+  - id: 45
+    row: 3
+    column: 0
+    forwardConnections: 3d0000003c000000
+    backwardConnections: 1e000000
+    position: {x: -6.461375, y: 3.7041123, z: 0}
+    cullable: 1
+  - id: 47
+    row: 3
+    column: 2
+    forwardConnections: 3f0000003e000000
+    backwardConnections: 11000000
+    position: {x: -1.2394787, y: 3.7803807, z: 0}
+    cullable: 1
+  - id: 48
+    row: 3
+    column: 3
+    forwardConnections: 3f000000
+    backwardConnections: 2100000022000000
+    position: {x: 0.9998931, y: 3.1836493, z: 0}
+    cullable: 1
+  - id: 50
+    row: 3
+    column: 5
+    forwardConnections: 41000000
+    backwardConnections: 2200000023000000
+    position: {x: 6.4705453, y: 2.9733248, z: 0}
+    cullable: 1
+  - id: 51
+    row: 3
+    column: 6
+    forwardConnections: 4100000042000000
+    backwardConnections: 24000000
+    position: {x: 8.927098, y: 3.0471377, z: 0}
+    cullable: 1
+  - id: 52
+    row: 3
+    column: 7
+    forwardConnections: 4400000043000000
+    backwardConnections: 2600000025000000
+    position: {x: 11.275355, y: 3.3477395, z: 0}
+    cullable: 1
+  - id: 54
+    row: 3
+    column: 9
+    forwardConnections: 63000000
+    backwardConnections: 09000000
+    position: {x: 15.700595, y: 3.0845284, z: 0}
+    cullable: 1
+  - id: 55
+    row: 3
+    column: 10
+    forwardConnections: 46000000
+    backwardConnections: 28000000
+    position: {x: 18.729208, y: 3.7129805, z: 0}
+    cullable: 1
+  - id: 56
+    row: 3
+    column: 11
+    forwardConnections: 47000000
+    backwardConnections: 2a00000029000000
+    position: {x: 21.432661, y: 3.5586817, z: 0}
+    cullable: 1
+  - id: 57
+    row: 3
+    column: 12
+    forwardConnections: 4700000048000000
+    backwardConnections: 2a000000
+    position: {x: 23.369835, y: 3.001447, z: 0}
+    cullable: 1
+  - id: 59
+    row: 3
+    column: 14
+    forwardConnections: 4900000059000000
+    backwardConnections: 2b0000002c000000
+    position: {x: 28.117506, y: 3.19512, z: 0}
+    cullable: 1
+  - id: 60
+    row: 4
+    column: 0
+    forwardConnections: 78000000
+    backwardConnections: 2d000000
+    position: {x: -6.8440313, y: 5.3278284, z: 0}
+    cullable: 1
+  - id: 61
+    row: 4
+    column: 1
+    forwardConnections: 4c000000
+    backwardConnections: 2d00000010000000
+    position: {x: -4.07609, y: 5.2573833, z: 0}
+    cullable: 1
+  - id: 62
+    row: 4
+    column: 2
+    forwardConnections: 4d000000
+    backwardConnections: 2f000000
+    position: {x: -1.428644, y: 5.2117434, z: 0}
+    cullable: 1
+  - id: 63
+    row: 4
+    column: 3
+    forwardConnections: 5d000000
+    backwardConnections: 2f00000030000000
+    position: {x: 0.7668185, y: 5.531856, z: 0}
+    cullable: 1
+  - id: 64
+    row: 4
+    column: 4
+    forwardConnections: 4f000000
+    backwardConnections: 22000000
+    position: {x: 3.0986533, y: 5.123467, z: 0}
+    cullable: 1
+  - id: 65
+    row: 4
+    column: 5
+    forwardConnections: 4f00000050000000
+    backwardConnections: 3300000032000000
+    position: {x: 5.81091, y: 6.0117655, z: 0}
+    cullable: 1
+  - id: 66
+    row: 4
+    column: 6
+    forwardConnections: 5000000051000000
+    backwardConnections: 33000000
+    position: {x: 8.843449, y: 6.0406, z: 0}
+    cullable: 1
+  - id: 67
+    row: 4
+    column: 7
+    forwardConnections: 510000005200000053000000
+    backwardConnections: 34000000
+    position: {x: 10.619564, y: 5.5702834, z: 0}
+    cullable: 1
+  - id: 68
+    row: 4
+    column: 8
+    forwardConnections: 53000000
+    backwardConnections: 3400000026000000
+    position: {x: 13.594919, y: 5.688784, z: 0}
+    cullable: 1
+  - id: 70
+    row: 4
+    column: 10
+    forwardConnections: 55000000
+    backwardConnections: 37000000
+    position: {x: 18.740793, y: 5.853546, z: 0}
+    cullable: 1
+  - id: 71
+    row: 4
+    column: 11
+    forwardConnections: 65000000
+    backwardConnections: 3800000039000000
+    position: {x: 20.974459, y: 5.8691235, z: 0}
+    cullable: 1
+  - id: 72
+    row: 4
+    column: 12
+    forwardConnections: 5700000058000000
+    backwardConnections: 39000000
+    position: {x: 23.232958, y: 5.535184, z: 0}
+    cullable: 1
+  - id: 73
+    row: 4
+    column: 13
+    forwardConnections: 58000000
+    backwardConnections: 3b0000002b000000
+    position: {x: 26.156708, y: 5.7676916, z: 0}
+    cullable: 1
+  - id: 76
+    row: 5
+    column: 1
+    forwardConnections: 5b000000
+    backwardConnections: 3d000000
+    position: {x: -4.205966, y: 7.695941, z: 0}
+    cullable: 1
+  - id: 77
+    row: 5
+    column: 2
+    forwardConnections: 5d0000005c000000
+    backwardConnections: 3e000000
+    position: {x: -1.1917578, y: 8.181333, z: 0}
+    cullable: 1
+  - id: 79
+    row: 5
+    column: 4
+    forwardConnections: 5e000000
+    backwardConnections: 4100000040000000
+    position: {x: 4.0416594, y: 7.6348944, z: 0}
+    cullable: 1
+  - id: 80
+    row: 5
+    column: 5
+    forwardConnections: 5f000000
+    backwardConnections: 4200000041000000
+    position: {x: 6.2123876, y: 7.420436, z: 0}
+    cullable: 1
+  - id: 81
+    row: 5
+    column: 6
+    forwardConnections: 60000000
+    backwardConnections: 4300000042000000
+    position: {x: 8.24928, y: 7.589121, z: 0}
+    cullable: 1
+  - id: 82
+    row: 5
+    column: 7
+    forwardConnections: 61000000
+    backwardConnections: 43000000
+    position: {x: 10.797346, y: 7.416656, z: 0}
+    cullable: 1
+  - id: 83
+    row: 5
+    column: 8
+    forwardConnections: 6100000062000000
+    backwardConnections: 4300000044000000
+    position: {x: 13.877471, y: 7.990791, z: 0}
+    cullable: 1
+  - id: 85
+    row: 5
+    column: 10
+    forwardConnections: 64000000
+    backwardConnections: 46000000
+    position: {x: 18.794079, y: 7.7529078, z: 0}
+    cullable: 1
+  - id: 87
+    row: 5
+    column: 12
+    forwardConnections: 66000000
+    backwardConnections: 48000000
+    position: {x: 23.127039, y: 7.826975, z: 0}
+    cullable: 1
+  - id: 88
+    row: 5
+    column: 13
+    forwardConnections: 6700000068000000
+    backwardConnections: 4800000049000000
+    position: {x: 26.390308, y: 8.152973, z: 0}
+    cullable: 1
+  - id: 89
+    row: 5
+    column: 14
+    forwardConnections: 68000000
+    backwardConnections: 3b000000
+    position: {x: 28.588634, y: 8.155774, z: 0}
+    cullable: 1
+  - id: 91
+    row: 6
+    column: 1
+    forwardConnections: 79000000
+    backwardConnections: 4c000000
+    position: {x: -3.8461902, y: 9.549884, z: 0}
+    cullable: 1
+  - id: 92
+    row: 6
+    column: 2
+    forwardConnections: 6b000000
+    backwardConnections: 4d000000
+    position: {x: -0.91429603, y: 9.861993, z: 0}
+    cullable: 1
+  - id: 93
+    row: 6
+    column: 3
+    forwardConnections: 6d0000006c000000
+    backwardConnections: 4d0000003f000000
+    position: {x: 1.4304823, y: 10.143779, z: 0}
+    cullable: 1
+  - id: 94
+    row: 6
+    column: 4
+    forwardConnections: 6d000000
+    backwardConnections: 4f000000
+    position: {x: 3.470399, y: 9.576669, z: 0}
+    cullable: 1
+  - id: 95
+    row: 6
+    column: 5
+    forwardConnections: 7d000000
+    backwardConnections: 50000000
+    position: {x: 6.549005, y: 10.251944, z: 0}
+    cullable: 1
+  - id: 96
+    row: 6
+    column: 6
+    forwardConnections: 6f000000
+    backwardConnections: 51000000
+    position: {x: 8.191539, y: 10.279734, z: 0}
+    cullable: 1
+  - id: 97
+    row: 6
+    column: 7
+    forwardConnections: 70000000
+    backwardConnections: 5200000053000000
+    position: {x: 10.689047, y: 9.937933, z: 0}
+    cullable: 1
+  - id: 98
+    row: 6
+    column: 8
+    forwardConnections: 71000000
+    backwardConnections: 53000000
+    position: {x: 13.682032, y: 9.560617, z: 0}
+    cullable: 1
+  - id: 99
+    row: 6
+    column: 9
+    forwardConnections: 72000000
+    backwardConnections: 36000000
+    position: {x: 16.360199, y: 9.741175, z: 0}
+    cullable: 1
+  - id: 100
+    row: 6
+    column: 10
+    forwardConnections: 720000007400000073000000
+    backwardConnections: 55000000
+    position: {x: 18.68978, y: 9.653892, z: 0}
+    cullable: 1
+  - id: 101
+    row: 6
+    column: 11
+    forwardConnections: 74000000
+    backwardConnections: 47000000
+    position: {x: 21.152773, y: 9.495564, z: 0}
+    cullable: 1
+  - id: 102
+    row: 6
+    column: 12
+    forwardConnections: 75000000
+    backwardConnections: 57000000
+    position: {x: 23.200867, y: 10.342367, z: 0}
+    cullable: 1
+  - id: 103
+    row: 6
+    column: 13
+    forwardConnections: 7700000076000000
+    backwardConnections: 58000000
+    position: {x: 26.390278, y: 10.030366, z: 0}
+    cullable: 1
+  - id: 104
+    row: 6
+    column: 14
+    forwardConnections: 77000000
+    backwardConnections: 5800000059000000
+    position: {x: 28.214869, y: 10.149668, z: 0}
+    cullable: 1
+  - id: 107
+    row: 7
+    column: 2
+    forwardConnections: 7a000000
+    backwardConnections: 5c000000
+    position: {x: -1.434489, y: 11.816571, z: 0}
+    cullable: 1
+  - id: 108
+    row: 7
+    column: 3
+    forwardConnections: 7a0000007c0000007b000000
+    backwardConnections: 5d000000
+    position: {x: 0.97745556, y: 12.254565, z: 0}
+    cullable: 1
+  - id: 109
+    row: 7
+    column: 4
+    forwardConnections: 7c000000
+    backwardConnections: 5d0000005e000000
+    position: {x: 3.8194544, y: 12.323484, z: 0}
+    cullable: 1
+  - id: 111
+    row: 7
+    column: 6
+    forwardConnections: 8d000000
+    backwardConnections: 60000000
+    position: {x: 8.188431, y: 11.98033, z: 0}
+    cullable: 1
+  - id: 112
+    row: 7
+    column: 7
+    forwardConnections: 7f000000
+    backwardConnections: 61000000
+    position: {x: 10.823065, y: 11.875303, z: 0}
+    cullable: 1
+  - id: 113
+    row: 7
+    column: 8
+    forwardConnections: 7f00000080000000
+    backwardConnections: 62000000
+    position: {x: 13.419194, y: 12.076284, z: 0}
+    cullable: 1
+  - id: 114
+    row: 7
+    column: 9
+    forwardConnections: 90000000
+    backwardConnections: 6300000064000000
+    position: {x: 15.963389, y: 11.9235935, z: 0}
+    cullable: 1
+  - id: 115
+    row: 7
+    column: 10
+    forwardConnections: 82000000
+    backwardConnections: 64000000
+    position: {x: 18.304195, y: 11.986211, z: 0}
+    cullable: 1
+  - id: 116
+    row: 7
+    column: 11
+    forwardConnections: 83000000
+    backwardConnections: 6400000065000000
+    position: {x: 21.271135, y: 12.524154, z: 0}
+    cullable: 1
+  - id: 117
+    row: 7
+    column: 12
+    forwardConnections: 8300000093000000
+    backwardConnections: 66000000
+    position: {x: 23.850843, y: 12.045333, z: 0}
+    cullable: 1
+  - id: 118
+    row: 7
+    column: 13
+    forwardConnections: 85000000
+    backwardConnections: 67000000
+    position: {x: 26.367508, y: 11.763881, z: 0}
+    cullable: 1
+  - id: 119
+    row: 7
+    column: 14
+    forwardConnections: 86000000
+    backwardConnections: 6700000068000000
+    position: {x: 28.51798, y: 12.401684, z: 0}
+    cullable: 1
+  - id: 120
+    row: 8
+    column: 0
+    forwardConnections: 87000000
+    backwardConnections: 3c000000
+    position: {x: -6.386199, y: 14.62134, z: 0}
+    cullable: 1
+  - id: 121
+    row: 8
+    column: 1
+    forwardConnections: 88000000
+    backwardConnections: 5b000000
+    position: {x: -3.4162962, y: 14.85183, z: 0}
+    cullable: 1
+  - id: 122
+    row: 8
+    column: 2
+    forwardConnections: 98000000
+    backwardConnections: 6c0000006b000000
+    position: {x: -1.767868, y: 13.908029, z: 0}
+    cullable: 1
+  - id: 123
+    row: 8
+    column: 3
+    forwardConnections: 8a000000
+    backwardConnections: 6c000000
+    position: {x: 1.1379814, y: 14.747337, z: 0}
+    cullable: 1
+  - id: 124
+    row: 8
+    column: 4
+    forwardConnections: 8a0000008b0000008c000000
+    backwardConnections: 6c0000006d000000
+    position: {x: 3.1226459, y: 14.172616, z: 0}
+    cullable: 1
+  - id: 125
+    row: 8
+    column: 5
+    forwardConnections: 8d0000008c000000
+    backwardConnections: 5f000000
+    position: {x: 6.16675, y: 14.267764, z: 0}
+    cullable: 1
+  - id: 127
+    row: 8
+    column: 7
+    forwardConnections: ac000000
+    backwardConnections: 7100000070000000
+    position: {x: 11.511217, y: 14.4467945, z: 0}
+    cullable: 1
+  - id: 128
+    row: 8
+    column: 8
+    forwardConnections: 9e000000
+    backwardConnections: 71000000
+    position: {x: 13.576519, y: 14.152586, z: 0}
+    cullable: 1
+  - id: 130
+    row: 8
+    column: 10
+    forwardConnections: 91000000
+    backwardConnections: 73000000
+    position: {x: 18.702957, y: 14.009368, z: 0}
+    cullable: 1
+  - id: 131
+    row: 8
+    column: 11
+    forwardConnections: 9300000092000000
+    backwardConnections: 7400000075000000
+    position: {x: 20.886292, y: 14.824947, z: 0}
+    cullable: 1
+  - id: 133
+    row: 8
+    column: 13
+    forwardConnections: 930000009500000094000000
+    backwardConnections: 76000000
+    position: {x: 26.079582, y: 14.705391, z: 0}
+    cullable: 1
+  - id: 134
+    row: 8
+    column: 14
+    forwardConnections: 95000000
+    backwardConnections: 77000000
+    position: {x: 28.370678, y: 14.1431675, z: 0}
+    cullable: 1
+  - id: 135
+    row: 9
+    column: 0
+    forwardConnections: 96000000
+    backwardConnections: 78000000
+    position: {x: -5.914132, y: 16.389208, z: 0}
+    cullable: 1
+  - id: 136
+    row: 9
+    column: 1
+    forwardConnections: 97000000
+    backwardConnections: 79000000
+    position: {x: -3.7603202, y: 16.4785, z: 0}
+    cullable: 1
+  - id: 138
+    row: 9
+    column: 3
+    forwardConnections: 9800000099000000
+    backwardConnections: 7b0000007c000000
+    position: {x: 1.5334585, y: 16.616583, z: 0}
+    cullable: 1
+  - id: 139
+    row: 9
+    column: 4
+    forwardConnections: 9a000000
+    backwardConnections: 7c000000
+    position: {x: 3.1671362, y: 17.031263, z: 0}
+    cullable: 1
+  - id: 140
+    row: 9
+    column: 5
+    forwardConnections: 9b000000
+    backwardConnections: 7c0000007d000000
+    position: {x: 6.0315194, y: 16.74514, z: 0}
+    cullable: 1
+  - id: 141
+    row: 9
+    column: 6
+    forwardConnections: ba000000
+    backwardConnections: 7d0000006f000000
+    position: {x: 8.881413, y: 16.827242, z: 0}
+    cullable: 1
+  - id: 144
+    row: 9
+    column: 9
+    forwardConnections: ae000000
+    backwardConnections: 72000000
+    position: {x: 16.04927, y: 16.827036, z: 0}
+    cullable: 1
+  - id: 145
+    row: 9
+    column: 10
+    forwardConnections: a0000000
+    backwardConnections: 82000000
+    position: {x: 18.760067, y: 16.302668, z: 0}
+    cullable: 1
+  - id: 146
+    row: 9
+    column: 11
+    forwardConnections: a0000000a1000000
+    backwardConnections: 83000000
+    position: {x: 21.27189, y: 16.153975, z: 0}
+    cullable: 1
+  - id: 147
+    row: 9
+    column: 12
+    forwardConnections: a3000000b1000000
+    backwardConnections: 830000008500000075000000
+    position: {x: 23.27749, y: 16.376308, z: 0}
+    cullable: 1
+  - id: 148
+    row: 9
+    column: 13
+    forwardConnections: a3000000
+    backwardConnections: 85000000
+    position: {x: 26.55201, y: 17.057169, z: 0}
+    cullable: 1
+  - id: 149
+    row: 9
+    column: 14
+    forwardConnections: a4000000
+    backwardConnections: 8500000086000000
+    position: {x: 28.605341, y: 16.867569, z: 0}
+    cullable: 1
+  - id: 150
+    row: 10
+    column: 0
+    forwardConnections: a6000000a5000000
+    backwardConnections: 87000000
+    position: {x: -6.267416, y: 18.49279, z: 0}
+    cullable: 1
+  - id: 151
+    row: 10
+    column: 1
+    forwardConnections: a7000000a6000000
+    backwardConnections: 88000000
+    position: {x: -3.488163, y: 18.66667, z: 0}
+    cullable: 1
+  - id: 152
+    row: 10
+    column: 2
+    forwardConnections: a7000000a8000000
+    backwardConnections: 8a0000007a000000
+    position: {x: -1.1918037, y: 19.255352, z: 0}
+    cullable: 1
+  - id: 153
+    row: 10
+    column: 3
+    forwardConnections: a8000000
+    backwardConnections: 8a000000
+    position: {x: 1.1662548, y: 18.797215, z: 0}
+    cullable: 1
+  - id: 154
+    row: 10
+    column: 4
+    forwardConnections: a8000000a9000000
+    backwardConnections: 8b000000
+    position: {x: 3.7396333, y: 18.604166, z: 0}
+    cullable: 1
+  - id: 155
+    row: 10
+    column: 5
+    forwardConnections: aa000000
+    backwardConnections: 8c000000
+    position: {x: 5.9361687, y: 18.291168, z: 0}
+    cullable: 1
+  - id: 158
+    row: 10
+    column: 8
+    forwardConnections: ac000000ad000000
+    backwardConnections: 80000000
+    position: {x: 13.223108, y: 19.193453, z: 0}
+    cullable: 1
+  - id: 160
+    row: 10
+    column: 10
+    forwardConnections: b0000000af000000
+    backwardConnections: 9200000091000000
+    position: {x: 18.247675, y: 18.291945, z: 0}
+    cullable: 1
+  - id: 161
+    row: 10
+    column: 11
+    forwardConnections: b0000000
+    backwardConnections: 92000000
+    position: {x: 20.762522, y: 19.159023, z: 0}
+    cullable: 1
+  - id: 163
+    row: 10
+    column: 13
+    forwardConnections: b1000000b2000000
+    backwardConnections: 9300000094000000
+    position: {x: 25.846394, y: 18.58224, z: 0}
+    cullable: 1
+  - id: 164
+    row: 10
+    column: 14
+    forwardConnections: c2000000
+    backwardConnections: 95000000
+    position: {x: 28.335775, y: 18.733175, z: 0}
+    cullable: 1
+  - id: 165
+    row: 11
+    column: 0
+    forwardConnections: b7000000
+    backwardConnections: 96000000
+    position: {x: -6.292719, y: 20.612963, z: 0}
+    cullable: 1
+  - id: 166
+    row: 11
+    column: 1
+    forwardConnections: c4000000
+    backwardConnections: 9600000097000000
+    position: {x: -4.120877, y: 20.522905, z: 0}
+    cullable: 1
+  - id: 167
+    row: 11
+    column: 2
+    forwardConnections: c5000000
+    backwardConnections: 9700000098000000
+    position: {x: -1.513026, y: 20.618404, z: 0}
+    cullable: 1
+  - id: 168
+    row: 11
+    column: 3
+    forwardConnections: b7000000
+    backwardConnections: 980000009a00000099000000
+    position: {x: 0.6662694, y: 21.01753, z: 0}
+    cullable: 1
+  - id: 169
+    row: 11
+    column: 4
+    forwardConnections: b8000000
+    backwardConnections: 9a000000
+    position: {x: 3.191162, y: 21.107174, z: 0}
+    cullable: 1
+  - id: 170
+    row: 11
+    column: 5
+    forwardConnections: ba000000b9000000
+    backwardConnections: 9b000000
+    position: {x: 6.133215, y: 20.772112, z: 0}
+    cullable: 1
+  - id: 172
+    row: 11
+    column: 7
+    forwardConnections: ca000000
+    backwardConnections: 9e0000007f000000
+    position: {x: 10.664028, y: 20.894262, z: 0}
+    cullable: 1
+  - id: 173
+    row: 11
+    column: 8
+    forwardConnections: bc000000
+    backwardConnections: 9e000000
+    position: {x: 13.3421, y: 21.43771, z: 0}
+    cullable: 1
+  - id: 174
+    row: 11
+    column: 9
+    forwardConnections: bd000000
+    backwardConnections: 90000000
+    position: {x: 15.599379, y: 21.1807, z: 0}
+    cullable: 1
+  - id: 175
+    row: 11
+    column: 10
+    forwardConnections: be000000
+    backwardConnections: a0000000
+    position: {x: 18.11359, y: 20.998951, z: 0}
+    cullable: 1
+  - id: 176
+    row: 11
+    column: 11
+    forwardConnections: ce000000
+    backwardConnections: a0000000a1000000
+    position: {x: 20.98164, y: 20.681074, z: 0}
+    cullable: 1
+  - id: 177
+    row: 11
+    column: 12
+    forwardConnections: c1000000c0000000
+    backwardConnections: a300000093000000
+    position: {x: 23.692196, y: 20.65566, z: 0}
+    cullable: 1
+  - id: 178
+    row: 11
+    column: 13
+    forwardConnections: c1000000
+    backwardConnections: a3000000
+    position: {x: 26.04201, y: 21.441574, z: 0}
+    cullable: 1
+  - id: 183
+    row: 12
+    column: 3
+    forwardConnections: c7000000
+    backwardConnections: a8000000a5000000
+    position: {x: 0.80859566, y: 23.398472, z: 0}
+    cullable: 1
+  - id: 184
+    row: 12
+    column: 4
+    forwardConnections: c7000000
+    backwardConnections: a9000000
+    position: {x: 3.9990351, y: 23.166262, z: 0}
+    cullable: 1
+  - id: 185
+    row: 12
+    column: 5
+    forwardConnections: c9000000
+    backwardConnections: aa000000
+    position: {x: 6.070872, y: 23.406364, z: 0}
+    cullable: 1
+  - id: 186
+    row: 12
+    column: 6
+    forwardConnections: c9000000
+    backwardConnections: aa0000008d000000
+    position: {x: 8.176255, y: 23.377235, z: 0}
+    cullable: 1
+  - id: 188
+    row: 12
+    column: 8
+    forwardConnections: cb000000
+    backwardConnections: ad000000
+    position: {x: 13.751387, y: 23.623474, z: 0}
+    cullable: 1
+  - id: 189
+    row: 12
+    column: 9
+    forwardConnections: cc000000
+    backwardConnections: ae000000
+    position: {x: 15.841904, y: 22.706654, z: 0}
+    cullable: 1
+  - id: 190
+    row: 12
+    column: 10
+    forwardConnections: cd000000
+    backwardConnections: af000000
+    position: {x: 18.947872, y: 22.827374, z: 0}
+    cullable: 1
+  - id: 192
+    row: 12
+    column: 12
+    forwardConnections: cf000000
+    backwardConnections: b1000000
+    position: {x: 23.49434, y: 23.077168, z: 0}
+    cullable: 1
+  - id: 193
+    row: 12
+    column: 13
+    forwardConnections: d0000000
+    backwardConnections: b1000000b2000000
+    position: {x: 25.66652, y: 22.720406, z: 0}
+    cullable: 1
+  - id: 194
+    row: 12
+    column: 14
+    forwardConnections: d1000000
+    backwardConnections: a4000000
+    position: {x: 28.936188, y: 23.303818, z: 0}
+    cullable: 1
+  - id: 196
+    row: 13
+    column: 1
+    forwardConnections: d2000000
+    backwardConnections: a6000000
+    position: {x: -3.9188485, y: 25.634045, z: 0}
+    cullable: 1
+  - id: 197
+    row: 13
+    column: 2
+    forwardConnections: d2000000
+    backwardConnections: a7000000
+    position: {x: -1.560297, y: 25.350409, z: 0}
+    cullable: 1
+  - id: 199
+    row: 13
+    column: 4
+    forwardConnections: d3000000
+    backwardConnections: b8000000b7000000
+    position: {x: 3.2566733, y: 25.795473, z: 0}
+    cullable: 1
+  - id: 201
+    row: 13
+    column: 6
+    forwardConnections: d3000000
+    backwardConnections: ba000000b9000000
+    position: {x: 8.911696, y: 25.27823, z: 0}
+    cullable: 1
+  - id: 202
+    row: 13
+    column: 7
+    forwardConnections: d3000000
+    backwardConnections: ac000000
+    position: {x: 10.741194, y: 25.220224, z: 0}
+    cullable: 1
+  - id: 203
+    row: 13
+    column: 8
+    forwardConnections: d4000000
+    backwardConnections: bc000000
+    position: {x: 13.7301445, y: 25.524035, z: 0}
+    cullable: 1
+  - id: 204
+    row: 13
+    column: 9
+    forwardConnections: d4000000
+    backwardConnections: bd000000
+    position: {x: 15.6715, y: 24.96043, z: 0}
+    cullable: 1
+  - id: 205
+    row: 13
+    column: 10
+    forwardConnections: d4000000
+    backwardConnections: be000000
+    position: {x: 18.558283, y: 25.027363, z: 0}
+    cullable: 1
+  - id: 206
+    row: 13
+    column: 11
+    forwardConnections: d5000000
+    backwardConnections: b0000000
+    position: {x: 20.992617, y: 25.7839, z: 0}
+    cullable: 1
+  - id: 207
+    row: 13
+    column: 12
+    forwardConnections: d5000000
+    backwardConnections: c0000000
+    position: {x: 23.501188, y: 25.807842, z: 0}
+    cullable: 1
+  - id: 208
+    row: 13
+    column: 13
+    forwardConnections: d5000000
+    backwardConnections: c1000000
+    position: {x: 26.352808, y: 25.76346, z: 0}
+    cullable: 1
+  - id: 209
+    row: 13
+    column: 14
+    forwardConnections: d5000000
+    backwardConnections: c2000000
+    position: {x: 29.075865, y: 24.911526, z: 0}
+    cullable: 1
+  - id: 210
+    row: 14
+    column: 0
+    forwardConnections: 
+    backwardConnections: c4000000c5000000
+    position: {x: -1.9099998, y: 27.714096, z: 0}
+    cullable: 0
+  - id: 211
+    row: 14
+    column: 4
+    forwardConnections: 
+    backwardConnections: c7000000c9000000ca000000
+    position: {x: 7.59, y: 27.36251, z: 0}
+    cullable: 0
+  - id: 212
+    row: 14
+    column: 8
+    forwardConnections: 
+    backwardConnections: cb000000cc000000cd000000
+    position: {x: 14.59, y: 27.637533, z: 0}
+    cullable: 0
+  - id: 213
+    row: 14
+    column: 11
+    forwardConnections: 
+    backwardConnections: ce000000cf000000d0000000d1000000
+    position: {x: 24.09, y: 27.995724, z: 0}
+    cullable: 0
+--- !u!1 &1636146666360902029
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1636146666360902028}
+  m_Layer: 0
+  m_Name: StartPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1636146666360902028
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1636146666360902029}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.14, y: -4.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1636146664963233625}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5727064172857059618
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7055786142025781742}
+  m_Layer: 0
+  m_Name: Lines
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7055786142025781742
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5727064172857059618}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1636146664963233625}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
