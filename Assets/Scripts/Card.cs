@@ -35,7 +35,9 @@ public class Card : MonoBehaviour
             //Make the slot the card was in available again
             gameManager.player.availableCardSlots[handIndex] = true;
             //Move the card to the discardPile
-            Invoke("MoveToDiscardPile", 2f);
+            gameManager.player.Invoke("discardHand", 2f);
+            //Invoke("MoveToDiscardPile", 2f);
+            gameManager.enemy.Invoke("attackPlayer", 2f);
         }
     }
 
