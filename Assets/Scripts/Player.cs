@@ -43,6 +43,7 @@ public class Player : MonoBehaviour
     }
 
     public void DrawCard(){
+        Cursor.lockState = CursorLockMode.None;
         //Note: new for MVP - draw 3 cards at start of turn
         for(int j = 0; j < availableCardSlots.Length; j++){
             //Randomly assign Cards to gameObjects in deck

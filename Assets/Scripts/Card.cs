@@ -30,6 +30,7 @@ public class Card : MonoBehaviour
             gameManager.player.attackEnemy(damage);
             //Move the card up so we can see that it has been played
             transform.position += Vector3.up * 5;
+            Cursor.lockState = CursorLockMode.Locked;
             //Set hasBeenPlayed to true
             hasBeenPlayed = true;
             //Make the slot the card was in available again

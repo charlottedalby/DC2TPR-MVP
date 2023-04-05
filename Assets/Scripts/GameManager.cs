@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
 
 
     public void GameOver(){
+        Cursor.lockState = CursorLockMode.None;
         //Move all cards in the deck to the discardPile and make the gameObjects to be inactive
         for(int i = 0; i < player.deck.Count; i++){
             player.deck[i].MoveToDiscardPile();

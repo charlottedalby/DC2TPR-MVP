@@ -19,6 +19,7 @@ public class Menu : MonoBehaviour
 
     public void NextBattle()
     {
+        Cursor.lockState = CursorLockMode.None;
         //Goes to load the BattleScreen
         SceneManager.LoadScene("BattleScreen");
     }
