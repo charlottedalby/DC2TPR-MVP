@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
         //Else if player is not dead, update their health text
         else if(playerHealth > 0){
             playerHealthText.text = playerHealth.ToString();
-        } 
+        }
     }
 
     public void DrawCard(){
@@ -76,6 +76,14 @@ public class Player : MonoBehaviour
             availableCardSlots[i] = true;
         }
         hand.Clear();
+
+        //Once hand is discarded, draw more cards - if deck is empty, shuffle first
+        if(deck.Count <= 0){
+            Shuffle();
+        }
+        Invoke("DrawCard", 2f);
+        
+        
     }
 
     public void Shuffle(){

@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     public void Start(){
         enemy = FindObjectOfType<Enemy>();
         player = FindObjectOfType<Player>();
+
+        player.Invoke("DrawCard", 2f);
     }
 
 

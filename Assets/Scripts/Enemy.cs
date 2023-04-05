@@ -39,7 +39,7 @@ public class Enemy : MonoBehaviour
     public void Update()
     {
         if(health <= 0){
-            healthText.text = "DEFEATED";
+            healthText.text = "0";
             //gameManager.GameOver();
 
             //Delaying by a second so we can still see the enemy being defeated
