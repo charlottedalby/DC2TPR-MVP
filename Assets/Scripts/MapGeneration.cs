@@ -301,7 +301,7 @@ public class MapGeneration : MonoBehaviour
             if(rowCount == rows-1){
 
                 if(topRowNodes.nodeNum != 0){
-                    nodesOnThisRow = topRowNodes.nodeNum;
+                    nodesOnThisRow = 1;
                     nodesAreCullable = topRowNodes.cullable;
                 }
 
