@@ -37,4 +37,8 @@ public class Menu : MonoBehaviour
     public void loadOverworld(){
         SceneManager.LoadScene("OverworldScreen");
     }
+
+    public void exitGame(){
+        Application.Quit();
+    }
 }
