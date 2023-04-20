@@ -5,29 +5,56 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+    public static Player Instance;
+
     public int playerHealth;
-    public Text playerHealthText;
+    //public Text playerHealthText;
     public List<Card> deck = new List<Card>();
     public List<Card> discardPile = new List<Card>();
     //New to MVP - separate hand variable
     public List<Card> hand = new List<Card>();    
     public bool[] availableCardSlots;
-    public Text deckSizeText;
-    public Text discardSizeText;
+    //public Text deckSizeText;
+    //public Text discardSizeText;
     public Transform[] cardSlots;
 
     public GameManager gameManager;
 
+    public void Awake(){
+        /*
+        if(Instance != null){
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+        */
+
+        if (Instance == null) {
+            //First run, set the instance
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+ 
+        } else if (Instance != this) {
+            //Instance is not the same as the one we have, destroy old one, and reset to newest one
+            Destroy(Instance.gameObject);
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
-        gameManager = FindObjectOfType<GameManager>();
+        Instance.gameManager = FindObjectOfType<GameManager>();
     }
 
      void Update()
     {
         //Update all the text elements on the screen
-        deckSizeText.text = deck.Count.ToString();
+        /*deckSizeText.text = deck.Count.ToString();
         discardSizeText.text = discardPile.Count.ToString();
 
         //Check player health every frame to see if they have lost all health
@@ -40,6 +67,7 @@ public class Player : MonoBehaviour
         else if(playerHealth > 0){
             playerHealthText.text = playerHealth.ToString();
         }
+        */
     }
 
     public void DrawCard(){
@@ -47,20 +75,20 @@ public class Player : MonoBehaviour
         //Note: new for MVP - draw 3 cards at start of turn
         for(int j = 0; j < availableCardSlots.Length; j++){
             //Randomly assign Cards to gameObjects in deck
-            if(deck.Count >= 1){
-                Card randCard = deck[Random.Range(0, deck.Count)];
+            if(Instance.deck.Count >= 1){
+                Card randCard = Instance.deck[Random.Range(0, deck.Count)];
 
                 //Check the card slots on screen
-                for(int i = 0; i < availableCardSlots.Length; i++){
+                for(int i = 0; i < Instance.availableCardSlots.Length; i++){
                     //If the slot is available (no card displayed there), then move the card to the slot and remove it from the deck
-                    if(availableCardSlots[i] == true){
+                    if(Instance.availableCardSlots[i] == true){
                         randCard.hasBeenPlayed = false;
                         randCard.gameObject.SetActive(true);
                         randCard.handIndex = i;
                         randCard.transform.position = cardSlots[i].position;
-                        availableCardSlots[i] = false;
-                        hand.Add(randCard);
-                        deck.Remove(randCard);
+                        Instance.availableCardSlots[i] = false;
+                        Instance.hand.Add(randCard);
+                        Instance.deck.Remove(randCard);
                         break;
                     }
                 }
@@ -70,16 +98,16 @@ public class Player : MonoBehaviour
 
     //New for MVP - discarding all cards at the end of turn
     public void discardHand(){
-        for(int i = 0; i < availableCardSlots.Length; i++){
-            Card currentCard = hand[i];
-            discardPile.Add(currentCard);
+        for(int i = 0; i < Instance.availableCardSlots.Length; i++){
+            Card currentCard = Instance.hand[i];
+            Instance.discardPile.Add(currentCard);
             currentCard.gameObject.SetActive(false);
-            availableCardSlots[i] = true;
+            Instance.availableCardSlots[i] = true;
         }
-        hand.Clear();
+        Instance.hand.Clear();
 
         //Once hand is discarded, draw more cards - if deck is empty, shuffle first
-        if(deck.Count <= 0){
+        if(Instance.deck.Count <= 0){
             Shuffle();
         }
         Invoke("DrawCard", 2f);
@@ -89,16 +117,16 @@ public class Player : MonoBehaviour
 
     public void Shuffle(){
         //If there's at least one card in the discardPile, move all cards in the discardPile back into the deck
-        if(discardPile.Count >= 1){
-            foreach(Card card in discardPile){
-                deck.Add(card);
+        if(Instance.discardPile.Count >= 1){
+            foreach(Card card in Instance.discardPile){
+                Instance.deck.Add(card);
             }
-            discardPile.Clear();
+            Instance.discardPile.Clear();
         }
     }
 
     public void attackEnemy(int damage){
         //Reduce enemy health by the playerCard's damage value
-        gameManager.enemy.health -= damage;
+        Instance.gameManager.enemy.health -= damage;
     }
 }
