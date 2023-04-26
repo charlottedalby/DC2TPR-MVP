@@ -12,7 +12,7 @@ public class NodeOBJ : MonoBehaviour {
     private Vector3 normalScale;
     [SerializeField] private Transform GFX;
     [SerializeField] private Animator animator;
-    private bool canSelect = false;
+    //private bool canSelect = false;
 
     void Start(){
 

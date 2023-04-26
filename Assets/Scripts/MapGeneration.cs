@@ -179,7 +179,6 @@ public class MapGeneration : MonoBehaviour
         EnsureTopNodesAlwaysHaveAConnection();
         
         SaveMap();
-        Debug.Log(saveData);
         return mapState;
     }
 

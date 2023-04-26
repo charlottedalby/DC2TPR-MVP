@@ -1,27 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void NextBattle()
     {
         Cursor.lockState = CursorLockMode.None;
         //Goes to load the BattleScreen
         SceneManager.LoadScene("BattleScreen");
+    }
+
+    public void loadOverworld(){
+        Debug.Log("This is the Starting Deck Count:  " + GameController.StartingDeck.Count);
+        SceneManager.LoadScene("OverworldScreen");
+    }
+
+    public void exitGame(){
+        Application.Quit();
     }
 
     public void loadMainMenu()
@@ -32,13 +30,5 @@ public class Menu : MonoBehaviour
 
     public void loadNewGame(){
         SceneManager.LoadScene("OverworldScreen");
-    }
-
-    public void loadOverworld(){
-        SceneManager.LoadScene("OverworldScreen");
-    }
-
-    public void exitGame(){
-        Application.Quit();
     }
 }

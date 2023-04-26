@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     public void Start(){
         enemy = FindObjectOfType<Enemy>();
         player = FindObjectOfType<Player>();
-
+        player.playerHealth = GameController.PlayerStartHealth;
         player.Invoke("DrawCard", 2f);
     }
 
@@ -40,22 +40,27 @@ public class GameManager : MonoBehaviour
 
     public void GameOver(){
         Cursor.lockState = CursorLockMode.None;
-        //Move all cards in the deck to the discardPile and make the gameObjects to be inactive
-        for(int i = 0; i < player.deck.Count; i++){
-            player.deck[i].MoveToDiscardPile();
-            player.deck[i].gameObject.SetActive(false);
-        }
-
+        player.discardDeck();
         //Fix for the discard pile duplication bug
         player.deck.Clear();
 
         //Goes to You Win screen if enemy health reaches 0
         if(enemy.health <= 0){
+            GameController.PlayerStartHealth = player.playerHealth;
+            player.storeStartingDeck();
+            GameController.checkDeckRequired = true;
+            Debug.Log(GameController.StartingDeck.Count + ": is Starting Deck Count before scene is loaded");
             SceneManager.LoadScene("YouWin");
         }
         //Goes to Game Over screen if player health reaches 0
         else if(player.playerHealth <= 0){
             SceneManager.LoadScene("GameOver");
         }
+
+        else if (GameController.checkDeckRequired != true){
+            GameController.StartingDeck.Clear();
+        }
     }
+
+    
 }

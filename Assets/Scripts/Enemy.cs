@@ -32,7 +32,6 @@ public class Enemy : MonoBehaviour
         selectedCard.transform.position = enemyCardDisplay.position;
         //Move the card back off the screen
         StartCoroutine(MoveAfterWait(selectedCard, initialPosition));
-        Debug.Log("Enemy Card Damage " + selectedCard.damage);
     }
 
     // Update is called once per frame
@@ -59,7 +58,6 @@ public class Enemy : MonoBehaviour
       public IEnumerator MoveAfterWait(Card card, Vector3 position){
         //Create a wait of 2 seconds
         yield return new WaitForSeconds(2f);
-        Debug.Log("Reached wait");
         //Move the card back to its initial position (off the screen)
         card.transform.position = position;
     }

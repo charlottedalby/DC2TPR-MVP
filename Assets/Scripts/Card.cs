@@ -10,11 +10,26 @@ public class Card : MonoBehaviour
     public bool hasBeenPlayed;
     public int handIndex;
     private GameManager gameManager;
+    public Player player;
 
     public void Start()
     {
+        player = FindObjectOfType<Player>();
         //Randomly assign damage value to Card when initialised
-        damage = Random.Range(1,6);
+        if(damage <= 0){
+            if(GameController.checkDeckRequired != true){
+                damage = Random.Range(1,6);
+            }
+            else if(GameController.checkDeckRequired == true){
+                int count = 0;
+                foreach (Card cards in GameController.StartingDeck){
+                    if(count < 12){
+                        player.deck[count] = cards;
+                        count++;
+                    }
+                }
+            }  
+        }
         if (damageText != null) 
         {
             damageText.text = damage.ToString();
@@ -43,18 +58,17 @@ public class Card : MonoBehaviour
     }
 
     public void MoveToDiscardPile(){
-        //Fix for the nullReference errors
-        Debug.Log(gameManager);
-        if (gameManager == null) {
-            this.gameManager = FindObjectOfType<GameManager>();
+        if (gameManager.player.discardPile.Count < 12){
+            //Fix for the nullReference errors
+            if (gameManager == null) {
+                this.gameManager = FindObjectOfType<GameManager>();
+            }
+            //Add the Card to the discardPile and set the card to inactive
+            gameManager.player.discardPile.Add(this);
+            //gameObject.SetActive(false);
+            //Invoke the enemy to attack the player
+            gameManager.enemy.Invoke("attackPlayer", 2f);
         }
-        Debug.Log(this);
-        //Add the Card to the discardPile and set the card to inactive
-        gameManager.player.discardPile.Add(this);
-        gameObject.SetActive(false);
-        //Invoke the enemy to attack the player
-        gameManager.enemy.Invoke("attackPlayer", 2f);
-        Debug.Log("Discard pile: " +gameManager.player.discardPile.Count);
     }
 
 }

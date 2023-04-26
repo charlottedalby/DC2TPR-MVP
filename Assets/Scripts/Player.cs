@@ -77,7 +77,6 @@ public class Player : MonoBehaviour
             //Randomly assign Cards to gameObjects in deck
             if(Instance.deck.Count >= 1){
                 Card randCard = Instance.deck[Random.Range(0, deck.Count)];
-
                 //Check the card slots on screen
                 for(int i = 0; i < Instance.availableCardSlots.Length; i++){
                     //If the slot is available (no card displayed there), then move the card to the slot and remove it from the deck
@@ -128,5 +127,30 @@ public class Player : MonoBehaviour
     public void attackEnemy(int damage){
         //Reduce enemy health by the playerCard's damage value
         Instance.gameManager.enemy.health -= damage;
+    }
+
+    public void discardDeck(){
+        //Discards Deck and Hand to Discard Pile
+        //Move all cards in the deck to the discardPile and make the gameObjects to be inactive
+        while (Instance.discardPile.Count < 12){
+            foreach(Card card in Instance.deck){
+                Instance.discardPile.Add(card);
+            }
+        
+            foreach(Card hcard in Instance.hand){
+                Instance.discardPile.Add(hcard);
+            }
+        } 
+    }
+
+    public void storeStartingDeck(){
+        //Stored players starting deck 
+        if (Instance.discardPile.Count == 12){
+            //Store damages in GameController.StartingDeck
+            foreach(Card cards in Instance.discardPile){
+                GameController.StartingDeck.Add(cards);
+            }
+            Debug.Log(GameController.StartingDeck.Count + ": is Starting Deck Count");
+        }
     }
 }
