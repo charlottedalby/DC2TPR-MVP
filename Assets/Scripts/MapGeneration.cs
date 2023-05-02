@@ -1,15 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System.Reflection;
-
-namespace WorldMapGenerator
-{
+using System.Runtime.Serialization;
     
 [ExecuteInEditMode]
 public class MapGeneration : MonoBehaviour
 {
 
+    public Text playerHealthText;
     // Changeable properties
 
     // prefab the user can swap out
@@ -28,17 +28,17 @@ public class MapGeneration : MonoBehaviour
     // Columns are vertical
     // Set the min and max to the same to always generate the same amount of columns
     // The amount of columns determines the amount of nodes in rows
-    public int minColumns = 4;
+    public int minColumns = 5;
 
     //The maximum amount of columns the map will generate
-    public int maxColumns = 6;
+    public int maxColumns = 7;
 
     // The minimum amount of rows the map will generate
     // Rows are horizontal
     // Set min and max the same to always generate a fixed amount of rows
-    public int minRows = 5;
+    public int minRows = 6;
     // The maximum amount of rows the map will generate
-    public int maxRows = 9;
+    public int maxRows = 10;
 
     // The distance between each row
     public float rowDist = 2f;
@@ -113,20 +113,26 @@ public class MapGeneration : MonoBehaviour
 
     public void BuildNew()
     {
-        if (saveData!= null){
+        if (GameController.gameMapState!= null){
+            Debug.Log("GameMapState is not null...");
             LoadSavedMap();
         }
-        Load(GenerateMap());
+        else{
+            Load(GenerateMap());
+        }
+        
     }
 
     // Use this for saving
     public void SaveMap(){
-        saveData = Serialize();
+        Debug.Log(GameController.gameMapState);
+        GameController.gameMapState = Serialize();
+        Debug.Log(GameController.gameMapState);
     }
 
     // Use this for loading
     public void LoadSavedMap(){
-        Deserialize(saveData);
+        Deserialize(GameController.gameMapState);
     }
     
     // Saving
@@ -179,11 +185,13 @@ public class MapGeneration : MonoBehaviour
         EnsureTopNodesAlwaysHaveAConnection();
         
         SaveMap();
+        //Debug.Log(mapState);
+        //GameController.gameMapState = mapState;
         return mapState;
     }
 
     // Load a mapstate   
-    private void Load(MapState loadState)
+    public void Load(MapState loadState)
     {
         FunctionsAtEachGeneration();
         mapState = loadState;
@@ -756,5 +764,4 @@ public class MapGeneration : MonoBehaviour
 
         return null;
     }
-}
 }

@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
  
         } else if (Instance != this) {
             //Instance is not the same as the one we have, destroy old one, and reset to newest one
-            Destroy(Instance.gameObject);
+            //Destroy(Instance.gameObject);
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
@@ -100,7 +100,7 @@ public class Player : MonoBehaviour
         for(int i = 0; i < Instance.availableCardSlots.Length; i++){
             Card currentCard = Instance.hand[i];
             Instance.discardPile.Add(currentCard);
-            currentCard.gameObject.SetActive(false);
+            currentCard.gameObject.transform.position += Vector3.up * 25;
             Instance.availableCardSlots[i] = true;
         }
         Instance.hand.Clear();

@@ -1,10 +1,5 @@
 ﻿using UnityEngine;
 using UnityEditor;
-
-
-
-namespace WorldMapGenerator
-{
     
 
 [CustomEditor(typeof(MapGeneration))]
@@ -154,5 +149,4 @@ public class MapGenerationEditor : Editor
             mapGeneration.BuildNew();
         }
     }
-}
 }

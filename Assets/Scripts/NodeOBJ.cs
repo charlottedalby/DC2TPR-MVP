@@ -3,24 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace WorldMapGenerator{
-
-
-
 public class NodeOBJ : MonoBehaviour {
     public Node node;
     private Vector3 normalScale;
     [SerializeField] private Transform GFX;
     [SerializeField] private Animator animator;
     //private bool canSelect = false;
-
     void Start(){
-
         normalScale = GFX.localScale;
-        
-        if(node.row != 0){
-            animator.enabled = false;
-        }
+        animator.enabled = false;
 
     }
 
@@ -33,8 +24,21 @@ public class NodeOBJ : MonoBehaviour {
     }
 
     void OnMouseDown(){
-        SceneManager.LoadScene("BattleScreen");
+        if (GameController.PlayerStartHealth != 100){
+            int chance = Random.Range(1,10);
+            if (chance == 1 || chance == 3){
+                GameController.PlayerStartHealth += 10;
+                if (GameController.PlayerStartHealth > 100){
+                    GameController.PlayerStartHealth = 100;
+                }
+                SceneManager.LoadScene("RestStop");
+            }
+        }
+        else{
+            SceneManager.LoadScene("BattleScreen");
+        }
+        
     }
 }
 
-}
+

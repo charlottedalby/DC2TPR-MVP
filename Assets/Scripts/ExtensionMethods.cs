@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace WorldMapGenerator{
-
 public static class ExtensionMethods
 {
     public static bool IsOdd(this int value)
@@ -21,6 +19,4 @@ public static class ExtensionMethods
             ts[r] = tmp;
         }
     }
-}
-
 }

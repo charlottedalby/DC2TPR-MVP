@@ -11,6 +11,24 @@ public class Card : MonoBehaviour
     public int handIndex;
     private GameManager gameManager;
     public Player player;
+    public static Card Instance;
+    public GameObject PLAYER;
+
+
+    public void Awake(){
+        if (Instance == null) {
+            //First run, set the instance
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+ 
+        } else if (Instance != this) {
+            //Instance is not the same as the one we have, destroy old one, and reset to newest one
+            //Destroy(Instance.gameObject);
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+    }
+
 
     public void Start()
     {
@@ -24,11 +42,13 @@ public class Card : MonoBehaviour
                 int count = 0;
                 foreach (Card cards in GameController.StartingDeck){
                     if(count < 12){
-                        player.deck[count] = cards;
+                        //player.deck[count] = cards;
                         count++;
                     }
                 }
-            }  
+            }
+            //Just for use, until card destroy is fixed
+            damage = Random.Range(1,6);  
         }
         if (damageText != null) 
         {
@@ -70,5 +90,4 @@ public class Card : MonoBehaviour
             gameManager.enemy.Invoke("attackPlayer", 2f);
         }
     }
-
 }

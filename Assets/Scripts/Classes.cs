@@ -1,10 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-
-namespace WorldMapGenerator
-{
     
 
 class Classes{
@@ -41,9 +37,12 @@ public class Node
     }
 
     public int ColumnDistance(Node nodeToCompare){
-
         int dist = Mathf.Abs(column - nodeToCompare.column);
         return dist;
+    }
+
+    public int returnNodeID(Node node){
+        return node.id;
     }
 
 }
@@ -77,5 +76,4 @@ public class MapState
     {
         return JsonUtility.FromJson<MapState>(serializedData);
     }
-}
 }

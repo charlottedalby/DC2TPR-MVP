@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Camera : MonoBehaviour
 {
-    public float speed = 0.5f;
+    public float speed = 1.5f;
 
     // Update is called once per frame
     void Update()
