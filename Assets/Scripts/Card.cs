@@ -47,7 +47,7 @@ public class Card : MonoBehaviour
                     }
                 }
             }
-            //Just for use, until card destroy is fixed
+            //Just for use, until card destroy is fixed: ***************************************************************
             damage = Random.Range(1,6);  
         }
         if (damageText != null) 

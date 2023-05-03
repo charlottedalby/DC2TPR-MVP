@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public Text deckSizeText;
     public Text discardSizeText;
     public Text playerHealthText;
+    public Text playerArmourText;
 
     public void Start(){
         enemy = FindObjectOfType<Enemy>();
@@ -29,12 +30,14 @@ public class GameManager : MonoBehaviour
         //Check player health every frame to see if they have lost all health
         if(player.playerHealth <= 0){
             playerHealthText.text = "0";
+            playerArmourText.text = "0";
             //Call GameOver method
             Invoke("GameOver", 2f);
         }
         //Else if player is not dead, update their health text
         else if(player.playerHealth > 0){
             playerHealthText.text = player.playerHealth.ToString();
+            playerArmourText.text = player.playerArmour.ToString();
         }
     }
 

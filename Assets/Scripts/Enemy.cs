@@ -25,8 +25,25 @@ public class Enemy : MonoBehaviour
     public void attackPlayer(){
         //Randomly select a card from enemyCards
         Card selectedCard = enemyCards[Random.Range(0, enemyCards.Count)];
-        //Reduce player health by the card's damage value
-        gameManager.player.playerHealth -= selectedCard.damage;
+
+        if (gameManager.player.playerArmour > 0)
+        {
+            if (selectedCard.damage > gameManager.player.playerArmour)
+            {
+                selectedCard.damage -= gameManager.player.playerArmour;
+                gameManager.player.playerArmour = 0;
+                gameManager.player.playerHealth -= selectedCard.damage;
+            }
+            else
+            {
+                gameManager.player.playerArmour -= selectedCard.damage;
+            }
+        }
+        else
+        {
+            //Reduce player health by the card's damage value
+            gameManager.player.playerHealth -= selectedCard.damage;
+        }
         //Display the enemy's card on the screen for 2 seconds
         Vector3 initialPosition = selectedCard.transform.position;
         selectedCard.transform.position = enemyCardDisplay.position;

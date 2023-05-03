@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     public static Player Instance;
 
     public int playerHealth;
+    public int playerArmour = 3;
     //public Text playerHealthText;
     public List<Card> deck = new List<Card>();
     public List<Card> discardPile = new List<Card>();
@@ -34,13 +35,13 @@ public class Player : MonoBehaviour
         if (Instance == null) {
             //First run, set the instance
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
  
         } else if (Instance != this) {
             //Instance is not the same as the one we have, destroy old one, and reset to newest one
             //Destroy(Instance.gameObject);
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
         }
     }
 
@@ -53,21 +54,6 @@ public class Player : MonoBehaviour
 
      void Update()
     {
-        //Update all the text elements on the screen
-        /*deckSizeText.text = deck.Count.ToString();
-        discardSizeText.text = discardPile.Count.ToString();
-
-        //Check player health every frame to see if they have lost all health
-        if(playerHealth <= 0){
-            playerHealthText.text = "0";
-            //Call GameOver method
-            gameManager.Invoke("GameOver", 2f);
-        }
-        //Else if player is not dead, update their health text
-        else if(playerHealth > 0){
-            playerHealthText.text = playerHealth.ToString();
-        }
-        */
     }
 
     public void DrawCard(){
