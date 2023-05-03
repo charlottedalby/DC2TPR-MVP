@@ -150,7 +150,6 @@ public class Player : MonoBehaviour
             foreach(Card cards in Instance.discardPile){
                 GameController.StartingDeck.Add(cards);
             }
-            Debug.Log(GameController.StartingDeck.Count + ": is Starting Deck Count");
         }
     }
 }

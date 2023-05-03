@@ -14,7 +14,6 @@ public class Menu : MonoBehaviour
     }
 
     public void loadOverworld(){
-        Debug.Log("This is the Starting Deck Count:  " + GameController.StartingDeck.Count);
         SceneManager.LoadScene("OverworldScreen");
     }
 

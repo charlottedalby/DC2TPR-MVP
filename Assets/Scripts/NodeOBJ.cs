@@ -9,36 +9,94 @@ public class NodeOBJ : MonoBehaviour {
     [SerializeField] private Transform GFX;
     [SerializeField] private Animator animator;
     //private bool canSelect = false;
-    void Start(){
+    void Start()
+    {
         normalScale = GFX.localScale;
         animator.enabled = false;
-
+        animateNodes();
     }
 
-    void OnMouseOver(){
-        GFX.transform.localScale = 2 * normalScale;
+    void OnMouseOver()
+    {
+        if (GameController.PlayerStartNode != null)
+        {
+            if (GameController.PlayerStartNode.IsConnected(node) == true)
+            {
+                GFX.transform.localScale = 2 * normalScale;
+            }
+        }
+        else if(GameController.PlayerStartRow == node.row)
+        {
+            GFX.transform.localScale = 2 * normalScale;
+        }
     }
 
-    void OnMouseExit(){
+    void OnMouseExit()
+    {
         GFX.transform.localScale = normalScale;
     }
 
-    void OnMouseDown(){
-        if (GameController.PlayerStartHealth != 100){
-            int chance = Random.Range(1,10);
-            if (chance == 1 || chance == 3){
-                GameController.PlayerStartHealth += 10;
-                if (GameController.PlayerStartHealth > 100){
-                    GameController.PlayerStartHealth = 100;
+    void OnMouseDown()
+    {
+        //If the Start Node is null then Load battle screen and set Start Node
+        if (GameController.PlayerStartNode != null)
+        {
+            if (GameController.PlayerStartNode.IsConnected(node) == true)
+            {
+                //Ensures Node Clicked is on the correct row the player should be on
+                if (GameController.PlayerStartRow == node.row)
+                {
+                //Need a function that returns current row, then if the current row is clicked then it will be selected or animated
+                //If Player Health is less than 100 (Max) then there is a chance of a rest stop 
+                if (GameController.PlayerStartHealth != 100)
+                {
+                    //Chance is randon between 1 and 10
+                    int chance = Random.Range(1,10);
+                    if (chance == 1 || chance == 3){
+                        GameController.PlayerStartRow += 1;
+                        GameController.PlayerStartNode = node;
+                        GameController.PlayerStartHealth += 10;
+                        GameController.PlayerMapPos.Add(node.id);
+                        if (GameController.PlayerStartHealth > 100)
+                        {
+                            GameController.PlayerStartHealth = 100;
+                        }
+                        SceneManager.LoadScene("RestStop");
+                    }
+                    else{
+                        GameController.PlayerStartRow += 1;
+                        GameController.PlayerStartNode = node;
+                        GameController.PlayerMapPos.Add(node.id);
+                        SceneManager.LoadScene("BattleScreen");
+                    }
                 }
-                SceneManager.LoadScene("RestStop");
+                else{
+                    GameController.PlayerStartRow += 1;
+                    GameController.PlayerStartNode = node;
+                    GameController.PlayerMapPos.Add(node.id);
+                    SceneManager.LoadScene("BattleScreen");
+                    }
+                }
             }
         }
-        else{
+        else
+        {
+            GameController.PlayerStartRow += 1;
+            GameController.PlayerStartNode = node;
+            GameController.PlayerMapPos.Add(node.id);
             SceneManager.LoadScene("BattleScreen");
         }
-        
     }
+
+    void animateNodes()
+    {
+        
+        for (int i = 0; i < GameController.PlayerMapPos.Count; i++)
+        {
+            if (node.id == GameController.PlayerMapPos[i])
+            {
+                animator.enabled = true;
+            }
+        }
+    } 
 }
-
-

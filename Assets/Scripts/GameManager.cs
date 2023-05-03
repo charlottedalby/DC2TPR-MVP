@@ -49,7 +49,6 @@ public class GameManager : MonoBehaviour
             GameController.PlayerStartHealth = player.playerHealth;
             player.storeStartingDeck();
             GameController.checkDeckRequired = true;
-            Debug.Log(GameController.StartingDeck.Count + ": is Starting Deck Count before scene is loaded");
             SceneManager.LoadScene("YouWin");
         }
         //Goes to Game Over screen if player health reaches 0

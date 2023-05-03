@@ -36,7 +36,7 @@ public class MapGeneration : MonoBehaviour
     // The minimum amount of rows the map will generate
     // Rows are horizontal
     // Set min and max the same to always generate a fixed amount of rows
-    public int minRows = 6;
+    public int minRows = 5;
     // The maximum amount of rows the map will generate
     public int maxRows = 10;
 
@@ -114,7 +114,6 @@ public class MapGeneration : MonoBehaviour
     public void BuildNew()
     {
         if (GameController.gameMapState!= null){
-            Debug.Log("GameMapState is not null...");
             LoadSavedMap();
         }
         else{
@@ -125,9 +124,7 @@ public class MapGeneration : MonoBehaviour
 
     // Use this for saving
     public void SaveMap(){
-        Debug.Log(GameController.gameMapState);
         GameController.gameMapState = Serialize();
-        Debug.Log(GameController.gameMapState);
     }
 
     // Use this for loading
@@ -183,9 +180,7 @@ public class MapGeneration : MonoBehaviour
         if(nodesAlwaysHaveAtLeastOneForwardConnection)
             EnsureAllNodesHaveAtLeastOneForwardConnection();
         EnsureTopNodesAlwaysHaveAConnection();
-        
         SaveMap();
-        //Debug.Log(mapState);
         //GameController.gameMapState = mapState;
         return mapState;
     }
@@ -328,7 +323,7 @@ public class MapGeneration : MonoBehaviour
             for (int colCount = 0; colCount < nodesOnThisRow; colCount++)
             {
                 Node newNode = new Node();
-
+                
                 Vector2 pos = genStartPos.position;
                 pos.x+= colCount * colDist + Random.Range(minXDeviation, maxXDeviation);
                 pos.y += rowCount * rowDist + Random.Range(minYDeviation, maxYDeviation);
