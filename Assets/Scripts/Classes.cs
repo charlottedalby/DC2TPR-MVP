@@ -27,12 +27,16 @@ public class Node
                 return true;
         }
 
+        return false;
+    }
+
+    public bool IsConnectedBKW(Node node)
+    {
         foreach (var connection in backwardConnections)
         {
             if(connection == node.id)
                 return true;
         }
-
         return false;
     }
 

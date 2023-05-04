@@ -35,18 +35,6 @@ public class Card : MonoBehaviour
         player = FindObjectOfType<Player>();
         //Randomly assign damage value to Card when initialised
         if(damage <= 0){
-            if(GameController.checkDeckRequired != true){
-                damage = Random.Range(1,6);
-            }
-            else if(GameController.checkDeckRequired == true){
-                int count = 0;
-                foreach (Card cards in GameController.StartingDeck){
-                    if(count < 12){
-                        //player.deck[count] = cards;
-                        count++;
-                    }
-                }
-            }
             //Just for use, until card destroy is fixed: ***************************************************************
             damage = Random.Range(1,6);  
         }

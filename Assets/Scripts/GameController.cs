@@ -10,7 +10,6 @@ using System.Reflection;
 public class GameController : MonoBehaviour
 {
     public static int PlayerStartHealth;
-    public static bool checkDeckRequired;
     public static List<Card> StartingDeck;
     public static string gameMapState;
     public static int PlayerStartRow;
@@ -20,7 +19,6 @@ public class GameController : MonoBehaviour
     void Start()
     {
         PlayerStartHealth = 100;
-        checkDeckRequired = false;
         StartingDeck = new List<Card>();
         gameMapState = null;
         PlayerStartRow = 0;

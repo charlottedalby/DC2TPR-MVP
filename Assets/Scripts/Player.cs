@@ -115,28 +115,4 @@ public class Player : MonoBehaviour
         //Reduce enemy health by the playerCard's damage value
         Instance.gameManager.enemy.health -= damage;
     }
-
-    public void discardDeck(){
-        //Discards Deck and Hand to Discard Pile
-        //Move all cards in the deck to the discardPile and make the gameObjects to be inactive
-        while (Instance.discardPile.Count < 12){
-            foreach(Card card in Instance.deck){
-                Instance.discardPile.Add(card);
-            }
-        
-            foreach(Card hcard in Instance.hand){
-                Instance.discardPile.Add(hcard);
-            }
-        } 
-    }
-
-    public void storeStartingDeck(){
-        //Stored players starting deck 
-        if (Instance.discardPile.Count == 12){
-            //Store damages in GameController.StartingDeck
-            foreach(Card cards in Instance.discardPile){
-                GameController.StartingDeck.Add(cards);
-            }
-        }
-    }
 }
