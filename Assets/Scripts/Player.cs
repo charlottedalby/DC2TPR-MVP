@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     public static Player Instance;
 
     public int playerHealth;
-    public int playerArmour = 3;
+    public int playerArmour;
     //public Text playerHealthText;
     public List<Card> deck = new List<Card>();
     public List<Card> discardPile = new List<Card>();
@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
     public GameManager gameManager;
 
     public void Awake(){
-        /*
+        
         if(Instance != null){
             Destroy(gameObject);
             return;
@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
-        */
+        
 
         if (Instance == null) {
             //First run, set the instance
@@ -50,6 +50,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         Instance.gameManager = FindObjectOfType<GameManager>();
+        playerArmour = 0;
     }
 
      void Update()
