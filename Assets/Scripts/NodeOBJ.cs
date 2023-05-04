@@ -25,7 +25,7 @@ public class NodeOBJ : MonoBehaviour {
                 GFX.transform.localScale = 2 * normalScale;
             }
         }
-        else if(GameController.PlayerStartRow == node.row)
+        else if(node.row == 0)
         {
             GFX.transform.localScale = 2 * normalScale;
         }
@@ -44,53 +44,39 @@ public class NodeOBJ : MonoBehaviour {
             if (GameController.PlayerStartNode.IsConnected(node) == true)
             {
                 //Ensures Node Clicked is on the correct row the player should be on
-                if (GameController.PlayerStartRow == node.row)
-                {
+                Debug.Log(GameController.PlayerStartColumn + " " + node.column);
+                Debug.Log("PlayerStartRow is equal to node row");
                 //Need a function that returns current row, then if the current row is clicked then it will be selected or animated
                 //If Player Health is less than 100 (Max) then there is a chance of a rest stop 
                 if (GameController.PlayerStartHealth != 100)
                 {
                     //Chance is randon between 1 and 10
                     int chance = Random.Range(1,10);
-                    if (chance == 1 || chance == 3){
-                        GameController.PlayerStartRow += 1;
-                        GameController.PlayerStartNode = node;
-                        GameController.PlayerStartHealth += 10;
-                        GameController.PlayerMapPos.Add(node.id);
-                        if (GameController.PlayerStartHealth > 100)
-                        {
-                            GameController.PlayerStartHealth = 100;
-                        }
-                        SceneManager.LoadScene("RestStop");
+                    if (chance == 1 || chance == 3 || chance == 5)
+                    {
+                        //Loads Rest Stop Scene 
+                        lodRestStop();
                     }
-                    else{
-                        GameController.PlayerStartRow += 1;
-                        GameController.PlayerStartNode = node;
-                        GameController.PlayerMapPos.Add(node.id);
-                        SceneManager.LoadScene("BattleScreen");
+                    else
+                    {
+                        //Loads Battle Scene
+                        loadBattleScene();
                     }
                 }
-                else{
-                    GameController.PlayerStartRow += 1;
-                    GameController.PlayerStartNode = node;
-                    GameController.PlayerMapPos.Add(node.id);
-                    SceneManager.LoadScene("BattleScreen");
-                    }
+                else
+                {
+                    loadBattleScene();
                 }
             }
         }
         else
         {
-            GameController.PlayerStartRow += 1;
-            GameController.PlayerStartNode = node;
-            GameController.PlayerMapPos.Add(node.id);
-            SceneManager.LoadScene("BattleScreen");
+            loadBattleScene();
         }
     }
 
     void animateNodes()
     {
-        
         for (int i = 0; i < GameController.PlayerMapPos.Count; i++)
         {
             if (node.id == GameController.PlayerMapPos[i])
@@ -98,5 +84,26 @@ public class NodeOBJ : MonoBehaviour {
                 animator.enabled = true;
             }
         }
+    }
+
+    void loadBattleScene()
+    {
+        GameController.PlayerStartColumn = node.column;
+        GameController.PlayerStartNode = node;
+        GameController.PlayerMapPos.Add(node.id);
+        SceneManager.LoadScene("BattleScreen");
     } 
+
+    void lodRestStop()
+    {
+        GameController.PlayerStartColumn = node.column;
+        GameController.PlayerStartNode = node;
+        GameController.PlayerStartHealth += 10;
+        GameController.PlayerMapPos.Add(node.id);
+        if (GameController.PlayerStartHealth > 100)
+        {
+            GameController.PlayerStartHealth = 100;
+        }
+        SceneManager.LoadScene("RestStop");
+    }
 }
