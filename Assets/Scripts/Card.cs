@@ -13,6 +13,8 @@ public class Card : MonoBehaviour
     public Player player;
     public static Card Instance;
     public GameObject PLAYER;
+    public int armour;
+    public int damageMult;
 
 
     public void Awake(){
@@ -34,6 +36,7 @@ public class Card : MonoBehaviour
     {
         player = FindObjectOfType<Player>();
         //Randomly assign damage value to Card when initialised
+        
         if(damage <= 0){
             //Just for use, until card destroy is fixed: ***************************************************************
             damage = Random.Range(1,6);  
@@ -44,6 +47,16 @@ public class Card : MonoBehaviour
         }
         gameManager = FindObjectOfType<GameManager>();
         
+    }
+
+    public Card (int damage, Text damageText, bool hasBeenPlayed, int handIndex, int armour, int damageMult)
+    {
+        this.damage = damage;
+        this.damageText = damageText;
+        this.hasBeenPlayed = hasBeenPlayed;
+        this.handIndex = handIndex;
+        this.armour = armour;
+        this.damageMult = damageMult;
     }
 
     void OnMouseDown(){

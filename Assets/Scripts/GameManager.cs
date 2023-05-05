@@ -12,12 +12,17 @@ public class GameManager : MonoBehaviour
     public Text deckSizeText;
     public Text discardSizeText;
     public Text playerHealthText;
-    public Text playerArmourText;
+    public Text playerArmorText;
+    public HealthBar healthBar;
+    public ArmorBar armorBar;
 
     public void Start(){
         enemy = FindObjectOfType<Enemy>();
         player = FindObjectOfType<Player>();
         player.playerHealth = GameController.PlayerStartHealth;
+        player.playerArmor = GameController.PlayerStartArmor;
+        healthBar.setMaxValue(GameController.PlayerStartHealth);
+        armorBar.setMaxArmor(GameController.PlayerStartArmor);
         player.Invoke("DrawCard", 2f);
     }
 
@@ -26,18 +31,19 @@ public class GameManager : MonoBehaviour
         //Update all the text elements on the screen
         deckSizeText.text = player.deck.Count.ToString();
         discardSizeText.text = player.discardPile.Count.ToString();
-
         //Check player health every frame to see if they have lost all health
         if(player.playerHealth <= 0){
             playerHealthText.text = "0";
-            playerArmourText.text = "0";
+            playerArmorText.text = "0";
             //Call GameOver method
             Invoke("GameOver", 2f);
         }
         //Else if player is not dead, update their health text
         else if(player.playerHealth > 0){
+            healthBar.setHealth(player.playerHealth);
+            armorBar.setArmor(player.playerArmor);
             playerHealthText.text = player.playerHealth.ToString();
-            playerArmourText.text = player.playerArmour.ToString();
+            playerArmorText.text = player.playerArmor.ToString();
         }
     }
 

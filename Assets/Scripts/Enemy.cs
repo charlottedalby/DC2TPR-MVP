@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     public int health;
     public Text healthText;
     private GameManager gameManager;
+    //public HealthBar healthBar;
 
 
     public void Start()
@@ -26,23 +27,26 @@ public class Enemy : MonoBehaviour
         //Randomly select a card from enemyCards
         Card selectedCard = enemyCards[Random.Range(0, enemyCards.Count)];
 
-        if (gameManager.player.playerArmour > 0)
+        if (gameManager.player.playerArmor > 0)
         {
-            if (selectedCard.damage > gameManager.player.playerArmour)
+            if (selectedCard.damage > gameManager.player.playerArmor)
             {
-                selectedCard.damage -= gameManager.player.playerArmour;
-                gameManager.player.playerArmour = 0;
+                selectedCard.damage -= gameManager.player.playerArmor;
+                gameManager.player.playerArmor = 0;
                 gameManager.player.playerHealth -= selectedCard.damage;
+                //healthBar.setHealth(gameManager.player.playerHealth);
             }
             else
             {
-                gameManager.player.playerArmour -= selectedCard.damage;
+                gameManager.player.playerArmor -= selectedCard.damage;
+                //healthBar.setHealth(gameManager.player.playerHealth);
             }
         }
         else
         {
             //Reduce player health by the card's damage value
             gameManager.player.playerHealth -= selectedCard.damage;
+            //healthBar.setHealth(gameManager.player.playerHealth);
         }
         //Display the enemy's card on the screen for 2 seconds
         Vector3 initialPosition = selectedCard.transform.position;

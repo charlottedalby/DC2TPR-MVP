@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     public static Player Instance;
 
     public int playerHealth;
-    public int playerArmour;
+    public int playerArmor;
     //public Text playerHealthText;
     public List<Card> deck = new List<Card>();
     public List<Card> discardPile = new List<Card>();
@@ -50,7 +50,8 @@ public class Player : MonoBehaviour
     void Start()
     {
         Instance.gameManager = FindObjectOfType<GameManager>();
-        playerArmour = 0;
+        getStartingCards();
+        
     }
 
      void Update()
@@ -114,5 +115,13 @@ public class Player : MonoBehaviour
     public void attackEnemy(int damage){
         //Reduce enemy health by the playerCard's damage value
         Instance.gameManager.enemy.health -= damage;
+    }
+
+    public void getStartingCards()
+    {
+        foreach (Card sCard in GameController.playerStartingDeck)
+        {
+            deck.Add(sCard);
+        }
     }
 }
