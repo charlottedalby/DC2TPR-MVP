@@ -48,14 +48,14 @@ public class NodeOBJ : MonoBehaviour {
                 Debug.Log("PlayerStartRow is equal to node row");
                 //Need a function that returns current row, then if the current row is clicked then it will be selected or animated
                 //If Player Health is less than 100 (Max) then there is a chance of a rest stop 
-                if (GameController.PlayerStartHealth != 100)
+                if (GameController.PlayerStartHealth != 100 && node.forwardConnections.Count != 0)
                 {
                     //Chance is randon between 1 and 10
                     int chance = Random.Range(1,10);
-                    if (chance == 1 || chance == 3 || chance == 5)
+                    if (chance == 1 || chance == 3)
                     {
                         //Loads Rest Stop Scene 
-                        lodRestStop();
+                        loadRestStop();
                     }
                     else
                     {
@@ -94,11 +94,11 @@ public class NodeOBJ : MonoBehaviour {
         SceneManager.LoadScene("BattleScreen");
     } 
 
-    void lodRestStop()
+    void loadRestStop()
     {
         GameController.PlayerStartColumn = node.column;
         GameController.PlayerStartNode = node;
-        GameController.PlayerStartHealth += 10;
+        GameController.PlayerStartHealth += 5;
         GameController.PlayerMapPos.Add(node.id);
         if (GameController.PlayerStartHealth > 100)
         {

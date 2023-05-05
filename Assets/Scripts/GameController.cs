@@ -21,7 +21,7 @@ public class GameController : MonoBehaviour
     void Start()
     {
         PlayerStartHealth = 100;
-        PlayerStartArmor = 5;
+        PlayerStartArmor = 0;
         StartingDeck = new List<Card>();
         gameMapState = null;
         PlayerStartNode = null;

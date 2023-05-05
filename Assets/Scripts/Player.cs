@@ -50,7 +50,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         Instance.gameManager = FindObjectOfType<GameManager>();
-        getStartingCards();
+        //getStartingCards();
         
     }
 
