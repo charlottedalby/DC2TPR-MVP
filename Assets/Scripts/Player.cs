@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
 
     public int playerHealth;
     public int playerArmor;
+    public int playerDamageMult;
     //public Text playerHealthText;
     public List<Card> deck = new List<Card>();
     public List<Card> discardPile = new List<Card>();
@@ -114,7 +115,49 @@ public class Player : MonoBehaviour
 
     public void attackEnemy(int damage){
         //Reduce enemy health by the playerCard's damage value
-        Instance.gameManager.enemy.health -= damage;
+
+        //Instance.gameManager.enemy.health -= damage;
+
+        damage = damage * Instance.gameManager.player.playerDamageMult;
+
+        if (Instance.gameManager.enemy.armour > 0)
+        {
+            if (damage > Instance.gameManager.enemy.armour)
+            {
+                damage -= Instance.gameManager.enemy.armour;
+                Instance.gameManager.enemy.armour = 0;
+                Instance.gameManager.enemy.health -= damage;
+                //healthBar.setHealth(gameManager.player.playerHealth);
+            }
+            else
+            {
+                Instance.gameManager.enemy.armour -= damage;
+                //healthBar.setHealth(gameManager.player.playerHealth);
+            }
+        }
+        else
+        {
+            //Reduce player health by the card's damage value
+            Instance.gameManager.enemy.health -= damage;
+            //healthBar.setHealth(gameManager.player.playerHealth);
+        }
+        // reset temporary damage multiplier
+        Instance.gameManager.player.playerDamageMult = 1;
+    }
+
+    // new addition
+    public void raiseArmor(int protection) {
+        Instance.gameManager.player.playerArmor += protection;
+    }
+
+    // new addition
+    public void healPlayer(int healing) {
+        Instance.gameManager.player.playerHealth += healing;
+    }
+
+    // new addition
+    public void powerUp(int damageMult) {
+        Instance.gameManager.player.playerDamageMult = damageMult;
     }
 
     public void getStartingCards()

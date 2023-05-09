@@ -8,6 +8,8 @@ public class Enemy : MonoBehaviour
     public List<Card> enemyCards = new List<Card>();
     public Transform enemyCardDisplay;
     public int health;
+    // new addition
+    public int armour;
     public Text healthText;
     private GameManager gameManager;
     //public HealthBar healthBar;
@@ -48,6 +50,11 @@ public class Enemy : MonoBehaviour
             gameManager.player.playerHealth -= selectedCard.damage;
             //healthBar.setHealth(gameManager.player.playerHealth);
         }
+
+        health += selectedCard.healing;
+        armour += selectedCard.armour;
+        
+
         //Display the enemy's card on the screen for 2 seconds
         Vector3 initialPosition = selectedCard.transform.position;
         selectedCard.transform.position = enemyCardDisplay.position;
