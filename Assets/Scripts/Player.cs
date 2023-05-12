@@ -51,7 +51,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         Instance.gameManager = FindObjectOfType<GameManager>();
-        //getStartingCards();
+        getStartingCards();
         
     }
 
@@ -162,9 +162,26 @@ public class Player : MonoBehaviour
 
     public void getStartingCards()
     {
+        /*
+        Instance.deck.Clear();
         foreach (Card sCard in GameController.playerStartingDeck)
         {
-            deck.Add(sCard);
+            Instance.gameManager.player.deck.Add(sCard);
+            
+        }
+        */
+
+        for(int i = 0; i < GameController.playerStartingDeck.Count; i++) 
+        {
+            Card currentCard = GameController.playerStartingDeck[i];
+            Instance.deck[i].damage = currentCard.damage;
+            //Instance.deck[i].damageText = currentCard.damageText;
+            Instance.deck[i].hasBeenPlayed = currentCard.hasBeenPlayed;
+            Instance.deck[i].handIndex = currentCard.handIndex;
+            Instance.deck[i].armour = currentCard.armour;
+            //new addition
+            Instance.deck[i].healing = currentCard.healing;
+            Instance.deck[i].damageMult = currentCard.damageMult;
         }
     }
 }

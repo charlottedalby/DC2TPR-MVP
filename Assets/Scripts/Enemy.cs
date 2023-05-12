@@ -77,7 +77,7 @@ public class Enemy : MonoBehaviour
         }
         else{
             //If enemy is not defeated, update text to display current health
-            healthText.text = health.ToString();
+            healthText.text = health.ToString() + "A" + armour.ToString();
         }
 
         
