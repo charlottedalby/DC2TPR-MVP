@@ -52,7 +52,7 @@ public class NodeOBJ : MonoBehaviour {
                 {
                     //Chance is randon between 1 and 10
                     int chance = Random.Range(1,10);
-                    if (chance == 1 || chance == 3)
+                    if (chance == 3 || chance == 5)
                     {
                         //Loads Rest Stop Scene 
                         loadRestStop();
@@ -71,7 +71,11 @@ public class NodeOBJ : MonoBehaviour {
         }
         else
         {
-            loadBattleScene();
+            //Player can only select first row on their first go
+            if(node.backwardConnections.Count == 0){
+                loadBattleScene();
+            }
+            
         }
     }
 
@@ -96,14 +100,9 @@ public class NodeOBJ : MonoBehaviour {
 
     void loadRestStop()
     {
+        SceneManager.LoadScene("RestStop");
         GameController.PlayerStartColumn = node.column;
         GameController.PlayerStartNode = node;
-        GameController.PlayerStartHealth += 5;
         GameController.PlayerMapPos.Add(node.id);
-        if (GameController.PlayerStartHealth > 100)
-        {
-            GameController.PlayerStartHealth = 100;
-        }
-        SceneManager.LoadScene("RestStop");
     }
 }

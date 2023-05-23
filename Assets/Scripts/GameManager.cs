@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
         player.playerHealth = GameController.PlayerStartHealth;
         player.playerArmor = GameController.PlayerStartArmor;
         healthBar.setMaxValue(GameController.PlayerStartHealth);
-        armorBar.setMaxArmor(GameController.PlayerStartArmor);
+        armorBar.setMaxArmor(5);
         player.Invoke("DrawCard", 2f);
     }
 

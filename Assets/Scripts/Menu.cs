@@ -30,4 +30,13 @@ public class Menu : MonoBehaviour
     public void loadNewGame(){
         SceneManager.LoadScene("OverworldScreen");
     }
+
+    public void loadOverworld20HP(){
+        GameController.PlayerStartHealth += 20;
+        if (GameController.PlayerStartHealth > 100)
+        {
+            GameController.PlayerStartHealth = 100;
+        }
+        SceneManager.LoadScene("OverworldScreen");
+    }
 }

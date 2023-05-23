@@ -148,6 +148,11 @@ public class Player : MonoBehaviour
     // new addition
     public void raiseArmor(int protection) {
         Instance.gameManager.player.playerArmor += protection;
+        if(Instance.gameManager.player.playerArmor > 5){
+            Instance.gameManager.player.playerArmor = 5;
+            Instance.gameManager.armorBar.setArmor(Instance.gameManager.player.playerArmor);
+        }
+        Instance.gameManager.armorBar.setArmor(Instance.gameManager.player.playerArmor);
     }
 
     // new addition
