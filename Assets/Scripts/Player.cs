@@ -167,15 +167,6 @@ public class Player : MonoBehaviour
 
     public void getStartingCards()
     {
-        /*
-        Instance.deck.Clear();
-        foreach (Card sCard in GameController.playerStartingDeck)
-        {
-            Instance.gameManager.player.deck.Add(sCard);
-            
-        }
-        */
-
         for(int i = 0; i < GameController.playerStartingDeck.Count; i++) 
         {
             Card currentCard = GameController.playerStartingDeck[i];
