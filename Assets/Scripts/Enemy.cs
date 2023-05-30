@@ -8,13 +8,11 @@ public class Enemy : MonoBehaviour
     public List<Card> enemyCards = new List<Card>();
     public Transform enemyCardDisplay;
     public int health;
-    // new addition
     public int armour;
     public Text healthText;
     private GameManager gameManager;
-    //public HealthBar healthBar;
-    
-    // public int enemyId;
+    public HealthBar healthBar;
+    public Text armorText;
 
 
     public void Start()
@@ -23,7 +21,7 @@ public class Enemy : MonoBehaviour
 
         // RNG for the enemyId to determine enemy type
         // enemyId = Random.Range(0, 2);
-
+        healthBar.setMaxValue(health);
         getEnemyStartingCards();
     }
 
@@ -81,7 +79,9 @@ public class Enemy : MonoBehaviour
         }
         else{
             //If enemy is not defeated, update text to display current health
-            healthText.text = health.ToString() + "A" + armour.ToString();
+            healthText.text = health.ToString();
+            healthBar.setHealth(health);
+            armorText.text = armour.ToString();
         }
 
         
