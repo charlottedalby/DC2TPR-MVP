@@ -13,16 +13,18 @@ public class Enemy : MonoBehaviour
     public Text healthText;
     private GameManager gameManager;
     //public HealthBar healthBar;
+    
+    // public int enemyId;
 
 
     public void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
 
-        //Set up enemy cards
-        foreach(Card enemyCard in enemyCards){
-            enemyCard.gameObject.SetActive(true);
-        }
+        // RNG for the enemyId to determine enemy type
+        // enemyId = Random.Range(0, 2);
+
+        getEnemyStartingCards();
     }
 
     public void attackPlayer(){
@@ -58,8 +60,10 @@ public class Enemy : MonoBehaviour
         //Display the enemy's card on the screen for 2 seconds
         Vector3 initialPosition = selectedCard.transform.position;
         selectedCard.transform.position = enemyCardDisplay.position;
+        selectedCard.gameObject.SetActive(true);
         //Move the card back off the screen
         StartCoroutine(MoveAfterWait(selectedCard, initialPosition));
+        selectedCard.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -88,5 +92,28 @@ public class Enemy : MonoBehaviour
         yield return new WaitForSeconds(2f);
         //Move the card back to its initial position (off the screen)
         card.transform.position = position;
+    }
+
+    public void getEnemyStartingCards() {
+        //GameController.assignStartingEnemyCards(enemyId);
+        for(int i = 0; i < GameController.enemyStartingDeck.Count; i++) 
+        {
+            Card currentCard = GameController.enemyStartingDeck[i];
+            enemyCards[i].damage = currentCard.damage;
+            //Instance.deck[i].damageText = currentCard.damageText;
+            enemyCards[i].hasBeenPlayed = currentCard.hasBeenPlayed;
+            enemyCards[i].handIndex = currentCard.handIndex;
+            enemyCards[i].armour = currentCard.armour;
+            //new addition
+            enemyCards[i].healing = currentCard.healing;
+            enemyCards[i].damageMult = currentCard.damageMult;
+        }
+
+        //Set up enemy cards
+        /*
+        foreach(Card enemyCard in enemyCards){
+            enemyCard.gameObject.SetActive(true);
+        }
+        */
     }
 }
