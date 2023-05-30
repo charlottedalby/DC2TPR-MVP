@@ -324,10 +324,10 @@ public class MapGeneration : MonoBehaviour
             {
                 Node newNode = new Node();
                 
-                Vector2 pos = genStartPos.position;
-                pos.x+= colCount * colDist + Random.Range(minXDeviation, maxXDeviation);
-                pos.y += rowCount * rowDist + Random.Range(minYDeviation, maxYDeviation);
-
+                Vector3 pos = genStartPos.position;
+                pos.x+= rowCount * rowDist + Random.Range(minYDeviation, maxYDeviation);
+                
+                pos.y += colCount * colDist + Random.Range(minXDeviation, maxXDeviation);
                 newNode.position = pos;
                 newNode.row = rowCount;
                 newNode.column = colCount;
@@ -462,7 +462,7 @@ public class MapGeneration : MonoBehaviour
         float interval = length / (topRowNodes.Count+1);
 
         for (int i = 0; i < topRowNodes.Count; i++){
-            topRowNodes[i].position.x = interval * (i+1) + genStartPos.position.x;
+            topRowNodes[i].position.y = interval * (i+1) + genStartPos.position.y;
         }
 
         if(topRowNodes.Count > 1){

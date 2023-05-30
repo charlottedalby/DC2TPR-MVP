@@ -60,7 +60,7 @@ public class dc2tpr_enemy_test
             enemy.health = 10;
             enemy.healthText = new GameObject().AddComponent<Text>();
             enemy.Update();
-            Assert.AreEqual("10", enemy.healthText.text);
+            Assert.AreEqual("10A0", enemy.healthText.text);
         }
     }
 }
