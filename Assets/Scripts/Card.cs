@@ -49,7 +49,7 @@ public class Card : MonoBehaviour
         
         if (damageText != null) 
         {
-            damageText.text = "D" + damage.ToString() + "A" + armour.ToString() + "H" + healing.ToString();
+            damageText.text = "D" + damage.ToString() + " A" + armour.ToString() + " H" + healing.ToString();
         }
         gameManager = FindObjectOfType<GameManager>();
         
