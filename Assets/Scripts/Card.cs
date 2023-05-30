@@ -37,15 +37,6 @@ public class Card : MonoBehaviour
     public void Start()
     {
         player = FindObjectOfType<Player>();
-        //Randomly assign damage value to Card when initialised
-        
-        // recently commented out
-        /*
-        if(damage <= 0){
-            //Just for use, until card destroy is fixed: ***************************************************************
-            damage = Random.Range(1,6);  
-        }
-        */
         
         if (damageText != null) 
         {
