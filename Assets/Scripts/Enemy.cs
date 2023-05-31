@@ -60,7 +60,7 @@ public class Enemy : MonoBehaviour
         selectedCard.gameObject.SetActive(true);
         //Move the card back off the screen
         StartCoroutine(MoveAfterWait(selectedCard, initialPosition));
-        selectedCard.gameObject.SetActive(false);
+        //selectedCard.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -104,6 +104,10 @@ public class Enemy : MonoBehaviour
             //new addition
             enemyCards[i].healing = currentCard.healing;
             enemyCards[i].damageMult = currentCard.damageMult;
+            if (enemyCards[i].damageText != null) 
+            {
+                enemyCards[i].damageText.text = "D" + currentCard.damage.ToString() + " A" + currentCard.armour.ToString() + " H" + currentCard.healing.ToString();
+            }
         }
 
         //Set up enemy cards
