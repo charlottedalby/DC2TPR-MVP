@@ -11,17 +11,19 @@ public class Enemy : MonoBehaviour
     public int armour;
     public Text healthText;
     private GameManager gameManager;
-    public HealthBar healthBar;
     public Text armorText;
 
+    //Enemy Constructor 
+    public Enemy(List<Card> enemyCards, int health, int armour)
+    {
+        this.enemyCards = enemyCards;
+        this.health = health;
+        this.armour = armour;
+    }
 
     public void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
-
-        // RNG for the enemyId to determine enemy type
-        // enemyId = Random.Range(0, 2);
-        healthBar.setMaxValue(health);
         getEnemyStartingCards();
     }
 
@@ -36,19 +38,16 @@ public class Enemy : MonoBehaviour
                 selectedCard.damage -= gameManager.player.playerArmor;
                 gameManager.player.playerArmor = 0;
                 gameManager.player.playerHealth -= selectedCard.damage;
-                //healthBar.setHealth(gameManager.player.playerHealth);
             }
             else
             {
                 gameManager.player.playerArmor -= selectedCard.damage;
-                //healthBar.setHealth(gameManager.player.playerHealth);
             }
         }
         else
         {
             //Reduce player health by the card's damage value
             gameManager.player.playerHealth -= selectedCard.damage;
-            //healthBar.setHealth(gameManager.player.playerHealth);
         }
 
         health += selectedCard.healing;
@@ -69,6 +68,7 @@ public class Enemy : MonoBehaviour
     {
         if(health <= 0){
             healthText.text = "0";
+            armorText.text = "0";
             //gameManager.GameOver();
 
             //Delaying by a second so we can still see the enemy being defeated
@@ -80,11 +80,8 @@ public class Enemy : MonoBehaviour
         else{
             //If enemy is not defeated, update text to display current health
             healthText.text = health.ToString();
-            healthBar.setHealth(health);
             armorText.text = armour.ToString();
-        }
-
-        
+        }      
     }
 
       public IEnumerator MoveAfterWait(Card card, Vector3 position){

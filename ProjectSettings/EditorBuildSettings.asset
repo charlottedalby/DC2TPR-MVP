@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RestStop.unity
     guid: 4bbee8cb05b0e3642ade2cebf419c216
+  - enabled: 1
+    path: Assets/Scenes/CardStealing.unity
+    guid: 5798767363dee1f4a964680742262558
   m_configObjects: {}

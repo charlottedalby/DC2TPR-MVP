@@ -1,21 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class ViewCardsUI : MonoBehaviour
+public class CardStealing : MonoBehaviour
 {
-
+    
     public List<Card> cards = new List<Card>();
-    public void Start()
+    public bool cardSwap;
+    // Start is called before the first frame update
+    void Start()
     {
-        setUpCards();
+        //cardSwap = false;
+        //AssignEnemyCards();
     }
 
-    public void setUpCards()
+    public void AssignEnemyCards()
     {
-        for(int i = 0; i < GameController.playerStartingDeck.Count; i++) 
+        for(int i = 0; i < GameController.enemyStartingDeck.Count; i++) 
         {
-            Card currentCard = GameController.playerStartingDeck[i];
+            Card currentCard = GameController.enemyStartingDeck[i];
             cards[i].damage = currentCard.damage;
             //cards[i].damageText = currentCard.damageText;
             cards[i].hasBeenPlayed = currentCard.hasBeenPlayed;

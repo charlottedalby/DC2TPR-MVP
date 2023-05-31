@@ -223,7 +223,6 @@ public class MapGeneration : MonoBehaviour
     }
 
     // Function that draws a line between two nodes to represent a connection.
-    // I'd suggest writing your own function as this is ugly and a placeholder.
     void DrawLine(Node nodeBelow, Node nodeAbove){
 
         Vector3 start = nodeBelow.position;

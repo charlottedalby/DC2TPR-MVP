@@ -462,7 +462,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1241980480}
         m_TargetAssemblyTypeName: Menu, Scripts
-        m_MethodName: loadOverworld
+        m_MethodName: loadCardSteal
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
