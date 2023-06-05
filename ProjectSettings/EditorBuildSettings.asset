@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CardStealing.unity
     guid: 5798767363dee1f4a964680742262558
+  - enabled: 1
+    path: Assets/Scenes/PlayerCardStealScreen.unity
+    guid: f19f81c16d871c94ea9425b42dee8ab7
   m_configObjects: {}

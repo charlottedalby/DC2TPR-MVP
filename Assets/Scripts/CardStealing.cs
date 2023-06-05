@@ -11,8 +11,9 @@ public class CardStealing : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //cardSwap = false;
-        //AssignEnemyCards();
+        cardSwap = false;
+        AssignEnemyCards();
+        Debug.Log(cards[1].damage);
     }
 
     public void AssignEnemyCards()

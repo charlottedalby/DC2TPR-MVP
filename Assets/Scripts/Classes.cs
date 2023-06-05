@@ -14,10 +14,12 @@ public class Node
     public int id; // each Node is given a unique id
     public int row;
     public int column;
+    public int battleStrength;
     public List<int> forwardConnections = new List<int>(); // array of ids representing connections between nodes
     public List<int> backwardConnections = new List<int>(); // array of ids representing connections between nodes
     public Vector3 position;
     public bool cullable = true;
+    public SpriteRenderer sprite;
 
     public bool IsConnected(Node node){
 

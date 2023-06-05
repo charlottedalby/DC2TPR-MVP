@@ -39,8 +39,26 @@ public class Menu : MonoBehaviour
         }
         SceneManager.LoadScene("OverworldScreen");
     }
+    
     public void loadCardSteal()
     {
         SceneManager.LoadScene("CardStealing");
     }
+
+    public void loadCardSwap()
+    {
+        SceneManager.LoadScene("CardSwap");
+    }
+
+    public void LoadPlayerCardsScene()
+    {
+        SceneManager.LoadScene("PlayerCardStealScreen");
+    }
+
+    public void loadPlayerCardCancel()
+    {
+        SceneManager.LoadScene("PlayerCardStealScreen");
+    }
+    
 }
+

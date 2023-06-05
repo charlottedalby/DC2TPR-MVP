@@ -611,6 +611,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efc85e913be465445bea7e2e44cc99fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EasyNodePrefab: {fileID: 491325060764273583, guid: de77f1b0a7679b94c8c0554db2d90b12, type: 3}
+  HardNodePrefab: {fileID: 491325060764273583, guid: b7cc0afa88d70474893e6deaacaf391a, type: 3}
+  BossNodePrefab: {fileID: 491325060764273583, guid: 5dbc0a8146903e4488e78297ddf31bb2, type: 3}
+  RestStopNodePrefab: {fileID: 491325060764273583, guid: 69fe13ff47b7307448d946c6bdde7750, type: 3}
 --- !u!114 &1241980481
 MonoBehaviour:
   m_ObjectHideFlags: 0

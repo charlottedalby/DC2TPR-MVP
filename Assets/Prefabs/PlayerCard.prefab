@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
-  damageText: {fileID: 716283893892813057}
+  damageText: {fileID: 0}
   hasBeenPlayed: 0
   handIndex: 0
   player: {fileID: 0}

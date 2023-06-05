@@ -25,6 +25,7 @@ public class Enemy : MonoBehaviour
     {
         gameManager = FindObjectOfType<GameManager>();
         getEnemyStartingCards();
+        Debug.Log(enemyCards[0].damage);
     }
 
     public void attackPlayer(){

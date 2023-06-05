@@ -8,10 +8,9 @@ using System.Runtime.Serialization;
 [ExecuteInEditMode]
 public class MapGeneration : MonoBehaviour
 {
-
     public Text playerHealthText;
     // Changeable properties
-
+    MapPrefab mapPrefabs;
     // prefab the user can swap out
     public GameObject nodePrefab;
 
@@ -106,6 +105,10 @@ public class MapGeneration : MonoBehaviour
     private MapState mapState;
     private string saveData;
 
+    public void Awake()
+    {
+        mapPrefabs = GameObject.FindObjectOfType<MapPrefab>();
+    }
     // Builds a new map on start
     void Start(){
         BuildNew();
@@ -181,7 +184,7 @@ public class MapGeneration : MonoBehaviour
             EnsureAllNodesHaveAtLeastOneForwardConnection();
         EnsureTopNodesAlwaysHaveAConnection();
         SaveMap();
-        //GameController.gameMapState = mapState;
+        generateDifficulty();
         return mapState;
     }
 
@@ -204,10 +207,32 @@ public class MapGeneration : MonoBehaviour
         // Iterate through each node and build it        
         foreach (var node in nodes)
         {
-            var nodeObject = Instantiate(nodePrefab, node.position, nodePrefab.transform.rotation, nodesParent);
-            nodeObject.name = "Node: " + node.id + " Row: " + node.row + " Column: " + node.column;
-
-            nodeObject.GetComponent<NodeOBJ>().node = node;
+            Debug.Log(node.battleStrength);  
+            if (node.battleStrength == 0)
+            {
+                var nodeObject = Instantiate(mapPrefabs.RestStopNodePrefab, node.position, mapPrefabs.RestStopNodePrefab.transform.rotation, nodesParent);
+                nodeObject.name = "Node: " + node.id + " Row: " + node.row + " Column: " + node.column;
+                nodeObject.GetComponent<NodeOBJ>().node = node;
+            }
+            else if(node.battleStrength == 2)
+            {
+                var nodeObject = Instantiate(mapPrefabs.HardNodePrefab, node.position, mapPrefabs.HardNodePrefab.transform.rotation, nodesParent);
+                nodeObject.name = "Node: " + node.id + " Row: " + node.row + " Column: " + node.column;
+                nodeObject.GetComponent<NodeOBJ>().node = node;
+            }
+            else if(node.battleStrength == 3)
+            {
+                var nodeObject = Instantiate(mapPrefabs.BossNodePrefab, node.position, mapPrefabs.BossNodePrefab.transform.rotation, nodesParent);
+                nodeObject.name = "Node: " + node.id + " Row: " + node.row + " Column: " + node.column;
+                nodeObject.GetComponent<NodeOBJ>().node = node;
+            }
+            else
+            {
+                var nodeObject = Instantiate(mapPrefabs.EasyNodePrefab, node.position, mapPrefabs.EasyNodePrefab.transform.rotation, nodesParent);
+                nodeObject.name = "Node: " + node.id + " Row: " + node.row + " Column: " + node.column;
+                nodeObject.GetComponent<NodeOBJ>().node = node;
+            }
+            
 
             var nodesAboveIDs = node.forwardConnections;
 
@@ -218,8 +243,7 @@ public class MapGeneration : MonoBehaviour
                 DrawLine(node, nodeAbove);
             }
         }
-       
-        // establish connections between nodes here based on Node.connections
+        
     }
 
     // Function that draws a line between two nodes to represent a connection.
@@ -757,5 +781,54 @@ public class MapGeneration : MonoBehaviour
         }
 
         return null;
+    }
+
+    public void generateDifficulty()
+    {
+        //Iterate Through Rows
+        for(int e = 0; e < rows; e++)
+        {
+            //If Row equals first row
+            if (e == 0)
+            {
+            //Iterate through nodes in row 
+                foreach(var node in GetNodesInRow(e))
+                {
+                    //Battle is Easy for first Row
+                    node.battleStrength = 1;
+                }
+            }
+            //Any other Row
+            else
+            {
+                //Iterate through row
+                foreach(var node in GetNodesInRow(e))
+                {
+                    if(node.forwardConnections.Count == 0)
+                    {
+                        node.battleStrength = 3;
+                    }
+                    else
+                    {
+                        int num = Random.Range(1,11);
+                        if(num <= 5)
+                        {
+                            //50% is easy
+                            node.battleStrength = 1;
+                        }
+                        //30% is Hard
+                        else if(num > 5 && num <= 8)
+                        {
+                            node.battleStrength = 2;
+                        }
+                        //20% is Rest Stop 
+                        else if(num > 8 && num <= 10)
+                        {
+                            node.battleStrength = 0;
+                        }
+                    } 
+                }
+            }
+        }
     }
 }

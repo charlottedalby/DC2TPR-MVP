@@ -54,6 +54,7 @@ public class GameManager : MonoBehaviour
         //Goes to You Win screen if enemy health reaches 0
         if(enemy.health <= 0){
             GameController.PlayerStartHealth = player.playerHealth;
+            Debug.Log(GameController.StartingDeck.Count);
             SceneManager.LoadScene("YouWin");
         }
         //Goes to Game Over screen if player health reaches 0

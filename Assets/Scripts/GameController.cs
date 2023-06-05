@@ -17,8 +17,9 @@ public class GameController : MonoBehaviour
     public static List <int> PlayerMapPos = new List<int>();
     public static List<Card> playerStartingDeck = new List <Card>();
     public static int PlayerStartArmor;
-    public static int EnemyHealth;
     public static List<Card> enemyStartingDeck = new List <Card>();
+    public static Card SwappedCard;
+    public static List<Card> dupStartDeck = new List <Card>();
 
     // Start is called before the first frame update
     void Start()
@@ -28,9 +29,9 @@ public class GameController : MonoBehaviour
         StartingDeck = new List<Card>();
         gameMapState = null;
         PlayerStartNode = null;
+        SwappedCard = null;
         assignStartingCards();
         assignStartingEnemyCards(Random.Range(0, 13));
-        EnemyHealth = 50;
     }
 
     // new addition, changed
