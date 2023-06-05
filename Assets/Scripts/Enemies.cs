@@ -1,75 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
-using System.Reflection;
 
-
-
-public class GameController : MonoBehaviour
+public class Enemies : MonoBehaviour
 {
-    public static int PlayerStartHealth;
-    public static List<Card> StartingDeck;
-    public static string gameMapState;
-    public static int PlayerStartColumn;
-    public static Node PlayerStartNode;
-    public static List <int> PlayerMapPos = new List<int>();
-    public static List<Card> playerStartingDeck = new List <Card>();
-    public static int PlayerStartArmor;
-    public static List<Card> enemyStartingDeck = new List <Card>();
-    public static Card SwappedCard;
-    public static List<Card> dupStartDeck = new List <Card>();
-    public static List<int> stage1Difficulty;
-    public static int stage;
+    public List<Enemy> stageEnemies = new List<Enemy>();
+    public List<Enemy> stageBosses = new List<Enemy>();
 
-    // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
-        PlayerStartHealth = 100;
-        PlayerStartArmor = 0;
-        StartingDeck = new List<Card>();
-        gameMapState = null;
-        PlayerStartNode = null;
-        SwappedCard = null;
-        stage1Difficulty = new List <int>();
-        stage = 1;
-        assignStartingCards();
-        assignStartingEnemyCards(Random.Range(0, 13));
+        createStageEnemies();
     }
 
-    // new addition, changed
-    void assignStartingCards()
+    public void createStageEnemies()
     {
-        //Punch Card 
-        playerStartingDeck.Add(new Card(5, null, false, 0, 0, 0, 1));
-        //Punch Card 
-        playerStartingDeck.Add(new Card(5, null, false, 0, 0, 0, 1));
-        //Kick Card 
-        playerStartingDeck.Add(new Card(7, null, false, 0, 0, 0, 1));
-        //Kick Card 
-        playerStartingDeck.Add(new Card(7, null, false, 0, 0, 0, 1));
-        //Jump Kick Card 
-        playerStartingDeck.Add(new Card(8, null, false, 0, 0, 0, 1));
-        //Jump Kick Card 
-        playerStartingDeck.Add(new Card(8, null, false, 0, 0, 0, 1));
-        //Throw Card 
-        playerStartingDeck.Add(new Card(5, null, false, 0, 3, 0, 1));
-        //Throw Card 
-        playerStartingDeck.Add(new Card(5, null, false, 0, 3, 0, 1));
-        //Grapple Card 
-        playerStartingDeck.Add(new Card(4, null, false, 0, 4, 0, 1));
-        //Grapple Card 
-        playerStartingDeck.Add(new Card(4, null, false, 0, 4, 0, 1));
-        //Meditate Card 
-        playerStartingDeck.Add(new Card(0, null, false, 0, 0, 0, 2));
-        //Meditate Card 
-        playerStartingDeck.Add(new Card(0, null, false, 0, 0, 0, 2));  
+        //Stage 1
+        //Ant Enemy 
+        stageEnemies.Add(new Enemy("Ant", assignStartingEnemyCards(0), 15, 0, 1, 1));
+        //CockRoach Enemy
+        stageEnemies.Add(new Enemy("Cockroach", assignStartingEnemyCards(1), 20, 0, 1, 1));
+        //Mouse Enemy 
+        stageEnemies.Add(new Enemy("Mouse", assignStartingEnemyCards(2), 20, 0, 1, 1));
+        //Pigeon Enemy 
+        stageEnemies.Add(new Enemy("Pigeon", assignStartingEnemyCards(3), 15, 0, 1, 1));
+        //Rabbit Enemy  
+        stageEnemies.Add(new Enemy("Rabbit", assignStartingEnemyCards(4), 40, 0, 2, 1));
+        //Rat
+        stageEnemies.Add(new Enemy("Rat", assignStartingEnemyCards(5), 35, 0, 2, 1));
+        //Rooster Enemy (Boss)
+        stageBosses.Add(new Enemy("Rooster", assignStartingEnemyCards(6), 50, 0, 3, 1));
     }
 
-    void assignStartingEnemyCards(int enemyId)
+    public List<Card> assignStartingEnemyCards(int enemyId)
     {
-        enemyStartingDeck.Clear();
+        List<Card> enemyStartingDeck = new List <Card>() ;
         switch(enemyId) 
         {
             //Stage 1 Enemies
@@ -83,7 +47,7 @@ public class GameController : MonoBehaviour
                 enemyStartingDeck.Add(new Card(9, null, false, 0, 0, 0, 1));
                 //Scramble Card 
                 enemyStartingDeck.Add(new Card(0, null, false, 0, 7, 0, 1));
-                break;
+                return enemyStartingDeck;
             case 1:
                 //Cockroach Enemy
                 //Curl Up Card (unfinished)
@@ -94,7 +58,7 @@ public class GameController : MonoBehaviour
                 enemyStartingDeck.Add(new Card(7, null, false, 0, 0, 0, 1));
                 //Scramble Card 
                 enemyStartingDeck.Add(new Card(0, null, false, 0, 0, 0, 1));
-                break;
+                return enemyStartingDeck;
             case 2:
                 //Mouse Enemy
                 //Gnaw Card
@@ -105,7 +69,7 @@ public class GameController : MonoBehaviour
                 enemyStartingDeck.Add(new Card(0, null, false, 0, 0, 0, 1));
                 //Tail Strike Card 
                 enemyStartingDeck.Add(new Card(8, null, false, 0, 0, 0, 1));
-                break;
+                return enemyStartingDeck;
             case 3:
                 //Pigeon Enemy
                 //Peck Card
@@ -116,7 +80,7 @@ public class GameController : MonoBehaviour
                 enemyStartingDeck.Add(new Card(0, null, false, 0, 0, 6, 1));
                 //Wing Defence Card 
                 enemyStartingDeck.Add(new Card(0, null, false, 0, 8, 0, 1));
-                break;
+                return enemyStartingDeck;
             case 4:
                 //Rabbit Enemy
                 //Gnaw Card
@@ -127,7 +91,7 @@ public class GameController : MonoBehaviour
                 enemyStartingDeck.Add(new Card(0, null, false, 0, 0, 0, 1));
                 //Keen Sense Card 
                 enemyStartingDeck.Add(new Card(0, null, false, 0, 0, 0, 2));
-                break;
+                return enemyStartingDeck;
             case 5:
                 //Rat Enemy
                 //Gnaw Card
@@ -138,7 +102,7 @@ public class GameController : MonoBehaviour
                 enemyStartingDeck.Add(new Card(0, null, false, 0, 0, 0, 1));
                 //Tail Strike Card 
                 enemyStartingDeck.Add(new Card(10, null, false, 0, 0, 0, 1));
-                break;
+                return enemyStartingDeck;
             case 6:
                 //Rooster Enemy
                 //Peck Card
@@ -149,7 +113,7 @@ public class GameController : MonoBehaviour
                 enemyStartingDeck.Add(new Card(5, null, false, 0, 0, 5, 1));
                 //Flock Attack Card (unfinished)
                 enemyStartingDeck.Add(new Card(12, null, false, 0, 0, 0, 1));
-                break;
+                return enemyStartingDeck;
             //Stage 2 Enemies
             case 7:
                 //Dog Enemy
@@ -161,7 +125,7 @@ public class GameController : MonoBehaviour
                 enemyStartingDeck.Add(new Card(7, null, false, 0, 0, 0, 1));
                 //Bare Teeth Card
                 enemyStartingDeck.Add(new Card(0, null, false, 0, 0, 0, 2));
-                break;
+                return enemyStartingDeck;
             case 8:
                 //Lizard Enemy
                 //Camouflage Card (unfinished)
@@ -172,7 +136,7 @@ public class GameController : MonoBehaviour
                 enemyStartingDeck.Add(new Card(15, null, false, 0, 0, -5, 1));
                 //Bite Card
                 enemyStartingDeck.Add(new Card(8, null, false, 0, 0, 0, 1));
-                break;
+                return enemyStartingDeck;
             case 9:
                 //Monkey Enemy
                 //Use Tools Card 
@@ -183,7 +147,7 @@ public class GameController : MonoBehaviour
                 enemyStartingDeck.Add(new Card(0, null, false, 0, 0, 0, 1));
                 //Pummel Card (unfinished)
                 enemyStartingDeck.Add(new Card(8, null, false, 0, 0, 0, 1));
-                break;
+                return enemyStartingDeck;
             case 10:
                 //Pig Enemy
                 //Thick Skin Card
@@ -194,7 +158,7 @@ public class GameController : MonoBehaviour
                 enemyStartingDeck.Add(new Card(4, null, false, 0, 7, 0, 1));
                 //Sniff Out Card
                 enemyStartingDeck.Add(new Card(0, null, false, 0, 0, 0, 2));
-                break;
+                return enemyStartingDeck;
             case 11:
                 //Scorpion Enemy
                 //Clamp Card
@@ -205,7 +169,7 @@ public class GameController : MonoBehaviour
                 enemyStartingDeck.Add(new Card(0, null, false, 0, 10, 0, 1));
                 //Envenom Card
                 enemyStartingDeck.Add(new Card(0, null, false, 0, 0, -2, 1));
-                break;
+                return enemyStartingDeck;
             case 12:
                 //Tarantula Enemy
                 //Spin Web Card
@@ -216,7 +180,7 @@ public class GameController : MonoBehaviour
                 enemyStartingDeck.Add(new Card(12, null, false, 0, 0, 0, 1));
                 //Pin down Card
                 enemyStartingDeck.Add(new Card(5, null, false, 0, 5, 0, 1));
-                break;
+                return enemyStartingDeck;
             case 13:
                 //Turtle Enemy
                 //Snap Card
@@ -227,7 +191,7 @@ public class GameController : MonoBehaviour
                 enemyStartingDeck.Add(new Card(6, null, false, 0, 6, 0, 1));
                 //Shell Armour Card
                 enemyStartingDeck.Add(new Card(0, null, false, 0, 12, 0, 1));
-                break;
+                return enemyStartingDeck;
             default:
                 //In case of case failure
                 //Punch Card
@@ -238,7 +202,7 @@ public class GameController : MonoBehaviour
                 enemyStartingDeck.Add(new Card(8, null, false, 0, 0, 0, 1));
                 //Kick Card 
                 enemyStartingDeck.Add(new Card(15, null, false, 0, 0, 0, 1));
-                break;
+                return enemyStartingDeck;
         }
     }
 }

@@ -571,6 +571,7 @@ GameObject:
   - component: {fileID: 1241980479}
   - component: {fileID: 1241980480}
   - component: {fileID: 1241980481}
+  - component: {fileID: 1241980482}
   m_Layer: 5
   m_Name: NewGameButton
   m_TagString: Untagged
@@ -611,10 +612,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efc85e913be465445bea7e2e44cc99fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EasyNodePrefab: {fileID: 491325060764273583, guid: de77f1b0a7679b94c8c0554db2d90b12, type: 3}
-  HardNodePrefab: {fileID: 491325060764273583, guid: b7cc0afa88d70474893e6deaacaf391a, type: 3}
-  BossNodePrefab: {fileID: 491325060764273583, guid: 5dbc0a8146903e4488e78297ddf31bb2, type: 3}
-  RestStopNodePrefab: {fileID: 491325060764273583, guid: 69fe13ff47b7307448d946c6bdde7750, type: 3}
 --- !u!114 &1241980481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -625,6 +622,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d82a74867fdda1e4a832c62aa8553e0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1241980482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241980478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a86d5681c3f65842a4180183d006dd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1275957130

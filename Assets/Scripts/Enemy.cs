@@ -12,20 +12,25 @@ public class Enemy : MonoBehaviour
     public Text healthText;
     private GameManager gameManager;
     public Text armorText;
+    public int difficulty;
+    public string name;
+    public int stage;
 
     //Enemy Constructor 
-    public Enemy(List<Card> enemyCards, int health, int armour)
+    public Enemy(string name, List<Card> enemyCards, int health, int armour, int difficulty, int stage)
     {
+        this.name = name;
         this.enemyCards = enemyCards;
         this.health = health;
         this.armour = armour;
+        this.difficulty = difficulty;
+        this.stage = stage;
     }
 
     public void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
         getEnemyStartingCards();
-        Debug.Log(enemyCards[0].damage);
     }
 
     public void attackPlayer(){

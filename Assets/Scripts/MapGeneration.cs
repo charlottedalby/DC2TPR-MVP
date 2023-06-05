@@ -194,7 +194,6 @@ public class MapGeneration : MonoBehaviour
     {
         FunctionsAtEachGeneration();
         mapState = loadState;
-        Debug.Log(GameController.stage1Difficulty.Count);
         if(GameController.stage1Difficulty.Count != 0)
         {
             int integer = 0;

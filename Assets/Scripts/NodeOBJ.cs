@@ -8,6 +8,8 @@ public class NodeOBJ : MonoBehaviour {
     private Vector3 normalScale;
     [SerializeField] private Transform GFX;
     [SerializeField] private Animator animator;
+    public Enemies enemies;
+    public Enemy enemy;
     //private bool canSelect = false;
     void Start()
     {
@@ -38,6 +40,7 @@ public class NodeOBJ : MonoBehaviour {
 
     void OnMouseDown()
     {
+        int randomNumber;
         //If the Start Node is null then Load battle screen and set Start Node
         if (GameController.PlayerStartNode != null)
         {
@@ -56,12 +59,12 @@ public class NodeOBJ : MonoBehaviour {
                 //if node battle difficulty is 1, then load hard battle (Will be changed)
                 if(node.battleStrength == 2)
                 {
-                    loadBattleScene();
+                    //loadBattleScene();
                 }
                 //if node battle difficulty is 1, then load boss battle (Will be changed)
                 if(node.battleStrength == 3)
                 {
-                    loadBattleScene();
+                    //loadBattleScene();
                 }
             }
         }
