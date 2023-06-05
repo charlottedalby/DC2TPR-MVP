@@ -43,27 +43,23 @@ public class NodeOBJ : MonoBehaviour {
         {
             if (GameController.PlayerStartNode.IsConnected(node) == true)
             {
-                //Ensures Node Clicked is on the correct row the player should be on
-                Debug.Log(GameController.PlayerStartColumn + " " + node.column);
-                Debug.Log("PlayerStartRow is equal to node row");
-                //Need a function that returns current row, then if the current row is clicked then it will be selected or animated
-                //If Player Health is less than 100 (Max) then there is a chance of a rest stop 
-                if (GameController.PlayerStartHealth != 100 && node.forwardConnections.Count != 0)
+                //if node battle diffculty is 0, then laod rest stop 
+                if(node.battleStrength == 0)
                 {
-                    //Chance is randon between 1 and 10
-                    int chance = Random.Range(1,10);
-                    if (chance == 3 || chance == 5)
-                    {
-                        //Loads Rest Stop Scene 
-                        loadRestStop();
-                    }
-                    else
-                    {
-                        //Loads Battle Scene
-                        loadBattleScene();
-                    }
+                    loadRestStop();
                 }
-                else
+                //if node battle difficulty is 1, then load easy battle (Will be changed)
+                if(node.battleStrength == 1)
+                {
+                    loadBattleScene();
+                }
+                //if node battle difficulty is 1, then load hard battle (Will be changed)
+                if(node.battleStrength == 2)
+                {
+                    loadBattleScene();
+                }
+                //if node battle difficulty is 1, then load boss battle (Will be changed)
+                if(node.battleStrength == 3)
                 {
                     loadBattleScene();
                 }

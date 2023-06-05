@@ -185,6 +185,7 @@ public class MapGeneration : MonoBehaviour
         EnsureTopNodesAlwaysHaveAConnection();
         SaveMap();
         generateDifficulty();
+        saveDiffculty();
         return mapState;
     }
 
@@ -193,6 +194,17 @@ public class MapGeneration : MonoBehaviour
     {
         FunctionsAtEachGeneration();
         mapState = loadState;
+        Debug.Log(GameController.stage1Difficulty.Count);
+        if(GameController.stage1Difficulty.Count != 0)
+        {
+            int integer = 0;
+            foreach (var selectedNode in mapState.nodes)
+            {
+            selectedNode.battleStrength = GameController.stage1Difficulty[integer];
+            integer += 1;
+            }
+        }
+        
         Build(mapState);
 
     }
@@ -207,7 +219,7 @@ public class MapGeneration : MonoBehaviour
         // Iterate through each node and build it        
         foreach (var node in nodes)
         {
-            Debug.Log(node.battleStrength);  
+              
             if (node.battleStrength == 0)
             {
                 var nodeObject = Instantiate(mapPrefabs.RestStopNodePrefab, node.position, mapPrefabs.RestStopNodePrefab.transform.rotation, nodesParent);
@@ -829,6 +841,13 @@ public class MapGeneration : MonoBehaviour
                     } 
                 }
             }
+        }
+    }
+    public void saveDiffculty()
+    {
+        foreach (var node in mapState.nodes)
+        {
+            GameController.stage1Difficulty.Add(node.battleStrength);
         }
     }
 }
