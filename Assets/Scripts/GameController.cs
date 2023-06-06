@@ -22,7 +22,7 @@ public class GameController : MonoBehaviour
     public static List<Card> dupStartDeck = new List <Card>();
     public static List<int> stage1Difficulty;
     public static int stage;
-    public static Image cardImage;
+
     // Start is called before the first frame update
     void Start()
     {
