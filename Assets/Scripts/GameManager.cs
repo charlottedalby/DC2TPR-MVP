@@ -15,9 +15,22 @@ public class GameManager : MonoBehaviour
     public Text playerArmorText;
     public HealthBar healthBar;
     public ArmorBar armorBar;
+    public Enemies enemies;
+    public Enemy currentEnemy;
 
     public void Start(){
         enemy = FindObjectOfType<Enemy>();
+        currentEnemy = enemies.selectEnemy(1, 1);
+        enemy.name = currentEnemy.name;
+        //enemy.health = currentEnemy.health;
+        enemy.difficulty = currentEnemy.difficulty;
+        enemy.stage = currentEnemy.stage;
+        
+        for (int c = 0; c > currentEnemy.enemyCards.Count; c++)
+        {
+            enemy.enemyCards[c] = currentEnemy.enemyCards[c];
+        }
+
         player = FindObjectOfType<Player>();
         player.playerHealth = GameController.PlayerStartHealth;
         player.playerArmor = GameController.PlayerStartArmor;
