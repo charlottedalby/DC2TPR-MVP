@@ -99,7 +99,20 @@ public class Player : MonoBehaviour
             Shuffle();
         }
         Invoke("DrawCard", 2f);
-        
+    }
+
+    public void enableHand(bool enable){
+        if(enable == false){
+            foreach (Card x in hand){
+                x.gameObject.SetActive(false);
+            }
+        }
+        else if(enable == true){
+            foreach (Card y in hand)
+            {
+                y.gameObject.SetActive(true);
+            }
+        }
         
     }
 

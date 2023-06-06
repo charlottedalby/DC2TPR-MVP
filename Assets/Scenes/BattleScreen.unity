@@ -2589,27 +2589,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5972153875729988769, guid: 10d8e510fe4bd674e823e4fc14850962, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5972153875729988769, guid: 10d8e510fe4bd674e823e4fc14850962, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 790427627}
+      objectReference: {fileID: 1553112796}
     - target: {fileID: 5972153875729988769, guid: 10d8e510fe4bd674e823e4fc14850962, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5972153875729988769, guid: 10d8e510fe4bd674e823e4fc14850962, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: activateCards
+      value: enableHand
       objectReference: {fileID: 0}
     - target: {fileID: 5972153875729988769, guid: 10d8e510fe4bd674e823e4fc14850962, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: ViewCardsUI, Scripts
+      value: Player, Scripts
       objectReference: {fileID: 0}
     - target: {fileID: 5972153875729988769, guid: 10d8e510fe4bd674e823e4fc14850962, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5972153875729988769, guid: 10d8e510fe4bd674e823e4fc14850962, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5972153875729988769, guid: 10d8e510fe4bd674e823e4fc14850962, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -2621,7 +2625,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6237884590700692559, guid: 10d8e510fe4bd674e823e4fc14850962, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6464391189036378913, guid: 10d8e510fe4bd674e823e4fc14850962, type: 3}
       propertyPath: m_Sprite
@@ -2662,17 +2666,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6237884590700692559, guid: 10d8e510fe4bd674e823e4fc14850962, type: 3}
   m_PrefabInstance: {fileID: 790427625}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &790427627 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5646528193165703337, guid: 10d8e510fe4bd674e823e4fc14850962, type: 3}
-  m_PrefabInstance: {fileID: 790427625}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 790427626}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86986295544d3be41ada99146a796570, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &797006160
 GameObject:
   m_ObjectHideFlags: 0
@@ -3592,7 +3585,7 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1711544380}
     m_Modifications:
-    - target: {fileID: 162143069182179350, guid: 80e9bad8ab641b24fbc341fc6613f5dd, type: 3}
+    - target: {fileID: 0}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
@@ -3712,9 +3705,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8034895816596506836, guid: 80e9bad8ab641b24fbc341fc6613f5dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8034895816596506836, guid: 80e9bad8ab641b24fbc341fc6613f5dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8034895816596506836, guid: 80e9bad8ab641b24fbc341fc6613f5dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1553112796}
+    - target: {fileID: 8034895816596506836, guid: 80e9bad8ab641b24fbc341fc6613f5dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8034895816596506836, guid: 80e9bad8ab641b24fbc341fc6613f5dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: enableHand
+      objectReference: {fileID: 0}
+    - target: {fileID: 8034895816596506836, guid: 80e9bad8ab641b24fbc341fc6613f5dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Player, Scripts
+      objectReference: {fileID: 0}
+    - target: {fileID: 8034895816596506836, guid: 80e9bad8ab641b24fbc341fc6613f5dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8034895816596506836, guid: 80e9bad8ab641b24fbc341fc6613f5dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6474477256049754452, guid: 80e9bad8ab641b24fbc341fc6613f5dd, type: 3}
-    - {fileID: 162143069182179350, guid: 80e9bad8ab641b24fbc341fc6613f5dd, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 80e9bad8ab641b24fbc341fc6613f5dd, type: 3}
 --- !u!114 &1202255362
 MonoBehaviour:
@@ -3767,6 +3791,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

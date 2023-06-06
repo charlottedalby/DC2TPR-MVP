@@ -1168,8 +1168,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2808,6 +2808,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 802356506}
     m_Modifications:
+    - target: {fileID: 1265344461505645737, guid: 80e9bad8ab641b24fbc341fc6613f5dd, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 134.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 1265344461505645737, guid: 80e9bad8ab641b24fbc341fc6613f5dd, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 84.464
+      objectReference: {fileID: 0}
+    - target: {fileID: 1265344461505645737, guid: 80e9bad8ab641b24fbc341fc6613f5dd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.00049162
+      objectReference: {fileID: 0}
+    - target: {fileID: 1265344461505645737, guid: 80e9bad8ab641b24fbc341fc6613f5dd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.00004673
+      objectReference: {fileID: 0}
     - target: {fileID: 2824921672701655248, guid: 80e9bad8ab641b24fbc341fc6613f5dd, type: 3}
       propertyPath: m_Name
       value: ViewCardsButton
@@ -2842,11 +2858,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6127493087458156987, guid: 80e9bad8ab641b24fbc341fc6613f5dd, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 113.8909
+      value: 134.8655
       objectReference: {fileID: 0}
     - target: {fileID: 6127493087458156987, guid: 80e9bad8ab641b24fbc341fc6613f5dd, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 75
+      value: 84.4634
+      objectReference: {fileID: 0}
+    - target: {fileID: 6127493087458156987, guid: 80e9bad8ab641b24fbc341fc6613f5dd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6127493087458156987, guid: 80e9bad8ab641b24fbc341fc6613f5dd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2878,11 +2898,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6127493087458156987, guid: 80e9bad8ab641b24fbc341fc6613f5dd, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 895
+      value: 874
       objectReference: {fileID: 0}
     - target: {fileID: 6127493087458156987, guid: 80e9bad8ab641b24fbc341fc6613f5dd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -496
+      value: -480
       objectReference: {fileID: 0}
     - target: {fileID: 6127493087458156987, guid: 80e9bad8ab641b24fbc341fc6613f5dd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
