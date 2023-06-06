@@ -11,6 +11,10 @@ public class CardStealButtons : MonoBehaviour
     public GameObject Highlight3;
     public GameObject Highlight4;
     public static Card card;
+    public GameObject Card1;
+    public GameObject Card2;
+    public GameObject Card3;
+    public GameObject Card4;
 
     void Start()
     {
@@ -18,6 +22,10 @@ public class CardStealButtons : MonoBehaviour
         Highlight2 = GameObject.Find("CardHighlight2");
         Highlight3 = GameObject.Find("CardHighlight3");
         Highlight4 = GameObject.Find("CardHighlight4");
+        Card1 = GameObject.Find("PlayerCard");
+        Card2 = GameObject.Find("PlayerCard (1)");
+        Card3 = GameObject.Find("PlayerCard (2)");
+        Card4 = GameObject.Find("PlayerCard (3)");
         card = null;
         SetAllFalse();
     }
@@ -30,6 +38,7 @@ public class CardStealButtons : MonoBehaviour
             Highlight1.SetActive(true);
             card = GameController.enemyStartingDeck[0];
             GameController.SwappedCard = card;
+            GameController.cardImage = Card1.GetComponent<Image>();
             Debug.Log(card.damage);
         }
     }
@@ -42,6 +51,7 @@ public class CardStealButtons : MonoBehaviour
             Highlight2.SetActive(true);
             card = GameController.enemyStartingDeck[1];
             GameController.SwappedCard = card;
+            GameController.cardImage = Card2.GetComponent<Image>();
             Debug.Log(card.damage);
         }
     }
@@ -54,6 +64,7 @@ public class CardStealButtons : MonoBehaviour
             Highlight3.SetActive(true);
             card = GameController.enemyStartingDeck[2];
             GameController.SwappedCard = card;
+            GameController.cardImage = Card2.GetComponent<Image>();
             Debug.Log(card.damage);
         }
     }
@@ -66,6 +77,7 @@ public class CardStealButtons : MonoBehaviour
             Highlight4.SetActive(true);
             card = GameController.enemyStartingDeck[3];
             GameController.SwappedCard = card;
+            GameController.cardImage = Card3.GetComponent<Image>();
             Debug.Log(card.damage);
         }
     }
@@ -76,11 +88,6 @@ public class CardStealButtons : MonoBehaviour
         Highlight2.SetActive(false);
         Highlight3.SetActive(false);
         Highlight4.SetActive(false);
-    }
-
-    public Card getCard()
-    {
-        return card;
     }
 }
 
