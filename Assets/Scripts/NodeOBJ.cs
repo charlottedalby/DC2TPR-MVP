@@ -16,6 +16,10 @@ public class NodeOBJ : MonoBehaviour {
         normalScale = GFX.localScale;
         animator.enabled = false;
         animateNodes();
+        if (enemies == null)
+        {
+        enemies = GetComponent<Enemies>();
+        }
     }
 
     void OnMouseOver()
@@ -91,11 +95,13 @@ public class NodeOBJ : MonoBehaviour {
 
     void loadBattleScene()
     {
+        Debug.Log(GameController.stage);
+        Debug.Log(node.battleStrength);
         GameController.PlayerStartColumn = node.column;
         GameController.PlayerStartNode = node;
         GameController.PlayerMapPos.Add(node.id);
 
-        //Enemies.selectEnemy(node.battleStrength, GameController.stage);
+        //enemies.selectEnemy(node.battleStrength, GameController.stage);
 
         SceneManager.LoadScene("BattleScreen");
     } 

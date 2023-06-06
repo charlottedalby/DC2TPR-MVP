@@ -40,16 +40,16 @@ public class MapGeneration : MonoBehaviour
     public int maxRows = 10;
 
     // The distance between each row
-    public float rowDist = 2f;
+    public float rowDist = 40f;
 
     // The distance between each column
-    public float colDist = 2f;
+    public float colDist = 50f;
 
     // Minimum and maximum amount each node will deviate from its generated position
-    public float minXDeviation = -0.5f;
-    public float maxXDeviation = 0.5f;
-    public float minYDeviation = -0.5f;
-    public float maxYDeviation = 0.5f;
+    public float minXDeviation = 1.0f;
+    public float maxXDeviation = 4.0f;
+    public float minYDeviation = 1.0f;
+    public float maxYDeviation = 4.0f;
 
     // The default chance any node will be culled
     public float cullNodesChance = 25f;

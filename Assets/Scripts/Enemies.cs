@@ -9,7 +9,7 @@ public class Enemies : MonoBehaviour
 
     public void Start()
     {
-        createStageEnemies();
+    
     }
 
     public void createStageEnemies()
@@ -47,19 +47,28 @@ public class Enemies : MonoBehaviour
         stageEnemies.Add(new Enemy("Turtle", assignStartingEnemyCards(13), 35, 0, 1, 2));
     }
 
-    /*
+    
     public Enemy selectEnemy(int battleDifficulty, int currentStage) {
+        createStageEnemies();
         bool isEnemyChosen = false;
+        Debug.Log("Your at the start");
         int enemyIndex = 0;
         while (!isEnemyChosen) {
+            Debug.Log("Your In");
             enemyIndex = Random.Range(0, 13);
             if (stageEnemies[enemyIndex].difficulty == battleDifficulty) {
-                if (stageEnemies[enemyIndex].difficulty == battleDifficulty) {
+                Debug.Log("Your In");
+                if (stageEnemies[enemyIndex].stage == currentStage) {
                     isEnemyChosen = true;
+                    Debug.Log("Hey");
+                    Debug.Log(stageEnemies[enemyIndex].health);
+                    Debug.Log(stageEnemies[enemyIndex].name);
+                    return stageEnemies[enemyIndex];
                 }
             }
         }
-    }*/
+        return null;
+    }
 
     public List<Card> assignStartingEnemyCards(int enemyId)
     {

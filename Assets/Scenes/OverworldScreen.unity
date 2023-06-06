@@ -4060,12 +4060,20 @@ PrefabInstance:
       value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 1636146664963233624, guid: 45c12af87fca514438edb82c12b1948c, type: 3}
+      propertyPath: colDist
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1636146664963233624, guid: 45c12af87fca514438edb82c12b1948c, type: 3}
       propertyPath: maxRows
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1636146664963233624, guid: 45c12af87fca514438edb82c12b1948c, type: 3}
       propertyPath: minRows
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1636146664963233624, guid: 45c12af87fca514438edb82c12b1948c, type: 3}
+      propertyPath: rowDist
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1636146664963233624, guid: 45c12af87fca514438edb82c12b1948c, type: 3}
       propertyPath: maxColumns
@@ -5397,11 +5405,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1636146666360902028, guid: 45c12af87fca514438edb82c12b1948c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4
+      value: -7
       objectReference: {fileID: 0}
     - target: {fileID: 1636146666360902028, guid: 45c12af87fca514438edb82c12b1948c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.5
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 1694625798523314947, guid: 45c12af87fca514438edb82c12b1948c, type: 3}
       propertyPath: m_RootOrder
