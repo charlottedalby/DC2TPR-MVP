@@ -56,15 +56,15 @@ public class NodeOBJ : MonoBehaviour {
                 {
                     loadBattleScene();
                 }
-                //if node battle difficulty is 1, then load hard battle (Will be changed)
+                //if node battle difficulty is 2, then load hard battle (Will be changed)
                 if(node.battleStrength == 2)
                 {
-                    //loadBattleScene();
+                    loadBattleScene();
                 }
                 //if node battle difficulty is 1, then load boss battle (Will be changed)
                 if(node.battleStrength == 3)
                 {
-                    //loadBattleScene();
+                    loadBattleScene();
                 }
             }
         }
@@ -94,6 +94,9 @@ public class NodeOBJ : MonoBehaviour {
         GameController.PlayerStartColumn = node.column;
         GameController.PlayerStartNode = node;
         GameController.PlayerMapPos.Add(node.id);
+
+        //Enemies.selectEnemy(node.battleStrength, GameController.stage);
+
         SceneManager.LoadScene("BattleScreen");
     } 
 

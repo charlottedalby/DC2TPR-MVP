@@ -99,6 +99,11 @@ public class Enemy : MonoBehaviour
 
     public void getEnemyStartingCards() {
         //GameController.assignStartingEnemyCards(enemyId);
+        bool isEnemyChosen = false;
+        /*while (!isEnemyChosen) {
+            
+        }*/
+
         for(int i = 0; i < GameController.enemyStartingDeck.Count; i++) 
         {
             Card currentCard = GameController.enemyStartingDeck[i];

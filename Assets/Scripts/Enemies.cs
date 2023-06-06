@@ -28,8 +28,38 @@ public class Enemies : MonoBehaviour
         //Rat
         stageEnemies.Add(new Enemy("Rat", assignStartingEnemyCards(5), 35, 0, 2, 1));
         //Rooster Enemy (Boss)
-        stageBosses.Add(new Enemy("Rooster", assignStartingEnemyCards(6), 50, 0, 3, 1));
+        stageEnemies.Add(new Enemy("Rooster", assignStartingEnemyCards(6), 50, 0, 3, 1));
+
+        //Stage 2 (WIP)
+        //Dog Enemy 
+        stageEnemies.Add(new Enemy("Dog", assignStartingEnemyCards(7), 45, 0, 2, 2));
+        //Lizard Enemy
+        stageEnemies.Add(new Enemy("Lizard", assignStartingEnemyCards(8), 30, 0, 1, 2));
+        //Monkey Enemy  (Boss)
+        stageEnemies.Add(new Enemy("Monkey", assignStartingEnemyCards(9), 60, 0, 3, 2));
+        //Pig Enemy 
+        stageEnemies.Add(new Enemy("Pig", assignStartingEnemyCards(10), 50, 0, 2, 2));
+        //Scorpion Enemy  
+        stageEnemies.Add(new Enemy("Scorpion", assignStartingEnemyCards(11), 25, 0, 1, 2));
+        //Tarantula Enemy
+        stageEnemies.Add(new Enemy("Tarantula", assignStartingEnemyCards(12), 25, 0, 1, 2));
+        //Turtle Enemy (Boss)
+        stageEnemies.Add(new Enemy("Turtle", assignStartingEnemyCards(13), 35, 0, 1, 2));
     }
+
+    /*
+    public Enemy selectEnemy(int battleDifficulty, int currentStage) {
+        bool isEnemyChosen = false;
+        int enemyIndex = 0;
+        while (!isEnemyChosen) {
+            enemyIndex = Random.Range(0, 13);
+            if (stageEnemies[enemyIndex].difficulty == battleDifficulty) {
+                if (stageEnemies[enemyIndex].difficulty == battleDifficulty) {
+                    isEnemyChosen = true;
+                }
+            }
+        }
+    }*/
 
     public List<Card> assignStartingEnemyCards(int enemyId)
     {
@@ -75,11 +105,11 @@ public class Enemies : MonoBehaviour
                 //Peck Card
                 enemyStartingDeck.Add(new Card(7, null, false, 0, 0, 0, 1));
                 //Home In Card (unfinished) 
-                enemyStartingDeck.Add(new Card(5, null, false, 0, 0, 0, 1));
+                enemyStartingDeck.Add(new Card(6, null, false, 0, 0, 0, 1));
                 //Roost Card 
                 enemyStartingDeck.Add(new Card(0, null, false, 0, 0, 6, 1));
                 //Wing Defence Card 
-                enemyStartingDeck.Add(new Card(0, null, false, 0, 8, 0, 1));
+                enemyStartingDeck.Add(new Card(0, null, false, 0, 7, 0, 1));
                 return enemyStartingDeck;
             case 4:
                 //Rabbit Enemy
@@ -106,13 +136,13 @@ public class Enemies : MonoBehaviour
             case 6:
                 //Rooster Enemy
                 //Peck Card
-                enemyStartingDeck.Add(new Card(10, null, false, 0, 0, 0, 1));
+                enemyStartingDeck.Add(new Card(13, null, false, 0, 0, 0, 1));
                 //Intimidate Card (unfinished)
-                enemyStartingDeck.Add(new Card(0, null, false, 0, 5, 0, 1));
+                enemyStartingDeck.Add(new Card(0, null, false, 0, 10, 0, 1));
                 //Feather Dance Card 
-                enemyStartingDeck.Add(new Card(5, null, false, 0, 0, 5, 1));
+                enemyStartingDeck.Add(new Card(6, null, false, 0, 0, 6, 1));
                 //Flock Attack Card (unfinished)
-                enemyStartingDeck.Add(new Card(12, null, false, 0, 0, 0, 1));
+                enemyStartingDeck.Add(new Card(15, null, false, 0, 0, 0, 1));
                 return enemyStartingDeck;
             //Stage 2 Enemies
             case 7:
