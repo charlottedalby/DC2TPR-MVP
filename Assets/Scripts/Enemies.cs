@@ -79,7 +79,7 @@ public class Enemies : MonoBehaviour
                 //Pincer Card
                 enemyStartingDeck.Add(new Card("Pincer", 9, false, 0, 0, 0, 1));
                 //Scramble Card 
-                enemyStartingDeck.Add(new Card("Scramble", 0, false, 0, 7, 0, 1));
+                enemyStartingDeck.Add(new Card("Scramble", 0, false, 0, 0, 0, 1));
                 return enemyStartingDeck;
             case 1:
                 //Cockroach Enemy

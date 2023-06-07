@@ -11,6 +11,8 @@ public class ViewCardsUI : MonoBehaviour
         setUpCards();
     }
 
+    
+
     public void setUpCards()
     {
         for(int i = 0; i < GameController.playerStartingDeck.Count; i++) 
@@ -26,6 +28,7 @@ public class ViewCardsUI : MonoBehaviour
             //new addition
             cards[i].healing = currentCard.healing;
             cards[i].damageMult = currentCard.damageMult;
+            cards[i].assignCardUI();
         }
     }
 }
