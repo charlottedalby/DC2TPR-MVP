@@ -30,7 +30,6 @@ public class CardStealButtons : MonoBehaviour
             Highlight1.SetActive(true);
             card = GameController.enemyStartingDeck[0];
             GameController.SwappedCard = card;
-            Debug.Log(card.damage);
         }
     }
 
@@ -42,7 +41,7 @@ public class CardStealButtons : MonoBehaviour
             Highlight2.SetActive(true);
             card = GameController.enemyStartingDeck[1];
             GameController.SwappedCard = card;
-            Debug.Log(card.damage);
+            
         }
     }
 
@@ -54,7 +53,7 @@ public class CardStealButtons : MonoBehaviour
             Highlight3.SetActive(true);
             card = GameController.enemyStartingDeck[2];
             GameController.SwappedCard = card;
-            Debug.Log(card.damage);
+            
         }
     }
 
@@ -66,7 +65,7 @@ public class CardStealButtons : MonoBehaviour
             Highlight4.SetActive(true);
             card = GameController.enemyStartingDeck[3];
             GameController.SwappedCard = card;
-            Debug.Log(card.damage);
+            
         }
     }
 

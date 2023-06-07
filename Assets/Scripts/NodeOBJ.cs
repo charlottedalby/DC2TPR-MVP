@@ -106,8 +106,6 @@ public class NodeOBJ : MonoBehaviour {
 
     void loadBattleScene()
     {
-        Debug.Log(GameController.stage);
-        Debug.Log(node.battleStrength);
         GameController.PlayerStartColumn = node.column;
         GameController.PlayerStartNode = node;
         GameController.PlayerMapPos.Add(node.id);

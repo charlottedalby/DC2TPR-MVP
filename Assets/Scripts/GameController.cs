@@ -42,29 +42,29 @@ public class GameController : MonoBehaviour
     void assignStartingCards()
     {
         //Punch Card 
-        playerStartingDeck.Add(new Card(5, null, false, 0, 0, 0, 1));
+        playerStartingDeck.Add(new Card("Punch", 5, false, 0, 0, 0, 1));
         //Punch Card 
-        playerStartingDeck.Add(new Card(5, null, false, 0, 0, 0, 1));
+        playerStartingDeck.Add(new Card("Punch", 5, false, 0, 0, 0, 1));
         //Kick Card 
-        playerStartingDeck.Add(new Card(7, null, false, 0, 0, 0, 1));
+        playerStartingDeck.Add(new Card("Kick", 7, false, 0, 0, 0, 1));
         //Kick Card 
-        playerStartingDeck.Add(new Card(7, null, false, 0, 0, 0, 1));
+        playerStartingDeck.Add(new Card("Kick", 7, false, 0, 0, 0, 1));
         //Jump Kick Card 
-        playerStartingDeck.Add(new Card(8, null, false, 0, 0, 0, 1));
+        playerStartingDeck.Add(new Card("Jump Kick", 8, false, 0, 0, 0, 1));
         //Jump Kick Card 
-        playerStartingDeck.Add(new Card(8, null, false, 0, 0, 0, 1));
+        playerStartingDeck.Add(new Card("Jump Kick", 8, false, 0, 0, 0, 1));
         //Throw Card 
-        playerStartingDeck.Add(new Card(5, null, false, 0, 3, 0, 1));
+        playerStartingDeck.Add(new Card("Throw", 5, false, 0, 3, 0, 1));
         //Throw Card 
-        playerStartingDeck.Add(new Card(5, null, false, 0, 3, 0, 1));
+        playerStartingDeck.Add(new Card("Throw", 5, false, 0, 3, 0, 1));
         //Grapple Card 
-        playerStartingDeck.Add(new Card(4, null, false, 0, 4, 0, 1));
+        playerStartingDeck.Add(new Card("Grapple", 4, false, 0, 4, 0, 1));
         //Grapple Card 
-        playerStartingDeck.Add(new Card(4, null, false, 0, 4, 0, 1));
+        playerStartingDeck.Add(new Card("Grapple", 4, false, 0, 4, 0, 1));
         //Meditate Card 
-        playerStartingDeck.Add(new Card(0, null, false, 0, 0, 0, 2));
+        playerStartingDeck.Add(new Card("Meditate", 0, false, 0, 0, 0, 2));
         //Meditate Card 
-        playerStartingDeck.Add(new Card(0, null, false, 0, 0, 0, 2));  
+        playerStartingDeck.Add(new Card("Meditate", 0, false, 0, 0, 0, 2));  
     }
 
     

@@ -26,28 +26,17 @@ public class GameManager : MonoBehaviour
         enemy.difficulty = currentEnemy.difficulty;
         enemy.stage = currentEnemy.stage;
         GameController.enemyStartingDeck = currentEnemy.enemyCards;
-        
         for (int i = 0; i < currentEnemy.enemyCards.Count; i++)
         {
             Card currentCard = currentEnemy.enemyCards[i];
+            enemy.enemyCards[i].name = currentCard.name;
             enemy.enemyCards[i].damage = currentCard.damage;
-            Debug.Log(currentCard.damage);
-            //Instance.deck[i].damageText = currentCard.damageText;
             enemy.enemyCards[i].hasBeenPlayed = currentCard.hasBeenPlayed;
-            Debug.Log(currentCard.hasBeenPlayed);
             enemy.enemyCards[i].handIndex = currentCard.handIndex;
-            Debug.Log(currentCard.handIndex);
             enemy.enemyCards[i].armour = currentCard.armour;
-            Debug.Log(currentCard.armour);
             //new addition
             enemy.enemyCards[i].healing = currentCard.healing;
-            Debug.Log(currentCard.healing);
             enemy.enemyCards[i].damageMult = currentCard.damageMult;
-            Debug.Log(currentCard.damageMult);
-            if (enemy.enemyCards[i].damageText != null) 
-            {
-                enemy.enemyCards[i].damageText.text = "D" + currentCard.damage.ToString() + " A" + currentCard.armour.ToString() + " H" + currentCard.healing.ToString();
-            }
         }
 
         player = FindObjectOfType<Player>();
@@ -86,7 +75,6 @@ public class GameManager : MonoBehaviour
         //Goes to You Win screen if enemy health reaches 0
         if(enemy.health <= 0){
             GameController.PlayerStartHealth = player.playerHealth;
-            Debug.Log(GameController.StartingDeck.Count);
             SceneManager.LoadScene("YouWin");
         }
         //Goes to Game Over screen if player health reaches 0

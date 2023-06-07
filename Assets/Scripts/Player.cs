@@ -183,18 +183,14 @@ public class Player : MonoBehaviour
         for(int i = 0; i < GameController.playerStartingDeck.Count; i++) 
         {
             Card currentCard = GameController.playerStartingDeck[i];
+            Instance.deck[i].name = currentCard.name;
             Instance.deck[i].damage = currentCard.damage;
-            //Instance.deck[i].damageText = currentCard.damageText;
             Instance.deck[i].hasBeenPlayed = currentCard.hasBeenPlayed;
             Instance.deck[i].handIndex = currentCard.handIndex;
             Instance.deck[i].armour = currentCard.armour;
             //new addition
             Instance.deck[i].healing = currentCard.healing;
             Instance.deck[i].damageMult = currentCard.damageMult;
-            if (Instance.deck[i].damageText != null) 
-            {
-                Instance.deck[i].damageText.text = "D" + currentCard.damage.ToString() + " A" + currentCard.armour.ToString() + " H" + currentCard.healing.ToString();
-            }
         }
     }
 }

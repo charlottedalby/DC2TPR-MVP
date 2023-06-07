@@ -116,7 +116,6 @@ public class MapGeneration : MonoBehaviour
 
     public void BuildNew()
     {
-        Debug.Log(GameController.gameMapState);
         if (GameController.gameMapState!= null){
             LoadSavedMap();
         }
