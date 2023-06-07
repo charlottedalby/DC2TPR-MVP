@@ -108,13 +108,19 @@ public class Enemy : MonoBehaviour
         {
             Card currentCard = GameController.enemyStartingDeck[i];
             enemyCards[i].damage = currentCard.damage;
+            Debug.Log(currentCard.damage);
             //Instance.deck[i].damageText = currentCard.damageText;
             enemyCards[i].hasBeenPlayed = currentCard.hasBeenPlayed;
+            Debug.Log(currentCard.hasBeenPlayed);
             enemyCards[i].handIndex = currentCard.handIndex;
+            Debug.Log(currentCard.handIndex);
             enemyCards[i].armour = currentCard.armour;
+            Debug.Log(currentCard.armour);
             //new addition
             enemyCards[i].healing = currentCard.healing;
+            Debug.Log(currentCard.healing);
             enemyCards[i].damageMult = currentCard.damageMult;
+            Debug.Log(currentCard.damageMult);
             if (enemyCards[i].damageText != null) 
             {
                 enemyCards[i].damageText.text = "D" + currentCard.damage.ToString() + " A" + currentCard.armour.ToString() + " H" + currentCard.healing.ToString();

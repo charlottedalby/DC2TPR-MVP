@@ -20,15 +20,34 @@ public class GameManager : MonoBehaviour
 
     public void Start(){
         enemy = FindObjectOfType<Enemy>();
-        currentEnemy = enemies.selectEnemy(1, 1);
+        currentEnemy = enemies.selectEnemy(GameController.PlayerStartNode.battleStrength, GameController.stage);
         enemy.name = currentEnemy.name;
-        //enemy.health = currentEnemy.health;
+        enemy.health = currentEnemy.health;
         enemy.difficulty = currentEnemy.difficulty;
         enemy.stage = currentEnemy.stage;
+        GameController.enemyStartingDeck = currentEnemy.enemyCards;
         
-        for (int c = 0; c > currentEnemy.enemyCards.Count; c++)
+        for (int i = 0; i < currentEnemy.enemyCards.Count; i++)
         {
-            enemy.enemyCards[c] = currentEnemy.enemyCards[c];
+            Card currentCard = currentEnemy.enemyCards[i];
+            enemy.enemyCards[i].damage = currentCard.damage;
+            Debug.Log(currentCard.damage);
+            //Instance.deck[i].damageText = currentCard.damageText;
+            enemy.enemyCards[i].hasBeenPlayed = currentCard.hasBeenPlayed;
+            Debug.Log(currentCard.hasBeenPlayed);
+            enemy.enemyCards[i].handIndex = currentCard.handIndex;
+            Debug.Log(currentCard.handIndex);
+            enemy.enemyCards[i].armour = currentCard.armour;
+            Debug.Log(currentCard.armour);
+            //new addition
+            enemy.enemyCards[i].healing = currentCard.healing;
+            Debug.Log(currentCard.healing);
+            enemy.enemyCards[i].damageMult = currentCard.damageMult;
+            Debug.Log(currentCard.damageMult);
+            if (enemy.enemyCards[i].damageText != null) 
+            {
+                enemy.enemyCards[i].damageText.text = "D" + currentCard.damage.ToString() + " A" + currentCard.armour.ToString() + " H" + currentCard.healing.ToString();
+            }
         }
 
         player = FindObjectOfType<Player>();

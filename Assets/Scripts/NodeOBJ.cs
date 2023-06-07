@@ -93,6 +93,17 @@ public class NodeOBJ : MonoBehaviour {
         }
     }
 
+    public void deanimateNodes()
+    {
+        for (int i = 0; i < GameController.PlayerMapPos.Count; i++)
+        {
+            if (node.id == GameController.PlayerMapPos[i])
+            {
+                animator.enabled = false;
+            }
+        }
+    }
+
     void loadBattleScene()
     {
         Debug.Log(GameController.stage);

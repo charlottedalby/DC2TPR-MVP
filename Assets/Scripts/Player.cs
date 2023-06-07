@@ -191,6 +191,10 @@ public class Player : MonoBehaviour
             //new addition
             Instance.deck[i].healing = currentCard.healing;
             Instance.deck[i].damageMult = currentCard.damageMult;
+            if (Instance.deck[i].damageText != null) 
+            {
+                Instance.deck[i].damageText.text = "D" + currentCard.damage.ToString() + " A" + currentCard.armour.ToString() + " H" + currentCard.healing.ToString();
+            }
         }
     }
 }

@@ -63,6 +63,19 @@ public class Enemies : MonoBehaviour
                     Debug.Log("Hey");
                     Debug.Log(stageEnemies[enemyIndex].health);
                     Debug.Log(stageEnemies[enemyIndex].name);
+                    Debug.Log(stageEnemies[enemyIndex].enemyCards.Count);
+
+                    for (int i = 0; i < stageEnemies[enemyIndex].enemyCards.Count; i++)
+                    {
+                        Debug.Log(i);
+                        Debug.Log(stageEnemies[enemyIndex].enemyCards[i].damage);
+                        Debug.Log(stageEnemies[enemyIndex].enemyCards[i].hasBeenPlayed);
+                        Debug.Log(stageEnemies[enemyIndex].enemyCards[i].handIndex);
+                        Debug.Log(stageEnemies[enemyIndex].enemyCards[i].armour);
+                        //new addition
+                        Debug.Log(stageEnemies[enemyIndex].enemyCards[i].healing);
+                        Debug.Log(stageEnemies[enemyIndex].enemyCards[i].damageMult);
+                    }                    
                     return stageEnemies[enemyIndex];
                 }
             }

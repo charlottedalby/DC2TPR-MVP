@@ -29,6 +29,10 @@ public class CardStealing : MonoBehaviour
             //new addition
             cards[i].healing = currentCard.healing;
             cards[i].damageMult = currentCard.damageMult;
+            if (cards[i].damageText != null) 
+            {
+                cards[i].damageText.text = "D" + currentCard.damage.ToString() + " A" + currentCard.armour.ToString() + " H" + currentCard.healing.ToString();
+            }
         }
     }
 }
