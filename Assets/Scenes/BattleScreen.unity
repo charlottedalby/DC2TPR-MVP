@@ -4256,6 +4256,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1711544380}
     m_Modifications:
+    - target: {fileID: 362657038729471041, guid: 10d8e510fe4bd674e823e4fc14850962, type: 3}
+      propertyPath: m_TagString
+      value: Card
+      objectReference: {fileID: 0}
+    - target: {fileID: 1301967981244298925, guid: 10d8e510fe4bd674e823e4fc14850962, type: 3}
+      propertyPath: m_TagString
+      value: Card
+      objectReference: {fileID: 0}
     - target: {fileID: 1525097410706187660, guid: 10d8e510fe4bd674e823e4fc14850962, type: 3}
       propertyPath: m_TagString
       value: Card

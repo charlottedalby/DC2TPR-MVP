@@ -103,7 +103,6 @@ public class Card : MonoBehaviour
         foreach (GameObject card in cards)
         {
             Card currentCard = card.GetComponent<Card>();
-            Debug.Log(currentCard.name);
             if (currentCard.name == "Punch")
             {
                 Image cardImage = currentCard.GetComponent<Image>();
