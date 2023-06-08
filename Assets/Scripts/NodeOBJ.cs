@@ -84,6 +84,7 @@ public class NodeOBJ : MonoBehaviour {
 
     void animateNodes()
     {
+        Debug.Log("Animate Nodes triggered");
         for (int i = 0; i < GameController.PlayerMapPos.Count; i++)
         {
             if (node.id == GameController.PlayerMapPos[i])

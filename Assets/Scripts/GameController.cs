@@ -32,6 +32,7 @@ public class GameController : MonoBehaviour
         StartingDeck = new List<Card>();
         gameMapState = null;
         PlayerStartNode = null;
+        PlayerMapPos.Clear();
         SwappedCard = null;
         stage1Difficulty = new List <int>();
         stage = 1;
@@ -41,6 +42,7 @@ public class GameController : MonoBehaviour
     // new addition, changed
     void assignStartingCards()
     {
+        playerStartingDeck.Clear();
         //Punch Card 
         playerStartingDeck.Add(new Card("Punch", 5, false, 0, 0, 0, 1));
         //Punch Card 
