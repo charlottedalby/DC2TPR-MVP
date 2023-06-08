@@ -19,6 +19,7 @@ public class ReplacePlayerCard : MonoBehaviour
     public Image CardHighlight11;
     public Image CardHighlight12;
     public static int cardPos;
+    public List<Card> cards = new List<Card>();
     
     void Start()
     {
@@ -35,6 +36,21 @@ public class ReplacePlayerCard : MonoBehaviour
         CardHighlight11 = GameObject.Find("CardHighlight1 (10)").GetComponent<Image>();
         CardHighlight12 = GameObject.Find("CardHighlight1 (11)").GetComponent<Image>();
 
+        for(int i = 0; i < GameController.playerStartingDeck.Count; i++) 
+        {
+            Card currentCard = GameController.playerStartingDeck[i];
+            Debug.Log(currentCard);
+            cards[i] = currentCard;
+            cards[i].name = currentCard.name;
+            cards[i].damage = currentCard.damage;
+            cards[i].hasBeenPlayed = currentCard.hasBeenPlayed;
+            cards[i].handIndex = currentCard.handIndex;
+            cards[i].armour = currentCard.armour;
+            //new addition
+            cards[i].healing = currentCard.healing;
+            cards[i].damageMult = currentCard.damageMult;
+            cards[i].assignCardUI();
+        }
     }
 
     public void firstClick()
