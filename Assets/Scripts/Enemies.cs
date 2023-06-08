@@ -88,25 +88,25 @@ public class Enemies : MonoBehaviour
                 //Attempt flight Card 
                 enemyStartingDeck.Add(new Card("Attempt Flight", 0, false, 0, 7, 0, 1));
                 //Pincer Card
-                enemyStartingDeck.Add(new Card("Pincer", 7, false, 0, 0, 0, 1));
+                enemyStartingDeck.Add(new Card("Pincer", 9, false, 0, 0, 0, 1));
                 //Scramble Card 
                 enemyStartingDeck.Add(new Card("Scramble", 0, false, 0, 0, 0, 1));
                 return enemyStartingDeck;
             case 2:
                 //Mouse Enemy
                 //Gnaw Card
-                enemyStartingDeck.Add(new Card("Gnaw", 7, false, 0, 0, 0, 1));
+                enemyStartingDeck.Add(new Card("Gnaw", 9, false, 0, 0, 0, 1));
                 //Clamp Down (unfinished) 
-                enemyStartingDeck.Add(new Card("Clamp Down", 4, false, 0, 0, 0, 1));
+                enemyStartingDeck.Add(new Card("Clamp Down", 5, false, 0, 0, 0, 1));
                 //Scurry Card (unfinished)
                 enemyStartingDeck.Add(new Card("Scurry", 0, false, 0, 0, 0, 1));
                 //Tail Strike Card 
-                enemyStartingDeck.Add(new Card("Tail Strike", 8, false, 0, 0, 0, 1));
+                enemyStartingDeck.Add(new Card("Tail Strike", 10, false, 0, 0, 0, 1));
                 return enemyStartingDeck;
             case 3:
                 //Pigeon Enemy
                 //Peck Card
-                enemyStartingDeck.Add(new Card("Peck", 7, false, 0, 0, 0, 1));
+                enemyStartingDeck.Add(new Card("Peck", 13, false, 0, 0, 0, 1));
                 //Home In Card (unfinished) 
                 enemyStartingDeck.Add(new Card("Home In", 6, false, 0, 0, 0, 1));
                 //Roost Card 
