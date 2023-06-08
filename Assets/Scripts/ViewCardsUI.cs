@@ -16,7 +16,6 @@ public class ViewCardsUI : MonoBehaviour
         for(int i = 0; i < GameController.playerStartingDeck.Count; i++) 
         {
             Card currentCard = GameController.playerStartingDeck[i];
-            Debug.Log(currentCard);
             cards[i] = currentCard;
             cards[i].name = currentCard.name;
             cards[i].damage = currentCard.damage;

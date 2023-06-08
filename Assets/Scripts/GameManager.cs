@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public Text discardSizeText;
     public Text playerHealthText;
     public Text playerArmorText;
+    public Text enemyText;
     public HealthBar healthBar;
     public ArmorBar armorBar;
     public Enemies enemies;
@@ -43,6 +44,7 @@ public class GameManager : MonoBehaviour
         player.playerHealth = GameController.PlayerStartHealth;
         player.playerArmor = GameController.PlayerStartArmor;
         healthBar.setMaxValue(GameController.PlayerStartHealth);
+        displayEnemy();
         player.Invoke("DrawCard", 2f);
     }
 
@@ -82,6 +84,74 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene("GameOver");
         }
     }
-
-    
+    public void displayEnemy()
+    {
+        GameObject[] Enemiess;
+        Enemiess = GameObject.FindGameObjectsWithTag("Enemy");
+        Debug.Log(Enemiess.Length);
+        foreach (GameObject enemy in Enemiess)
+        {
+            Enemy currentEnemy = enemy.GetComponent<Enemy>();
+            Debug.Log(currentEnemy.name);
+            if(currentEnemy.name != null)
+            {
+                if (currentEnemy.name == "Ant")
+                {
+                    Debug.Log("Ant");
+                    Image enemyImage = currentEnemy.GetComponent<Image>();
+                    Sprite newSprite = GameObject.Find("Ant").GetComponent<Image>().sprite;
+                    enemyImage.sprite = newSprite;
+                    enemyText.text = currentEnemy.name;
+                }
+                else if (currentEnemy.name == "Cockroach")
+                {
+                    Debug.Log("Roach");
+                    Image enemyImage = currentEnemy.GetComponent<Image>();
+                    Sprite newSprite = GameObject.Find("Cockroach").GetComponent<Image>().sprite;
+                    enemyImage.sprite = newSprite;
+                    enemyText.text = currentEnemy.name;
+                }
+                else if (currentEnemy.name == "Mouse")
+                {
+                    Debug.Log("Mouse");
+                    Image enemyImage = currentEnemy.GetComponent<Image>();
+                    Sprite newSprite = GameObject.Find("Mouse").GetComponent<Image>().sprite;
+                    enemyImage.sprite = newSprite;
+                    enemyText.text = currentEnemy.name;
+                }
+                else if (currentEnemy.name == "Pigeon")
+                {
+                    Debug.Log("Pigeon");
+                    Image enemyImage = currentEnemy.GetComponent<Image>();
+                    Sprite newSprite = GameObject.Find("Pigeon").GetComponent<Image>().sprite;
+                    enemyImage.sprite = newSprite;
+                    enemyText.text = currentEnemy.name;
+                }
+                else if (currentEnemy.name == "Rabbit")
+                {
+                    Debug.Log("Rabbit");
+                    Image enemyImage = currentEnemy.GetComponent<Image>();
+                    Sprite newSprite = GameObject.Find("Rabbit").GetComponent<Image>().sprite;
+                    enemyImage.sprite = newSprite;
+                    enemyText.text = currentEnemy.name;
+                }
+                else if (currentEnemy.name == "Rat")
+                {
+                    Debug.Log("Rat");
+                    Image enemyImage = currentEnemy.GetComponent<Image>();
+                    Sprite newSprite = GameObject.Find("Rat").GetComponent<Image>().sprite;
+                    enemyImage.sprite = newSprite;
+                    enemyText.text = currentEnemy.name;
+                }
+                else if (currentEnemy.name == "Rooster")
+                {
+                    Debug.Log("Roost");
+                    Image enemyImage = currentEnemy.GetComponent<Image>();
+                    Sprite newSprite = GameObject.Find("Rooster").GetComponent<Image>().sprite;
+                    enemyImage.sprite = newSprite;
+                    enemyText.text = currentEnemy.name;
+                }
+            }
+        }
+    }
 }

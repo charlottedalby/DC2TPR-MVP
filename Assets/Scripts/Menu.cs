@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
+    NodeOBJ nodeObj;
     public void NextBattle()
     {
         Cursor.lockState = CursorLockMode.None;
@@ -24,6 +25,8 @@ public class Menu : MonoBehaviour
     public void loadMainMenu()
     {
         //Loads Main Menu
+        GameController.PlayerStartNode = null;
+        nodeObj.deanimateNodes();
         SceneManager.LoadScene("MainMenu");
     }
 
