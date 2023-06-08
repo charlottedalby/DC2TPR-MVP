@@ -26,7 +26,6 @@ public class Menu : MonoBehaviour
     {
         //Loads Main Menu
         GameController.PlayerStartNode = null;
-        nodeObj.deanimateNodes();
         SceneManager.LoadScene("MainMenu");
     }
 

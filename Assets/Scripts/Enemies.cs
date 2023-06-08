@@ -119,7 +119,7 @@ public class Enemies : MonoBehaviour
                 //Gnaw Card
                 enemyStartingDeck.Add(new Card("Gnaw", 9, false, 0, 0, 0, 1));
                 //Rear kick Card 
-                enemyStartingDeck.Add(new Card("Rear kick", 11, false, 0, 0, 0, 1));
+                enemyStartingDeck.Add(new Card("Rear Kick", 11, false, 0, 0, 0, 1));
                 //Run Away Card (unfinished)
                 enemyStartingDeck.Add(new Card("Run Away", 0, false, 0, 0, 0, 1));
                 //Keen Sense Card 

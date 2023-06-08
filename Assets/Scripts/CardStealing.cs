@@ -7,12 +7,9 @@ public class CardStealing : MonoBehaviour
 {
     
     public List<Card> cards = new List<Card>();
-    public bool cardSwap;
-    public Card card;
     // Start is called before the first frame update
     void Start()
     {
-        cardSwap = false;
         AssignEnemyCards();
     }
 
@@ -29,7 +26,6 @@ public class CardStealing : MonoBehaviour
             //new addition
             cards[i].healing = currentCard.healing;
             cards[i].damageMult = currentCard.damageMult;
-            //cards[i].assignCardUI();
         }
     }
 }

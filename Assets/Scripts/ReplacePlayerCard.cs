@@ -39,9 +39,8 @@ public class ReplacePlayerCard : MonoBehaviour
         for(int i = 0; i < GameController.playerStartingDeck.Count; i++) 
         {
             Card currentCard = GameController.playerStartingDeck[i];
-            Debug.Log(currentCard);
-            cards[i] = currentCard;
             cards[i].name = currentCard.name;
+            Debug.Log(cards[i].name);
             cards[i].damage = currentCard.damage;
             cards[i].hasBeenPlayed = currentCard.hasBeenPlayed;
             cards[i].handIndex = currentCard.handIndex;
