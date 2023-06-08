@@ -77,6 +77,10 @@ public class GameManager : MonoBehaviour
         //Goes to You Win screen if enemy health reaches 0
         if(enemy.health <= 0){
             GameController.PlayerStartHealth = player.playerHealth;
+            if(GameController.PlayerStartNode.forwardConnections.Count == 0)
+            {
+                SceneManager.LoadScene("StageComplete");
+            }
             SceneManager.LoadScene("YouWin");
         }
         //Goes to Game Over screen if player health reaches 0

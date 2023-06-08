@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PlayerCardStealScreen.unity
     guid: f19f81c16d871c94ea9425b42dee8ab7
+  - enabled: 1
+    path: Assets/Scenes/StageComplete.unity
+    guid: 879d005f61a1fdd4d928e11ae5ce4ec8
   m_configObjects: {}

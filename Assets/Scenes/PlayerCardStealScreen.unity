@@ -2208,6 +2208,7 @@ MonoBehaviour:
   CardHighlight10: {fileID: 0}
   CardHighlight11: {fileID: 0}
   CardHighlight12: {fileID: 0}
+  cards: []
 --- !u!224 &492890331 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9180098212826517483, guid: cb39fd4c3e8743149bc6cf996d52362d, type: 3}
@@ -2834,7 +2835,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -518.29, y: -311.28}
+  m_AnchoredPosition: {x: -511.52, y: -311.44}
   m_SizeDelta: {x: 2.4265, y: 1.6512}
   m_Pivot: {x: 0.5000003, y: 0.4999996}
 --- !u!114 &631173715
@@ -3796,6 +3797,7 @@ MonoBehaviour:
   CardHighlight10: {fileID: 0}
   CardHighlight11: {fileID: 0}
   CardHighlight12: {fileID: 0}
+  cards: []
 --- !u!1 &726221068
 GameObject:
   m_ObjectHideFlags: 0
@@ -5975,7 +5977,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -511.32, y: -311.28}
+  m_AnchoredPosition: {x: -518.45, y: -311.44}
   m_SizeDelta: {x: 2.4265, y: 1.6512}
   m_Pivot: {x: 0.5000003, y: 0.4999996}
 --- !u!114 &1227602007
