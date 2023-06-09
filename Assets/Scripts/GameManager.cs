@@ -81,7 +81,10 @@ public class GameManager : MonoBehaviour
             {
                 SceneManager.LoadScene("StageComplete");
             }
-            SceneManager.LoadScene("YouWin");
+            else {
+                SceneManager.LoadScene("YouWin");
+            }
+            
         }
         //Goes to Game Over screen if player health reaches 0
         else if(player.playerHealth <= 0){
