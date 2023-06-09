@@ -22,50 +22,36 @@ public class CardStealButtons : MonoBehaviour
         SetAllFalse();
     }
 
-    public void FirstClicked()
+    public void CardClicked(int index)
     {
         SetAllFalse();
-        if(Highlight1.activeSelf == false)
-        {
-            Highlight1.SetActive(true);
-            card = GameController.enemyStartingDeck[0];
-            GameController.SwappedCard = card;
-        }
-    }
+        GameObject highlight = null;
+        Card card = null;
 
-    public void SecondClicked()
-    {
-        SetAllFalse();
-        if(Highlight2.activeSelf == false)
+        switch(index)
         {
-            Highlight2.SetActive(true);
-            card = GameController.enemyStartingDeck[1];
-            GameController.SwappedCard = card;
-            
+            case 0:
+                highlight = Highlight1;
+                card = GameController.enemyStartingDeck[0];
+                break;
+            case 1:
+                highlight = Highlight2;
+                card = GameController.enemyStartingDeck[1];
+                break;
+            case 2:
+                highlight = Highlight3;
+                card = GameController.enemyStartingDeck[2];
+                break;
+            case 3:
+                highlight = Highlight4;
+                card = GameController.enemyStartingDeck[3];
+                break;
         }
-    }
 
-    public void ThirdClicked()
-    {
-        SetAllFalse();
-        if(Highlight3.activeSelf == false)
+        if(highlight != null && highlight.activeSelf == false)
         {
-            Highlight3.SetActive(true);
-            card = GameController.enemyStartingDeck[2];
+            highlight.SetActive(true);
             GameController.SwappedCard = card;
-            
-        }
-    }
-
-    public void FourthClicked()
-    {
-        SetAllFalse();
-        if(Highlight4.activeSelf == false)
-        {
-            Highlight4.SetActive(true);
-            card = GameController.enemyStartingDeck[3];
-            GameController.SwappedCard = card;
-            
         }
     }
 

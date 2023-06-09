@@ -209,12 +209,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 705035789}
         m_TargetAssemblyTypeName: ReplacePlayerCard, Scripts
-        m_MethodName: tenthClick
-        m_Mode: 1
+        m_MethodName: CardClick
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 9
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -343,12 +343,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 705035789}
         m_TargetAssemblyTypeName: ReplacePlayerCard, Scripts
-        m_MethodName: eleventhClick
-        m_Mode: 1
+        m_MethodName: CardClick
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 10
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3295,12 +3295,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 705035789}
         m_TargetAssemblyTypeName: ReplacePlayerCard, Scripts
-        m_MethodName: ninthClick
-        m_Mode: 1
+        m_MethodName: CardClick
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 8
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4560,12 +4560,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 705035789}
         m_TargetAssemblyTypeName: ReplacePlayerCard, Scripts
-        m_MethodName: fifthClick
-        m_Mode: 1
+        m_MethodName: CardClick
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4940,12 +4940,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 705035789}
         m_TargetAssemblyTypeName: ReplacePlayerCard, Scripts
-        m_MethodName: eighthClick
-        m_Mode: 1
+        m_MethodName: CardClick
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 7
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5448,8 +5448,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 705035789}
         m_TargetAssemblyTypeName: ReplacePlayerCard, Scripts
-        m_MethodName: firstClick
-        m_Mode: 1
+        m_MethodName: CardClick
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6465,12 +6465,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 705035789}
         m_TargetAssemblyTypeName: ReplacePlayerCard, Scripts
-        m_MethodName: SecondClick
-        m_Mode: 1
+        m_MethodName: CardClick
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -9155,12 +9155,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 705035789}
         m_TargetAssemblyTypeName: ReplacePlayerCard, Scripts
-        m_MethodName: seventhClick
-        m_Mode: 1
+        m_MethodName: CardClick
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 6
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -9863,12 +9863,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 705035789}
         m_TargetAssemblyTypeName: ReplacePlayerCard, Scripts
-        m_MethodName: fourthClick
-        m_Mode: 1
+        m_MethodName: CardClick
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -10690,12 +10690,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 705035789}
         m_TargetAssemblyTypeName: ReplacePlayerCard, Scripts
-        m_MethodName: sixthClick
-        m_Mode: 1
+        m_MethodName: CardClick
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -11160,12 +11160,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 705035789}
         m_TargetAssemblyTypeName: ReplacePlayerCard, Scripts
-        m_MethodName: thirdClick
-        m_Mode: 1
+        m_MethodName: CardClick
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -11294,12 +11294,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 705035789}
         m_TargetAssemblyTypeName: ReplacePlayerCard, Scripts
-        m_MethodName: twelvthClick
-        m_Mode: 1
+        m_MethodName: CardClick
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 11
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

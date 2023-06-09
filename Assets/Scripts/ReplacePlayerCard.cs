@@ -52,77 +52,52 @@ public class ReplacePlayerCard : MonoBehaviour
         }
     }
 
-    public void firstClick()
+    public void CardClick(int cardPosition)
     {
         setAllWhite();
-        CardHighlight1.color = new Color32(13,250,19,255);
-        cardPos = 0; 
-    }
-    public void SecondClick()
-    {
-        setAllWhite();
-        CardHighlight2.color = new Color32(13,250,19,255);
-        cardPos = 1; 
-    }
-    public void thirdClick()
-    {
-        setAllWhite();
-        CardHighlight3.color = new Color32(13,250,19,255);
-        cardPos = 2; 
-    }
-    public void fourthClick()
-    {
-        setAllWhite();
-        CardHighlight4.color = new Color32(13,250,19,255);
-        cardPos = 3; 
-    }
-    public void fifthClick()
-    {
-        setAllWhite();
-        CardHighlight5.color = new Color32(13,250,19,255);
-        cardPos = 4; 
-    }
-    public void sixthClick()
-    {
-        setAllWhite();
-        CardHighlight6.color = new Color32(13,250,19,255);
-        cardPos = 5; 
-    }
-    public void seventhClick()
-    {
-        setAllWhite();
-        CardHighlight7.color = new Color32(13,250,19,255);
-        cardPos = 6; 
-    }
-    public void eighthClick()
-    {
-        setAllWhite();
-        CardHighlight8.color = new Color32(13,250,19,255);
-        cardPos = 7; 
-    }
-    public void ninthClick()
-    {
-        setAllWhite();
-        CardHighlight9.color = new Color32(13,250,19,255);
-        cardPos = 8; 
-    }
-    public void tenthClick()
-    {
-        setAllWhite();
-        CardHighlight10.color = new Color32(13,250,19,255);
-        cardPos = 9; 
-    }
-    public void eleventhClick()
-    {
-        setAllWhite();
-        CardHighlight11.color = new Color32(13,250,19,255);
-        cardPos = 10; 
-    }
-    public void twelvthClick()
-    {
-        setAllWhite();
-        CardHighlight12.color = new Color32(13,250,19,255);
-        cardPos = 11; 
+        switch(cardPosition)
+        {
+            case 0:
+            CardHighlight1.color = new Color32(13, 250, 19, 255);
+            break;
+            case 1:
+                CardHighlight2.color = new Color32(13, 250, 19, 255);
+                break;
+            case 2:
+                CardHighlight3.color = new Color32(13, 250, 19, 255);
+                break;
+            case 3:
+                CardHighlight4.color = new Color32(13, 250, 19, 255);
+                break;
+            case 4:
+                CardHighlight5.color = new Color32(13, 250, 19, 255);
+                break;
+            case 5:
+                CardHighlight6.color = new Color32(13, 250, 19, 255);
+                break;
+            case 6:
+                CardHighlight7.color = new Color32(13, 250, 19, 255);
+                break;
+            case 7:
+                CardHighlight8.color = new Color32(13, 250, 19, 255);
+                break;
+            case 8:
+                CardHighlight9.color = new Color32(13, 250, 19, 255);
+                break;
+            case 9:
+                CardHighlight10.color = new Color32(13, 250, 19, 255);
+                break;
+            case 10:
+                CardHighlight11.color = new Color32(13, 250, 19, 255);
+                break;
+            case 11:
+                CardHighlight12.color = new Color32(13, 250, 19, 255);
+                break;
+            default:
+                // Invalid card position
+                return;
+        }
+        cardPos = cardPosition;
     }
 
 
