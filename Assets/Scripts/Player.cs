@@ -167,6 +167,9 @@ public class Player : MonoBehaviour
     // new addition
     public void healPlayer(int healing) {
         Instance.gameManager.player.playerHealth += healing;
+        if (Instance.gameManager.player.playerHealth > 100) {
+            Instance.gameManager.player.playerHealth = 100;
+        }
     }
 
     // new addition
