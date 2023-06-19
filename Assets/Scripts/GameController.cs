@@ -5,12 +5,34 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Reflection;
 
+/*
+    Class: GameController
+    Visibility: Public 
+    Output: N/A
+    Attributes: 
 
+    a. PlayerStartHealth: Players Starting Health
+    b. gameMapState: Overworld Map
+    c. PlayerStartNode: Players previous or start node
+    d. PlayerMapPos: Contains list of battles they have chosen on Overworld Map
+    e. playerStartingDeck: Players Starting Deck
+    f. PlayerStartArmor: Players Starting Armor 
+    g. enemyStartingDeck: Enemy Starting Deck
+    h. SwappedCard: Enemy Card that will be Swapped for Player Card
+    i. stage1Difficulty: List of Stage 1 Difficulties on Overworld Map
+    j. stage: Players current stage
+    k. battleDifficulty: The difficulty of battle a player is undertaking 
+
+    Methods: 
+
+    a. Start()
+    b. assignStartingCards()
+
+*/
 
 public class GameController : MonoBehaviour
 {
     public static int PlayerStartHealth;
-    public static List<Card> StartingDeck;
     public static string gameMapState;
     public static int PlayerStartColumn;
     public static Node PlayerStartNode;
@@ -19,17 +41,31 @@ public class GameController : MonoBehaviour
     public static int PlayerStartArmor;
     public static List<Card> enemyStartingDeck = new List <Card>();
     public static Card SwappedCard;
-    public static List<Card> dupStartDeck = new List <Card>();
     public static List<int> stage1Difficulty;
     public static int stage;
     public static int battleDifficulty;
 
-    // Start is called before the first frame update
+    /*
+	    Method: Start()
+        Visibility: Private 
+        Output: N/A
+        Purpose: 
+
+        a. Sets PlayerStartingHealth to 100
+        b. Sets PlayerStartingArmor to 0
+        c. Sets gameMapState to null
+        d. Sets PlayerStartNode to null
+        e. Removes all from PlayerMapPos
+        f. Sets SwappedCard to null
+        g. Initilizes stage1Difficulty 
+        h. Sets stage to 1
+        i. Runs assignStartingCards()
+    */
+
     void Start()
     {
         PlayerStartHealth = 100;
         PlayerStartArmor = 0;
-        StartingDeck = new List<Card>();
         gameMapState = null;
         PlayerStartNode = null;
         PlayerMapPos.Clear();
@@ -39,33 +75,49 @@ public class GameController : MonoBehaviour
         assignStartingCards();
     }
 
-    // new addition, changed
+    /*
+	    Method: assignStartingCards()
+        Visibility: Private 
+        Output: N/A
+        Purpose: 
+
+        a. Clears all from playerStartingDeck
+        b. Adds 12 new cards to playerStartingDeck
+            i. Punch 
+            ii. Punch
+            iii. Kick
+            iv. Kick
+            v. Jump Kick
+            vi. Jump Kick
+            vii. Throw
+            viii. throw
+            ix. Grapple
+            x. Grapple 
+            xi. Meditate
+            xii. Meditate
+
+    */
+
     void assignStartingCards()
     {
         playerStartingDeck.Clear();
-        //Punch Card 
+
         playerStartingDeck.Add(new Card("Punch", 5, false, 0, 0, 0, 1));
-        //Punch Card 
         playerStartingDeck.Add(new Card("Punch", 5, false, 0, 0, 0, 1));
-        //Kick Card 
+
         playerStartingDeck.Add(new Card("Kick", 7, false, 0, 0, 0, 1));
-        //Kick Card 
         playerStartingDeck.Add(new Card("Kick", 7, false, 0, 0, 0, 1));
-        //Jump Kick Card 
+
         playerStartingDeck.Add(new Card("Jump Kick", 8, false, 0, 0, 0, 1));
-        //Jump Kick Card 
         playerStartingDeck.Add(new Card("Jump Kick", 8, false, 0, 0, 0, 1));
-        //Throw Card 
+
         playerStartingDeck.Add(new Card("Throw", 5, false, 0, 3, 0, 1));
-        //Throw Card 
         playerStartingDeck.Add(new Card("Throw", 5, false, 0, 3, 0, 1));
-        //Grapple Card 
+
         playerStartingDeck.Add(new Card("Grapple", 4, false, 0, 4, 0, 1));
-        //Grapple Card 
         playerStartingDeck.Add(new Card("Grapple", 4, false, 0, 4, 0, 1));
-        //Meditate Card 
-        playerStartingDeck.Add(new Card("Meditate", 0, false, 0, 0, 0, 2));
-        //Meditate Card 
+
+        playerStartingDeck.Add(new Card("Meditate", 0, false, 0, 0, 0, 2)); 
         playerStartingDeck.Add(new Card("Meditate", 0, false, 0, 0, 0, 2));  
     }
 

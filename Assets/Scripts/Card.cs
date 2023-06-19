@@ -3,98 +3,196 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
+    Class: Card
+    Visibility: Public 
+    Output: N/A
+    Attributes: 
+
+    a. damage: Card Damage
+    b. hasBeenPlayed: Indicator showing if card has been played
+    c. handIndex: Position of Card in Deck
+    d. gameManager: Game Manager Instance 
+    e. player: Player Instance
+    f. Instance: card Instance
+    g. armour: Card Armor
+    h. healing: Card Healing 
+    i. damageMult: Card Damage Multiplier 
+    j. name: Card Name
+
+    Methods: 
+
+    a. Awake()
+    b. Start()
+    c. Card()
+    d. OnMouseDown()
+    e. MoveToDiscardPile()
+    f. assignCardUI()
+*/
+
 public class Card : MonoBehaviour
 {
+    
     public int damage;
     public bool hasBeenPlayed;
     public int handIndex;
     private GameManager gameManager;
     public Player player;
     public static Card Instance;
-    public GameObject PLAYER;
     public int armour;
-    // new addition
     public int healing;
     public int damageMult;
     public string name;
 
+    /*
+        Method: Awake()
+        Visibility: Public 
+        Output: N/A
+        Purpose: 
+
+        a. Create Instance of Card
+        b. Set this equal to Instance
+        c. If this is not equal to Instance then Instance equals this 
+        d. Keep GameObject when Scene is loaded 
+    */
+
     public void Awake(){
-        if (Instance == null) {
-            //First run, set the instance
+        if (Instance == null) 
+        {
             Instance = this;
             DontDestroyOnLoad(gameObject);
  
-        } else if (Instance != this) {
-            //Instance is not the same as the one we have, destroy old one, and reset to newest one
-            //Destroy(Instance.gameObject);
+        } 
+        else if (Instance != this) 
+        {
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
     }
 
+    /*
+        Method: Start()
+        Visibility: Public 
+        Output: N/A
+        Purpose: 
+
+        a. Find Player in Scene
+        b. Find Game Manager in Scene
+        c. Import Card UI's
+    */
 
     public void Start()
-    {
+    { 
         player = FindObjectOfType<Player>();
         gameManager = FindObjectOfType<GameManager>();
         assignCardUI();
     }
 
-    public Card (string name, int damage, bool hasBeenPlayed, int handIndex, int armour, int healing, int damageMult)
+    /*
+        Method: Card ()
+        Visibility: Public 
+        Output: N/A
+        Purpose: 
+
+        a. Card Constructor 
+        b. Sets all attributes for Card
+    */
+
+    public Card (string name, 
+    int damage, 
+    bool hasBeenPlayed, 
+    int handIndex, 
+    int armour, 
+    int healing, 
+    int damageMult)
+
     {
         this.name = name;
         this.damage = damage;
         this.hasBeenPlayed = hasBeenPlayed;
         this.handIndex = handIndex;
         this.armour = armour;
-        //new addition
         this.healing = healing;
         this.damageMult = damageMult;
     }
 
+    /*
+        Method: OnMouseDown()
+        Visibility: Private 
+        Output: N/A
+        Purpose: 
+
+        a. If the Card has been clicked on and hasn't been played yet
+        b. Attack Enemy with Damage of Card
+        c. Raise player's armor with Card Armor 
+        d. Heal Player with Card Healing 
+        e. Raise Damage Multiplier with Card Damage Multiplier 
+        f. Move Card to New Position, indicating Card being played
+        g. Lock Cursor so Player cannot player another card
+        h. Set Card hasBeenPlayed indicator to true
+        i. Make played card slot avalible to new cards from deck
+        j. Dicard Players Hand to discard pile
+        k. Start Enemy Attack sequence 
+    */
+
     void OnMouseDown(){
-        //If the Card has been clicked on and hasn't been played yet
-        //If the View Card Scene is not active
-        if(hasBeenPlayed == false){
-        //Attack the enemy
+        if(hasBeenPlayed == false)
+        {
         gameManager.player.attackEnemy(damage);
-        //New addition, raise player's armour
         gameManager.player.raiseArmor(armour);
-        //New addition, heal player's health
         gameManager.player.healPlayer(healing);
-        //New addition, changes damage multiplier
         gameManager.player.powerUp(damageMult);
         
-
-        //Move the card up so we can see that it has been played
         transform.position += Vector3.up * 5;
         Cursor.lockState = CursorLockMode.Locked;
-        //Set hasBeenPlayed to true
         hasBeenPlayed = true;
-        //Make the slot the card was in available again
+
         gameManager.player.availableCardSlots[handIndex] = true;
-        //Move the card to the discardPile
         gameManager.player.Invoke("discardHand", 2f);
-        //Invoke("MoveToDiscardPile", 2f);
         gameManager.enemy.Invoke("attackPlayer", 2f);
         }
     }
 
+    /*
+        Method: MoveToDiscardPile()
+        Visibility: Public  
+        Output: N/A
+        Purpose: 
+
+        a. If Players Discard Pile is Less than Size 12
+        b. If Game Manager is null, find Game Manager in Scene 
+        c. Add Card to Discard Pile 
+        d. Start Enemy Attack sequence 
+    */
+
     public void MoveToDiscardPile()
     {
-        if (gameManager.player.discardPile.Count < 12){
-            //Fix for the nullReference errors
-            if (gameManager == null) {
+        if (gameManager.player.discardPile.Count < 12)
+        {
+            if (gameManager == null) 
+            {
                 this.gameManager = FindObjectOfType<GameManager>();
             }
-            //Add the Card to the discardPile and set the card to inactive
             gameManager.player.discardPile.Add(this);
-            //gameObject.SetActive(false);
-            //Invoke the enemy to attack the player
             gameManager.enemy.Invoke("attackPlayer", 2f);
         }
     }
     
+    /*
+        Method: assignCardUI()
+        Visibility: Public  
+        Output: N/A
+        Purpose: 
+
+        a. Create Card Dictionary 
+        b. Populate Card Dictionary with Card Name and CardUI Name
+        c. Add all cards in current Scene to an Array 
+        d. Iterate through Cards in Scene 
+        e. Get Card attributes of each card
+        f. If Card name is not null and Card dictionary contains Card Name
+        g. Current Card Image equals New Card Image 
+    */
+
     public void assignCardUI()
     {
         //Add Cards to Card Dictionary 
@@ -151,21 +249,16 @@ public class Card : MonoBehaviour
             { "Scramble", "Scramble" },
             { "Gnaw", "Gnaw" }
         };
-        //Create an array of all cards present in scene 
+
         GameObject[] cards = GameObject.FindGameObjectsWithTag("Card");
-        //Iterate through array of cards 
+        
         foreach (GameObject card in cards)
         {
-            //Get Card Component of the game object
             Card currentCard = card.GetComponent<Card>();
-            //If the card name is not null and the dictionary contains the card name 
             if(currentCard.name != null && cardSpriteMap.ContainsKey(currentCard.name))
             {
-                //Get Current card image
                 Image cardImage = currentCard.GetComponent<Image>();
-                //Create new Card image from loaded cards, corresponding to card.name
                 Sprite newSprite = GameObject.Find(cardSpriteMap[currentCard.name]).GetComponent<Image>().sprite;
-                //Change image to new card image 
                 cardImage.sprite = newSprite;
             }
         }

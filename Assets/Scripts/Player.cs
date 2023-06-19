@@ -3,28 +3,72 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
+    Class: ArmorBar
+    Visibility: Public 
+    Output: N/A
+    Attributes: 
+
+    a. Instance: Instance of Player
+    b. playerHealth: Players Health
+    c. playerArmor: Players Armor
+    d. playerDamageMult: Players Damage Multiplier 
+    e. deck: Players Deck
+    f. discardPile: Players Discard Pile
+    g. hand: Players hand 
+    h. avalibleCardSlots: Card Slots avalible on Screen
+    i. cardSlots: List of Card Slots
+    j. gameManager: Instance of GameManager 
+
+    Methods: 
+
+    a. Awake()
+    b. Start()
+    c. DrawCard()
+    d. discardHand()
+    e. enableHand()
+    f. Shuffle()
+    g. attackEnemy()
+    h. raiseArmor()
+    i. healPlayer()
+    j. powerUp()
+    k. getStartingCards()
+*/
+
 public class Player : MonoBehaviour
 {
     public static Player Instance;
-
     public int playerHealth;
     public int playerArmor;
     public int playerDamageMult;
-    //public Text playerHealthText;
+
     public List<Card> deck = new List<Card>();
     public List<Card> discardPile = new List<Card>();
-    //New to MVP - separate hand variable
     public List<Card> hand = new List<Card>();    
     public bool[] availableCardSlots;
-    //public Text deckSizeText;
-    //public Text discardSizeText;
     public Transform[] cardSlots;
-
     public GameManager gameManager;
 
-    public void Awake(){
-        
-        if(Instance != null){
+    /*
+        Method: Awake()
+        Visibility: Public 
+        Output: N/A
+        Purpose: 
+
+        a. Check if an instance of the script already exists:
+        b. If it exists, destroy the current game object and return.
+        c. Set the Instance variable to reference the current script.
+        d. Prevent the game object from being destroyed when loading new scenes.
+        e. If Instance is still null:
+        f. Set the Instance variable to reference the current script.
+        g. If Instance is not null and it is not the current script:
+        h. Set the Instance variable to reference the current script.
+    */
+
+    public void Awake()
+    { 
+        if(Instance != null)
+        {
             Destroy(gameObject);
             return;
         }
@@ -33,21 +77,27 @@ public class Player : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         
 
-        if (Instance == null) {
-            //First run, set the instance
+        if (Instance == null) 
+        {
             Instance = this;
-            //DontDestroyOnLoad(gameObject);
- 
-        } else if (Instance != this) {
-            //Instance is not the same as the one we have, destroy old one, and reset to newest one
-            //Destroy(Instance.gameObject);
+        } 
+
+        else if (Instance != this) 
+        {
             Instance = this;
-            //DontDestroyOnLoad(gameObject);
         }
     }
 
+    /*
+        Method: Start()
+        Visibility: Private 
+        Output: N/A
+        Purpose: 
 
-    // Start is called before the first frame update
+        a. Set the GameManager component in Instance to the GameManager object found in the scene.
+        b. Call the getStartingCards() method.
+    */
+
     void Start()
     {
         Instance.gameManager = FindObjectOfType<GameManager>();
@@ -55,25 +105,47 @@ public class Player : MonoBehaviour
         
     }
 
-     void Update()
-    {
-    }
+    /*
+        Method: DrawCard()
+        Visibility: Public 
+        Output: N/A
+        Purpose: 
 
-    public void DrawCard(){
+        a. Unlock the cursor.
+        b. Iterate over the availableCardSlots array:
+        c. If the deck has at least one card:
+        d. Then Select a random card from the deck.
+        e. Iterate over the availableCardSlots array:
+        f. If the current slot is available:
+        g. Then Reset the played state of the random card.
+        h. Activate the random card's GameObject.
+        i. Set the random card's handIndex to the current slot index.
+        j. Move the random card to the position of the corresponding card slot.
+        k. Mark the current slot as unavailable.
+        l. Add the random card to the hand.
+        m. Remove the random card from the deck.
+        n. Break the loop.
+    */
+
+    public void DrawCard()
+    {
         Cursor.lockState = CursorLockMode.None;
-        //Note: new for MVP - draw 3 cards at start of turn
-        for(int j = 0; j < availableCardSlots.Length; j++){
-            //Randomly assign Cards to gameObjects in deck
-            if(Instance.deck.Count >= 1){
+
+        for(int j = 0; j < availableCardSlots.Length; j++)
+        {
+            if(Instance.deck.Count >= 1)
+            {
                 Card randCard = Instance.deck[Random.Range(0, deck.Count)];
-                //Check the card slots on screen
-                for(int i = 0; i < Instance.availableCardSlots.Length; i++){
-                    //If the slot is available (no card displayed there), then move the card to the slot and remove it from the deck
-                    if(Instance.availableCardSlots[i] == true){
+
+                for(int i = 0; i < Instance.availableCardSlots.Length; i++)
+                {
+                    if(Instance.availableCardSlots[i] == true)
+                    {
                         randCard.hasBeenPlayed = false;
                         randCard.gameObject.SetActive(true);
                         randCard.handIndex = i;
                         randCard.transform.position = cardSlots[i].position;
+
                         Instance.availableCardSlots[i] = false;
                         Instance.hand.Add(randCard);
                         Instance.deck.Remove(randCard);
@@ -84,30 +156,67 @@ public class Player : MonoBehaviour
         }
     }
 
-    //New for MVP - discarding all cards at the end of turn
-    public void discardHand(){
-        for(int i = 0; i < Instance.availableCardSlots.Length; i++){
+    /*
+        Method: discardHand()
+        Visibility: Public 
+        Output: N/A
+        Purpose: 
+
+        a. Iterate over the availableCardSlots array:
+        b. Get the current card from the hand.
+        c. Add the current card to the discardPile.
+        d. Move the current card's GameObject up by 25 units on the y-axis.
+        e. Mark the current slot as available.
+        f. Clear the hand list.
+        g. If the deck is empty:
+        h. Then Call the Shuffle() method.
+        i. Delay the execution of the DrawCard() method by 2 seconds using Invoke().
+    */
+
+    public void discardHand()
+    {
+        for(int i = 0; i < Instance.availableCardSlots.Length; i++)
+        {
             Card currentCard = Instance.hand[i];
             Instance.discardPile.Add(currentCard);
             currentCard.gameObject.transform.position += Vector3.up * 25;
             Instance.availableCardSlots[i] = true;
         }
+
         Instance.hand.Clear();
 
-        //Once hand is discarded, draw more cards - if deck is empty, shuffle first
-        if(Instance.deck.Count <= 0){
+        if(Instance.deck.Count <= 0)
+        {
             Shuffle();
         }
+
         Invoke("DrawCard", 2f);
     }
 
-    public void enableHand(bool enable){
-        if(enable == false){
-            foreach (Card x in hand){
+    /*
+        Method: enableHand()
+        Visibility: Public 
+        Output: N/A
+        Purpose: 
+
+        a. If enable is false:
+        b. Then Deactivate all cards in the hand.
+        c. If enable is true:
+        d. Then Activate all cards in the hand.
+    */
+
+    public void enableHand(bool enable)
+    {
+        if(enable == false)
+        {
+            foreach (Card x in hand)
+            {
                 x.gameObject.SetActive(false);
             }
         }
-        else if(enable == true){
+
+        else if(enable == true)
+        {
             foreach (Card y in hand)
             {
                 y.gameObject.SetActive(true);
@@ -115,22 +224,49 @@ public class Player : MonoBehaviour
         }
         
     }
+    
+    /*
+        Method: Shuffle()
+        Visibility: Public 
+        Output: N/A
+        Purpose: 
 
-    public void Shuffle(){
-        //If there's at least one card in the discardPile, move all cards in the discardPile back into the deck
-        if(Instance.discardPile.Count >= 1){
-            foreach(Card card in Instance.discardPile){
+        a. If the discardPile has at least one card:
+        b. Then Move all cards from the discardPile to the deck.
+        c. Clear the discardPile.
+    */
+
+    public void Shuffle()
+    {
+
+        if(Instance.discardPile.Count >= 1)
+        {
+            foreach(Card card in Instance.discardPile)
+            {
                 Instance.deck.Add(card);
             }
+
             Instance.discardPile.Clear();
         }
     }
 
-    public void attackEnemy(int damage){
-        //Reduce enemy health by the playerCard's damage value
+    /*
+        Method: attackEnemy()
+        Visibility: Public 
+        Output: N/A
+        Purpose: 
 
-        //Instance.gameManager.enemy.health -= damage;
+        a. Adjust the damage value based on the player's damage multiplier.
+        b. If the enemy has armor:
+        c. If the damage is greater than the enemy's armor:
+        d. Then Subtract the armor from the damage and reduce the enemy's health by the remaining damage.
+        e. Otherwise, subtract the damage from the enemy's armor.
+        f. If the enemy has no armor, reduce the enemy's health by the damage.
+        g. Then Reset the player's damage multiplier to 1.
+    */
 
+    public void attackEnemy(int damage)
+    {
         damage = damage * Instance.gameManager.player.playerDamageMult;
 
         if (Instance.gameManager.enemy.armour > 0)
@@ -140,42 +276,83 @@ public class Player : MonoBehaviour
                 damage -= Instance.gameManager.enemy.armour;
                 Instance.gameManager.enemy.armour = 0;
                 Instance.gameManager.enemy.health -= damage;
-                //healthBar.setHealth(gameManager.player.playerHealth);
             }
+
             else
             {
                 Instance.gameManager.enemy.armour -= damage;
-                //healthBar.setHealth(gameManager.player.playerHealth);
             }
         }
+        
         else
         {
-            //Reduce player health by the card's damage value
             Instance.gameManager.enemy.health -= damage;
-            //healthBar.setHealth(gameManager.player.playerHealth);
         }
-        // reset temporary damage multiplier
+
         Instance.gameManager.player.playerDamageMult = 1;
     }
 
-    // new addition
-    public void raiseArmor(int protection) {
+    /*
+        Method: raiseArmor()
+        Visibility: Public 
+        Output: N/A
+        Purpose: 
+
+        a. Increase the player's armor by the specified protection value.
+        b. Update the armor value displayed in the armorBar.
+    */
+
+    public void raiseArmor(int protection) 
+    {
         Instance.gameManager.player.playerArmor += protection;
         Instance.gameManager.armorBar.setArmor(Instance.gameManager.player.playerArmor);
     }
 
-    // new addition
-    public void healPlayer(int healing) {
+    /*
+        Method: healPlayer()
+        Visibility: Public 
+        Output: N/A
+        Purpose: 
+
+        a. Increase the player's health by the specified healing value.
+        b. If the player's health exceeds 100, set it to 100.
+    */
+
+
+    public void healPlayer(int healing) 
+    {
         Instance.gameManager.player.playerHealth += healing;
-        if (Instance.gameManager.player.playerHealth > 100) {
+        
+        if (Instance.gameManager.player.playerHealth > 100) 
+        {
             Instance.gameManager.player.playerHealth = 100;
         }
     }
 
-    // new addition
-    public void powerUp(int damageMult) {
+    /*
+        Method: powerUp()
+        Visibility: Public 
+        Output: N/A
+        Purpose: 
+
+        a. Set the player's damage multiplier to the specified damageMult value.
+    */
+
+    public void powerUp(int damageMult) 
+    {
         Instance.gameManager.player.playerDamageMult = damageMult;
     }
+
+    /*
+    Method: getStartingCards()
+    Visibility: Public 
+    Output: N/A
+    Purpose: 
+
+    a. Iterate over the playerStartingDeck list:
+    b. Get the current card from the GameController's playerStartingDeck.
+    c. Assign the properties of the current card to the corresponding properties of the cards in Instance's deck.
+*/
 
     public void getStartingCards()
     {

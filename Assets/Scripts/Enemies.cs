@@ -2,52 +2,87 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+    Class: Enemies
+    Visibility: Public 
+    Output: N/A
+    Attributes: 
+
+    a. stageEnemies: List of all Enemies in Game
+
+    Methods: 
+
+    a. createStageEnemies() 
+    b. selectEnemy()
+    c. asignStartingEnemyCards()
+
+*/
+
 public class Enemies : MonoBehaviour
 {
     public List<Enemy> stageEnemies = new List<Enemy>();
-    public List<Enemy> stageBosses = new List<Enemy>();
 
-    public void Start()
-    {
-    
-    }
+    /*
+	    Method: createStageEnemies()
+        Visibility: Public 
+        Output: N/A
+        Purpose: 
+
+        a. Creates Enemies for each Stage 
+        b. Stage 1: 
+            i. Ant
+            ii. Cockroach
+            iii. Mouse
+            iv. Pigeon
+            v. Rabbit
+            vi. Rat
+            vii. Rooster
+        c. Stage 2: 
+            i. Dog
+            ii. Lizzard
+            iii. Pig
+            iv. Scorpion
+            v. Tarantula 
+            vi. Turtle
+    */
 
     public void createStageEnemies()
     {
-        //Stage 1
-        //Ant Enemy 
         stageEnemies.Add(new Enemy("Ant", assignStartingEnemyCards(0), 15, 0, 1, 1));
-        //CockRoach Enemy
         stageEnemies.Add(new Enemy("Cockroach", assignStartingEnemyCards(1), 20, 0, 1, 1));
-        //Mouse Enemy 
         stageEnemies.Add(new Enemy("Mouse", assignStartingEnemyCards(2), 20, 0, 1, 1));
-        //Pigeon Enemy 
         stageEnemies.Add(new Enemy("Pigeon", assignStartingEnemyCards(3), 15, 0, 1, 1));
-        //Rabbit Enemy  
         stageEnemies.Add(new Enemy("Rabbit", assignStartingEnemyCards(4), 40, 0, 2, 1));
-        //Rat
         stageEnemies.Add(new Enemy("Rat", assignStartingEnemyCards(5), 35, 0, 2, 1));
-        //Rooster Enemy (Boss)
         stageEnemies.Add(new Enemy("Rooster", assignStartingEnemyCards(6), 50, 0, 3, 1));
-
-        //Stage 2 (WIP)
-        //Dog Enemy 
+        
         stageEnemies.Add(new Enemy("Dog", assignStartingEnemyCards(7), 45, 0, 2, 2));
-        //Lizard Enemy
         stageEnemies.Add(new Enemy("Lizard", assignStartingEnemyCards(8), 30, 0, 1, 2));
-        //Monkey Enemy  (Boss)
         stageEnemies.Add(new Enemy("Monkey", assignStartingEnemyCards(9), 60, 0, 3, 2));
-        //Pig Enemy 
-        stageEnemies.Add(new Enemy("Pig", assignStartingEnemyCards(10), 50, 0, 2, 2));
-        //Scorpion Enemy  
+        stageEnemies.Add(new Enemy("Pig", assignStartingEnemyCards(10), 50, 0, 2, 2)); 
         stageEnemies.Add(new Enemy("Scorpion", assignStartingEnemyCards(11), 25, 0, 1, 2));
-        //Tarantula Enemy
         stageEnemies.Add(new Enemy("Tarantula", assignStartingEnemyCards(12), 25, 0, 1, 2));
-        //Turtle Enemy (Boss)
         stageEnemies.Add(new Enemy("Turtle", assignStartingEnemyCards(13), 35, 0, 1, 2));
     }
 
-    
+    /*
+	    Method: selectEnemy()
+        Visibility: Public 
+        Output: Enemy
+        Purpose: 
+
+        a. Runs Function createStageEnemies()
+        b. Creates variable isEnemyChosen and sets it to false
+        c. Creates variable enemyIndex and sets it to 0
+        d. While enemy has not been chosen 
+        e. Enemy index is set to random range between 0 and 13
+        f. If enemy in list stageEnemies difficulty is equal to chose difficulty 
+        g. If enemy in list stageEnemies stage is equal to player current stage 
+        h. isEnemyChosen set to true 
+        i. Returns chosen enemy from stageEnemies 
+        j. Returns Null if above is false
+    */
+
     public Enemy selectEnemy(int battleDifficulty, int currentStage) {
         createStageEnemies();
         bool isEnemyChosen = false;
@@ -63,6 +98,17 @@ public class Enemies : MonoBehaviour
         }
         return null;
     }
+
+    /*
+	    Method: assignStartingEnemyCards()
+        Visibility: Public 
+        Output: List<Card>
+        Purpose: 
+
+        a. Create enemyStartingDeck List
+        b. Runs Case depending on functions inputted integer 
+        c. assigns enemy cards 
+    */
 
     public List<Card> assignStartingEnemyCards(int enemyId)
     {

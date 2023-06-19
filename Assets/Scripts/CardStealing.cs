@@ -3,15 +3,50 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
+    Class: CardStealing
+    Visibility: Public 
+    Output: N/A
+    Attributes: 
+
+    a. cards: List of Cards in Players  Deck 
+
+    Methods: 
+
+    a. Start()
+    b. AssignEnemyCards()
+
+*/
+
 public class CardStealing : MonoBehaviour
 {
     
     public List<Card> cards = new List<Card>();
-    // Start is called before the first frame update
+
+    /*
+	    Method: Start()
+        Visibility: Public 
+        Output: N/A
+        Purpose: 
+
+        a. Run AssignEnemyCards()
+    */
+
     void Start()
     {
         AssignEnemyCards();
     }
+
+    /*
+	    Method: AssignEnemyCards()
+        Visibility: Public 
+        Output: N/A
+        Purpose: 
+
+        a. Iterate through GameController Enemy Starting Deck
+        b. Create new Card currentCard and assign GameController Enemy Starting Deck [i] to it 
+        c. cards [i] attributes equal to currentCard Attributes
+    */
 
     public void AssignEnemyCards()
     {

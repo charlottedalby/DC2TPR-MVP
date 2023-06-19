@@ -4,6 +4,33 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+/*
+    Class: ArmorBar
+    Visibility: Public 
+    Output: N/A
+    Attributes: 
+
+    a. CardHighlight1: Card Highlight 
+    b. CardHighlight2: Card Highlight 
+    c. CardHighlight3: Card Highlight 
+    d. CardHighlight4: Card Highlight 
+    e. CardHighlight5: Card Highlight 
+    f. CardHighlight6: Card Highlight 
+    g. CardHighlight7: Card Highlight 
+    h. CardHighlight8: Card Highlight 
+    i. CardHighlight9: Card Highlight 
+    j. CardHighlight10: Card Highlight 
+    k. CardHighlight11: Card Highlight 
+    l. CardHighlight12: Card Highlight 
+    m. cardPos: Card Position in List 
+    n. cards: List of player Cards
+
+    Methods: 
+
+    a. setArmor()
+    b. setMaxArmor()
+*/
+
 public class ReplacePlayerCard : MonoBehaviour
 {
     public Image CardHighlight1;
@@ -21,6 +48,20 @@ public class ReplacePlayerCard : MonoBehaviour
     public static int cardPos;
     public List<Card> cards = new List<Card>();
     
+    /*
+        Method: Start()
+        Visibility: Public 
+        Output: N/A
+        Purpose: 
+
+        a. Find and assign the Image component of CardHighlights
+        b. Iterate through the playerStartingDeck list:
+        c. Get the current card from the GameController's playerStartingDeck.
+        d. Assign the properties of the current card to the corresponding properties of the cards in the cards array.
+        e. Log the name of the current card.
+        f. Call the assignCardUI() method on the current card.
+    */
+
     void Start()
     {
         CardHighlight1 = GameObject.Find("CardHighlight1").GetComponent<Image>();
@@ -51,6 +92,19 @@ public class ReplacePlayerCard : MonoBehaviour
             cards[i].assignCardUI();
         }
     }
+
+    /*
+        Method: CardClick()
+        Visibility: Public 
+        Output: N/A
+        Purpose: 
+
+        a. Set all card highlight colors to white.
+        b. Switch the cardPosition parameter:
+        c. For each case, set the corresponding CardHighlight color to a specified color.
+        d. If none of the cases match, return (invalid card position).
+        e. Then Set the cardPos variable to the cardPosition parameter.
+    */
 
     public void CardClick(int cardPosition)
     {
@@ -94,12 +148,19 @@ public class ReplacePlayerCard : MonoBehaviour
                 CardHighlight12.color = new Color32(13, 250, 19, 255);
                 break;
             default:
-                // Invalid card position
                 return;
         }
         cardPos = cardPosition;
     }
 
+    /*
+        Method: setAllWhite()
+        Visibility: Public 
+        Output: N/A
+        Purpose: 
+
+        a. Set all CardHighlight colors to white.
+    */
 
     public void setAllWhite()
     {
@@ -117,6 +178,17 @@ public class ReplacePlayerCard : MonoBehaviour
         CardHighlight12.color = new Color32(255,255,255,255);
     }
 
+    /*
+        Method: confirmClick()
+        Visibility: Public 
+        Output: N/A
+        Purpose: 
+
+        a. If cardPos is not null:
+        b. Replace the card at the cardPos index in the playerStartingDeck with the swapped card.
+        c. Load the "OverworldScreen" scene.
+    */
+
     public void confirmClick()
     {
         if(cardPos != null)
@@ -125,6 +197,15 @@ public class ReplacePlayerCard : MonoBehaviour
             SceneManager.LoadScene("OverworldScreen");
         }
     }
+
+    /*
+        Method: cancelClick
+        Visibility: Public 
+        Output: N/A
+        Purpose: 
+
+        a. Load the "OverworldScreen" scene.
+    */
 
     public void cancelClick()
     {

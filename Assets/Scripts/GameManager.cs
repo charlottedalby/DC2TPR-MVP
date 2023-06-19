@@ -4,11 +4,37 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+/*
+    Class: GameManager
+    Visibility: Public 
+    Output: N/A
+    Attributes: 
+
+    a. enemy: Enemy Instance 
+    b. player: Player Instance
+    c. deckSizeText: Deck Size
+    d. discardSizeText: Discard Pile Size
+    e. playerHealthText: Player Health
+    f. playerArmorText: Player Armor
+    g. enemyText: Enemy Name
+    h. healthBar: Player Health Bar
+    i. armorBar: Player Armor Bar
+    j. enemies: List of Enemies 
+    k. currentEnemy: Enemy Chosen to Battle
+
+    Methods: 
+
+    a. Start()
+    b. Update()
+    c. GameOver()
+    d. displayEnemy()
+
+*/
+
 public class GameManager : MonoBehaviour
 {
     public Enemy enemy;
     public Player player;
-    
     public Text deckSizeText;
     public Text discardSizeText;
     public Text playerHealthText;
@@ -19,23 +45,46 @@ public class GameManager : MonoBehaviour
     public Enemies enemies;
     public Enemy currentEnemy;
 
+    /*
+	    Method: Start()
+        Visibility: Public  
+        Output: N/A
+        Purpose: 
+
+        a. Finds Instance of Enemy in Scene 
+        b. Sets currentEnemy to Random enemy in enemies 
+        c. Sets Enemy Attributes 
+        d. Iterate through Enemy Cards
+        e. Set Enemy Card attributes 
+        f. Finds Instance of Player in Scene 
+        g. Sets Player Health to GameController playerStartHealth
+        h. Sets Player Armor to GameController PlayerStartArmor
+        i. Runs Player HealthBar setMaxValue with GameController playerStartHealth
+        j. Runs displayEnemy()
+        k. Draws Card for Player 
+
+    */
+
     public void Start(){
+        
         enemy = FindObjectOfType<Enemy>();
         currentEnemy = enemies.selectEnemy(GameController.PlayerStartNode.battleStrength, GameController.stage);
         enemy.name = currentEnemy.name;
         enemy.health = currentEnemy.health;
         enemy.difficulty = currentEnemy.difficulty;
         enemy.stage = currentEnemy.stage;
+
         GameController.enemyStartingDeck = currentEnemy.enemyCards;
+        
         for (int i = 0; i < currentEnemy.enemyCards.Count; i++)
         {
             Card currentCard = currentEnemy.enemyCards[i];
+
             enemy.enemyCards[i].name = currentCard.name;
             enemy.enemyCards[i].damage = currentCard.damage;
             enemy.enemyCards[i].hasBeenPlayed = currentCard.hasBeenPlayed;
             enemy.enemyCards[i].handIndex = currentCard.handIndex;
             enemy.enemyCards[i].armour = currentCard.armour;
-            //new addition
             enemy.enemyCards[i].healing = currentCard.healing;
             enemy.enemyCards[i].damageMult = currentCard.damageMult;
         }
@@ -44,24 +93,43 @@ public class GameManager : MonoBehaviour
         player.playerHealth = GameController.PlayerStartHealth;
         player.playerArmor = GameController.PlayerStartArmor;
         healthBar.setMaxValue(GameController.PlayerStartHealth);
+
         displayEnemy();
         player.Invoke("DrawCard", 2f);
     }
 
+    /*
+	    Method: Update()
+        Visibility: Private 
+        Output: N/A
+        Purpose: 
+
+        a. Updates DeckSize Text
+        b. Updates Discard Pile Text 
+        c. If Player Health is less than or equal to 0
+        d. Then Player Health Text  = "0"
+        e. Player Armor Text = "0"
+        f. Load GameOver Sequence 
+        g. Else if Player Health is greater than 0
+        h. Player Health Bar runs setHealth to player health
+        i. Player Armor Bar runs setArmor to player armor 
+        j. Player Health and Armor is set to current player armor and health 
+
+    */
+
     void Update()
     {
-        //Update all the text elements on the screen
         deckSizeText.text = player.deck.Count.ToString();
         discardSizeText.text = player.discardPile.Count.ToString();
-        //Check player health every frame to see if they have lost all health
-        if(player.playerHealth <= 0){
+
+        if(player.playerHealth <= 0)
+        {
             playerHealthText.text = "0";
             playerArmorText.text = "0";
-            //Call GameOver method
             Invoke("GameOver", 2f);
         }
-        //Else if player is not dead, update their health text
-        else if(player.playerHealth > 0){
+        else if(player.playerHealth > 0)
+        {
             healthBar.setHealth(player.playerHealth);
             armorBar.setArmor(player.playerArmor);
             playerHealthText.text = player.playerHealth.ToString();
@@ -69,14 +137,33 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void GameOver(){
+    /*
+	    Method: GameOver()
+        Visibility: Public  
+        Output: N/A
+        Purpose: 
+
+        a. Unlock Player Cursor 
+        b. Clear Player Deck
+        c. If Enemy Health is less than or equal to 0
+        d. Then GameController playerStartHealth equals Player Health
+        e. If GameController PlayerStartNode forward connections amount equals 0
+        f. Then Load Stage Complete Scene 
+        g. Else Load You Win Scene
+        h. Else if Player Health is less than or equal to 0 
+        i. Then Load You Win Scene 
+
+    */
+
+    public void GameOver()
+    {
         Cursor.lockState = CursorLockMode.None;
-        //Fix for the discard pile duplication bug
         player.deck.Clear();
 
-        //Goes to You Win screen if enemy health reaches 0
-        if(enemy.health <= 0){
+        if(enemy.health <= 0)
+        {
             GameController.PlayerStartHealth = player.playerHealth;
+
             if(GameController.PlayerStartNode.forwardConnections.Count == 0)
             {
                 SceneManager.LoadScene("StageComplete");
@@ -86,78 +173,42 @@ public class GameManager : MonoBehaviour
                 SceneManager.LoadScene("YouWin");
             }
         }
-        //Goes to Game Over screen if player health reaches 0
-        else if(player.playerHealth <= 0){
+        else if(player.playerHealth <= 0)
+        {
             SceneManager.LoadScene("GameOver");
         }
     }
+
+    /*
+	    Method: displayEnemy()
+        Visibility: Public  
+        Output: N/A
+        Purpose: 
+
+        a. Declare List of Enemy GameObjects 
+        b. List contents equals All GameObjects in Scene with Tag Enemy 
+        c. Iterate through List 
+        d. Declare currentEnemy which is each enemy in list 
+        e. If currentEnemy name is not null 
+        g. Set Enemy Image based off name. 
+
+    */
+
     public void displayEnemy()
     {
         GameObject[] Enemiess;
         Enemiess = GameObject.FindGameObjectsWithTag("Enemy");
-        Debug.Log(Enemiess.Length);
+
         foreach (GameObject enemy in Enemiess)
         {
             Enemy currentEnemy = enemy.GetComponent<Enemy>();
-            Debug.Log(currentEnemy.name);
+            
             if(currentEnemy.name != null)
             {
-                if (currentEnemy.name == "Ant")
-                {
-                    Debug.Log("Ant");
-                    Image enemyImage = currentEnemy.GetComponent<Image>();
-                    Sprite newSprite = GameObject.Find("Ant").GetComponent<Image>().sprite;
-                    enemyImage.sprite = newSprite;
-                    enemyText.text = currentEnemy.name;
-                }
-                else if (currentEnemy.name == "Cockroach")
-                {
-                    Debug.Log("Roach");
-                    Image enemyImage = currentEnemy.GetComponent<Image>();
-                    Sprite newSprite = GameObject.Find("Cockroach").GetComponent<Image>().sprite;
-                    enemyImage.sprite = newSprite;
-                    enemyText.text = currentEnemy.name;
-                }
-                else if (currentEnemy.name == "Mouse")
-                {
-                    Debug.Log("Mouse");
-                    Image enemyImage = currentEnemy.GetComponent<Image>();
-                    Sprite newSprite = GameObject.Find("Mouse").GetComponent<Image>().sprite;
-                    enemyImage.sprite = newSprite;
-                    enemyText.text = currentEnemy.name;
-                }
-                else if (currentEnemy.name == "Pigeon")
-                {
-                    Debug.Log("Pigeon");
-                    Image enemyImage = currentEnemy.GetComponent<Image>();
-                    Sprite newSprite = GameObject.Find("Pigeon").GetComponent<Image>().sprite;
-                    enemyImage.sprite = newSprite;
-                    enemyText.text = currentEnemy.name;
-                }
-                else if (currentEnemy.name == "Rabbit")
-                {
-                    Debug.Log("Rabbit");
-                    Image enemyImage = currentEnemy.GetComponent<Image>();
-                    Sprite newSprite = GameObject.Find("Rabbit").GetComponent<Image>().sprite;
-                    enemyImage.sprite = newSprite;
-                    enemyText.text = currentEnemy.name;
-                }
-                else if (currentEnemy.name == "Rat")
-                {
-                    Debug.Log("Rat");
-                    Image enemyImage = currentEnemy.GetComponent<Image>();
-                    Sprite newSprite = GameObject.Find("Rat").GetComponent<Image>().sprite;
-                    enemyImage.sprite = newSprite;
-                    enemyText.text = currentEnemy.name;
-                }
-                else if (currentEnemy.name == "Rooster")
-                {
-                    Debug.Log("Roost");
-                    Image enemyImage = currentEnemy.GetComponent<Image>();
-                    Sprite newSprite = GameObject.Find("Rooster").GetComponent<Image>().sprite;
-                    enemyImage.sprite = newSprite;
-                    enemyText.text = currentEnemy.name;
-                }
+                Image enemyImage = currentEnemy.GetComponent<Image>();
+                Sprite newSprite = GameObject.Find(currentEnemy.name).GetComponent<Image>().sprite;
+                enemyImage.sprite = newSprite;
+                enemyText.text = currentEnemy.name;
             }
         }
     }
