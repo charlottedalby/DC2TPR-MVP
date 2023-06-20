@@ -37,7 +37,7 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    public static Player Instance;
+    
     public int playerHealth;
     public int playerArmor;
     public int playerDamageMult;
@@ -64,7 +64,7 @@ public class Player : MonoBehaviour
         g. If Instance is not null and it is not the current script:
         h. Set the Instance variable to reference the current script.
     */
-
+    /*
     public void Awake()
     { 
         if(Instance != null)
@@ -86,7 +86,7 @@ public class Player : MonoBehaviour
         {
             Instance = this;
         }
-    }
+    }*/
 
     /*
         Method: Start()
@@ -98,9 +98,9 @@ public class Player : MonoBehaviour
         b. Call the getStartingCards() method.
     */
 
-    void Start()
+    public void Start()
     {
-        Instance.gameManager = FindObjectOfType<GameManager>();
+        gameManager = FindObjectOfType<GameManager>();
         getStartingCards();
         
     }
@@ -133,22 +133,22 @@ public class Player : MonoBehaviour
 
         for(int j = 0; j < availableCardSlots.Length; j++)
         {
-            if(Instance.deck.Count >= 1)
+            if(deck.Count >= 1)
             {
-                Card randCard = Instance.deck[Random.Range(0, deck.Count)];
+                Card randCard = deck[Random.Range(0, deck.Count)];
 
-                for(int i = 0; i < Instance.availableCardSlots.Length; i++)
+                for(int i = 0; i < availableCardSlots.Length; i++)
                 {
-                    if(Instance.availableCardSlots[i] == true)
+                    if(availableCardSlots[i] == true)
                     {
                         randCard.hasBeenPlayed = false;
                         randCard.gameObject.SetActive(true);
                         randCard.handIndex = i;
                         randCard.transform.position = cardSlots[i].position;
 
-                        Instance.availableCardSlots[i] = false;
-                        Instance.hand.Add(randCard);
-                        Instance.deck.Remove(randCard);
+                        availableCardSlots[i] = false;
+                        hand.Add(randCard);
+                        deck.Remove(randCard);
                         break;
                     }
                 }
@@ -175,17 +175,17 @@ public class Player : MonoBehaviour
 
     public void discardHand()
     {
-        for(int i = 0; i < Instance.availableCardSlots.Length; i++)
+        for(int i = 0; i < availableCardSlots.Length; i++)
         {
-            Card currentCard = Instance.hand[i];
-            Instance.discardPile.Add(currentCard);
+            Card currentCard = hand[i];
+            discardPile.Add(currentCard);
             currentCard.gameObject.transform.position += Vector3.up * 25;
-            Instance.availableCardSlots[i] = true;
+            availableCardSlots[i] = true;
         }
 
-        Instance.hand.Clear();
+        hand.Clear();
 
-        if(Instance.deck.Count <= 0)
+        if(deck.Count <= 0)
         {
             Shuffle();
         }
@@ -239,14 +239,14 @@ public class Player : MonoBehaviour
     public void Shuffle()
     {
 
-        if(Instance.discardPile.Count >= 1)
+        if(discardPile.Count >= 1)
         {
-            foreach(Card card in Instance.discardPile)
+            foreach(Card card in discardPile)
             {
-                Instance.deck.Add(card);
+                deck.Add(card);
             }
 
-            Instance.discardPile.Clear();
+            discardPile.Clear();
         }
     }
 
@@ -267,29 +267,29 @@ public class Player : MonoBehaviour
 
     public void attackEnemy(int damage)
     {
-        damage = damage * Instance.gameManager.player.playerDamageMult;
+        damage = damage * gameManager.player.playerDamageMult;
 
-        if (Instance.gameManager.enemy.armour > 0)
+        if (gameManager.enemy.armour > 0)
         {
-            if (damage > Instance.gameManager.enemy.armour)
+            if (damage > gameManager.enemy.armour)
             {
-                damage -= Instance.gameManager.enemy.armour;
-                Instance.gameManager.enemy.armour = 0;
-                Instance.gameManager.enemy.health -= damage;
+                damage -= gameManager.enemy.armour;
+                gameManager.enemy.armour = 0;
+                gameManager.enemy.health -= damage;
             }
 
             else
             {
-                Instance.gameManager.enemy.armour -= damage;
+                gameManager.enemy.armour -= damage;
             }
         }
         
         else
         {
-            Instance.gameManager.enemy.health -= damage;
+            gameManager.enemy.health -= damage;
         }
 
-        Instance.gameManager.player.playerDamageMult = 1;
+        gameManager.player.playerDamageMult = 1;
     }
 
     /*
@@ -304,8 +304,8 @@ public class Player : MonoBehaviour
 
     public void raiseArmor(int protection) 
     {
-        Instance.gameManager.player.playerArmor += protection;
-        Instance.gameManager.armorBar.setArmor(Instance.gameManager.player.playerArmor);
+        gameManager.player.playerArmor += protection;
+        gameManager.armorBar.setArmor(gameManager.player.playerArmor);
     }
 
     /*
@@ -321,11 +321,11 @@ public class Player : MonoBehaviour
 
     public void healPlayer(int healing) 
     {
-        Instance.gameManager.player.playerHealth += healing;
+        gameManager.player.playerHealth += healing;
         
-        if (Instance.gameManager.player.playerHealth > 100) 
+        if (gameManager.player.playerHealth > 100) 
         {
-            Instance.gameManager.player.playerHealth = 100;
+            gameManager.player.playerHealth = 100;
         }
     }
 
@@ -340,7 +340,7 @@ public class Player : MonoBehaviour
 
     public void powerUp(int damageMult) 
     {
-        Instance.gameManager.player.playerDamageMult = damageMult;
+        gameManager.player.playerDamageMult = damageMult;
     }
 
     /*
@@ -359,14 +359,14 @@ public class Player : MonoBehaviour
         for(int i = 0; i < GameController.playerStartingDeck.Count; i++) 
         {
             Card currentCard = GameController.playerStartingDeck[i];
-            Instance.deck[i].name = currentCard.name;
-            Instance.deck[i].damage = currentCard.damage;
-            Instance.deck[i].hasBeenPlayed = currentCard.hasBeenPlayed;
-            Instance.deck[i].handIndex = currentCard.handIndex;
-            Instance.deck[i].armour = currentCard.armour;
+            deck[i].name = currentCard.name;
+            deck[i].damage = currentCard.damage;
+            deck[i].hasBeenPlayed = currentCard.hasBeenPlayed;
+            deck[i].handIndex = currentCard.handIndex;
+            deck[i].armour = currentCard.armour;
             //new addition
-            Instance.deck[i].healing = currentCard.healing;
-            Instance.deck[i].damageMult = currentCard.damageMult;
+            deck[i].healing = currentCard.healing;
+            deck[i].damageMult = currentCard.damageMult;
         }
     }
 }

@@ -62,7 +62,7 @@ public class GameController : MonoBehaviour
         i. Runs assignStartingCards()
     */
 
-    void Start()
+    public void Start()
     {
         PlayerStartHealth = 100;
         PlayerStartArmor = 0;
@@ -98,7 +98,7 @@ public class GameController : MonoBehaviour
 
     */
 
-    void assignStartingCards()
+    public void assignStartingCards()
     {
         playerStartingDeck.Clear();
 
