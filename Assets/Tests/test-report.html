@@ -6,6 +6,8 @@
         table {
             border-collapse: collapse;
             width: 100%;
+            text-align: left;
+            vertical-align: text-top;
         }
 
         th, td {
@@ -21,10 +23,26 @@
         }
 
         tr:nth-child(even) {
-            background-color: #f9f9f9;
+            text-align: left;
+            vertical-align: text-top;
+            background-color: #07070727;
         }
         .screenshot {
             margin-bottom: 20px;
+        }
+        .column {
+            float: left;
+            width: 50%;
+            padding: 5px;
+            text-align: left;
+            vertical-align: text-top;
+        }
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+            text-align: left;
+            vertical-align: text-top;
         }
     </style>
 </head>
@@ -1056,188 +1074,213 @@
             <th>Unit Test Code Screenshot</th>
             <th>Unit Test Screenshot</th>
             <th>System Test Screenshot</th>
-            <th>Outcome Reasoning</th>
         </tr>
         <tr>
-            <th>US0001</th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th>This test passed because...</th>
+            <th>US0001
+                <br>
+                <br> 
+                AC1:
+                <br> 
+                <br>
+                This Acceptance criteria has been met in Unit Test Screenshots.
+                The Screenshots show the Unit Tests checking that the players starting deck
+                size 12, players discard pile is size 0 and players hand is size 0. 
+                <br> 
+                <br>
+                AC2/AC3/AC4:
+                <br> 
+                <br>
+                This Acceptance criteria has been met in the System Test Screenshots.
+                The first screenshot shows Deck size of 12 and no cards drawn yet. 
+                After a few seconds the first 3 random cards are drawn. This is seen 
+                in the second screenshot 
+            </th>
+            <th><img src="\Assets\Tests\Test Screenshots\US0001_AC1_UNIT_TEST_SS.PNG" width="600" height="400" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\US001_AC1_UNIT_TEST_OUTCOME_SS.PNG" width="600" height="400" ></th>
+            <th>
+                <div class= "row">
+                    <div class="column">
+                        <img src="\Assets\Tests\Test Screenshots\US001_AC2_SYSTEM_TEST_OUTCOME_SS.PNG" width="400" height="300" >
+                    </div>
+                    <div class="column">
+                        <img src="\Assets\Tests\Test Screenshots\US001_AC2_SYSTEM_TEST_OUTCOME_01_SS.PNG" width="400" height="300" >
+                    </div>
+                </div>
+            </th>
         </tr>
         <tr>
             <th>US0002</th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th><img src="path/to/screenshot1.png" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
             <th>This test passed because...</th>
         </tr>
         <tr>
             <th>US0003</th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th><img src="path/to/screenshot1.png" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
             <th>This test passed because...</th>
         </tr>
         <tr>
             <th>US0004</th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th><img src="path/to/screenshot1.png" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
             <th>This test passed because...</th>
         </tr>
         <tr>
             <th>US0005</th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th><img src="path/to/screenshot1.png" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
             <th>This test passed because...</th>
         </tr>
         <tr>
             <th>US0006</th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th><img src="path/to/screenshot1.png" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
             <th>This test passed because...</th>
         </tr>
         <tr>
             <th>US0007</th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th><img src="path/to/screenshot1.png" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
             <th>This test passed because...</th>
         </tr>
         <tr>
             <th>US0008</th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th><img src="path/to/screenshot1.png" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
             <th>This test passed because...</th>
         </tr>
         <tr>
             <th>US0009</th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th><img src="path/to/screenshot1.png" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
             <th>This test passed because...</th>
         </tr>
         <tr>
             <th>US0010</th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th><img src="path/to/screenshot1.png" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
             <th>This test passed because...</th>
         </tr>
         <tr>
             <th>US0011</th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th><img src="path/to/screenshot1.png" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
             <th>This test passed because...</th>
         </tr>
         <tr>
             <th>US0012</th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th><img src="path/to/screenshot1.png" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
             <th>This test passed because...</th>
         </tr>
         <tr>
             <th>US0013</th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th><img src="path/to/screenshot1.png" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
             <th>This test passed because...</th>
         </tr>
         <tr>
             <th>US0014</th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th><img src="path/to/screenshot1.png" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
             <th>This test passed because...</th>
         </tr>
         <tr>
             <th>US0015</th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th><img src="path/to/screenshot1.png" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
             <th>This test passed because...</th>
         </tr>
         <tr>
             <th>US0016</th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th><img src="path/to/screenshot1.png" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
             <th>This test passed because...</th>
         </tr>
         <tr>
             <th>US0017</th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th><img src="path/to/screenshot1.png" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
             <th>This test passed because...</th>
         </tr>
         <tr>
             <th>US0018</th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th><img src="path/to/screenshot1.png" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
             <th>This test passed because...</th>
         </tr>
         <tr>
             <th>US0019</th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th><img src="path/to/screenshot1.png" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
             <th>This test passed because...</th>
         </tr>
         <tr>
             <th>US0020</th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th><img src="path/to/screenshot1.png" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
             <th>This test passed because...</th>
         </tr>
         <tr>
             <th>US0021</th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th><img src="path/to/screenshot1.png" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
             <th>This test passed because...</th>
         </tr>
         <tr>
             <th>US0022</th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th><img src="path/to/screenshot1.png" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
             <th>This test passed because...</th>
         </tr>
         <tr>
             <th>US0023</th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th><img src="path/to/screenshot1.png" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
             <th>This test passed because...</th>
         </tr>
         <tr>
             <th>US0024</th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th><img src="path/to/screenshot1.png" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
             <th>This test passed because...</th>
         </tr>
         <tr>
             <th>US0025</th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th><img src="path/to/screenshot1.png" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
             <th>This test passed because...</th>
         </tr>
         <tr>
             <th>US0026</th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th><img src="path/to/screenshot1.png" ></th>
-            <th><img src="path/to/screenshot1.png" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
+            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
             <th>This test passed because...</th>
         </tr>
 
