@@ -21,4 +21,5 @@ public class MapPrefab : MonoBehaviour
     public GameObject HardNodePrefab;
     public GameObject BossNodePrefab;
     public GameObject RestStopNodePrefab;
+    public GameObject EventNodePrefab;
 }

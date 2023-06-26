@@ -12,20 +12,17 @@
 
         th, td {
             text-align: left;
-            vertical-align: text-top;
             padding: 8px;
+            
         }
 
         th {
             background-color: #f2f2f2;
             text-align: left;
-            vertical-align: text-top;
         }
 
         tr:nth-child(even) {
-            text-align: left;
-            vertical-align: text-top;
-            background-color: #07070727;
+            background-color: #0c010167;
         }
         .screenshot {
             margin-bottom: 20px;
@@ -34,15 +31,12 @@
             float: left;
             width: 50%;
             padding: 5px;
-            text-align: left;
-            vertical-align: text-top;
         }
         .row::after {
             content: "";
             clear: both;
             display: table;
             text-align: left;
-            vertical-align: text-top;
         }
     </style>
 </head>
@@ -1068,221 +1062,86 @@
         
     </table>
     <h2>Test Evidence</h2>
+
+    <style>
+        .row {
+            display: flex;
+        }
+        
+        .column {
+            flex: 50%;
+            padding: 5px;
+        }
+        .desc
+        {
+            column-span: 10;
+        }
+    </style>
+    
     <table>
         <tr>
             <th>Test</th>
+            <th class="desc">Description</th>
             <th>Unit Test Code Screenshot</th>
             <th>Unit Test Screenshot</th>
-            <th>System Test Screenshot</th>
+            <th>System Test Screenshot 1</th>
+            <th>System Test Screenshot 2</th>
+            <th>System Test Screenshot 3</th>
+            <th>System Test Screenshot 4</th>
         </tr>
         <tr>
-            <th>US0001
-                <br>
-                <br> 
-                AC1:
-                <br> 
-                <br>
-                This Acceptance criteria has been met in Unit Test Screenshots.
-                The Screenshots show the Unit Tests checking that the players starting deck
-                size 12, players discard pile is size 0 and players hand is size 0. 
-                <br> 
-                <br>
-                AC2/AC3/AC4:
-                <br> 
-                <br>
-                This Acceptance criteria has been met in the System Test Screenshots.
-                The first screenshot shows Deck size of 12 and no cards drawn yet. 
-                After a few seconds the first 3 random cards are drawn. This is seen 
-                in the second screenshot 
-            </th>
-            <th><img src="\Assets\Tests\Test Screenshots\US0001_AC1_UNIT_TEST_SS.PNG" width="600" height="400" ></th>
-            <th><img src="\Assets\Tests\Test Screenshots\US001_AC1_UNIT_TEST_OUTCOME_SS.PNG" width="600" height="400" ></th>
-            <th>
-                <div class= "row">
-                    <div class="column">
-                        <img src="\Assets\Tests\Test Screenshots\US001_AC2_SYSTEM_TEST_OUTCOME_SS.PNG" width="400" height="300" >
-                    </div>
-                    <div class="column">
-                        <img src="\Assets\Tests\Test Screenshots\US001_AC2_SYSTEM_TEST_OUTCOME_01_SS.PNG" width="400" height="300" >
-                    </div>
-                </div>
-            </th>
+            <td>
+                <strong>US0001</strong><br><br>
+                
+            </td>
+            <td class="desc">This test shows that the game has the following features:<br><br>
+                - A Player Starting Deck of 12 cards<br>
+                - A Player Discard Pile of 0 cards<br>
+                - A Player hand of 0 cards<br>
+                - The game begins with 0 cards drawn<br>
+                - The game has a short Pause<br>
+                - Then 3 random deck cards are drawn</td>
+            <td><img src="\Assets\Tests\Test Screenshots\US0001_AC1_UNIT_TEST_SS.PNG" width="400" height="300"></td>
+            <td><img src="\Assets\Tests\Test Screenshots\US001_AC1_UNIT_TEST_OUTCOME_SS.PNG" width="400" height="300"></td>
+            <td><img src="\Assets\Tests\Test Screenshots\US001_AC2_SYSTEM_TEST_OUTCOME_SS.PNG" width="400" height="300"></td>
+            <td><img src="\Assets\Tests\Test Screenshots\US001_AC2_SYSTEM_TEST_OUTCOME_01_SS.PNG" width="400" height="300"></td>
+            <td>N/A</td>
+            <td>N/A</td>
         </tr>
         <tr>
-            <th>US0002</th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th>This test passed because...</th>
+            <td>
+                <strong>US0002</strong><br><br>
+                
+            </td>
+            <td class="desc">This test shows that the game has the following features:<br><br>
+                - An Enemy has 4 pre-determined cards<br>
+                - Enemies hand is not visible at all</td>
+            <td><img src="\Assets\Tests\Test Screenshots\US0002_AC1_UNIT_TEST_CODE_SS.PNG" width="400" height="300"></td>
+            <td><img src="\Assets\Tests\Test Screenshots\US0002_AC1_UNIT_TEST_OUTPUT_SS.PNG" width="400" height="300"></td>
+            <td><img src="\Assets\Tests\Test Screenshots\US0002_AC2_SYSTEM_TEST_SS.PNG" width="400" height="300"></td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
         </tr>
         <tr>
-            <th>US0003</th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th>This test passed because...</th>
+            <td>
+                <strong>US0003</strong><br><br>
+                
+            </td>
+            <td class="desc">This test shows that the game has the following features:<br><br>
+                - When a player clicks a card it is visible in the Battlefield<br>
+                - When a card is in the battlefield, all card effects are applied<br>
+                - Once Player card effects complete, enemy will play their card<br>
+                - When enemy card is in the battlefield, all card effects are applied</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td><img src="\Assets\Tests\Test Screenshots\US0003_AC1_SYSTEM_TEST_SS.PNG" width="400" height="300"> </td>
+            <td><img src="\Assets\Tests\Test Screenshots\US0003_AC2_SYSTEM_TEST_SS.PNG" width="400" height="300"></td>
+            <td><img src="\Assets\Tests\Test Screenshots\US0003_AC3_SYSTEM_TEST_SS.PNG" width="400" height="300"></td>
+            <td><img src="\Assets\Tests\Test Screenshots\US0003_AC4_SYSTEM_TEST_SS.PNG" width="400" height="300"></td>
         </tr>
-        <tr>
-            <th>US0004</th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th>This test passed because...</th>
-        </tr>
-        <tr>
-            <th>US0005</th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th>This test passed because...</th>
-        </tr>
-        <tr>
-            <th>US0006</th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th>This test passed because...</th>
-        </tr>
-        <tr>
-            <th>US0007</th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th>This test passed because...</th>
-        </tr>
-        <tr>
-            <th>US0008</th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th>This test passed because...</th>
-        </tr>
-        <tr>
-            <th>US0009</th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th>This test passed because...</th>
-        </tr>
-        <tr>
-            <th>US0010</th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th>This test passed because...</th>
-        </tr>
-        <tr>
-            <th>US0011</th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th>This test passed because...</th>
-        </tr>
-        <tr>
-            <th>US0012</th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th>This test passed because...</th>
-        </tr>
-        <tr>
-            <th>US0013</th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th>This test passed because...</th>
-        </tr>
-        <tr>
-            <th>US0014</th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th>This test passed because...</th>
-        </tr>
-        <tr>
-            <th>US0015</th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th>This test passed because...</th>
-        </tr>
-        <tr>
-            <th>US0016</th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th>This test passed because...</th>
-        </tr>
-        <tr>
-            <th>US0017</th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th>This test passed because...</th>
-        </tr>
-        <tr>
-            <th>US0018</th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th>This test passed because...</th>
-        </tr>
-        <tr>
-            <th>US0019</th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th>This test passed because...</th>
-        </tr>
-        <tr>
-            <th>US0020</th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th>This test passed because...</th>
-        </tr>
-        <tr>
-            <th>US0021</th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th>This test passed because...</th>
-        </tr>
-        <tr>
-            <th>US0022</th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th>This test passed because...</th>
-        </tr>
-        <tr>
-            <th>US0023</th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th>This test passed because...</th>
-        </tr>
-        <tr>
-            <th>US0024</th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th>This test passed because...</th>
-        </tr>
-        <tr>
-            <th>US0025</th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th>This test passed because...</th>
-        </tr>
-        <tr>
-            <th>US0026</th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th><img src="\Assets\Tests\Test Screenshots\" ></th>
-            <th>This test passed because...</th>
-        </tr>
-
+        <!-- Rest of the table rows -->
+    </table>
+    
 </body>
 </html>

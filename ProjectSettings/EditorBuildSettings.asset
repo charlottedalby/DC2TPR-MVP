@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StageComplete.unity
     guid: 879d005f61a1fdd4d928e11ae5ce4ec8
+  - enabled: 1
+    path: Assets/Scenes/EventStop.unity
+    guid: 499820ee70f374943bff56717897c7c8
   m_configObjects: {}

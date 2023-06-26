@@ -225,6 +225,13 @@ public class MapGeneration : MonoBehaviour
                 nodeObject.name = "Node: " + node.id + " Row: " + node.row + " Column: " + node.column;
                 nodeObject.GetComponent<NodeOBJ>().node = node;
             }
+            else if(node.battleStrength == 1)
+            {
+                var nodeObject = Instantiate(mapPrefabs.EasyNodePrefab, node.position, mapPrefabs.EasyNodePrefab.transform.rotation, nodesParent);
+                nodeObject.name = "Node: " + node.id + " Row: " + node.row + " Column: " + node.column;
+                nodeObject.GetComponent<NodeOBJ>().node = node;
+            }
+
             else if(node.battleStrength == 2)
             {
                 var nodeObject = Instantiate(mapPrefabs.HardNodePrefab, node.position, mapPrefabs.HardNodePrefab.transform.rotation, nodesParent);
@@ -237,13 +244,12 @@ public class MapGeneration : MonoBehaviour
                 nodeObject.name = "Node: " + node.id + " Row: " + node.row + " Column: " + node.column;
                 nodeObject.GetComponent<NodeOBJ>().node = node;
             }
-            else
+            else if(node.battleStrength == 4)
             {
-                var nodeObject = Instantiate(mapPrefabs.EasyNodePrefab, node.position, mapPrefabs.EasyNodePrefab.transform.rotation, nodesParent);
+                var nodeObject = Instantiate(mapPrefabs.EventNodePrefab, node.position, mapPrefabs.EventNodePrefab.transform.rotation, nodesParent);
                 nodeObject.name = "Node: " + node.id + " Row: " + node.row + " Column: " + node.column;
                 nodeObject.GetComponent<NodeOBJ>().node = node;
             }
-            
 
             var nodesAboveIDs = node.forwardConnections;
 
@@ -817,27 +823,34 @@ public class MapGeneration : MonoBehaviour
                 {
                     if(node.forwardConnections.Count == 0)
                     {
+                        //Node will be boss battle
                         node.battleStrength = 3;
                     }
                     else
                     {
                         int num = Random.Range(1,11);
-                        if(num <= 5)
+                        if(num <= 3)
                         {
-                            //50% is easy
+                            //40% is easy
                             node.battleStrength = 1;
                         }
                         //30% is Hard
-                        else if(num > 5 && num <= 8)
+                        else if(num > 3 && num <= 6)
                         {
                             node.battleStrength = 2;
                         }
                         //20% is Rest Stop 
-                        else if(num > 8 && num <= 10)
+                        else if(num > 6 && num <= 8)
                         {
                             node.battleStrength = 0;
                         }
+                        //20% is Event
+                        else if(num > 8 && num <= 10)
+                        {
+                            node.battleStrength = 4;
+                        }
                     } 
+                    Debug.Log(node.battleStrength);
                 }
             }
         }

@@ -19,7 +19,6 @@ using UnityEngine.UI;
 public class StageCompleteTextManipulator : MonoBehaviour
 {
     public Text stageCompleteText;
-
     /*
         Method: Start()
         Visibility: Public 
@@ -34,4 +33,5 @@ public class StageCompleteTextManipulator : MonoBehaviour
         string newText = "Stage " + GameController.stage + " Complete";
         stageCompleteText.text = newText;
     }
+
 }

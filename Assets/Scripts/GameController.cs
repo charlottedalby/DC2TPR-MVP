@@ -40,6 +40,7 @@ public class GameController : MonoBehaviour
     public static List<Card> playerStartingDeck = new List <Card>();
     public static int PlayerStartArmor;
     public static List<Card> enemyStartingDeck = new List <Card>();
+    public static List<int> enemyStartDeck = new List <int>(4);
     public static Card SwappedCard;
     public static List<int> stage1Difficulty;
     public static int stage;

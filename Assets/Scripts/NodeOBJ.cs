@@ -119,7 +119,7 @@ public class NodeOBJ : MonoBehaviour {
         f. If it is 0
         g. Then call the loadRestStop() method.
         h. If it is 1, 2, or 3
-        i. Then call the loadBattleScene() method.
+        i. Then call the loadBattleScene() method. If it is 4 then Load Event Scene
         j. If the GameController's PlayerStartNode is null:
         k. Then Check if the current node has no backward connections.
         l. If it doesn't have any backward connections
@@ -152,6 +152,10 @@ public class NodeOBJ : MonoBehaviour {
                 if(node.battleStrength == 3)
                 {
                     loadBattleScene();
+                }
+                if(node.battleStrength == 4)
+                {
+                    loadEventScene();
                 }
             }
         }
@@ -249,6 +253,26 @@ public class NodeOBJ : MonoBehaviour {
     void loadRestStop()
     {
         SceneManager.LoadScene("RestStop");
+        GameController.PlayerStartColumn = node.column;
+        GameController.PlayerStartNode = node;
+        GameController.PlayerMapPos.Add(node.id);
+    }
+
+    /*
+        Method: loadEventStop
+        Visibility: Private 
+        Output: N/A
+        Purpose: 
+
+        a. Load the "EventStop" scene using SceneManager.
+        b. Set the GameController's PlayerStartColumn to the current node's column.
+        c. Set the GameController's PlayerStartNode to the current node.
+        d. Add the current node's ID to the GameController's PlayerMapPos list.
+    */
+
+    void loadEventScene()
+    {
+        SceneManager.LoadScene("EventStop");
         GameController.PlayerStartColumn = node.column;
         GameController.PlayerStartNode = node;
         GameController.PlayerMapPos.Add(node.id);
