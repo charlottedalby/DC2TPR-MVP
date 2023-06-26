@@ -112,175 +112,175 @@ public class Enemies : MonoBehaviour
 
     public List<Card> assignStartingEnemyCards(int enemyId)
     {
-        List<Card> enemyStartingDeck = new List <Card>() ;
-        switch(enemyId) 
+        List<Card> enemyStartingDeck = new List <Card>();
+        switch(enemyId)
         {
             //Stage 1 Enemies
             case 0:
                 // Ant Enemy
                 //Curl Up Card (unfinished)
-                enemyStartingDeck.Add(new Card("Curl Up", 0, false, 0, 0, 0, 1));
+                enemyStartingDeck.Add(new Card("Curl Up", 0, false, 0, 0, 0, 1, false));
                 //Team Attack Card (unfinished)
-                enemyStartingDeck.Add(new Card("Team Attack", 8, false, 0, 0, 0, 1));
+                enemyStartingDeck.Add(new Card("Team Attack", 8, false, 0, 0, 0, 1, false));
                 //Pincer Card
-                enemyStartingDeck.Add(new Card("Pincer", 9, false, 0, 0, 0, 1));
+                enemyStartingDeck.Add(new Card("Pincer", 9, false, 0, 0, 0, 1, false));
                 //Scramble Card 
-                enemyStartingDeck.Add(new Card("Scramble", 0, false, 0, 0, 0, 1));
+                enemyStartingDeck.Add(new Card("Scramble", 0, false, 0, 0, 0, 1, false));
                 return enemyStartingDeck;
             case 1:
                 //Cockroach Enemy
                 //Curl Up Card (unfinished)
-                enemyStartingDeck.Add(new Card("Curl Up", 0, false, 0, 0, 0, 1));
+                enemyStartingDeck.Add(new Card("Curl Up", 0, false, 0, 0, 0, 1, false));
                 //Attempt flight Card 
-                enemyStartingDeck.Add(new Card("Attempt Flight", 0, false, 0, 7, 0, 1));
+                enemyStartingDeck.Add(new Card("Attempt Flight", 0, false, 0, 7, 0, 1, false));
                 //Pincer Card
-                enemyStartingDeck.Add(new Card("Pincer", 9, false, 0, 0, 0, 1));
+                enemyStartingDeck.Add(new Card("Pincer", 9, false, 0, 0, 0, 1, false));
                 //Scramble Card 
-                enemyStartingDeck.Add(new Card("Scramble", 0, false, 0, 0, 0, 1));
+                enemyStartingDeck.Add(new Card("Scramble", 0, false, 0, 0, 0, 1, false));
                 return enemyStartingDeck;
             case 2:
                 //Mouse Enemy
                 //Gnaw Card
-                enemyStartingDeck.Add(new Card("Gnaw", 9, false, 0, 0, 0, 1));
+                enemyStartingDeck.Add(new Card("Gnaw", 9, false, 0, 0, 0, 1, false));
                 //Clamp Down (unfinished) 
-                enemyStartingDeck.Add(new Card("Clamp Down", 5, false, 0, 0, 0, 1));
+                enemyStartingDeck.Add(new Card("Clamp Down", 5, false, 0, 0, 0, 1, false));
                 //Scurry Card (unfinished)
-                enemyStartingDeck.Add(new Card("Scurry", 0, false, 0, 0, 0, 1));
+                enemyStartingDeck.Add(new Card("Scurry", 0, false, 0, 0, 0, 1, false));
                 //Tail Strike Card 
-                enemyStartingDeck.Add(new Card("Tail Strike", 10, false, 0, 0, 0, 1));
+                enemyStartingDeck.Add(new Card("Tail Strike", 10, false, 0, 0, 0, 1, false));
                 return enemyStartingDeck;
             case 3:
                 //Pigeon Enemy
                 //Peck Card
-                enemyStartingDeck.Add(new Card("Peck", 13, false, 0, 0, 0, 1));
+                enemyStartingDeck.Add(new Card("Peck", 13, false, 0, 0, 0, 1, false));
                 //Home In Card (unfinished) 
-                enemyStartingDeck.Add(new Card("Home In", 6, false, 0, 0, 0, 1));
+                enemyStartingDeck.Add(new Card("Home In", 6, false, 0, 0, 0, 1, true));
                 //Roost Card 
-                enemyStartingDeck.Add(new Card("Roost", 0, false, 0, 0, 6, 1));
+                enemyStartingDeck.Add(new Card("Roost", 0, false, 0, 0, 6, 1, false));
                 //Wing Defence Card 
-                enemyStartingDeck.Add(new Card("Wing Defence", 0, false, 0, 7, 0, 1));
+                enemyStartingDeck.Add(new Card("Wing Defence", 0, false, 0, 7, 0, 1, false));
                 return enemyStartingDeck;
             case 4:
                 //Rabbit Enemy
                 //Gnaw Card
-                enemyStartingDeck.Add(new Card("Gnaw", 9, false, 0, 0, 0, 1));
+                enemyStartingDeck.Add(new Card("Gnaw", 9, false, 0, 0, 0, 1, false));
                 //Rear kick Card 
-                enemyStartingDeck.Add(new Card("Rear Kick", 11, false, 0, 0, 0, 1));
+                enemyStartingDeck.Add(new Card("Rear Kick", 11, false, 0, 0, 0, 1, false));
                 //Run Away Card (unfinished)
-                enemyStartingDeck.Add(new Card("Run Away", 0, false, 0, 0, 0, 1));
+                enemyStartingDeck.Add(new Card("Run Away", 0, false, 0, 0, 0, 1, false));
                 //Keen Sense Card 
-                enemyStartingDeck.Add(new Card("Keen Sense", 0, false, 0, 0, 0, 2));
+                enemyStartingDeck.Add(new Card("Keen Sense", 0, false, 0, 0, 0, 2, false));
                 return enemyStartingDeck;
             case 5:
                 //Rat Enemy
                 //Gnaw Card
-                enemyStartingDeck.Add(new Card("Gnaw", 9, false, 0, 0, 0, 1));
+                enemyStartingDeck.Add(new Card("Gnaw", 9, false, 0, 0, 0, 1, false));
                 //Clamp Down (unfinished) 
-                enemyStartingDeck.Add(new Card("Clamp Down", 5, false, 0, 0, 0, 1));
+                enemyStartingDeck.Add(new Card("Clamp Down", 5, false, 0, 0, 0, 1, false));
                 //Scurry Card (unfinished)
-                enemyStartingDeck.Add(new Card("Scurry", 0, false, 0, 0, 0, 1));
+                enemyStartingDeck.Add(new Card("Scurry", 0, false, 0, 0, 0, 1, false));
                 //Tail Strike Card 
-                enemyStartingDeck.Add(new Card("Tail Strike", 10, false, 0, 0, 0, 1));
+                enemyStartingDeck.Add(new Card("Tail Strike", 10, false, 0, 0, 0, 1, false));
                 return enemyStartingDeck;
             case 6:
                 //Rooster Enemy
                 //Peck Card
-                enemyStartingDeck.Add(new Card("Peck", 13, false, 0, 0, 0, 1));
+                enemyStartingDeck.Add(new Card("Peck", 13, false, 0, 0, 0, 1, false));
                 //Intimidate Card (unfinished)
-                enemyStartingDeck.Add(new Card("Intimidate", 0, false, 0, 10, 0, 1));
+                enemyStartingDeck.Add(new Card("Intimidate", 0, false, 0, 10, 0, 1, false));
                 //Feather Dance Card 
-                enemyStartingDeck.Add(new Card("Feather Dance", 6, false, 0, 0, 6, 1));
+                enemyStartingDeck.Add(new Card("Feather Dance", 6, false, 0, 0, 6, 1, false));
                 //Flock Attack Card (unfinished)
-                enemyStartingDeck.Add(new Card("Flock Attack", 15, false, 0, 0, 0, 1));
+                enemyStartingDeck.Add(new Card("Flock Attack", 15, false, 0, 0, 0, 1, false));
                 return enemyStartingDeck;
             //Stage 2 Enemies
             case 7:
                 //Dog Enemy
                 //Hound Card (unfinished)
-                enemyStartingDeck.Add(new Card("Hound", 5, false, 0, 0, 0, 1));
+                enemyStartingDeck.Add(new Card("Hound", 5, false, 0, 0, 0, 1, false));
                 //Bite Card
-                enemyStartingDeck.Add(new Card("Bite", 12, false, 0, 0, 0, 1));
+                enemyStartingDeck.Add(new Card("Bite", 12, false, 0, 0, 0, 1, false));
                 //Pounce Card 
-                enemyStartingDeck.Add(new Card("Pounce", 7, false, 0, 0, 0, 1));
+                enemyStartingDeck.Add(new Card("Pounce", 7, false, 0, 0, 0, 1, false));
                 //Bare Teeth Card
-                enemyStartingDeck.Add(new Card("Bare Teeth", 0, false, 0, 0, 0, 2));
+                enemyStartingDeck.Add(new Card("Bare Teeth", 0, false, 0, 0, 0, 2, false));
                 return enemyStartingDeck;
             case 8:
                 //Lizard Enemy
                 //Camouflage Card (unfinished)
-                enemyStartingDeck.Add(new Card("Camouflage", 0, false, 0, 0, 0, 1));
+                enemyStartingDeck.Add(new Card("Camouflage", 0, false, 0, 0, 0, 1, false));
                 //Tail Lash Card
-                enemyStartingDeck.Add(new Card("Tail Lash", 10, false, 0, 0, 0, 1));
+                enemyStartingDeck.Add(new Card("Tail Lash", 10, false, 0, 0, 0, 1, false));
                 //Shed Tail Card 
-                enemyStartingDeck.Add(new Card("Shed Tail", 15, false, 0, 0, -5, 1));
+                enemyStartingDeck.Add(new Card("Shed Tail", 15, false, 0, 0, -5, 1, false));
                 //Bite Card
-                enemyStartingDeck.Add(new Card("Bite", 8, false, 0, 0, 0, 1));
+                enemyStartingDeck.Add(new Card("Bite", 8, false, 0, 0, 0, 1, false));
                 return enemyStartingDeck;
             case 9:
                 //Monkey Enemy
                 //Use Tools Card 
-                enemyStartingDeck.Add(new Card("Use Tools", 7, false, 0, 7, 0, 1));
+                enemyStartingDeck.Add(new Card("Use Tools", 7, false, 0, 7, 0, 1, false));
                 //Gouge Card
-                enemyStartingDeck.Add(new Card("Gouge", 15, false, 0, 0, 0, 1));
+                enemyStartingDeck.Add(new Card("Gouge", 15, false, 0, 0, 0, 1, false));
                 //Swing High Card (unfinished)
-                enemyStartingDeck.Add(new Card("Swing High", 0, false, 0, 0, 0, 1));
+                enemyStartingDeck.Add(new Card("Swing High", 0, false, 0, 0, 0, 1, false));
                 //Pummel Card (unfinished)
-                enemyStartingDeck.Add(new Card("Pummel", 8, false, 0, 0, 0, 1));
+                enemyStartingDeck.Add(new Card("Pummel", 8, false, 0, 0, 0, 1, false));
                 return enemyStartingDeck;
             case 10:
                 //Pig Enemy
                 //Thick Skin Card
-                enemyStartingDeck.Add(new Card("Thick Skin", 12, false, 0, 0, 0, 1));
+                enemyStartingDeck.Add(new Card("Thick Skin", 12, false, 0, 0, 0, 1, false));
                 //Trample Card (unfinished)
-                enemyStartingDeck.Add(new Card("Trample", 10, false, 0, 0, 0, 1));
+                enemyStartingDeck.Add(new Card("Trample", 10, false, 0, 0, 0, 1, false));
                 //Roll Around Card 
-                enemyStartingDeck.Add(new Card("Roll Around", 4, false, 0, 7, 0, 1));
+                enemyStartingDeck.Add(new Card("Roll Around", 4, false, 0, 7, 0, 1, false));
                 //Sniff Out Card
-                enemyStartingDeck.Add(new Card("Sniff Out", 0, false, 0, 0, 0, 2));
+                enemyStartingDeck.Add(new Card("Sniff Out", 0, false, 0, 0, 0, 2, false));
                 return enemyStartingDeck;
             case 11:
                 //Scorpion Enemy
                 //Clamp Card
-                enemyStartingDeck.Add(new Card("Clamp", 5, false, 0, 5, 0, 1));
+                enemyStartingDeck.Add(new Card("Clamp", 5, false, 0, 5, 0, 1, false));
                 //Tail Lash Card 
-                enemyStartingDeck.Add(new Card("Tail Lash", 5, false, 0, 0, -1, 1));
+                enemyStartingDeck.Add(new Card("Tail Lash", 5, false, 0, 0, -1, 1, false));
                 //Exoskeleton Card 
-                enemyStartingDeck.Add(new Card("Exoskeleton", 0, false, 0, 10, 0, 1));
+                enemyStartingDeck.Add(new Card("Exoskeleton", 0, false, 0, 10, 0, 1, false));
                 //Envenom Card
-                enemyStartingDeck.Add(new Card("Envenom", 0, false, 0, 0, -2, 1));
+                enemyStartingDeck.Add(new Card("Envenom", 0, false, 0, 0, -2, 1, false));
                 return enemyStartingDeck;
             case 12:
                 //Tarantula Enemy
                 //Spin Web Card
-                enemyStartingDeck.Add(new Card("Spin Web", 0, false, 0, 8, 0, 1));
+                enemyStartingDeck.Add(new Card("Spin Web", 0, false, 0, 8, 0, 1, false));
                 //Envenom Card 
-                enemyStartingDeck.Add(new Card("Envenom", 0, false, 0, 0, -2, 1));
+                enemyStartingDeck.Add(new Card("Envenom", 0, false, 0, 0, -2, 1, false));
                 //Fang Strike Card 
-                enemyStartingDeck.Add(new Card("Fang Strike", 12, false, 0, 0, 0, 1));
+                enemyStartingDeck.Add(new Card("Fang Strike", 12, false, 0, 0, 0, 1, false));
                 //Pin down Card
-                enemyStartingDeck.Add(new Card("Pin down", 5, false, 0, 5, 0, 1));
+                enemyStartingDeck.Add(new Card("Pin down", 5, false, 0, 5, 0, 1, false));
                 return enemyStartingDeck;
             case 13:
                 //Turtle Enemy
                 //Snap Card
-                enemyStartingDeck.Add(new Card("Snap", 10, false, 0, 0, 0, 1));
+                enemyStartingDeck.Add(new Card("Snap", 10, false, 0, 0, 0, 1, false));
                 //Slow Start Card 
-                enemyStartingDeck.Add(new Card("Slow Start", 0, false, 0, 0, 0, 1));
+                enemyStartingDeck.Add(new Card("Slow Start", 0, false, 0, 0, 0, 1, false));
                 //Shell Attack Card 
-                enemyStartingDeck.Add(new Card("Shell Attack", 6, false, 0, 6, 0, 1));
+                enemyStartingDeck.Add(new Card("Shell Attack", 6, false, 0, 6, 0, 1, false));
                 //Shell Armour Card
-                enemyStartingDeck.Add(new Card("Shell Armour", 0, false, 0, 12, 0, 1));
+                enemyStartingDeck.Add(new Card("Shell Armour", 0, false, 0, 12, 0, 1, false));
                 return enemyStartingDeck;
             default:
                 //In case of case failure
                 //Punch Card
-                enemyStartingDeck.Add(new Card("Punch", 5, false, 0, 0, 0, 1));
+                enemyStartingDeck.Add(new Card("Punch", 5, false, 0, 0, 0, 1, false));
                 //Punch Card 
-                enemyStartingDeck.Add(new Card("Punch", 7, false, 0, 0, 0, 1));
+                enemyStartingDeck.Add(new Card("Punch", 7, false, 0, 0, 0, 1, false));
                 //Kick Card 
-                enemyStartingDeck.Add(new Card("Kick", 8, false, 0, 0, 0, 1));
+                enemyStartingDeck.Add(new Card("Kick", 8, false, 0, 0, 0, 1, false));
                 //Kick Card 
-                enemyStartingDeck.Add(new Card("Kick", 15, false, 0, 0, 0, 1));
+                enemyStartingDeck.Add(new Card("Kick", 15, false, 0, 0, 0, 1, false));
                 return enemyStartingDeck;
         }
     }

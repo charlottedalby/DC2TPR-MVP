@@ -103,23 +103,23 @@ public class GameController : MonoBehaviour
     {
         playerStartingDeck.Clear();
 
-        playerStartingDeck.Add(new Card("Punch", 5, false, 0, 0, 0, 1));
-        playerStartingDeck.Add(new Card("Punch", 5, false, 0, 0, 0, 1));
+        playerStartingDeck.Add(new Card("Punch", 5, false, 0, 0, 0, 1, false));
+        playerStartingDeck.Add(new Card("Punch", 5, false, 0, 0, 0, 1, false));
 
-        playerStartingDeck.Add(new Card("Kick", 7, false, 0, 0, 0, 1));
-        playerStartingDeck.Add(new Card("Kick", 7, false, 0, 0, 0, 1));
+        playerStartingDeck.Add(new Card("Kick", 7, false, 0, 0, 0, 1, false));
+        playerStartingDeck.Add(new Card("Kick", 7, false, 0, 0, 0, 1, false));
 
-        playerStartingDeck.Add(new Card("Jump Kick", 8, false, 0, 0, 0, 1));
-        playerStartingDeck.Add(new Card("Jump Kick", 8, false, 0, 0, 0, 1));
+        playerStartingDeck.Add(new Card("Jump Kick", 8, false, 0, 0, 0, 1, false));
+        playerStartingDeck.Add(new Card("Jump Kick", 8, false, 0, 0, 0, 1, false));
 
-        playerStartingDeck.Add(new Card("Throw", 5, false, 0, 3, 0, 1));
-        playerStartingDeck.Add(new Card("Throw", 5, false, 0, 3, 0, 1));
+        playerStartingDeck.Add(new Card("Throw", 5, false, 0, 3, 0, 1, false));
+        playerStartingDeck.Add(new Card("Throw", 5, false, 0, 3, 0, 1, false));
 
-        playerStartingDeck.Add(new Card("Grapple", 4, false, 0, 4, 0, 1));
-        playerStartingDeck.Add(new Card("Grapple", 4, false, 0, 4, 0, 1));
+        playerStartingDeck.Add(new Card("Grapple", 4, false, 0, 4, 0, 1, false));
+        playerStartingDeck.Add(new Card("Grapple", 4, false, 0, 4, 0, 1, false));
 
-        playerStartingDeck.Add(new Card("Meditate", 0, false, 0, 0, 0, 2)); 
-        playerStartingDeck.Add(new Card("Meditate", 0, false, 0, 0, 0, 2));  
+        playerStartingDeck.Add(new Card("Meditate", 0, false, 0, 0, 0, 2, false)); 
+        playerStartingDeck.Add(new Card("Meditate", 0, false, 0, 0, 0, 2, false));  
     }
 
     

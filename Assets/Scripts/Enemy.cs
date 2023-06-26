@@ -102,7 +102,7 @@ public class Enemy : MonoBehaviour
         
         Card selectedCard = enemyCards[Random.Range(0, enemyCards.Count)];
 
-        if (gameManager.player.playerArmor > 0)
+        if (gameManager.player.playerArmor > 0 && selectedCard.ignoreArmour != true)
         {
 
             if (selectedCard.damage > gameManager.player.playerArmor)
@@ -202,6 +202,7 @@ public class Enemy : MonoBehaviour
             enemyCards[i].armour = currentCard.armour;
             enemyCards[i].healing = currentCard.healing;
             enemyCards[i].damageMult = currentCard.damageMult;
+            enemyCards[i].ignoreArmour = currentCard.ignoreArmour;
         }
     }
 }

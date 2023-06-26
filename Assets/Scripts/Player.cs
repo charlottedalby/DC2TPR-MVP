@@ -265,11 +265,11 @@ public class Player : MonoBehaviour
         g. Then Reset the player's damage multiplier to 1.
     */
 
-    public void attackEnemy(int damage)
+    public void attackEnemy(int damage, bool ignoreArmour)
     {
         damage = damage * gameManager.player.playerDamageMult;
 
-        if (gameManager.enemy.armour > 0)
+        if (gameManager.enemy.armour > 0 && ignoreArmour != true)
         {
             if (damage > gameManager.enemy.armour)
             {
@@ -367,6 +367,7 @@ public class Player : MonoBehaviour
             //new addition
             deck[i].healing = currentCard.healing;
             deck[i].damageMult = currentCard.damageMult;
+            deck[i].ignoreArmour = currentCard.ignoreArmour;
         }
     }
 }

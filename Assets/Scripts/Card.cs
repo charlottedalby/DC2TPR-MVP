@@ -43,6 +43,7 @@ public class Card : MonoBehaviour
     public int healing;
     public int damageMult;
     public string name;
+    public bool ignoreArmour;
 
     /*
         Method: Awake()
@@ -104,7 +105,8 @@ public class Card : MonoBehaviour
     int handIndex, 
     int armour, 
     int healing, 
-    int damageMult)
+    int damageMult,
+    bool ignoreArmour)
 
     {
         this.name = name;
@@ -114,6 +116,7 @@ public class Card : MonoBehaviour
         this.armour = armour;
         this.healing = healing;
         this.damageMult = damageMult;
+        this.ignoreArmour = ignoreArmour;
     }
 
     /*
@@ -138,7 +141,7 @@ public class Card : MonoBehaviour
     void OnMouseDown(){
         if(hasBeenPlayed == false)
         {
-        gameManager.player.attackEnemy(damage);
+        gameManager.player.attackEnemy(damage, ignoreArmour);
         gameManager.player.raiseArmor(armour);
         gameManager.player.healPlayer(healing);
         gameManager.player.powerUp(damageMult);
