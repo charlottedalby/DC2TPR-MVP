@@ -167,6 +167,9 @@ public class GameManager : MonoBehaviour
 
             if(GameController.PlayerStartNode.forwardConnections.Count == 0)
             {
+                GameController.PlayerStartHealth = 100;
+                GameController.PlayerStartNode = null;
+                GameController.PlayerMapPos.Clear();
                 SceneManager.LoadScene("StageComplete");
             }
             else

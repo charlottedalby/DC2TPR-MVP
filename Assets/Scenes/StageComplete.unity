@@ -277,7 +277,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1497062249}
         m_TargetAssemblyTypeName: Menu, Scripts
-        m_MethodName: loadOverworld
+        m_MethodName: loadCardSteal
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -639,7 +639,6 @@ GameObject:
   - component: {fileID: 1497062248}
   - component: {fileID: 1497062249}
   - component: {fileID: 1497062251}
-  - component: {fileID: 1497062250}
   m_Layer: 5
   m_Name: NextBattleButton
   m_TagString: Untagged
@@ -678,18 +677,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d82a74867fdda1e4a832c62aa8553e0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1497062250
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1497062247}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efc85e913be465445bea7e2e44cc99fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1497062251
