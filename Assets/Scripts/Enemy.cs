@@ -42,6 +42,7 @@ public class Enemy : MonoBehaviour
     public int difficulty;
     public string name;
     public int stage;
+    public bool avoidAttack;
 
     /*
 	    Method: Enemy()
@@ -102,9 +103,9 @@ public class Enemy : MonoBehaviour
         
         Card selectedCard = enemyCards[Random.Range(0, enemyCards.Count)];
 
-        if (gameManager.player.playerArmor > 0 && selectedCard.ignoreArmour != true)
+        if (gameManager.player.playerArmor > 0 && selectedCard.ignoreArmour != true && gameManager.player.avoidAttack != true)
         {
-
+            
             if (selectedCard.damage > gameManager.player.playerArmor)
             {
                 selectedCard.damage -= gameManager.player.playerArmor;
@@ -118,13 +119,25 @@ public class Enemy : MonoBehaviour
             }
         }
 
-        else
+        else if(gameManager.player.avoidAttack != true)
         {
             gameManager.player.playerHealth -= selectedCard.damage;
+        }
+        else{
+            gameManager.player.avoidAttack = false;
         }
 
         health += selectedCard.healing;
         armour += selectedCard.armour;
+    
+        if(selectedCard.hitChance > 0){
+            int x = Random.Range(0, 100);
+            Debug.Log(x.ToString());
+            
+            if(x <= selectedCard.hitChance){
+                avoidAttack = true;
+            }
+        }
         
         Vector3 initialPosition = selectedCard.transform.position;
         selectedCard.transform.position = enemyCardDisplay.position;
@@ -203,6 +216,7 @@ public class Enemy : MonoBehaviour
             enemyCards[i].healing = currentCard.healing;
             enemyCards[i].damageMult = currentCard.damageMult;
             enemyCards[i].ignoreArmour = currentCard.ignoreArmour;
+            enemyCards[i].hitChance = currentCard.hitChance;
         }
     }
 }

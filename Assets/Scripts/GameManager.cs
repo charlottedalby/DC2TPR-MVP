@@ -88,6 +88,7 @@ public class GameManager : MonoBehaviour
             enemy.enemyCards[i].healing = currentCard.healing;
             enemy.enemyCards[i].damageMult = currentCard.damageMult;
             enemy.enemyCards[i].ignoreArmour = currentCard.ignoreArmour;
+            enemy.enemyCards[i].hitChance = currentCard.hitChance;
         }
 
         player = FindObjectOfType<Player>();
