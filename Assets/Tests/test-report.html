@@ -41,8 +41,9 @@
     </style>
 </head>
 <body>
-    <h1>Project Zodiac Test Evidence</h1>
-    <h2>Tests</h2>
+    <h1 id="main-heading">Project Zodiac Testing</h1>
+    <nav id="table-of-contents"></nav>
+    <h2 id="subheading-1">Tests</h2>
     <table>
         <tr>
             <th>Test</th>
@@ -61,7 +62,7 @@
                     <tr>
                         <td>AC1</td>
                         <td> When a player enters a battle, they should have a deck size of 12, 
-                            discard pile size of 0, and no cards visible in hand. There should be a 
+                            dis card pile size of 0, and no cards visible in hand. There should be a 
                             small pause before the player draws any cards from their deck 
                         </td>
                     </tr>
@@ -1061,7 +1062,7 @@
         </tr>
         
     </table>
-    <h2>Test Evidence</h2>
+    <h2 id="subheading-2">Test Evidence</h2>
 
     <style>
         .row {
@@ -1140,8 +1141,36 @@
             <td><img src="\Assets\Tests\Test Screenshots\US0003_AC3_SYSTEM_TEST_SS.PNG" width="400" height="300"></td>
             <td><img src="\Assets\Tests\Test Screenshots\US0003_AC4_SYSTEM_TEST_SS.PNG" width="400" height="300"></td>
         </tr>
-        <!-- Rest of the table rows -->
     </table>
     
+    <script>
+        // Find the table of contents container
+        var tocContainer = document.getElementById("table-of-contents");
+      
+        // Find all the headings in the document
+        var headings = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+      
+        // Iterate through the headings and create links in the table of contents
+        for (var i = 0; i < headings.length; i++) {
+          var heading = headings[i];
+          var level = parseInt(heading.tagName.charAt(1), 10);
+      
+          // Create a link element
+          var link = document.createElement("a");
+          link.href = "#" + heading.id;
+          link.textContent = heading.textContent;
+      
+          // Create a list item and append the link
+          var listItem = document.createElement("li");
+          listItem.appendChild(link);
+      
+          // Indent the list item based on the heading level
+          listItem.style.marginLeft = (level - 1) + "rem";
+      
+          // Append the list item to the table of contents container
+          tocContainer.appendChild(listItem);
+        }
+      </script>
+
 </body>
 </html>

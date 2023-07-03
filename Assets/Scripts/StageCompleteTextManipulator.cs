@@ -32,8 +32,7 @@ public class StageCompleteTextManipulator : MonoBehaviour
     {
         string newText = "Stage " + GameController.stage + " Complete";
         stageCompleteText.text = newText;
-        // Uncomment to level up stage, commented as games breaks as stage 2 enemies assets are not implemented
-        // GameController.stage += 1;
+        GameController.stage += 1;
     }
 
 }
