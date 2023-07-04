@@ -14,7 +14,8 @@ using UnityEngine.SceneManagement;
     c. GFX: nodes Transform
     d. animator: animation for nodes
     e. enemies: Instance of Enemies 
-    f. enemy: Instance of Enemy 
+    f. enemy: Instance of Enemy
+    g. eventManager: Instance of Event Manager
 
     Methods: 
 

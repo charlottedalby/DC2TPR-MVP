@@ -850,7 +850,6 @@ public class MapGeneration : MonoBehaviour
                             node.battleStrength = 4;
                         }
                     } 
-                    Debug.Log(node.battleStrength);
                 }
             }
         }

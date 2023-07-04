@@ -132,7 +132,6 @@ public class Enemy : MonoBehaviour
     
         if(selectedCard.hitChance > 0){
             int x = Random.Range(0, 100);
-            Debug.Log(x.ToString());
             
             if(x <= selectedCard.hitChance){
                 avoidAttack = true;

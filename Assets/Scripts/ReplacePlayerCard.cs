@@ -81,7 +81,6 @@ public class ReplacePlayerCard : MonoBehaviour
         {
             Card currentCard = GameController.playerStartingDeck[i];
             cards[i].name = currentCard.name;
-            Debug.Log(cards[i].name);
             cards[i].damage = currentCard.damage;
             cards[i].hasBeenPlayed = currentCard.hasBeenPlayed;
             cards[i].handIndex = currentCard.handIndex;
