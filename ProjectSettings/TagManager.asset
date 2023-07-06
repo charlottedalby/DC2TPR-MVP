@@ -9,6 +9,56 @@ TagManager:
   - Card
   - Enemy
   - Skip
+  - Punch
+  - Kick
+  - Jump Kick
+  - Throw
+  - Grapple
+  - Meditate
+  - Clamp Down
+  - Scurry
+  - Tail Strike
+  - Peck
+  - Home In
+  - Roost
+  - Wing Defence
+  - Rear Kick
+  - Run Away
+  - Keen Sense
+  - Intimidate
+  - Feather Dance
+  - Flock Attack
+  - Hound
+  - Bite
+  - Pounce
+  - Bare Teeth
+  - Camoflage
+  - Tail Lash
+  - Shed Tail
+  - Use Tools
+  - Gouge
+  - Swing High
+  - Pummel
+  - Thick Skin
+  - Trample
+  - Roll Around
+  - Sniff Out
+  - Clamp
+  - Exoskelton
+  - Envenom
+  - Spin Web
+  - Fang Strike
+  - Pin Down
+  - Snap
+  - Slow Start
+  - Shell Attack
+  - Shell Armour
+  - Curl Up
+  - Pincer
+  - Team Attack
+  - Attempt Flight
+  - Scramble
+  - Gnaw
   layers:
   - Default
   - TransparentFX

@@ -19,6 +19,7 @@ using UnityEngine.UI;
     h. avalibleCardSlots: Card Slots avalible on Screen
     i. cardSlots: List of Card Slots
     j. gameManager: Instance of GameManager 
+    k. avoidAttack: allows the player to avoid enemy attack 
 
     Methods: 
 

@@ -29,7 +29,8 @@ using UnityEngine.SceneManagement;
     h. loadRestStop()
 */
 
-public class NodeOBJ : MonoBehaviour {
+public class NodeOBJ : MonoBehaviour
+{
     
     public Node node;
     private Vector3 normalScale;
@@ -82,13 +83,13 @@ public class NodeOBJ : MonoBehaviour {
         {
             if (GameController.PlayerStartNode.IsConnected(node) == true)
             {
-                GFX.transform.localScale = 2 * normalScale;
+                GFX.transform.localScale = 1.25f * normalScale;
             }
         }
 
         else if(node.row == 0)
         {
-            GFX.transform.localScale = 2 * normalScale;
+            GFX.transform.localScale = 1.25f * normalScale;
         }
     }
 
@@ -129,12 +130,14 @@ public class NodeOBJ : MonoBehaviour {
 
     void OnMouseDown()
     {
-        int randomNumber;
+        Debug.Log("Hey you are at the start");
         if (GameController.PlayerStartNode != null)
         {
+            Debug.Log("Hey you are in the GameController PlayerStartNode != null if statement");
             if (GameController.PlayerStartNode.IsConnected(node) == true)
             {
-                
+                Debug.Log("Hey you are in the GameController PlayerStartNode isConnected if statement");
+            
                 if(node.battleStrength == 0)
                 {
                     loadRestStop();
@@ -163,8 +166,11 @@ public class NodeOBJ : MonoBehaviour {
 
         else
         {
+            Debug.Log("HEy");
+            
             if(node.backwardConnections.Count == 0)
             {
+                Debug.Log("Hey you are in the else");
                 loadBattleScene();
             }
             

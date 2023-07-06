@@ -5,7 +5,6 @@ using UnityEngine.UI;
 using System.Reflection;
 using System.Runtime.Serialization;
     
-[ExecuteInEditMode]
 public class MapGeneration : MonoBehaviour
 {
     public Text playerHealthText;
@@ -812,7 +811,7 @@ public class MapGeneration : MonoBehaviour
                 foreach(var node in GetNodesInRow(e))
                 {
                     //Battle is Easy for first Row
-                    node.battleStrength = 1;
+                    node.battleStrength = 1; 
                 }
             }
             //Any other Row

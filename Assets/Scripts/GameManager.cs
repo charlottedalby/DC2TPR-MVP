@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour
     public ArmorBar armorBar;
     public Enemies enemies;
     public Enemy currentEnemy;
+    public Card card;
 
     /*
 	    Method: Start()
@@ -90,7 +91,7 @@ public class GameManager : MonoBehaviour
             enemy.enemyCards[i].ignoreArmour = currentCard.ignoreArmour;
             enemy.enemyCards[i].hitChance = currentCard.hitChance;
         }
-
+        
         player = FindObjectOfType<Player>();
         player.playerHealth = GameController.PlayerStartHealth;
         player.playerArmor = GameController.PlayerStartArmor;
@@ -172,6 +173,8 @@ public class GameManager : MonoBehaviour
                 GameController.gameMapState = null;
                 GameController.PlayerStartNode = null;
                 GameController.PlayerMapPos.Clear();
+                GameController.stage1Difficulty = new List <int>();
+                GameController.PlayerStartColumn = 0;
                 SceneManager.LoadScene("StageComplete");
             }
             else

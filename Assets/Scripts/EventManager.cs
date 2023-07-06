@@ -250,8 +250,14 @@ public class EventManager : MonoBehaviour
 
         else if (EventNumber == 8)
         {
+            int tempStage = GameController.stage;
+            if (GameController.stage != 1)
+            {
+                GameController.stage -= 1;
+            }
             GameController.PlayerStartNode.battleStrength = 3;
             SceneManager.LoadScene("BattleScreen");
+            GameController.stage = tempStage;
         }
     }
 

@@ -19,6 +19,8 @@ using UnityEngine.UI;
     h. healing: Card Healing 
     i. damageMult: Card Damage Multiplier 
     j. name: Card Name
+    k. ignoreArmor: Boolean operator to signify if the card will ignore armor 
+    l. hitChance: Chance of the card hitting the opponent 
 
     Methods: 
 
@@ -45,6 +47,8 @@ public class Card : MonoBehaviour
     public string name;
     public bool ignoreArmour;
     public int hitChance;
+    public Vector3 tranformPos;
+    bool yes;
 
     /*
         Method: Awake()
@@ -85,9 +89,11 @@ public class Card : MonoBehaviour
 
     public void Start()
     { 
+        yes = false;
         player = FindObjectOfType<Player>();
         gameManager = FindObjectOfType<GameManager>();
         assignCardUI();
+        tranformPos = transform.position;
     }
 
     /*
@@ -144,19 +150,37 @@ public class Card : MonoBehaviour
     void OnMouseDown(){
         if(hasBeenPlayed == false)
         {
-        gameManager.player.attackEnemy(damage, ignoreArmour, hitChance);
-        gameManager.player.raiseArmor(armour);
-        gameManager.player.healPlayer(healing);
-        gameManager.player.powerUp(damageMult);
-        
-        transform.position += Vector3.up * 5;
-        Cursor.lockState = CursorLockMode.Locked;
-        hasBeenPlayed = true;
+            hasBeenPlayed = true;
+            gameManager.player.attackEnemy(damage, ignoreArmour, hitChance);
+            gameManager.player.raiseArmor(armour);
+            gameManager.player.healPlayer(healing);
+            gameManager.player.powerUp(damageMult);
 
-        gameManager.player.availableCardSlots[handIndex] = true;
-        gameManager.player.Invoke("discardHand", 2f);
-        gameManager.enemy.Invoke("attackPlayer", 2f);
+            Cursor.lockState = CursorLockMode.Locked;
+
+            gameManager.player.availableCardSlots[handIndex] = true;
+            gameManager.player.Invoke("discardHand", 2f);
+            gameManager.enemy.Invoke("attackPlayer", 2f);
         }
+    }
+
+    void OnMouseEnter()
+    {
+        tranformPos = transform.position;
+        if(!yes)
+        {
+            transform.position += Vector3.up * 1;
+            yes = true;
+        }
+    }
+
+    void OnMouseExit()
+    {
+        if(hasBeenPlayed == false)
+        {
+            transform.position = tranformPos;
+        }
+        yes = false;
     }
 
     /*
@@ -210,59 +234,82 @@ public class Card : MonoBehaviour
             { "Throw", "Throw" },
             { "Grapple", "Grapple" },
             { "Meditate", "Meditate" },
-            { "Clamp Down", "Clamp Down" },
-            { "Scurry", "Scurry" },
-            { "Tail Strike", "Tail Strike" },
-            { "Peck", "Peck" },
-            { "Home In", "Home In" },
-            { "Roost", "Roost" },
-            { "Wing Defence", "Wing Defence" },
-            { "Rear Kick", "Rear Kick" },
-            { "Run Away", "Run Away" },
-            { "Keen Sense", "Keen Sense" },
-            { "Intimidate", "Intimidate" },
-            { "Feather Dance", "Feather Dance" },
-            { "Flock Attack", "Flock Attack" },
-            { "Hound", "Hound" },
-            { "Bite", "Bite" },
-            { "Pounce", "Pounce" },
-            { "Bare Teeth", "Bare Teeth" },
-            { "Camouflage", "Camouflage" },
-            { "Tail Lash", "Tail Lash" },
-            { "Shed Tail", "Shed Tail" },
-            { "Use Tools", "Use Tools" },
-            { "Gouge", "Gouge" },
-            { "Swing High", "Swing High" },
-            { "Pummel", "Pummel" },
-            { "Thick Skin", "Thick Skin" },
-            { "Trample", "Trample" },
-            { "Roll Around", "Roll Around" },
-            { "Sniff Out", "Sniff Out" },
-            { "Clamp", "Clamp" },
-            { "Exoskeleton", "Exoskeleton" },
-            { "Envenom", "Envenom" },
-            { "Spin Web", "Spin Web" },
-            { "Fang Strike", "Fang Strike" },
-            { "Pin down", "Pin down" },
-            { "Snap", "Snap" },
-            { "Slow Start", "Slow Start" },
-            { "Shell Attack", "Shell Attack" },
-            { "Shell Armour", "Shell Armour" },
-            { "Pincer", "Pincer" },
-            { "Team Attack", "Team Attack" },
-            { "Curl Up", "Curl Up" },
-            { "Attempt Flight", "Attempt Flight" },
-            { "Scramble", "Scramble" },
-            { "Gnaw", "Gnaw" }
+            
+            {"Curl Up (Ant)", "Curl Up (Ant)"},
+            {"Exoskeleton (Ant)", "Exoskeleton (Ant)"},
+            {"Pincer (Ant)", "Pincer (Ant)"},
+            {"Team Attack (Ant)", "Team Attack (Ant)"},
+
+            {"Attempt Flight (Cockroach)", "Attempt Flight (Cockroach)"},
+            {"Curl Up (Cockroach)", "Curl Up (Cockroach)"},
+            {"Pincer (Cockroach)", "Pincer (Cockroach)"},
+            {"Scramble (Cockroach)", "Scramble (Cockroach)"},
+            
+            {"Bare Teeth (Dog)", "Bare Teeth (Dog)"},
+            {"Bite (Dog)", "Bite (Dog)"},
+            {"Hound (Dog)", "Hound (Dog)"},
+            {"Pounce (Dog)", "Pounce (Dog)"},
+
+            {"Bite (Lizard)", "Bite (Lizard)"},
+            {"Camouflage (Lizard)", "Camouflage (Lizard)"},
+            {"Shed Tail (Lizard)", "Shed Tail (Lizard)"},
+            {"Tail Lash (Lizard)", "Tail Lash (Lizard)"},
+
+            {"Gouge (Monkey)", "Gouge (Monkey)"},
+            {"Pummel (Monkey)", "Pummel (Monkey)"},
+            {"Swing High (Monkey)", "Swing High (Monkey)"},
+            {"User Tools (Monkey)", "User Tools (Monkey)"},
+
+            {"Clamp Down (Mouse)", "Clamp Down (Mouse)"},
+            {"Gnaw (Mouse)", "Gnaw (Mouse)"},
+            {"Scurry (Mouse)", "Scurry (Mouse)"},
+            {"Tail Strike (Mouse)", "Tail Strike (Mouse)"},
+
+            {"Roll Around (Pig)", "Roll Around (Pig)"},
+            {"Sniff Out (Pig)", "Sniff Out (Pig)"},
+            {"Thick Skin (Pig)", "Thick Skin (Pig)"},
+            {"Trample (Pig)", "Trample (Pig)"},
+
+            {"Home In (Pigeon)", "Home In (Pigeon)"},
+            {"Peck (Pigeon)", "Peck (Pigeon)"},
+            {"Roost (Pigeon)", "Roost (Pigeon)"},
+            {"Wing Defence (Pigeon)", "Wing Defence (Pigeon)"},
+
+            {"Gnaw (Rabbit)", "Gnaw (Rabbit)"},
+            {"Keen Sense (Rabbit)", "Keen Sense (Rabbit)"},
+            {"Rear Kick (Rabbit)", "Rear Kick (Rabbit)"},
+            {"Run Away (Rabbit)", "Run Away (Rabbit)"},
+
+            {"Clamp Down (Rat)", "Clamp Down (Rat)"},
+            {"Gnaw (Rat)", "Gnaw (Rat)"},
+            {"Scurry (Rat)", "Scurry (Rat)"},
+            {"Tail Strike (Rat)", "Tail Strike (Rat)"},
+
+            {"Feather Dance (Rooster)", "Feather Dance (Rooster)"},
+            {"Flock Attack (Rooster)", "Flock Attack (Rooster)"},
+            {"Intimidate (Rooster)", "Intimidate (Rooster)"},
+            {"Peck (Rooster)", "Peck (Rooster)"},
+
+            {"Clamp (Scorpion)", "Clamp (Scorpion)"},
+            {"Evnvenom (Scorpion)", "Evnvenom (Scorpion)"},
+            {"Exoskeleton (Scorpion)", "Exoskeleton (Scorpion)"},
+            {"Tail Lash (Scorpion)", "Tail Lash (Scorpion)"},
+
+            {"Shell Armor (Turtle)", "Shell Armor (Turtle)"},
+            {"Shell Attack (Turtle)", "Shell Attack (Turtle)"},
+            {"Slow Start (Turtle)", "Slow Start (Turtle)"},
+            {"Snap (Turtle)", "Snap (Turtle)"},
         };
 
         GameObject[] cards = GameObject.FindGameObjectsWithTag("Card");
+        Debug.Log("Number of cards found: " + cards.Length);
         
         foreach (GameObject card in cards)
         {
             Card currentCard = card.GetComponent<Card>();
             if(currentCard.name != null && cardSpriteMap.ContainsKey(currentCard.name))
             {
+                Debug.Log("You are in");
                 Image cardImage = currentCard.GetComponent<Image>();
                 Sprite newSprite = GameObject.Find(cardSpriteMap[currentCard.name]).GetComponent<Image>().sprite;
                 cardImage.sprite = newSprite;
