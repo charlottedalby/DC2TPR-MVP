@@ -64,12 +64,12 @@ public class Enemies : MonoBehaviour
         stageEnemies.Add(new Enemy("Turtle", assignStartingEnemyCards(12), 35, 0, 1, 2));
 
         //Placeholder Stage 3 enemies
-        stageEnemies.Add(new Enemy("Dog", assignStartingEnemyCards(7), 45, 0, 2, 3));
-        stageEnemies.Add(new Enemy("Lizard", assignStartingEnemyCards(8), 30, 0, 1, 3));
-        stageEnemies.Add(new Enemy("Monkey", assignStartingEnemyCards(9), 60, 0, 3, 3));
-        stageEnemies.Add(new Enemy("Pig", assignStartingEnemyCards(10), 50, 0, 2, 3)); 
-        stageEnemies.Add(new Enemy("Scorpion", assignStartingEnemyCards(11), 25, 0, 1, 3));
-        stageEnemies.Add(new Enemy("Turtle", assignStartingEnemyCards(12), 35, 0, 1, 3));
+        stageEnemies.Add(new Enemy("Dog", assignStartingEnemyCards(13), 45, 0, 2, 3));
+        stageEnemies.Add(new Enemy("Lizard", assignStartingEnemyCards(14), 30, 0, 1, 3));
+        stageEnemies.Add(new Enemy("Monkey", assignStartingEnemyCards(15), 60, 0, 3, 3));
+        stageEnemies.Add(new Enemy("Pig", assignStartingEnemyCards(16), 50, 0, 2, 3)); 
+        stageEnemies.Add(new Enemy("Scorpion", assignStartingEnemyCards(17), 25, 0, 1, 3));
+        stageEnemies.Add(new Enemy("Turtle", assignStartingEnemyCards(18), 35, 0, 1, 3));
     }
 
     /*
@@ -95,7 +95,7 @@ public class Enemies : MonoBehaviour
         bool isEnemyChosen = false;
         int enemyIndex = 0;
         while (!isEnemyChosen) {
-            enemyIndex = Random.Range(0, 13);
+            enemyIndex = Random.Range(0, 19);
             if (stageEnemies[enemyIndex].difficulty == battleDifficulty) {
                 if (stageEnemies[enemyIndex].stage == currentStage) {
                     isEnemyChosen = true;                 
