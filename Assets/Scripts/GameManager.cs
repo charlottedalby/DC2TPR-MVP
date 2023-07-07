@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
     public Enemies enemies;
     public Enemy currentEnemy;
     public Card card;
+    public Menu menu;
 
     /*
 	    Method: Start()
@@ -68,6 +69,9 @@ public class GameManager : MonoBehaviour
 
     public void Start(){
         
+        GameObject menuObject = GameObject.Find("Canvas");
+        menu = menuObject.GetComponent<Menu>();
+
         enemy = FindObjectOfType<Enemy>();
         currentEnemy = enemies.selectEnemy(GameController.PlayerStartNode.battleStrength, GameController.stage);
         enemy.name = currentEnemy.name;
@@ -129,7 +133,7 @@ public class GameManager : MonoBehaviour
         {
             playerHealthText.text = "0";
             playerArmorText.text = "0";
-            Invoke("GameOver", 2f);
+            Invoke("GameOver", 1f);
         }
         else if(player.playerHealth > 0)
         {
@@ -175,16 +179,16 @@ public class GameManager : MonoBehaviour
                 GameController.PlayerMapPos.Clear();
                 GameController.stage1Difficulty = new List <int>();
                 GameController.PlayerStartColumn = 0;
-                SceneManager.LoadScene("StageComplete");
+                menu.loadStageComplete();
             }
             else
             {
-                SceneManager.LoadScene("YouWin");
+                menu.loadYouWin();
             }
         }
         else if(player.playerHealth <= 0)
         {
-            SceneManager.LoadScene("GameOver");
+            menu.loadGameOver();
         }
     }
 

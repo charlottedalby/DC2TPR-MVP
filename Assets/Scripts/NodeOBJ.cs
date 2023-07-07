@@ -38,6 +38,7 @@ public class NodeOBJ : MonoBehaviour
     [SerializeField] private Animator animator;
     public Enemies enemies;
     public Enemy enemy;
+    public Menu menu;
     
     /*
         Method: Start()
@@ -54,9 +55,11 @@ public class NodeOBJ : MonoBehaviour
 
     void Start()
     {
+        GameObject menuObject = GameObject.Find("mapCanvas");
+        menu = menuObject.GetComponent<Menu>();
         normalScale = GFX.localScale;
         animator.enabled = false;
-        animateNodes();
+        colorNodes();
 
         if (enemies == null)
         {
@@ -79,17 +82,20 @@ public class NodeOBJ : MonoBehaviour
 
     void OnMouseOver()
     {
+        SpriteRenderer spriteRen = GFX.GetComponent<SpriteRenderer>();
         if (GameController.PlayerStartNode != null)
         {
             if (GameController.PlayerStartNode.IsConnected(node) == true)
             {
                 GFX.transform.localScale = 1.25f * normalScale;
+                spriteRen.color = Color.yellow;
             }
         }
 
         else if(node.row == 0)
         {
             GFX.transform.localScale = 1.25f * normalScale;
+            spriteRen.color = Color.yellow;
         }
     }
 
@@ -104,7 +110,13 @@ public class NodeOBJ : MonoBehaviour
 
     void OnMouseExit()
     {
-        GFX.transform.localScale = normalScale;
+        if (animator.enabled == false)
+        {
+            SpriteRenderer spriteRen = GFX.GetComponent<SpriteRenderer>();
+            GFX.transform.localScale = normalScale;
+            spriteRen.color = Color.white;
+        }
+        
     }
 
     /*
@@ -130,13 +142,11 @@ public class NodeOBJ : MonoBehaviour
 
     void OnMouseDown()
     {
-        Debug.Log("Hey you are at the start");
         if (GameController.PlayerStartNode != null)
         {
-            Debug.Log("Hey you are in the GameController PlayerStartNode != null if statement");
+            
             if (GameController.PlayerStartNode.IsConnected(node) == true)
             {
-                Debug.Log("Hey you are in the GameController PlayerStartNode isConnected if statement");
             
                 if(node.battleStrength == 0)
                 {
@@ -166,11 +176,9 @@ public class NodeOBJ : MonoBehaviour
 
         else
         {
-            Debug.Log("HEy");
             
             if(node.backwardConnections.Count == 0)
             {
-                Debug.Log("Hey you are in the else");
                 loadBattleScene();
             }
             
@@ -179,23 +187,28 @@ public class NodeOBJ : MonoBehaviour
 
     /*
 
-        Method: animateNodes
+        Method: colorNodes
         Visibility: Private 
         Output: N/A
         Purpose: 
 
         a. Iterate through the GameController's PlayerMapPos list.
         b. If the current node's ID matches an ID in the PlayerMapPos list
-        c. Then enable the animator component.
+        c. Then color turns grey 
     */
 
-    void animateNodes()
+    void colorNodes()
     {
         for (int i = 0; i < GameController.PlayerMapPos.Count; i++)
         {
             if (node.id == GameController.PlayerMapPos[i])
             {
-                animator.enabled = true;
+                if(node.id == GameController.PlayerMapPos[GameController.PlayerMapPos.Count-1])
+                {
+                    animator.enabled = true;
+                }
+                SpriteRenderer spriteRen = GFX.GetComponent<SpriteRenderer>();
+                spriteRen.color = Color.grey;
             }
         }
     }
@@ -242,7 +255,7 @@ public class NodeOBJ : MonoBehaviour
         GameController.PlayerStartNode = node;
         GameController.PlayerMapPos.Add(node.id);
 
-        SceneManager.LoadScene("BattleScreen");
+        menu.NextBattle();
     } 
 
     /*
@@ -259,7 +272,7 @@ public class NodeOBJ : MonoBehaviour
 
     void loadRestStop()
     {
-        SceneManager.LoadScene("RestStop");
+        menu.loadRestStop();
         GameController.PlayerStartColumn = node.column;
         GameController.PlayerStartNode = node;
         GameController.PlayerMapPos.Add(node.id);
@@ -279,9 +292,11 @@ public class NodeOBJ : MonoBehaviour
 
     void loadEventScene()
     {
-        SceneManager.LoadScene("EventStop");
+        menu.loadEventStop();
         GameController.PlayerStartColumn = node.column;
         GameController.PlayerStartNode = node;
         GameController.PlayerMapPos.Add(node.id);
     }
+
+    
 }

@@ -49,16 +49,17 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-
+    public Animator animator; 
+    
     public void NextBattle()
     {
         Cursor.lockState = CursorLockMode.None;
-        SceneManager.LoadScene("BattleScreen");
+        fadeToLevel("BattleScreen");
     }
 
     public void loadOverworld()
     {
-        SceneManager.LoadScene("OverworldScreen");
+        fadeToLevel("OverworldScreen");
     }
 
     public void exitGame()
@@ -69,7 +70,7 @@ public class Menu : MonoBehaviour
     public void loadMainMenu()
     {
         GameController.PlayerStartNode = null;
-        SceneManager.LoadScene("MainMenu");
+        fadeToLevel("MainMenu");
     }
 
     public void loadOverworld20HP()
@@ -81,27 +82,58 @@ public class Menu : MonoBehaviour
             GameController.PlayerStartHealth = 100;
         }
 
-        SceneManager.LoadScene("OverworldScreen");
+        fadeToLevel("OverworldScreen");
     }
     
     public void loadCardSteal()
     {
-        SceneManager.LoadScene("CardStealing");
+        fadeToLevel("CardStealing");
     }
 
     public void loadCardSwap()
     {
-        SceneManager.LoadScene("CardSwap");
+        fadeToLevel("CardSwap");
     }
 
     public void LoadPlayerCardsScene()
     {
-        SceneManager.LoadScene("PlayerCardStealScreen");
+        fadeToLevel("PlayerCardStealScreen");
     }
 
     public void loadPlayerCardCancel()
     {
-        SceneManager.LoadScene("PlayerCardStealScreen");
+        fadeToLevel("PlayerCardStealScreen");
+    } 
+
+    public void loadGameOver()
+    {
+        fadeToLevel("GameOver");
+    }
+
+    public void loadStageComplete()
+    {
+        fadeToLevel("StageComplete");
+    }
+
+    public void loadYouWin()
+    {
+        fadeToLevel("YouWin");
+    }
+
+    public void loadRestStop()
+    {
+        fadeToLevel("RestStop");
+    }
+
+    public void loadEventStop()
+    {
+        fadeToLevel("EventStop");
+    }
+
+    public void fadeToLevel(string name)
+    {
+        animator.SetTrigger("FadeOut");
+        SceneManager.LoadScene(name);
     }
     
 }

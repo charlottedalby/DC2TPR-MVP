@@ -47,6 +47,7 @@ public class EventManager : MonoBehaviour
     List<int> Event7;
     List<int> Event8;
     List<int> Event9;
+    public Menu menu;
 
     /*
         Method: Start()
@@ -63,6 +64,9 @@ public class EventManager : MonoBehaviour
 
     void Start()
     {
+        GameObject menuObject = GameObject.Find("Canvas");
+        menu = menuObject.GetComponent<Menu>();
+
         skip = false;
         generateEvents();
         Events[0].Stages = Event1 = new List<int> {1, 3, 4};
@@ -134,7 +138,7 @@ public class EventManager : MonoBehaviour
             }
 
             GameController.PlayerStartHealth = (int)Math.Round(newHealth);
-            SceneManager.LoadScene("OverworldScreen");
+            menu.loadOverworld();
         }
 
         else if(EventNumber == 1)
@@ -144,12 +148,12 @@ public class EventManager : MonoBehaviour
 
             if(newHealth <= 0.0f)
             {
-                SceneManager.LoadScene("GameOver");
+                menu.loadGameOver();
             }
             else
             {
                 GameController.PlayerStartHealth = (int)Math.Round(newHealth);
-                SceneManager.LoadScene("OverworldScreen");
+                menu.loadOverworld();
             }
         }
 
@@ -167,7 +171,7 @@ public class EventManager : MonoBehaviour
                 {
                     GameController.PlayerStartHealth += 10;
                 }
-                SceneManager.LoadScene("OverworldScreen");
+                menu.loadOverworld();
             }
             else
             {
@@ -175,9 +179,9 @@ public class EventManager : MonoBehaviour
 
                 if(GameController.PlayerStartHealth <= 0)
                 {
-                    SceneManager.LoadScene("GameOver");
+                    menu.loadGameOver();
                 }
-                SceneManager.LoadScene("OverworldScreen");
+                menu.loadOverworld();
             }
         }
 
@@ -185,7 +189,7 @@ public class EventManager : MonoBehaviour
         {
             bossEnemy = enemies.selectEnemy(3, GameController.stage);
             GameController.enemyStartingDeck = bossEnemy.enemyCards;
-            SceneManager.LoadScene("CardStealing");
+            menu.loadCardSteal();
         }
 
         else if(EventNumber == 4)
@@ -203,7 +207,7 @@ public class EventManager : MonoBehaviour
                 bossEnemy = enemies.selectEnemy(2, GameController.stage);
                 GameController.enemyStartingDeck = bossEnemy.enemyCards;
             }
-            SceneManager.LoadScene("CardStealing");
+            menu.loadCardSteal();
         }
 
         else if (EventNumber == 5)
@@ -213,7 +217,7 @@ public class EventManager : MonoBehaviour
 
             if(newHealth <= 0.0f)
             {
-                SceneManager.LoadScene("GameOver");
+                menu.loadGameOver();
             }
             else
             {
@@ -221,13 +225,13 @@ public class EventManager : MonoBehaviour
             }
             bossEnemy = enemies.selectEnemy(1, GameController.stage);
             GameController.enemyStartingDeck = bossEnemy.enemyCards;
-            SceneManager.LoadScene("CardStealing");
+            menu.loadCardSteal();
         }
 
         else if (EventNumber == 6)
         {
             GameController.PlayerStartHealth = 100;
-            SceneManager.LoadScene("OverworldScreen");
+            menu.loadOverworld();
         }
 
         else if (EventNumber == 7)
@@ -237,7 +241,7 @@ public class EventManager : MonoBehaviour
 
             if(newHealth <= 0.0f)
             {
-                SceneManager.LoadScene("GameOver");
+                menu.loadGameOver();
             }
             else
             {
@@ -245,7 +249,8 @@ public class EventManager : MonoBehaviour
             }
             bossEnemy = enemies.selectEnemy(2, GameController.stage);
             GameController.enemyStartingDeck = bossEnemy.enemyCards;
-            SceneManager.LoadScene("CardStealing");
+            menu.loadCardSteal();
+
         }
 
         else if (EventNumber == 8)
@@ -256,7 +261,7 @@ public class EventManager : MonoBehaviour
                 GameController.stage -= 1;
             }
             GameController.PlayerStartNode.battleStrength = 3;
-            SceneManager.LoadScene("BattleScreen");
+            menu.NextBattle();
             GameController.stage = tempStage;
         }
     }
@@ -319,7 +324,7 @@ public class EventManager : MonoBehaviour
     {
         if(skip == true)
         {
-            SceneManager.LoadScene("OverworldScreen");
+            menu.loadOverworld();
         }
     }
 

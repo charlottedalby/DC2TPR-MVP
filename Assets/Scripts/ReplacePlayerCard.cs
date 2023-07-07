@@ -47,6 +47,7 @@ public class ReplacePlayerCard : MonoBehaviour
     public Image CardHighlight12;
     public static int cardPos;
     public List<Card> cards = new List<Card>();
+    public Menu menu;
     
     /*
         Method: Start()
@@ -64,6 +65,9 @@ public class ReplacePlayerCard : MonoBehaviour
 
     void Start()
     {
+        GameObject menuObject = GameObject.Find("Canvas");
+        menu = menuObject.GetComponent<Menu>();
+
         CardHighlight1 = GameObject.Find("CardHighlight1").GetComponent<Image>();
         CardHighlight2 = GameObject.Find("CardHighlight1 (1)").GetComponent<Image>();
         CardHighlight3 = GameObject.Find("CardHighlight1 (2)").GetComponent<Image>();
@@ -193,7 +197,7 @@ public class ReplacePlayerCard : MonoBehaviour
         if(cardPos != null)
         {
             GameController.playerStartingDeck[cardPos] = GameController.SwappedCard;
-            SceneManager.LoadScene("OverworldScreen");
+            menu.loadOverworld();
         }
     }
 
@@ -208,6 +212,6 @@ public class ReplacePlayerCard : MonoBehaviour
 
     public void cancelClick()
     {
-        SceneManager.LoadScene("OverworldScreen");
+        menu.loadOverworld();
     }
 }
