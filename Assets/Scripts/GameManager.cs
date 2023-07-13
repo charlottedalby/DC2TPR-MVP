@@ -67,11 +67,10 @@ public class GameManager : MonoBehaviour
 
     */
 
-    public void Start(){
-        
+    public void Start()
+    {
         GameObject menuObject = GameObject.Find("Canvas");
         menu = menuObject.GetComponent<Menu>();
-
         enemy = FindObjectOfType<Enemy>();
         currentEnemy = enemies.selectEnemy(GameController.PlayerStartNode.battleStrength, GameController.stage);
         enemy.name = currentEnemy.name;

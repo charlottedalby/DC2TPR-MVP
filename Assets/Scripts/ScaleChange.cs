@@ -22,7 +22,7 @@ public class ScaleChange : MonoBehaviour
 {
     private bool isHovering = false;
     public Text text;
-
+    Color originalColor;
 
     /*
         Method: changeColour
@@ -39,21 +39,18 @@ public class ScaleChange : MonoBehaviour
         g. Set isHovering to false.
     */
 
-    public void changeColour(bool increase)
+    public void changeColour(bool change)
     {
-        if (increase)
+        
+        if (change)
         {
-            if(!isHovering)
-            {
-                text.color = new Color(255, 255, 0);
-                isHovering = true;
-            }   
+            originalColor = text.color;
+            text.color = Color.white;
         }
-
+        
         else
         {
-            text.color = new Color(255, 255, 255);
-            isHovering = false;
+            text.color = originalColor;
         }
     }
 }
