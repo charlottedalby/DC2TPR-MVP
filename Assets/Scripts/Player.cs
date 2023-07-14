@@ -20,6 +20,7 @@ using UnityEngine.UI;
     i. cardSlots: List of Card Slots
     j. gameManager: Instance of GameManager 
     k. avoidAttack: allows the player to avoid enemy attack 
+    l. playerCardDisplay: where the card will go when a player selects a card
 
     Methods: 
 
@@ -50,6 +51,7 @@ public class Player : MonoBehaviour
     public Transform[] cardSlots;
     public GameManager gameManager;
     public bool avoidAttack;
+    public Transform playerCardDisplay;
 
     /*
         Method: Awake()
@@ -122,11 +124,13 @@ public class Player : MonoBehaviour
         g. Then Reset the played state of the random card.
         h. Activate the random card's GameObject.
         i. Set the random card's handIndex to the current slot index.
-        j. Move the random card to the position of the corresponding card slot.
-        k. Mark the current slot as unavailable.
-        l. Add the random card to the hand.
-        m. Remove the random card from the deck.
-        n. Break the loop.
+        j. Get the Image of the Card and set the Alpha to 0 (Invisible)
+        k. Move the random card to the position of the corresponding card slot.
+        l. Mark the current slot as unavailable.
+        m. Add the random card to the hand.
+        n. Remove the random card from the deck.
+        o. Start Routine to Fade in Card
+        p. Break the loop.
     */
 
     public void DrawCard()
@@ -146,11 +150,16 @@ public class Player : MonoBehaviour
                         randCard.hasBeenPlayed = false;
                         randCard.gameObject.SetActive(true);
                         randCard.handIndex = i;
+                        
+                        Image image = randCard.GetComponent<Image>();
+                        image.color = new Color(1f, 1f, 1f, 0f);
+                        randCard.gameObject.transform.localScale = new Vector3 (1f, 1f, 1f);
                         randCard.transform.position = cardSlots[i].position;
-
                         availableCardSlots[i] = false;
                         hand.Add(randCard);
                         deck.Remove(randCard);
+
+                        StartCoroutine(FadeImage(image, 0.5f, 0f, 1f));
                         break;
                     }
                 }
@@ -167,7 +176,7 @@ public class Player : MonoBehaviour
         a. Iterate over the availableCardSlots array:
         b. Get the current card from the hand.
         c. Add the current card to the discardPile.
-        d. Move the current card's GameObject up by 25 units on the y-axis.
+        d. Move and shrink card to discard pile
         e. Mark the current slot as available.
         f. Clear the hand list.
         g. If the deck is empty:
@@ -181,8 +190,9 @@ public class Player : MonoBehaviour
         {
             Card currentCard = hand[i];
             discardPile.Add(currentCard);
-            currentCard.gameObject.transform.position += Vector3.up * 25;
             availableCardSlots[i] = true;
+            Vector3 originalScale = currentCard.gameObject.transform.localScale;
+            StartCoroutine(MoveAndShrinkCard(currentCard));
         }
 
         hand.Clear();
@@ -384,5 +394,77 @@ public class Player : MonoBehaviour
             deck[i].ignoreArmour = currentCard.ignoreArmour;
             deck[i].hitChance = currentCard.hitChance;
         }
+    }
+
+    /*
+        Method: FadeImage()
+        Visibility: private 
+        Output: null
+        Purpose: 
+
+        a. Gets starting Image Color
+        b. Gets target Image Color
+        c. Creates a time variable
+        d. While the time is less than duration 
+        e. time variable add real time value 
+        f. create a new time variable which contains amount of time passed 
+        g. image color now set to a value between start color and end color 
+        h. Keep on looping until time = duration
+        i. set color to target color 
+    */
+
+    private IEnumerator FadeImage(Image image, float duration, float startAlpha, float targetAlpha)
+    {
+        Color startColor = image.color;
+        Color targetColor = new Color(startColor.r, startColor.g, startColor.b, targetAlpha);
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsedTime/duration);
+            image.color = Color.Lerp(startColor,targetColor,t);
+            yield return null;
+        }
+        image.color = targetColor;
+    }
+
+    /*
+        Method: MoveAndShrinkCard()
+        Visibility: private 
+        Output: null
+        Purpose: 
+
+        a. Duration of Shrink
+        b. Gets target position that cards want to end up at 
+        c. gets original current scale of cards
+        d. gets card target scale i.e 0
+        e. gets elapsed time 
+        f. While elpased time is less than duration (2 seconds)
+        g. move position between starting and ending position 
+        h. Shrink card between start scale and end scale (0)
+        i. add time taken to elapsed time 
+        j. return null to break out of while and start again
+        k. set card position to target position 
+        l. set card scale to target scale 
+    */
+
+    private IEnumerator MoveAndShrinkCard(Card card)
+    {
+        float duration = 2f;
+        Vector3 targetPosition = new Vector3 (-8f, -4.2f, 0.0f);
+        Vector3 originalScale = card.gameObject.transform.localScale;
+        Vector3 targetScale = Vector3.zero;
+
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
+        {
+            card.gameObject.transform.position = Vector3.Lerp(card.gameObject.transform.position, targetPosition, elapsedTime/duration);
+            card.gameObject.transform.localScale = Vector3.Lerp(originalScale, targetScale, elapsedTime/duration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        card.gameObject.SetActive(false);
     }
 }

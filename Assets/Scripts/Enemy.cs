@@ -94,8 +94,9 @@ public class Enemy : MonoBehaviour
         h. Else then player health is reduced by Card Damage 
         i. Health is increased by Card healing 
         j. Armor is increased by Card Armor 
-        k. Enemy Card is Displayed for 2 seconds
-        l. Enemy Card is removed from Scene 
+        k. Enemy Card is faded into Scene
+        l. Enemy Card is Displayed for 2 seconds
+        m. Enemy Card is removed from Scene 
 
     */
 
@@ -141,6 +142,11 @@ public class Enemy : MonoBehaviour
         Vector3 initialPosition = selectedCard.transform.position;
         selectedCard.transform.position = enemyCardDisplay.position;
         selectedCard.gameObject.SetActive(true);
+        
+        Image image = selectedCard.GetComponent<Image>();
+        image.color = new Color(1f, 1f, 1f, 0f);
+        StartCoroutine(FadeImage(image, 0.5f, 0f, 1f));
+
         StartCoroutine(MoveAfterWait(selectedCard, initialPosition));
     }
 
@@ -180,14 +186,15 @@ public class Enemy : MonoBehaviour
         Purpose: 
 
         a. Creates a Wait of 2 Seconds
-        b. Moves Card back to Initial Position 
+        b. Fades Card Out of Scene 
 
     */
 
     public IEnumerator MoveAfterWait(Card card, Vector3 position)
     {
         yield return new WaitForSeconds(2f);
-        card.transform.position = position;
+        Image image = card.GetComponent<Image>();
+        StartCoroutine(FadeImage(image, 0.5f, 1f, 0f));
     }
 
     /*
@@ -202,7 +209,8 @@ public class Enemy : MonoBehaviour
 
     */
 
-    public void getEnemyStartingCards() {
+    public void getEnemyStartingCards() 
+    {
         
         for(int i = 0; i < GameController.enemyStartingDeck.Count; i++) 
         {
@@ -217,5 +225,38 @@ public class Enemy : MonoBehaviour
             enemyCards[i].ignoreArmour = currentCard.ignoreArmour;
             enemyCards[i].hitChance = currentCard.hitChance;
         }
+    }
+
+    /*
+        Method: FadeImage()
+        Visibility: private 
+        Output: null
+        Purpose: 
+
+        a. Gets starting Image Color
+        b. Gets target Image Color
+        c. Creates a time variable
+        d. While the time is less than duration 
+        e. time variable add real time value 
+        f. create a new time variable which contains amount of time passed 
+        g. image color now set to a value between start color and end color 
+        h. Keep on looping until time = duration
+        i. set color to target color 
+    */
+    
+    private IEnumerator FadeImage(Image image, float duration, float startAlpha, float targetAlpha)
+    {
+        Color startColor = image.color;
+        Color targetColor = new Color(startColor.r, startColor.g, startColor.b, targetAlpha);
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsedTime/duration);
+            image.color = Color.Lerp(startColor,targetColor,t);
+            yield return null;
+        }
+        image.color = targetColor;
     }
 }

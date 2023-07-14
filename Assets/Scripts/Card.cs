@@ -20,7 +20,9 @@ using UnityEngine.UI;
     i. damageMult: Card Damage Multiplier 
     j. name: Card Name
     k. ignoreArmor: Boolean operator to signify if the card will ignore armor 
-    l. hitChance: Chance of the card hitting the opponent 
+    l. hitChance: Chance of the card hitting the opponent
+    m. transformPo: position of card in scene ]
+    n. yes: true or false variable checking if card needs hovering over
 
     Methods: 
 
@@ -34,13 +36,11 @@ using UnityEngine.UI;
 
 public class Card : MonoBehaviour
 {
-    
     public int damage;
     public bool hasBeenPlayed;
     public int handIndex;
     private GameManager gameManager;
     public Player player;
-    public static Card Instance;
     public int armour;
     public int healing;
     public int damageMult;
@@ -49,33 +49,6 @@ public class Card : MonoBehaviour
     public int hitChance;
     public Vector3 tranformPos;
     bool yes;
-
-    /*
-        Method: Awake()
-        Visibility: Public 
-        Output: N/A
-        Purpose: 
-
-        a. Create Instance of Card
-        b. Set this equal to Instance
-        c. If this is not equal to Instance then Instance equals this 
-        d. Keep GameObject when Scene is loaded 
-    */
-
-    public void Awake(){
-        if (Instance == null) 
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
- 
-        } 
-        else if (Instance != this) 
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-    }
-
     /*
         Method: Start()
         Visibility: Public 
@@ -155,7 +128,8 @@ public class Card : MonoBehaviour
             gameManager.player.raiseArmor(armour);
             gameManager.player.healPlayer(healing);
             gameManager.player.powerUp(damageMult);
-
+            
+            transform.position = player.playerCardDisplay.position;
             Cursor.lockState = CursorLockMode.Locked;
 
             gameManager.player.availableCardSlots[handIndex] = true;
