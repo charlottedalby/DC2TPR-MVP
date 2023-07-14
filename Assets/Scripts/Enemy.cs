@@ -103,6 +103,11 @@ public class Enemy : MonoBehaviour
         
         Card selectedCard = enemyCards[Random.Range(0, enemyCards.Count)];
 
+        //Tutorial code
+        if (stage == 0 && difficulty != 3) {
+            selectedCard = enemyCards[0];
+        }
+
         if (gameManager.player.playerArmor > 0 && selectedCard.ignoreArmour != true && gameManager.player.avoidAttack != true)
         {
             

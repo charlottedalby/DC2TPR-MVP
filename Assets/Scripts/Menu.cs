@@ -62,6 +62,12 @@ public class Menu : MonoBehaviour
         fadeToLevel("OverworldScreen");
     }
 
+    public void loadTutorial()
+    {
+        GameController.stage = 0;
+        fadeToLevel("OverworldScreen");
+    }
+
     public void exitGame()
     {
         Application.Quit();
@@ -87,7 +93,12 @@ public class Menu : MonoBehaviour
     
     public void loadCardSteal()
     {
-        fadeToLevel("CardStealing");
+        if (GameController.stage == -1) {
+            fadeToLevel("MainMenu");
+        }
+        else {
+            fadeToLevel("CardStealing");
+        }
     }
 
     public void loadCardSwap()

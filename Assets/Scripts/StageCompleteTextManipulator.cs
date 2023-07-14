@@ -32,7 +32,12 @@ public class StageCompleteTextManipulator : MonoBehaviour
     {
         string newText = "Stage " + GameController.stage + " Complete";
         stageCompleteText.text = newText;
-        GameController.stage += 1;
+        if (GameController.stage != 0) {
+            GameController.stage += 1;
+        }
+        else{
+            GameController.stage = -1;
+        }
         GameController.PlayerStartHealth = 100;
     }
 

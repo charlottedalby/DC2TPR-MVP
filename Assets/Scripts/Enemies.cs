@@ -70,6 +70,19 @@ public class Enemies : MonoBehaviour
         stageEnemies.Add(new Enemy("Pig", assignStartingEnemyCards(16), 50, 0, 2, 3)); 
         stageEnemies.Add(new Enemy("Scorpion", assignStartingEnemyCards(17), 25, 0, 1, 3));
         stageEnemies.Add(new Enemy("Turtle", assignStartingEnemyCards(18), 35, 0, 1, 3));
+
+        //Placeholder Stage 4 Enemies
+        stageEnemies.Add(new Enemy("Dog", assignStartingEnemyCards(19), 45, 0, 2, 4));
+        stageEnemies.Add(new Enemy("Lizard", assignStartingEnemyCards(20), 30, 0, 1, 4));
+        stageEnemies.Add(new Enemy("Monkey", assignStartingEnemyCards(21), 60, 0, 3, 4));
+        stageEnemies.Add(new Enemy("Pig", assignStartingEnemyCards(22), 50, 0, 2, 4)); 
+        stageEnemies.Add(new Enemy("Scorpion", assignStartingEnemyCards(23), 25, 0, 1, 4));
+        stageEnemies.Add(new Enemy("Turtle", assignStartingEnemyCards(24), 35, 0, 1, 4));
+
+        // Tutorial Enemies
+        stageEnemies.Add(new Enemy("Ant", assignStartingEnemyCards(25), 8, 0, 1, 0));
+        stageEnemies.Add(new Enemy("Pigeon", assignStartingEnemyCards(26), 15, 0, 2, 0));
+        stageEnemies.Add(new Enemy("Rooster", assignStartingEnemyCards(27), 30, 0, 3, 0));
     }
 
     /*
@@ -95,7 +108,7 @@ public class Enemies : MonoBehaviour
         bool isEnemyChosen = false;
         int enemyIndex = 0;
         while (!isEnemyChosen) {
-            enemyIndex = Random.Range(0, 19);
+            enemyIndex = Random.Range(0, 28);
             if (stageEnemies[enemyIndex].difficulty == battleDifficulty) {
                 if (stageEnemies[enemyIndex].stage == currentStage) {
                     isEnemyChosen = true;                 
@@ -266,6 +279,174 @@ public class Enemies : MonoBehaviour
                 enemyStartingDeck.Add(new Card("Shell Attack (Turtle)", 6, false, 0, 6, 0, 1, false, 0));
                 //Shell Armour Card
                 enemyStartingDeck.Add(new Card("Shell Armor (Turtle)", 0, false, 0, 12, 0, 1, false, 0));
+                return enemyStartingDeck;
+            //Placeholder cases for Stage 3 Cards
+            case 13:
+                //Dog Enemy
+                //Hound Card (unfinished)
+                enemyStartingDeck.Add(new Card("Hound (Dog)", 5, false, 0, 0, 0, 1, false, 0));
+                //Bite Card
+                enemyStartingDeck.Add(new Card("Bite (Dog)", 12, false, 0, 0, 0, 1, false, 0));
+                //Pounce Card 
+                enemyStartingDeck.Add(new Card("Pounce (Dog)", 7, false, 0, 0, 0, 1, false, 0));
+                //Bare Teeth Card
+                enemyStartingDeck.Add(new Card("Bare Teeth (Dog)", 0, false, 0, 0, 0, 2, false, 0));
+                return enemyStartingDeck;
+            case 14:
+                //Lizard Enemy
+                //Camouflage Card (unfinished)
+                enemyStartingDeck.Add(new Card("Camouflage (Lizard)", 0, false, 0, 0, 0, 1, false, 100));
+                //Tail Lash Card
+                enemyStartingDeck.Add(new Card("Tail Lash (Lizard)", 10, false, 0, 0, 0, 1, false, 0));
+                //Shed Tail Card 
+                enemyStartingDeck.Add(new Card("Shed Tail (Lizard)", 15, false, 0, 0, -5, 1, false, 0));
+                //Bite Card
+                enemyStartingDeck.Add(new Card("Bite (Lizard)", 8, false, 0, 0, 0, 1, false, 0));
+                return enemyStartingDeck;
+            case 15:
+                //Monkey Enemy
+                //Use Tools Card 
+                enemyStartingDeck.Add(new Card("User Tools (Monkey)", 7, false, 0, 7, 0, 1, false, 0));
+                //Gouge Card
+                enemyStartingDeck.Add(new Card("Gouge (Monkey)", 15, false, 0, 0, 0, 1, false, 0));
+                //Swing High Card (unfinished)
+                enemyStartingDeck.Add(new Card("Swing High (Monkey)", 0, false, 0, 0, 0, 1, false, 100));
+                //Pummel Card (unfinished)
+                enemyStartingDeck.Add(new Card("Pummel (Monkey)", 8, false, 0, 0, 0, 1, false, 0));
+                return enemyStartingDeck;
+            case 16:
+                //Pig Enemy
+                //Thick Skin Card
+                enemyStartingDeck.Add(new Card("Thick Skin (Pig)", 0, false, 0, 12, 0, 1, false, 0));
+                //Trample Card (unfinished)
+                enemyStartingDeck.Add(new Card("Trample (Pig)", 10, false, 0, 0, 0, 1, false, 0));
+                //Roll Around Card 
+                enemyStartingDeck.Add(new Card("Roll Around (Pig)", 4, false, 0, 7, 0, 1, false, 0));
+                //Sniff Out Card
+                enemyStartingDeck.Add(new Card("Sniff Out (Pig)", 0, false, 0, 0, 0, 2, false, 0));
+                return enemyStartingDeck;
+            case 17:
+                //Scorpion Enemy
+                //Clamp Card
+                enemyStartingDeck.Add(new Card("Clamp (Scorpion)", 5, false, 0, 5, 0, 1, false, 0));
+                //Tail Lash Card 
+                enemyStartingDeck.Add(new Card("Tail Lash (Scorpion)", 5, false, 0, 0, -1, 1, false, 0));
+                //Exoskeleton Card 
+                enemyStartingDeck.Add(new Card("Exoskeleton (Scorpion)", 0, false, 0, 10, 0, 1, false, 0));
+                //Envenom Card
+                enemyStartingDeck.Add(new Card("Evnvenom (Scorpion)", 0, false, 0, 0, -2, 1, false, 0));
+                return enemyStartingDeck;
+            case 18:
+                //Turtle Enemy
+                //Snap Card
+                enemyStartingDeck.Add(new Card("Snap (Turtle)", 10, false, 0, 0, 0, 1, false, 0));
+                //Slow Start Card 
+                enemyStartingDeck.Add(new Card("Slow Start (Turtle)", 0, false, 0, 0, 0, 1, false, 0));
+                //Shell Attack Card 
+                enemyStartingDeck.Add(new Card("Shell Attack (Turtle)", 6, false, 0, 6, 0, 1, false, 0));
+                //Shell Armour Card
+                enemyStartingDeck.Add(new Card("Shell Armor (Turtle)", 0, false, 0, 12, 0, 1, false, 0));
+                return enemyStartingDeck;
+            //Placeholder cases for Stage 4 Cards
+            case 19:
+                //Dog Enemy
+                //Hound Card (unfinished)
+                enemyStartingDeck.Add(new Card("Hound (Dog)", 5, false, 0, 0, 0, 1, false, 0));
+                //Bite Card
+                enemyStartingDeck.Add(new Card("Bite (Dog)", 12, false, 0, 0, 0, 1, false, 0));
+                //Pounce Card 
+                enemyStartingDeck.Add(new Card("Pounce (Dog)", 7, false, 0, 0, 0, 1, false, 0));
+                //Bare Teeth Card
+                enemyStartingDeck.Add(new Card("Bare Teeth (Dog)", 0, false, 0, 0, 0, 2, false, 0));
+                return enemyStartingDeck;
+            case 20:
+                //Lizard Enemy
+                //Camouflage Card (unfinished)
+                enemyStartingDeck.Add(new Card("Camouflage (Lizard)", 0, false, 0, 0, 0, 1, false, 100));
+                //Tail Lash Card
+                enemyStartingDeck.Add(new Card("Tail Lash (Lizard)", 10, false, 0, 0, 0, 1, false, 0));
+                //Shed Tail Card 
+                enemyStartingDeck.Add(new Card("Shed Tail (Lizard)", 15, false, 0, 0, -5, 1, false, 0));
+                //Bite Card
+                enemyStartingDeck.Add(new Card("Bite (Lizard)", 8, false, 0, 0, 0, 1, false, 0));
+                return enemyStartingDeck;
+            case 21:
+                //Monkey Enemy
+                //Use Tools Card 
+                enemyStartingDeck.Add(new Card("User Tools (Monkey)", 7, false, 0, 7, 0, 1, false, 0));
+                //Gouge Card
+                enemyStartingDeck.Add(new Card("Gouge (Monkey)", 15, false, 0, 0, 0, 1, false, 0));
+                //Swing High Card (unfinished)
+                enemyStartingDeck.Add(new Card("Swing High (Monkey)", 0, false, 0, 0, 0, 1, false, 100));
+                //Pummel Card (unfinished)
+                enemyStartingDeck.Add(new Card("Pummel (Monkey)", 8, false, 0, 0, 0, 1, false, 0));
+                return enemyStartingDeck;
+            case 22:
+                //Pig Enemy
+                //Thick Skin Card
+                enemyStartingDeck.Add(new Card("Thick Skin (Pig)", 0, false, 0, 12, 0, 1, false, 0));
+                //Trample Card (unfinished)
+                enemyStartingDeck.Add(new Card("Trample (Pig)", 10, false, 0, 0, 0, 1, false, 0));
+                //Roll Around Card 
+                enemyStartingDeck.Add(new Card("Roll Around (Pig)", 4, false, 0, 7, 0, 1, false, 0));
+                //Sniff Out Card
+                enemyStartingDeck.Add(new Card("Sniff Out (Pig)", 0, false, 0, 0, 0, 2, false, 0));
+                return enemyStartingDeck;
+            case 23:
+                //Scorpion Enemy
+                //Clamp Card
+                enemyStartingDeck.Add(new Card("Clamp (Scorpion)", 5, false, 0, 5, 0, 1, false, 0));
+                //Tail Lash Card 
+                enemyStartingDeck.Add(new Card("Tail Lash (Scorpion)", 5, false, 0, 0, -1, 1, false, 0));
+                //Exoskeleton Card 
+                enemyStartingDeck.Add(new Card("Exoskeleton (Scorpion)", 0, false, 0, 10, 0, 1, false, 0));
+                //Envenom Card
+                enemyStartingDeck.Add(new Card("Evnvenom (Scorpion)", 0, false, 0, 0, -2, 1, false, 0));
+                return enemyStartingDeck;
+            case 24:
+                //Turtle Enemy
+                //Snap Card
+                enemyStartingDeck.Add(new Card("Snap (Turtle)", 10, false, 0, 0, 0, 1, false, 0));
+                //Slow Start Card 
+                enemyStartingDeck.Add(new Card("Slow Start (Turtle)", 0, false, 0, 0, 0, 1, false, 0));
+                //Shell Attack Card 
+                enemyStartingDeck.Add(new Card("Shell Attack (Turtle)", 6, false, 0, 6, 0, 1, false, 0));
+                //Shell Armour Card
+                enemyStartingDeck.Add(new Card("Shell Armor (Turtle)", 0, false, 0, 12, 0, 1, false, 0));
+                return enemyStartingDeck;
+            //Tutorial Enemies
+            case 25:
+                // Ant Enemy
+                //Pincer Card
+                enemyStartingDeck.Add(new Card("Pincer (Ant)", 9, false, 0, 0, 0, 1, false, 0));
+                //Curl Up Card
+                enemyStartingDeck.Add(new Card("Curl Up (Ant)", 0, false, 0, 0, 0, 1, false, 50));
+                //Team Attack Card
+                enemyStartingDeck.Add(new Card("Team Attack (Ant)", 8, false, 0, 0, 0, 1, false, 0));
+                //Exoskeleton
+                enemyStartingDeck.Add(new Card("Exoskeleton (Ant)", 0, false, 0, 7, 0, 1, false, 0));
+                return enemyStartingDeck;
+            case 26:
+                //Pigeon Enemy
+                //Peck Card
+                enemyStartingDeck.Add(new Card("Peck (Pigeon)", 7, false, 0, 0, 0, 1, false, 0));
+                //Home In Card (unfinished) 
+                enemyStartingDeck.Add(new Card("Home In (Pigeon)", 6, false, 0, 0, 0, 1, true, 0));
+                //Roost Card 
+                enemyStartingDeck.Add(new Card("Roost (Pigeon)", 0, false, 0, 0, 6, 1, false, 0));
+                //Wing Defence Card 
+                enemyStartingDeck.Add(new Card("Wing Defence (Pigeon)", 0, false, 0, 7, 0, 1, false, 0));
+                return enemyStartingDeck;
+            case 27:
+                //Rooster Enemy
+                //Peck Card
+                enemyStartingDeck.Add(new Card("Peck (Rooster)", 13, false, 0, 0, 0, 1, false, 0));
+                //Intimidate Card (unfinished)
+                enemyStartingDeck.Add(new Card("Intimidate (Rooster)", 0, false, 0, 10, 0, 1, false, 0));
+                //Feather Dance Card 
+                enemyStartingDeck.Add(new Card("Feather Dance (Rooster)", 6, false, 0, 0, 6, 1, false, 0));
+                //Flock Attack Card (unfinished)
+                enemyStartingDeck.Add(new Card("Flock Attack (Rooster)", 15, false, 0, 0, 0, 1, false, 0));
                 return enemyStartingDeck;
             default:
                 //In case of case failure
