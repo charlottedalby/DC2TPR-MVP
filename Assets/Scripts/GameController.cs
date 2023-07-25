@@ -43,6 +43,7 @@ public class GameController : MonoBehaviour
     public static List<int> enemyStartDeck = new List <int>(4);
     public static Card SwappedCard;
     public static List<int> stage1Difficulty;
+    public static List<int> tutorial;
     public static int stage;
     public static int battleDifficulty;
 
@@ -72,6 +73,7 @@ public class GameController : MonoBehaviour
         PlayerMapPos.Clear();
         SwappedCard = null;
         stage1Difficulty = new List <int>();
+        tutorial = new List <int>();
         stage = 1;
         assignStartingCards();
     }

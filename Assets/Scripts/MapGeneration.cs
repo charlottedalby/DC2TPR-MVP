@@ -42,7 +42,7 @@ public class MapGeneration : MonoBehaviour
     public float rowDist = 40f;
 
     // The distance between each column
-    public float colDist = 50f;
+    public float colDist = 45f;
 
     // Minimum and maximum amount each node will deviate from its generated position
     public float minXDeviation = 1.0f;
@@ -58,7 +58,7 @@ public class MapGeneration : MonoBehaviour
     public float topNodesCullChance = 0f;
 
     // Z position of the lines.
-    public float lineZPosition = 5f;
+    public float lineZPosition = 10f;
 
     // Manually set a fixed amount of nodes on a row. Check docs for more details
     public List<RowInput> userEnteredRowAmount = new List<RowInput>();
@@ -118,6 +118,7 @@ public class MapGeneration : MonoBehaviour
         if (GameController.gameMapState!= null){
             LoadSavedMap();
         }
+        
         if (GameController.stage == 0) {
             minColumns = 1;
             maxColumns = 1;
@@ -289,7 +290,7 @@ public class MapGeneration : MonoBehaviour
         LineRenderer lr = myLine.GetComponent<LineRenderer>();
         lr.sortingOrder = -3;
         lr.material = new Material(Shader.Find("Sprites/Default"));
-        lr.startColor = Color.gray;
+        lr.startColor = Color.black;
         lr.endColor = Color.clear;
         lr.startWidth = 0.05f;
         lr.endWidth = 0.2f;
@@ -883,9 +884,20 @@ public class MapGeneration : MonoBehaviour
     }
     public void saveDiffculty()
     {
-        foreach (var node in mapState.nodes)
+        if (GameController.stage > 0)
         {
-            GameController.stage1Difficulty.Add(node.battleStrength);
+            foreach (var node in mapState.nodes)
+            {
+                GameController.stage1Difficulty.Add(node.battleStrength);
+            }
         }
+        else
+        {
+            foreach (var node in mapState.nodes)
+            {
+                GameController.tutorial.Add(node.battleStrength);
+            }
+        }
+        
     }
 }

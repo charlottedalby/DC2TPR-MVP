@@ -3943,7 +3943,7 @@ PrefabInstance:
     - target: {fileID: 1233727580, guid: 45c12af87fca514438edb82c12b1948c, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: f87f0037acbf66e4d8acabbacad86068, type: 3}
+      objectReference: {fileID: 21300000, guid: 27ceb0332d81988488a5669cd552aab6, type: 3}
     - target: {fileID: 1233727581, guid: 45c12af87fca514438edb82c12b1948c, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.4569744
@@ -7333,7 +7333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.34509805, g: 0.34509805, b: 0.33333334, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
