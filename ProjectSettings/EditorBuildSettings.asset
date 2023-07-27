@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/OverworldScreen.unity
     guid: 47a21d852f622ca4cba58ac94df90c8a
   - enabled: 1
-    path: Assets/Scenes/BattleScreen.unity
+    path: Assets/Scenes/TutorialHelp.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/YouWin.unity
@@ -41,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TutorialOverworldScreen.unity
     guid: 248d1c7c7b9ae7e4eb91c63372ce8b23
+  - enabled: 1
+    path: Assets/Scenes/BattleScreen.unity
+    guid: be95d1be6a6e55d44a78f13c3a8bc84f
   m_configObjects: {}
