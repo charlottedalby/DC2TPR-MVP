@@ -183,7 +183,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 81dd34204219bc04b815c7c46c275669, type: 3}
-    m_FontSize: 100
+    m_FontSize: 60
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
@@ -397,7 +397,7 @@ GameObject:
   - component: {fileID: 314825802}
   - component: {fileID: 314825800}
   m_Layer: 5
-  m_Name: NewGameButton (1)
+  m_Name: TutorialButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -421,8 +421,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 303, y: -211}
-  m_SizeDelta: {x: 524.27, y: 129.11}
+  m_AnchoredPosition: {x: -211.4, y: -400.23}
+  m_SizeDelta: {x: 311.05, y: 84.01}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &314825800
 MonoBehaviour:
@@ -594,8 +594,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -375}
-  m_SizeDelta: {x: 524.27, y: 129.11}
+  m_AnchoredPosition: {x: -211.4, y: -312}
+  m_SizeDelta: {x: 298.62, y: 82.86}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &375855217
 MonoBehaviour:
@@ -792,7 +792,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 81dd34204219bc04b815c7c46c275669, type: 3}
-    m_FontSize: 100
+    m_FontSize: 60
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
@@ -1542,8 +1542,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 559, y: -373}
-  m_SizeDelta: {x: 238.21, y: 138.46}
+  m_AnchoredPosition: {x: -211.4, y: -486.63}
+  m_SizeDelta: {x: 127.52, y: 88.795}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1774714945
 MonoBehaviour:
@@ -1707,7 +1707,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 81dd34204219bc04b815c7c46c275669, type: 3}
-    m_FontSize: 100
+    m_FontSize: 60
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0

@@ -273,6 +273,43 @@ public class Card : MonoBehaviour
             {"Shell Attack (Turtle)", "Shell Attack (Turtle)"},
             {"Slow Start (Turtle)", "Slow Start (Turtle)"},
             {"Snap (Turtle)", "Snap (Turtle)"},
+
+
+            {"Wrap (Jellyfish)", "Wrap (Jellyfish)"},
+            {"Sting (Jellyfish)", "Sting (Jellyfish)"},
+            {"Float Away (Jellyfish)", "Float Away (Jellyfish)"},
+            {"Compound Poison (Jellyfish)", "Compound Poison (Jellyfish)"},
+
+            {"Talon Grab (Eagle)", "Talon Grab (Eagle)"},
+            {"Wing Strike (Eagle)", "Wing Strike (Eagle)"},
+            {"Tear Away (Eagle)", "Tear Away (Eagle)"},
+            {"Glide (Eagle)", "Glide (Eagle)"},
+
+            {"Ram (Goat)", "Ram (Goat)"},
+            {"Horn (Goat)", "Horn (Goat)"},
+            {"Rear Kick (Goat)", "Rear Kick (Goat)"},
+            {"Bite (Goat)", "Bite (Goat)"},
+
+            {"Poison Sting (Hornet)", "Poison Sting (Hornet)"},
+            {"Buzz Around (Hornet)", "Buzz Around (Hornet)"},
+            {"Swarm (Hornet)", "Swarm (Hornet)"},
+            {"Sharp Poison (Hornet)", "Sharp Poison (Hornet)"},
+
+            {"Gallop (Horse)", "Gallop (Horse)"},
+            {"Trample (Horse)", "Trample (Horse)"},
+            {"Rear Kick (Horse)", "Rear Kick (Horse)"},
+            {"Run Away (Horse)", "Run Away (Horse)"},
+
+            {"Grab and Tear (Hyena)", "Grab and Tear (Hyena)"},
+            {"Bite (Hyena)", "Bite (Hyena)"},
+            {"Pack Tactics (Hyena)", "Pack Tactics (Hyena)"},
+            {"Hunt Down (Hyena)", "Hunt Down (Hyena)"},
+
+            {"Roar (Tiger)", "Roar (Tiger)"},
+            {"Pounce (Tiger)", "Pounce (Tiger)"},
+            {"Claw Swipe (Tiger)", "Claw Swipe (Tiger)"},
+            {"Crunch (Tiger)", "Crunch (Tiger)"},
+
         };
 
         GameObject[] cards = GameObject.FindGameObjectsWithTag("Card");
