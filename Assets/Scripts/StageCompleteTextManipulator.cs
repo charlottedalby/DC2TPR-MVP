@@ -31,6 +31,9 @@ public class StageCompleteTextManipulator : MonoBehaviour
     public void Start()
     {
         string newText = "Stage " + GameController.stage + " Complete";
+        if (GameController.stage == 0) {
+            newText = "Tutorial Complete";
+        }
         stageCompleteText.text = newText;
         if (GameController.stage != 0) {
             GameController.stage += 1;

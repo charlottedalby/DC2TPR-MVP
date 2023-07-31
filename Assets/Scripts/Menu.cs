@@ -54,18 +54,30 @@ public class Menu : MonoBehaviour
     public void NextBattle()
     {
         Cursor.lockState = CursorLockMode.None;
-        fadeToLevel("BattleScreen");
+        if (GameController.stage == 0){
+            fadeToLevel("TutorialBattleScreen");
+        }
+        else {
+            fadeToLevel("BattleScreen");
+        }
+        
     }
 
     public void loadOverworld()
     {
-        fadeToLevel("OverworldScreen");
+        if (GameController.stage == 0){
+            fadeToLevel("TutorialOverworldScreen");
+        }
+        else {
+            fadeToLevel("OverworldScreen");
+        }
     }
 
     public void loadTutorial()
     {
         GameController.stage = 0;
-        fadeToLevel("OverworldScreen");
+        Debug.Log("Tutorial");
+        fadeToLevel("TutorialOverworldScreen");
     }
 
     public void exitGame()
@@ -144,6 +156,7 @@ public class Menu : MonoBehaviour
     public void fadeToLevel(string name)
     {
         animator.SetTrigger("FadeOut");
+        Debug.Log(name);
         SceneManager.LoadScene(name);
     }
     

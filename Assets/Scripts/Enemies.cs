@@ -82,7 +82,7 @@ public class Enemies : MonoBehaviour
         stageEnemies.Add(new Enemy("Snake", assignStartingEnemyCards(26), 40, 0, 2, 4));
 
         // Tutorial Enemies
-        stageEnemies.Add(new Enemy("Ant", assignStartingEnemyCards(27), 8, 0, 1, 0));
+        stageEnemies.Add(new Enemy("Ant", assignStartingEnemyCards(27), 7, 0, 1, 0));
         stageEnemies.Add(new Enemy("Pigeon", assignStartingEnemyCards(28), 15, 0, 2, 0));
         stageEnemies.Add(new Enemy("Rooster", assignStartingEnemyCards(29), 30, 0, 3, 0));
     }
@@ -110,7 +110,7 @@ public class Enemies : MonoBehaviour
         bool isEnemyChosen = false;
         int enemyIndex = 0;
         while (!isEnemyChosen) {
-            enemyIndex = Random.Range(0, 28);
+            enemyIndex = Random.Range(0, 30);
             if (stageEnemies[enemyIndex].difficulty == battleDifficulty) {
                 if (stageEnemies[enemyIndex].stage == currentStage) {
                     isEnemyChosen = true;                 

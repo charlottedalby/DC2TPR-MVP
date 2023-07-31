@@ -142,6 +142,17 @@ public class Player : MonoBehaviour
             if(deck.Count >= 1)
             {
                 Card randCard = deck[Random.Range(0, deck.Count)];
+                if (GameController.stage == 0 && gameManager.enemy.difficulty == 1) {
+                    randCard = deck[0];
+                }
+                if (GameController.stage == 0 && gameManager.enemy.difficulty == 2) {
+                    if (deck.Count > 3) {
+                        randCard = deck[3];
+                    }
+                    if (deck.Count > 6) {
+                        randCard = deck[6];
+                    }
+                }
 
                 for(int i = 0; i < availableCardSlots.Length; i++)
                 {

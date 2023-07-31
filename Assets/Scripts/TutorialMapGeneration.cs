@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using System.Reflection;
 using System.Runtime.Serialization;
     
-public class MapGeneration : MonoBehaviour
+public class TutorialMapGeneration : MonoBehaviour
 {
     public Text playerHealthText;
     // Changeable properties
@@ -42,7 +42,7 @@ public class MapGeneration : MonoBehaviour
     public float rowDist = 40f;
 
     // The distance between each column
-    public float colDist = 45f;
+    public float colDist = 50f;
 
     // Minimum and maximum amount each node will deviate from its generated position
     public float minXDeviation = 1.0f;
@@ -58,7 +58,7 @@ public class MapGeneration : MonoBehaviour
     public float topNodesCullChance = 0f;
 
     // Z position of the lines.
-    public float lineZPosition = 10f;
+    public float lineZPosition = 5f;
 
     // Manually set a fixed amount of nodes on a row. Check docs for more details
     public List<RowInput> userEnteredRowAmount = new List<RowInput>();
@@ -118,10 +118,14 @@ public class MapGeneration : MonoBehaviour
         if (GameController.gameMapState!= null){
             LoadSavedMap();
         }
-        else{
+        else {
+            minColumns = 1;
+            maxColumns = 1;
+            minRows = 4;
+            maxRows = 4;
+            cullNodesChance = 0f;
             Load(GenerateMap());
         }
-        
     }
 
     // Use this for saving
@@ -280,7 +284,7 @@ public class MapGeneration : MonoBehaviour
         LineRenderer lr = myLine.GetComponent<LineRenderer>();
         lr.sortingOrder = -3;
         lr.material = new Material(Shader.Find("Sprites/Default"));
-        lr.startColor = Color.black;
+        lr.startColor = Color.gray;
         lr.endColor = Color.clear;
         lr.startWidth = 0.05f;
         lr.endWidth = 0.2f;
@@ -820,33 +824,52 @@ public class MapGeneration : MonoBehaviour
                 //Iterate through row
                 foreach(var node in GetNodesInRow(e))
                 {
-                    if(node.forwardConnections.Count == 0)
-                    {
-                        //Node will be boss battle
-                        node.battleStrength = 3;
-                    }
-                    else
-                    {
-                        int num = Random.Range(1,11);
-                        if(num <= 3)
+                    //tutorial branch
+                    if (GameController.stage == 0) {
+                        if(node.row == 3)
                         {
-                            //40% is easy
-                            node.battleStrength = 1;
+                            //Node will be boss battle
+                            node.battleStrength = 3;
                         }
-                        //30% is Hard
-                        else if(num > 3 && num <= 6)
-                        {
-                            node.battleStrength = 2;
-                        }
-                        //20% is Rest Stop 
-                        else if(num > 6 && num <= 8)
-                        {
+                        if(node.row == 2) {
                             node.battleStrength = 0;
                         }
-                        //20% is Event
-                        else if(num > 8 && num <= 10)
+                        if(node.row == 1) {
+                            node.battleStrength = 2;
+                        }
+                        if(node.row == 0) {
+                            node.battleStrength = 1;
+                        }
+                    }
+                    else {
+                        if(node.forwardConnections.Count == 0)
                         {
-                            node.battleStrength = 4;
+                            //Node will be boss battle
+                            node.battleStrength = 3;
+                        }
+                        else
+                        {
+                            int num = Random.Range(1,11);
+                            if(num <= 3)
+                            {
+                                //40% is easy
+                                node.battleStrength = 1;
+                            }
+                            //30% is Hard
+                            else if(num > 3 && num <= 6)
+                            {
+                                node.battleStrength = 2;
+                            }
+                            //20% is Rest Stop 
+                            else if(num > 6 && num <= 8)
+                            {
+                                node.battleStrength = 0;
+                            }
+                            //20% is Event
+                            else if(num > 8 && num <= 10)
+                            {
+                                node.battleStrength = 4;
+                            }
                         }
                     } 
                 }
