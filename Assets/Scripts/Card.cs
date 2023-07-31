@@ -47,6 +47,7 @@ public class Card : MonoBehaviour
     public string name;
     public bool ignoreArmour;
     public int hitChance;
+    public int endOfTurnValue;
     public Vector3 tranformPos;
     bool yes;
     /*
@@ -87,7 +88,8 @@ public class Card : MonoBehaviour
     int healing, 
     int damageMult,
     bool ignoreArmour,
-    int hitChance)
+    int hitChance,
+    int endOfTurnValue)
 
     {
         this.name = name;
@@ -99,6 +101,7 @@ public class Card : MonoBehaviour
         this.damageMult = damageMult;
         this.ignoreArmour = ignoreArmour;
         this.hitChance = hitChance;
+        this.endOfTurnValue = endOfTurnValue;
     }
 
     /*
@@ -128,7 +131,8 @@ public class Card : MonoBehaviour
             gameManager.player.raiseArmor(armour);
             gameManager.player.healPlayer(healing);
             gameManager.player.powerUp(damageMult);
-            
+            gameManager.player.endTurnMechanics(endOfTurnValue);
+
             transform.position = player.playerCardDisplay.position;
             Cursor.lockState = CursorLockMode.Locked;
 
@@ -320,7 +324,7 @@ public class Card : MonoBehaviour
             Card currentCard = card.GetComponent<Card>();
             if(currentCard.name != null && cardSpriteMap.ContainsKey(currentCard.name))
             {
-                Debug.Log("You are in");
+                //Debug.Log("You are in");
                 Image cardImage = currentCard.GetComponent<Image>();
                 Sprite newSprite = GameObject.Find(cardSpriteMap[currentCard.name]).GetComponent<Image>().sprite;
                 cardImage.sprite = newSprite;

@@ -51,6 +51,7 @@ public class Player : MonoBehaviour
     public Transform[] cardSlots;
     public GameManager gameManager;
     public bool avoidAttack;
+    public int endOfTurnDamage;
     public Transform playerCardDisplay;
 
     /*
@@ -319,13 +320,74 @@ public class Player : MonoBehaviour
 
         if(hitChance > 0){
             int x = Random.Range(0, 100);
-            Debug.Log(x.ToString());
             
             if(x <= hitChance){
                 avoidAttack = true;
             }
         }
     }
+
+    public void endTurnMechanics(int endTurnOption){
+        switch(endTurnOption){
+            case 0:
+                Debug.Log("Enemy: " + gameManager.enemy.health + " - " + endOfTurnDamage);
+                if(endOfTurnDamage > 0){
+                    attackEnemy(endOfTurnDamage, false, 0);
+                }
+                Debug.Log("Enemy: " + gameManager.enemy.health + " - " + endOfTurnDamage);
+                break;
+            case 1:
+                endOfTurnDamage = 1;
+                break;
+            case 2:
+                endOfTurnDamage = 2;
+                break;
+            case 3:
+                endOfTurnDamage = 4;
+                break;
+            case 4:
+                if(endOfTurnDamage > 0){
+                    attackEnemy(18, false, 0);
+                }
+                break;
+            case 5:
+                if(gameManager.enemy.health <= 20){
+                    attackEnemy(20, false, 0);
+                }
+                break;
+            case 6:
+                if(gameManager.player.playerArmor > 0){
+                    attackEnemy(18, false, 0);
+                }
+                break;
+            case 7:
+                if(endOfTurnDamage > 0){
+                    attackEnemy(endOfTurnDamage + 7, false, 0);
+                }
+                break;
+            case 8:
+                if(gameManager.player.playerHealth > 50 ){
+                    healPlayer(18);
+                }
+                break;
+            case 9:
+                if(gameManager.enemy.armour > 0){
+                    attackEnemy(16, false, 0);
+                }
+                break;
+            case 10:
+                if(gameManager.enemy.health > 50 ){
+                    attackEnemy(20, false, 0);
+                }
+                break;
+            default:
+                if(endOfTurnDamage > 0){
+                    attackEnemy(endOfTurnDamage, false, 0);
+                }
+                break;
+        }
+    }
+
 
     /*
         Method: raiseArmor()

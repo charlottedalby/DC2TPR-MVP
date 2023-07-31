@@ -43,6 +43,7 @@ public class Enemy : MonoBehaviour
     public string name;
     public int stage;
     public bool avoidAttack;
+    public int endOfTurnDamage;
 
     /*
 	    Method: Enemy()
@@ -143,7 +144,9 @@ public class Enemy : MonoBehaviour
                 avoidAttack = true;
             }
         }
-        
+
+        endTurnMechanics(selectedCard.endOfTurnValue);
+
         Vector3 initialPosition = selectedCard.transform.position;
         selectedCard.transform.position = enemyCardDisplay.position;
         selectedCard.gameObject.SetActive(true);
@@ -153,6 +156,67 @@ public class Enemy : MonoBehaviour
         StartCoroutine(FadeImage(image, 0.5f, 0f, 1f));
 
         StartCoroutine(MoveAfterWait(selectedCard, initialPosition));
+    }
+
+    public void endTurnMechanics(int endTurnOption){
+        switch(endTurnOption){
+            case 0:
+                Debug.Log("Player: " + gameManager.player.playerHealth + " - " + endOfTurnDamage);
+                if(endOfTurnDamage > 0){
+                    gameManager.player.playerHealth -= endOfTurnDamage;
+                }
+                Debug.Log("Player: " + gameManager.player.playerHealth + " - " + endOfTurnDamage);
+                break;
+            case 1:
+                endOfTurnDamage = 1;
+                break;
+            case 2:
+                endOfTurnDamage = 2;
+                break;
+            case 3:
+                endOfTurnDamage = 4;
+                break;
+            case 4:
+                if(endOfTurnDamage > 0){
+                    gameManager.player.playerHealth -= 18;
+                }
+                break;
+            case 5:
+                if(gameManager.player.playerHealth <= 20){
+                    gameManager.player.playerHealth -= 20;
+                }
+                break;
+            case 6:
+                if(armour > 0){
+                    gameManager.player.playerHealth -= 18;
+                }
+                break;
+            case 7:
+                if(endOfTurnDamage > 0){
+                    gameManager.player.playerHealth -= (endOfTurnDamage + 7);
+                }
+                break;
+            case 8:
+                if(health > 50 ){
+                    health += 18;
+                }
+                break;
+            case 9:
+                if(gameManager.player.playerArmor > 0){
+                    gameManager.player.playerHealth -= 16;
+                }
+                break;
+            case 10:
+                if(gameManager.player.playerHealth > 50 ){
+                    gameManager.player.playerHealth -= 20;
+                }
+                break;
+            default:
+                if(endOfTurnDamage > 0){
+                    gameManager.player.playerHealth -= endOfTurnDamage;
+                }
+                break;
+        }
     }
 
     /*
@@ -229,6 +293,7 @@ public class Enemy : MonoBehaviour
             enemyCards[i].damageMult = currentCard.damageMult;
             enemyCards[i].ignoreArmour = currentCard.ignoreArmour;
             enemyCards[i].hitChance = currentCard.hitChance;
+            enemyCards[i].endOfTurnValue = currentCard.endOfTurnValue;
         }
     }
 
