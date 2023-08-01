@@ -205,6 +205,8 @@ public class Player : MonoBehaviour
             availableCardSlots[i] = true;
             Vector3 originalScale = currentCard.gameObject.transform.localScale;
             StartCoroutine(MoveAndShrinkCard(currentCard));
+            currentCard.gameObject.SetActive(true);
+            currentCard.gameObject.transform.localScale = originalScale;
         }
 
         hand.Clear();
@@ -538,6 +540,5 @@ public class Player : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-        card.gameObject.SetActive(false);
     }
 }

@@ -74,7 +74,7 @@ public class GameController : MonoBehaviour
         SwappedCard = null;
         stage1Difficulty = new List <int>();
         tutorial = new List <int>();
-        stage = 2;
+        stage = 1;
         assignStartingCards();
     }
 

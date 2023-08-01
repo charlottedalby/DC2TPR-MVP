@@ -46,6 +46,10 @@ public class GameManager : MonoBehaviour
     public Enemy currentEnemy;
     public Card card;
     public Menu menu;
+    public Sprite stage1Background;
+    public Sprite stage2Background;
+    public Sprite stage3Background;
+    public Sprite stage4Background;
 
     /*
 	    Method: Start()
@@ -100,6 +104,8 @@ public class GameManager : MonoBehaviour
         player.playerHealth = GameController.PlayerStartHealth;
         player.playerArmor = GameController.PlayerStartArmor;
         healthBar.setMaxValue(GameController.PlayerStartHealth);
+
+        setGameBackground();
 
         displayEnemy();
         player.Invoke("DrawCard", 2f);
@@ -223,6 +229,36 @@ public class GameManager : MonoBehaviour
                 enemyImage.sprite = newSprite;
                 enemyText.text = currentEnemy.name;
             }
+        }
+    }
+
+    public void setGameBackground()
+    {
+        stage1Background = GameObject.Find("Stage1Background").GetComponent<Image>().sprite;
+        stage2Background = GameObject.Find("Stage2Background").GetComponent<Image>().sprite;
+        stage3Background = GameObject.Find("Stage3Background").GetComponent<Image>().sprite;
+        stage4Background = GameObject.Find("Stage4Background").GetComponent<Image>().sprite;
+        
+        Image background = GameObject.Find("Background").GetComponent<Image>();
+
+        if (GameController.stage == 1)
+        {
+            background.sprite = stage1Background;
+        }
+
+        else if (GameController.stage == 2)
+        {
+            background.sprite = stage2Background;
+        }
+
+        else if (GameController.stage == 3)
+        {
+            background.sprite = stage3Background;
+        }
+
+        else if (GameController.stage == 4)
+        {
+            background.sprite = stage4Background;
         }
     }
 }

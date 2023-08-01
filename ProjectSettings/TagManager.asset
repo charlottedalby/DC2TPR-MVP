@@ -59,6 +59,7 @@ TagManager:
   - Attempt Flight
   - Scramble
   - Gnaw
+  - Event
   layers:
   - Default
   - TransparentFX

@@ -47,6 +47,17 @@ public class EventManager : MonoBehaviour
     List<int> Event7;
     List<int> Event8;
     List<int> Event9;
+
+    public Image InnPage;
+    public Image AmbushFlee;
+    public Image PotionMaster;
+    public Image BossBattle;
+    public Image MerchantPage;
+    public Image AmbushFight;
+    public Image ClericPage;
+    public Image ScoutPage;
+    public Image CardTheif;
+
     public Menu menu;
 
     /*
@@ -66,7 +77,7 @@ public class EventManager : MonoBehaviour
     {
         GameObject menuObject = GameObject.Find("Canvas");
         menu = menuObject.GetComponent<Menu>();
-
+        
         skip = false;
         generateEvents();
         Events[0].Stages = Event1 = new List<int> {1, 3, 4};
@@ -78,7 +89,19 @@ public class EventManager : MonoBehaviour
         Events[6].Stages = Event7 = new List<int> {2, 3, 4};
         Events[7].Stages = Event8 = new List<int> {1, 2, 4};
         Events[8].Stages = Event9 = new List<int> {2, 3, 4};
+
+        InnPage = GameObject.Find("Inn Page").GetComponent<Image>();
+        AmbushFlee = GameObject.Find("Ambush Flee").GetComponent<Image>();
+        PotionMaster = GameObject.Find("Potion Master").GetComponent<Image>();
+        BossBattle = GameObject.Find("Boss Battle").GetComponent<Image>();
+        MerchantPage = GameObject.Find("Merchant Page").GetComponent<Image>();
+        AmbushFight = GameObject.Find("Ambush Fight").GetComponent<Image>();
+        ClericPage = GameObject.Find("Cleric Page").GetComponent<Image>();
+        ScoutPage = GameObject.Find("Scope Page").GetComponent<Image>();
+        CardTheif = GameObject.Find("Card Thief").GetComponent<Image>();
         
+        setAllFalse();
+
         enemies = new Enemies();
         eventNumber = displayEvent();
     }
@@ -129,6 +152,7 @@ public class EventManager : MonoBehaviour
         
         if(EventNumber == 0)
         {
+
             int health = GameController.PlayerStartHealth;
             float newHealth = health * 1.2f;
 
@@ -285,10 +309,47 @@ public class EventManager : MonoBehaviour
         do
         {
             eventNumber = UnityEngine.Random.Range(0,Events.Count);
+            Debug.Log(eventNumber);
         }
         while(!Events[eventNumber].Stages.Contains(GameController.stage));
         
-        eventText.text = Events[eventNumber].Description;
+        if (eventNumber == 0)
+        {
+            InnPage.color = new Color32(255, 255, 255, 255);
+        }
+        else if (eventNumber == 1)
+        {
+            AmbushFlee.color = new Color32(255, 255, 255, 255);
+        }
+        else if (eventNumber == 2)
+        {
+            PotionMaster.color = new Color32(255, 255, 255, 255);
+        }
+        else if (eventNumber == 3)
+        {
+            CardTheif.color = new Color32(255, 255, 255, 255);
+        }
+        else if (eventNumber == 4)
+        {
+            MerchantPage.color = new Color32(255, 255, 255, 255);
+        }
+        else if (eventNumber == 5)
+        {
+            AmbushFight.color = new Color32(255, 255, 255, 255);
+        }
+        else if (eventNumber == 6)
+        {
+            ClericPage.color = new Color32(255, 255, 255, 255);
+        }
+        else if (eventNumber == 7)
+        {
+            ScoutPage.color = new Color32(255, 255, 255, 255);
+        }
+        else if (eventNumber == 8)
+        {
+            BossBattle.color = new Color32(255, 255, 255, 255);
+        }
+
         if(Events[eventNumber].Skipable == true)
         {
             skip = true;
@@ -326,6 +387,19 @@ public class EventManager : MonoBehaviour
         {
             menu.loadOverworld();
         }
+    }
+
+    public void setAllFalse()
+    {
+        InnPage.color = new Color32(255, 255, 255, 0);
+        AmbushFlee.color = new Color32(255, 255, 255, 0);
+        PotionMaster.color = new Color32(255, 255, 255, 0);
+        BossBattle.color = new Color32(255, 255, 255, 0);
+        MerchantPage.color = new Color32(255, 255, 255, 0);
+        AmbushFight.color = new Color32(255, 255, 255, 0);
+        ClericPage.color = new Color32(255, 255, 255, 0);
+        ScoutPage.color = new Color32(255, 255, 255, 0);
+        CardTheif.color = new Color32(255, 255, 255, 0);
     }
 
 }
