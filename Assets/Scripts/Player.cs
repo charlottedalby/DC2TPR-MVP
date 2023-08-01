@@ -468,6 +468,7 @@ public class Player : MonoBehaviour
             deck[i].damageMult = currentCard.damageMult;
             deck[i].ignoreArmour = currentCard.ignoreArmour;
             deck[i].hitChance = currentCard.hitChance;
+            deck[i].endOfTurnValue = currentCard.endOfTurnValue;
         }
     }
 

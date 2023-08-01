@@ -110,29 +110,7 @@ public class Enemy : MonoBehaviour
             selectedCard = enemyCards[0];
         }
 
-        if (gameManager.player.playerArmor > 0 && selectedCard.ignoreArmour != true && gameManager.player.avoidAttack != true)
-        {
-            
-            if (selectedCard.damage > gameManager.player.playerArmor)
-            {
-                selectedCard.damage -= gameManager.player.playerArmor;
-                gameManager.player.playerArmor = 0;
-                gameManager.player.playerHealth -= selectedCard.damage;
-            }
-
-            else
-            {
-                gameManager.player.playerArmor -= selectedCard.damage;
-            }
-        }
-
-        else if(gameManager.player.avoidAttack != true)
-        {
-            gameManager.player.playerHealth -= selectedCard.damage;
-        }
-        else{
-            gameManager.player.avoidAttack = false;
-        }
+        hitPlayer(selectedCard.damage, selectedCard.ignoreArmour);
 
         health += selectedCard.healing;
         armour += selectedCard.armour;
@@ -158,12 +136,39 @@ public class Enemy : MonoBehaviour
         StartCoroutine(MoveAfterWait(selectedCard, initialPosition));
     }
 
+    public void hitPlayer(int damage, bool ignoreArmour){
+        if (gameManager.player.playerArmor > 0 && ignoreArmour != true && gameManager.player.avoidAttack != true)
+        {
+            
+            if (damage > gameManager.player.playerArmor)
+            {
+                damage -= gameManager.player.playerArmor;
+                gameManager.player.playerArmor = 0;
+                gameManager.player.playerHealth -= damage;
+            }
+
+            else
+            {
+                gameManager.player.playerArmor -= damage;
+            }
+        }
+
+        else if(gameManager.player.avoidAttack != true)
+        {
+            gameManager.player.playerHealth -= damage;
+        }
+        else{
+            gameManager.player.avoidAttack = false;
+        }
+
+    }
+
     public void endTurnMechanics(int endTurnOption){
         switch(endTurnOption){
             case 0:
                 Debug.Log("Player: " + gameManager.player.playerHealth + " - " + endOfTurnDamage);
                 if(endOfTurnDamage > 0){
-                    gameManager.player.playerHealth -= endOfTurnDamage;
+                    hitPlayer(endOfTurnDamage, false);
                 }
                 Debug.Log("Player: " + gameManager.player.playerHealth + " - " + endOfTurnDamage);
                 break;
@@ -178,22 +183,22 @@ public class Enemy : MonoBehaviour
                 break;
             case 4:
                 if(endOfTurnDamage > 0){
-                    gameManager.player.playerHealth -= 18;
+                    hitPlayer(18, false);
                 }
                 break;
             case 5:
                 if(gameManager.player.playerHealth <= 20){
-                    gameManager.player.playerHealth -= 20;
+                    hitPlayer(20, false);
                 }
                 break;
             case 6:
                 if(armour > 0){
-                    gameManager.player.playerHealth -= 18;
+                    hitPlayer(18, false);
                 }
                 break;
             case 7:
                 if(endOfTurnDamage > 0){
-                    gameManager.player.playerHealth -= (endOfTurnDamage + 7);
+                    hitPlayer(endOfTurnDamage + 7, false);
                 }
                 break;
             case 8:
@@ -203,17 +208,17 @@ public class Enemy : MonoBehaviour
                 break;
             case 9:
                 if(gameManager.player.playerArmor > 0){
-                    gameManager.player.playerHealth -= 16;
+                    hitPlayer(16, false);
                 }
                 break;
             case 10:
                 if(gameManager.player.playerHealth > 50 ){
-                    gameManager.player.playerHealth -= 20;
+                    hitPlayer(20, false);
                 }
                 break;
             default:
                 if(endOfTurnDamage > 0){
-                    gameManager.player.playerHealth -= endOfTurnDamage;
+                    hitPlayer(endOfTurnDamage, false);
                 }
                 break;
         }

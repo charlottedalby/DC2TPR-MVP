@@ -92,6 +92,9 @@ public class ReplacePlayerCard : MonoBehaviour
             //new addition
             cards[i].healing = currentCard.healing;
             cards[i].damageMult = currentCard.damageMult;
+            cards[i].ignoreArmour = currentCard.ignoreArmour;
+            cards[i].hitChance = currentCard.hitChance;
+            cards[i].endOfTurnValue = currentCard.endOfTurnValue;
             cards[i].assignCardUI();
         }
     }

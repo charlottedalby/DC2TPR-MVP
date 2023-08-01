@@ -273,6 +273,11 @@ public class Card : MonoBehaviour
             {"Exoskeleton (Scorpion)", "Exoskeleton (Scorpion)"},
             {"Tail Lash (Scorpion)", "Tail Lash (Scorpion)"},
 
+            {"Spin Web (Tarantula)", "Spin Web (Tarantula)"},
+            {"Envenom (Tarantula)", "Envenom (Tarantula)"},
+            {"Fang Strike (Tarantula)", "Fang Strike (Tarantula)"},
+            {"Pin Down (Tarantula)", "Pin Down (Tarantula)"},
+
             {"Shell Armor (Turtle)", "Shell Armor (Turtle)"},
             {"Shell Attack (Turtle)", "Shell Attack (Turtle)"},
             {"Slow Start (Turtle)", "Slow Start (Turtle)"},
