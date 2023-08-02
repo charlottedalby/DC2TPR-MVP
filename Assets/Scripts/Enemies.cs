@@ -157,16 +157,16 @@ public class Enemies : MonoBehaviour
                 //Attempt flight Card 
                 enemyStartingDeck.Add(new Card("Attempt Flight (Cockroach)", 0, false, 0, 7, 0, 1, false, 0, 0));
                 //Pincer Card
-                enemyStartingDeck.Add(new Card("Pincer (Cockroach)", 9, false, 0, 0, 0, 1, false, 0, 0));
+                enemyStartingDeck.Add(new Card("Pincer (Cockroach)", 7, false, 0, 0, 0, 1, false, 0, 0));
                 //Scramble Card 
                 enemyStartingDeck.Add(new Card("Scramble (Cockroach)", 0, false, 0, 0, 0, 1, false, 0, 0));
                 return enemyStartingDeck;
             case 2:
                 //Mouse Enemy
                 //Gnaw Card
-                enemyStartingDeck.Add(new Card("Gnaw (Mouse)", 9, false, 0, 0, 0, 1, false, 0, 0));
+                enemyStartingDeck.Add(new Card("Gnaw (Mouse)", 7, false, 0, 0, 0, 1, false, 0, 0));
                 //Clamp Down (unfinished) 
-                enemyStartingDeck.Add(new Card("Clamp Down (Mouse)", 5, false, 0, 0, 0, 1, false, 0, 0));
+                enemyStartingDeck.Add(new Card("Clamp Down (Mouse)", 4, false, 0, 0, 0, 1, false, 0, 0));
                 //Scurry Card (unfinished)
                 enemyStartingDeck.Add(new Card("Scurry (Mouse)", 0, false, 0, 0, 0, 1, false, 50, 0));
                 //Tail Strike Card 
@@ -201,7 +201,7 @@ public class Enemies : MonoBehaviour
                 //Clamp Down (unfinished) 
                 enemyStartingDeck.Add(new Card("Clamp Down (Rat)", 5, false, 0, 0, 0, 1, false, 0, 0));
                 //Scurry Card (unfinished)
-                enemyStartingDeck.Add(new Card("Scurry (Rat)", 0, false, 0, 0, 0, 1, false, 0, 0));
+                enemyStartingDeck.Add(new Card("Scurry (Rat)", 0, false, 0, 0, 0, 1, false, 75, 0));
                 //Tail Strike Card 
                 enemyStartingDeck.Add(new Card("Tail Strike (Rat)", 10, false, 0, 0, 0, 1, false, 0, 0));
                 return enemyStartingDeck;
@@ -249,7 +249,7 @@ public class Enemies : MonoBehaviour
                 //Swing High Card (unfinished)
                 enemyStartingDeck.Add(new Card("Swing High (Monkey)", 0, false, 0, 0, 0, 1, false, 100, 0));
                 //Pummel Card (unfinished)
-                enemyStartingDeck.Add(new Card("Pummel (Monkey)", 8, false, 0, 0, 0, 1, false, 0, 0));
+                enemyStartingDeck.Add(new Card("Pummel (Monkey)", 16, false, 0, 0, 0, 1, false, 0, 0));
                 return enemyStartingDeck;
             case 10:
                 //Pig Enemy
@@ -267,11 +267,11 @@ public class Enemies : MonoBehaviour
                 //Clamp Card
                 enemyStartingDeck.Add(new Card("Clamp (Scorpion)", 5, false, 0, 5, 0, 1, false, 0, 0));
                 //Tail Lash Card 
-                enemyStartingDeck.Add(new Card("Tail Lash (Scorpion)", 5, false, 0, 0, -1, 1, false, 0, 1));
+                enemyStartingDeck.Add(new Card("Tail Lash (Scorpion)", 5, false, 0, 0, 0, 1, false, 0, 1));
                 //Exoskeleton Card 
                 enemyStartingDeck.Add(new Card("Exoskeleton (Scorpion)", 0, false, 0, 10, 0, 1, false, 0, 0));
                 //Envenom Card
-                enemyStartingDeck.Add(new Card("Evnvenom (Scorpion)", 0, false, 0, 0, -2, 1, false, 0, 2));
+                enemyStartingDeck.Add(new Card("Evnvenom (Scorpion)", 0, false, 0, 0, 0, 1, false, 0, 2));
                 return enemyStartingDeck;
             case 12:
                 //Tarantula Enemy
@@ -302,7 +302,7 @@ public class Enemies : MonoBehaviour
                 //Wrap
                 enemyStartingDeck.Add(new Card("Wrap (Jellyfish)", 8, false, 0, 4, 0, 1, false, 0, 0));
                 //Sting
-                enemyStartingDeck.Add(new Card("Sting (Jellyfish)", 4, false, 0, 0, 0, 1, false, 0, 3));
+                enemyStartingDeck.Add(new Card("Sting (Jellyfish)", 0, false, 0, 0, 0, 1, false, 0, 3));
                 //Float Away 
                 enemyStartingDeck.Add(new Card("Float Away (Jellyfish)", 0, false, 0, 0, 0, 1, false, 0, 0));
                 //Compund Position
@@ -380,13 +380,13 @@ public class Enemies : MonoBehaviour
                 // Shark
                 enemyStartingDeck.Add(new Card("Sense Blood (Shark)", 0, false, 5, 5, 0, 1, false, 0, 0));
                 enemyStartingDeck.Add(new Card("Bite (Shark)", 6, false, 0, 0, 0, 1, false, 0, 0));
-                enemyStartingDeck.Add(new Card("Crunch (Bite)", 11, false, 0, 0, 0, 1, false, 0, 0));
-                enemyStartingDeck.Add(new Card("Rough Skin", 3, false, 0, 0, 0, 1, false, 0, 0));
+                enemyStartingDeck.Add(new Card("Crunch (Shark)", 11, false, 0, 0, 0, 1, false, 0, 0));
+                enemyStartingDeck.Add(new Card("Rough Skin (Shark)", 0, false, 0, 0, 0, 1, false, 0, 11));
                 return enemyStartingDeck;
             case 22:
                 //Ox Enemy
-                enemyStartingDeck.Add(new Card("Ram (Ox)", 10, false, 0, 0, 0, 1, false, 0, 0));
-                enemyStartingDeck.Add(new Card("Gore (Ox)", 6, false, 5, 0, 0, 1, false, 0, 0));
+                enemyStartingDeck.Add(new Card("Ram (Ox)", 0, false, 0, 0, 0, 1, false, 0, 12));
+                enemyStartingDeck.Add(new Card("Gore (Ox)", 0, false, 5, 0, 0, 1, false, 0, 13));
                 enemyStartingDeck.Add(new Card("Stampede (Ox)", 10, false, 0, 0, 0, 1, false, 100, 0));
                 enemyStartingDeck.Add(new Card("Stomp (Ox)", 3, false, 9, 0, 0, 1, false, 0, 0));
                 return enemyStartingDeck;
@@ -408,7 +408,7 @@ public class Enemies : MonoBehaviour
             //Elephant
                 enemyStartingDeck.Add(new Card("Tusk Spear (Elephant)", 10, false, 0, 0, 0, 1, false, 0, 0));
                 enemyStartingDeck.Add(new Card("Stomp (Elephant)", 3, false, 8, 0, 0, 1, false, 0, 0));
-                enemyStartingDeck.Add(new Card("Throw Weight (Elephant)", 10, false, 0, 0, 0, 1, false, 0, 0));
+                enemyStartingDeck.Add(new Card("Throw Weight (Elephant)", 0, false, 0, 0, 0, 1, false, 0, 12));
                 enemyStartingDeck.Add(new Card("Trunk Slam (Elephant)", 2, false, 10, 0, 0, 1, false, 0, 0));
                 return enemyStartingDeck;
 
@@ -417,15 +417,15 @@ public class Enemies : MonoBehaviour
                 enemyStartingDeck.Add(new Card("Ascent (Dragon)", 10, false, 0, 0, 0, 1, true, 0, 0));
                 enemyStartingDeck.Add(new Card("Tail Strike (Dragon)", 13, false, 0, 0, 0, 1, false, 0, 0));
                 enemyStartingDeck.Add(new Card("Gather Energy (Dragon)", 0, false, 10, 0, 0, 1, false, 0, 0));
-                enemyStartingDeck.Add(new Card("Zodiac Blast (Dragon)", 4, false, 4, 4, 0, 1, false, 0, 0));
+                enemyStartingDeck.Add(new Card("Zodiac Blast (Dragon)", 4, false, 4, 4, 0, 1, false, 0, 3));
                 return enemyStartingDeck;
 
             case 27:
             //Snake
-                enemyStartingDeck.Add(new Card("Envenom (Snake)", 4, false, 0, 0, 0, 1, false, 0, 0));
+                enemyStartingDeck.Add(new Card("Envenom (Snake)", 0, false, 0, 0, 0, 1, false, 0, 3));
                 enemyStartingDeck.Add(new Card("Wrap (Snake)", 7, false, 7, 0, 0, 1, false, 0, 0));
                 enemyStartingDeck.Add(new Card("Bite (Snake)", 9, false, 0, 0, 0, 1, false, 0, 0));
-                enemyStartingDeck.Add(new Card("Spit Poison", 5, false, 0, 0, 0, 1, false, 0, 0));
+                enemyStartingDeck.Add(new Card("Spit Poison (Snake)", 0, false, 0, 0, 0, 1, false, 0, 14));
                 return enemyStartingDeck;
 
             //Tutorial Enemies

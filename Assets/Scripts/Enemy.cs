@@ -216,6 +216,15 @@ public class Enemy : MonoBehaviour
                     hitPlayer(20, false);
                 }
                 break;
+            case 11:
+                endOfTurnDamage = 3;
+            case 13:
+                gameManager.player.playerArmor = 0;
+                hitPlayer(6, false);
+            case 14:
+                if(endOfTurnDamage > 0){
+                    hitPlayer(endOfTurnDamage * 2, false);
+                }
             default:
                 if(endOfTurnDamage > 0){
                     hitPlayer(endOfTurnDamage, false);
