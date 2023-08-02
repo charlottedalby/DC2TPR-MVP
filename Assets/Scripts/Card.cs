@@ -319,6 +319,40 @@ public class Card : MonoBehaviour
             {"Claw Swipe (Tiger)", "Claw Swipe (Tiger)"},
             {"Crunch (Tiger)", "Crunch (Tiger)"},
 
+            {"Sense Blood (Shark)", "Sense Blood (Shark)"}, 
+            {"Bite (Shark)", "Bite (Shark)"}, 
+            {"Crunch (Bite)", "Crunch (Bite)"}, 
+            {"Rough Skin", "Rough Skin"},
+
+            {"Ram (Ox)", "Ram (Ox)"}, 
+            {"Gore (Ox)", "Gore (Ox)"}, 
+            {"Stampede (Ox)", "Stampede (Ox)"}, 
+            {"Stomp (Ox)", "Stomp (Ox)"},
+
+            {"Roar (Lion)", "Roar (Lion)"},
+            {"Crunch (Lion)", "Crunch (Lion)"}, 
+            {"Pounce (Lion)", "Pounce (Lion)"}, 
+            {"Tear Apart (Lion)", "Tear Apart (Lion)"}, 
+
+            {"Maul (Bear)", "Maul (Bear)"}, 
+            {"Bite (Bear)", "Bite (Bear)"},
+            {"Chase Down (Bear)", "Chase Down (Bear)"},
+            {"Knock Down (Bear)", "Knock Down (Bear)"},
+
+            {"Tusk Spear (Elephant)", "Tusk Spear (Elephant)"},
+            {"Stomp (Elephant)", "Stomp (Elephant)"},
+            {"Throw Weight (Elephant)", "Throw Weight (Elephant)"},
+            {"Trunk Slam (Elephant)", "Trunk Slam (Elephant)"},
+
+            {"Ascent (Dragon)", "Ascent (Dragon)"},
+            {"Tail Strike (Dragon)", "Tail Strike (Dragon)"},
+            {"Gather Energy (Dragon)", "Gather Energy (Dragon)"},
+            {"Zodiac Blast (Dragon)", "Zodiac Blast (Dragon)"}, 
+
+            {"Envenom (Snake)", "Envenom (Snake)"},
+            {"Wrap (Snake)", "Wrap (Snake)"}, 
+            {"Bite (Snake)", "Bite (Snake)"},
+            {"Spit Poison", "Spit Poison"},
         };
 
         GameObject[] cards = GameObject.FindGameObjectsWithTag("Card");
