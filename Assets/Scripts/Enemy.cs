@@ -44,6 +44,7 @@ public class Enemy : MonoBehaviour
     public int stage;
     public bool avoidAttack;
     public int endOfTurnDamage;
+    public int extraDamage;
 
     /*
 	    Method: Enemy()
@@ -110,7 +111,8 @@ public class Enemy : MonoBehaviour
             selectedCard = enemyCards[0];
         }
 
-        hitPlayer(selectedCard.damage, selectedCard.ignoreArmour);
+        hitPlayer(selectedCard.damage + extraDamage, selectedCard.ignoreArmour);
+        extraDamage = 0;
 
         health += selectedCard.healing;
         armour += selectedCard.armour;
@@ -166,11 +168,11 @@ public class Enemy : MonoBehaviour
     public void endTurnMechanics(int endTurnOption){
         switch(endTurnOption){
             case 0:
-                Debug.Log("Player: " + gameManager.player.playerHealth + " - " + endOfTurnDamage);
+                Debug.Log("Player: " + gameManager.player.playerHealth + ", " + gameManager.player.playerArmor + " - " + endOfTurnDamage);
                 if(endOfTurnDamage > 0){
                     hitPlayer(endOfTurnDamage, false);
                 }
-                Debug.Log("Player: " + gameManager.player.playerHealth + " - " + endOfTurnDamage);
+                Debug.Log("Player: " + gameManager.player.playerHealth + ", " + gameManager.player.playerArmor + " - " + endOfTurnDamage);
                 break;
             case 1:
                 endOfTurnDamage = 1;
@@ -227,6 +229,12 @@ public class Enemy : MonoBehaviour
                 if(endOfTurnDamage > 0){
                     hitPlayer(endOfTurnDamage * 2, false);
                 }
+                break;
+            case 15:
+                extraDamage = 5;
+                break;
+            case 16:
+                extraDamage = 4;
                 break;
             default:
                 if(endOfTurnDamage > 0){

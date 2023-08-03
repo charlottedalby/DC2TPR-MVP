@@ -52,6 +52,7 @@ public class Player : MonoBehaviour
     public GameManager gameManager;
     public bool avoidAttack;
     public int endOfTurnDamage;
+    public int extraDamage;
     public Transform playerCardDisplay;
 
     /*
@@ -294,6 +295,8 @@ public class Player : MonoBehaviour
     public void attackEnemy(int damage, bool ignoreArmour, int hitChance)
     {
         damage = damage * gameManager.player.playerDamageMult;
+        damage += extraDamage;
+        extraDamage = 0;
 
         if (gameManager.enemy.armour > 0 && ignoreArmour != true && gameManager.enemy.avoidAttack != true)
         {
@@ -332,11 +335,11 @@ public class Player : MonoBehaviour
     public void endTurnMechanics(int endTurnOption){
         switch(endTurnOption){
             case 0:
-                Debug.Log("Enemy: " + gameManager.enemy.health + " - " + endOfTurnDamage);
+                Debug.Log("Enemy: " + gameManager.enemy.health + ", " + gameManager.enemy.armour + " - " + endOfTurnDamage);
                 if(endOfTurnDamage > 0){
                     attackEnemy(endOfTurnDamage, false, 0);
                 }
-                Debug.Log("Enemy: " + gameManager.enemy.health + " - " + endOfTurnDamage);
+                Debug.Log("Enemy: " + gameManager.enemy.health + ", " + gameManager.enemy.armour + " - " + endOfTurnDamage);
                 break;
             case 1:
                 endOfTurnDamage = 1;
@@ -396,6 +399,12 @@ public class Player : MonoBehaviour
                 if(endOfTurnDamage > 0){
                     attackEnemy(endOfTurnDamage * 2, false, 0);
                 }
+                break;
+            case 15:
+                extraDamage = 5;
+                break;
+            case 16:
+                extraDamage = 4;
                 break;
             default:
                 if(endOfTurnDamage > 0){

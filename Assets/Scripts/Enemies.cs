@@ -166,7 +166,7 @@ public class Enemies : MonoBehaviour
                 //Gnaw Card
                 enemyStartingDeck.Add(new Card("Gnaw (Mouse)", 7, false, 0, 0, 0, 1, false, 0, 0));
                 //Clamp Down (unfinished) 
-                enemyStartingDeck.Add(new Card("Clamp Down (Mouse)", 4, false, 0, 0, 0, 1, false, 0, 0));
+                enemyStartingDeck.Add(new Card("Clamp Down (Mouse)", 4, false, 0, 0, 0, 1, false, 0, 16));
                 //Scurry Card (unfinished)
                 enemyStartingDeck.Add(new Card("Scurry (Mouse)", 0, false, 0, 0, 0, 1, false, 50, 0));
                 //Tail Strike Card 
@@ -199,7 +199,7 @@ public class Enemies : MonoBehaviour
                 //Gnaw Card
                 enemyStartingDeck.Add(new Card("Gnaw (Rat)", 9, false, 0, 0, 0, 1, false, 0, 0));
                 //Clamp Down (unfinished) 
-                enemyStartingDeck.Add(new Card("Clamp Down (Rat)", 5, false, 0, 0, 0, 1, false, 0, 0));
+                enemyStartingDeck.Add(new Card("Clamp Down (Rat)", 5, false, 0, 0, 0, 1, false, 0, 15));
                 //Scurry Card (unfinished)
                 enemyStartingDeck.Add(new Card("Scurry (Rat)", 0, false, 0, 0, 0, 1, false, 75, 0));
                 //Tail Strike Card 
@@ -221,7 +221,7 @@ public class Enemies : MonoBehaviour
             case 7:
                 //Dog Enemy
                 //Hound Card (unfinished)
-                enemyStartingDeck.Add(new Card("Hound (Dog)", 5, false, 0, 0, 0, 1, false, 0, 0));
+                enemyStartingDeck.Add(new Card("Hound (Dog)", 5, false, 0, 0, 0, 1, false, 0, 15));
                 //Bite Card
                 enemyStartingDeck.Add(new Card("Bite (Dog)", 12, false, 0, 0, 0, 1, false, 0, 0));
                 //Pounce Card 
@@ -401,7 +401,7 @@ public class Enemies : MonoBehaviour
                 //Grizzly Bear 
                 enemyStartingDeck.Add(new Card("Maul (Bear)", 8, false, 0, 0, 0, 1, false, 0, 0));
                 enemyStartingDeck.Add(new Card("Bite (Bear)", 7, false, 0, 0, 0, 1, false, 0, 0));
-                enemyStartingDeck.Add(new Card("Chase Down (Bear)", 0, false, 5, 0, 0, 1, false, 0, 0));
+                enemyStartingDeck.Add(new Card("Chase Down (Bear)", 0, false, 5, 0, 0, 1, false, 0, 15));
                 enemyStartingDeck.Add(new Card("Knock Down (Bear)", 6, false, 0, 0, 0, 1, false, 0, 0));
                 return enemyStartingDeck;
             case 25:
