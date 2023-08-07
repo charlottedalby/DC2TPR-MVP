@@ -47,4 +47,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BattleScreen.unity
     guid: be95d1be6a6e55d44a78f13c3a8bc84f
+  - enabled: 1
+    path: Assets/Scenes/GameComplete.unity
+    guid: c146870c569897746bb5605e7380998e
   m_configObjects: {}

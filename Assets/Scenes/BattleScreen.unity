@@ -1589,11 +1589,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4193766416910296203, guid: 5009813db09c26643b63511c2bd8a70a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 675
+      value: 745
       objectReference: {fileID: 0}
     - target: {fileID: 4193766416910296203, guid: 5009813db09c26643b63511c2bd8a70a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 901
+      value: 1223
       objectReference: {fileID: 0}
     - target: {fileID: 4193766416910296203, guid: 5009813db09c26643b63511c2bd8a70a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1909,11 +1909,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4193766416910296203, guid: 5009813db09c26643b63511c2bd8a70a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 675
+      value: 415
       objectReference: {fileID: 0}
     - target: {fileID: 4193766416910296203, guid: 5009813db09c26643b63511c2bd8a70a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 901
+      value: 1123
       objectReference: {fileID: 0}
     - target: {fileID: 4193766416910296203, guid: 5009813db09c26643b63511c2bd8a70a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5424,11 +5424,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1617531371678164241, guid: 45774d158338b5d4a8153d08f3f1cb97, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 153
+      value: 108.8
       objectReference: {fileID: 0}
     - target: {fileID: 1617531371678164241, guid: 45774d158338b5d4a8153d08f3f1cb97, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 466
+      value: 489.4
       objectReference: {fileID: 0}
     - target: {fileID: 2056463479747748098, guid: 45774d158338b5d4a8153d08f3f1cb97, type: 3}
       propertyPath: m_AnchorMax.x
@@ -5456,12 +5456,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2056463479747748098, guid: 45774d158338b5d4a8153d08f3f1cb97, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 253
+      value: 220.3
       objectReference: {fileID: 0}
     - target: {fileID: 2056463479747748098, guid: 45774d158338b5d4a8153d08f3f1cb97, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 608
       objectReference: {fileID: 0}
+    - target: {fileID: 4901036674041969324, guid: 45774d158338b5d4a8153d08f3f1cb97, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 83ca02caaf173694db295fa5006e460d, type: 3}
     - target: {fileID: 4901036674041969324, guid: 45774d158338b5d4a8153d08f3f1cb97, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -5544,11 +5548,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6651990973056166541, guid: 45774d158338b5d4a8153d08f3f1cb97, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 462
+      value: 507.11
       objectReference: {fileID: 0}
     - target: {fileID: 6651990973056166541, guid: 45774d158338b5d4a8153d08f3f1cb97, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -13
+      value: -34
       objectReference: {fileID: 0}
     - target: {fileID: 6651990973056166541, guid: 45774d158338b5d4a8153d08f3f1cb97, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5620,6 +5624,7 @@ MonoBehaviour:
   stage: 0
   avoidAttack: 0
   endOfTurnDamage: 0
+  extraDamage: 0
 --- !u!114 &555238444 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1357213285606136995, guid: 45774d158338b5d4a8153d08f3f1cb97, type: 3}
@@ -10658,7 +10663,6 @@ MonoBehaviour:
   currentEnemy: {fileID: 0}
   card: {fileID: 0}
   menu: {fileID: 0}
-  gameBackground: {fileID: 0}
   stage1Background: {fileID: 0}
   stage2Background: {fileID: 0}
   stage3Background: {fileID: 0}
@@ -11933,7 +11937,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -470, y: -14821276}
+  m_AnchoredPosition: {x: -468, y: -14821285}
   m_SizeDelta: {x: 517.95, y: 517.95}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1167640997
@@ -14698,6 +14702,7 @@ MonoBehaviour:
   gameManager: {fileID: 1042665089}
   avoidAttack: 0
   endOfTurnDamage: 0
+  extraDamage: 0
   playerCardDisplay: {fileID: 1065268458}
 --- !u!224 &1553112797
 RectTransform:
@@ -18356,7 +18361,7 @@ PrefabInstance:
     - target: {fileID: 868080004080416220, guid: 5009813db09c26643b63511c2bd8a70a, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 7e3fc6386a8493a488284f17c4642268, type: 3}
+      objectReference: {fileID: 21300000, guid: 6e98c5b64d327fd42b7f535d13aa51e4, type: 3}
     - target: {fileID: 868080004080416220, guid: 5009813db09c26643b63511c2bd8a70a, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -18439,11 +18444,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4193766416910296203, guid: 5009813db09c26643b63511c2bd8a70a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 675
+      value: 1047
       objectReference: {fileID: 0}
     - target: {fileID: 4193766416910296203, guid: 5009813db09c26643b63511c2bd8a70a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 901
+      value: 1076
       objectReference: {fileID: 0}
     - target: {fileID: 4193766416910296203, guid: 5009813db09c26643b63511c2bd8a70a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

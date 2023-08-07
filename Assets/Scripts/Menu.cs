@@ -152,11 +152,14 @@ public class Menu : MonoBehaviour
     {
         fadeToLevel("EventStop");
     }
+    public void loadGameComplete()
+    {
+        fadeToLevel("GameComplete");
+    }
 
     public void fadeToLevel(string name)
     {
         animator.SetTrigger("FadeOut");
-        Debug.Log(name);
         SceneManager.LoadScene(name);
     }
     

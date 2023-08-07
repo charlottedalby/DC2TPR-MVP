@@ -185,7 +185,15 @@ public class GameManager : MonoBehaviour
                 GameController.PlayerMapPos.Clear();
                 GameController.stage1Difficulty = new List <int>();
                 GameController.PlayerStartColumn = 0;
-                menu.loadStageComplete();
+                
+                if (GameController.stage != 4)
+                {
+                    menu.loadStageComplete();
+                }
+                else
+                {
+                    menu.loadGameComplete();
+                }
             }
             else
             {
