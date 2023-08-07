@@ -88,14 +88,12 @@ public class NodeOBJ : MonoBehaviour
             if (GameController.PlayerStartNode.IsConnected(node) == true)
             {
                 GFX.transform.localScale = 1.25f * normalScale;
-                spriteRen.color = Color.yellow;
             }
         }
 
         else if(node.row == 0)
         {
             GFX.transform.localScale = 1.25f * normalScale;
-            spriteRen.color = Color.yellow;
         }
     }
 
@@ -114,7 +112,6 @@ public class NodeOBJ : MonoBehaviour
         {
             SpriteRenderer spriteRen = GFX.GetComponent<SpriteRenderer>();
             GFX.transform.localScale = normalScale;
-            spriteRen.color = Color.white;
         }
         
     }
