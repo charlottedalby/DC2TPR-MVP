@@ -50,7 +50,6 @@ using UnityEngine.SceneManagement;
 public class Menu : MonoBehaviour
 {
     public Animator animator; 
-    public bool stage4Complete = false;
     
     public void NextBattle()
     {
@@ -77,7 +76,6 @@ public class Menu : MonoBehaviour
     public void loadTutorial()
     {
         GameController.stage = 0;
-        Debug.Log("Tutorial");
         fadeToLevel("TutorialOverworldScreen");
     }
 
@@ -112,10 +110,6 @@ public class Menu : MonoBehaviour
         }
         else 
         {
-            if(stage4Complete == true)
-            {
-                fadeToLevel("GameComplete");
-            }
             fadeToLevel("CardStealing");
         }
     }
@@ -142,10 +136,6 @@ public class Menu : MonoBehaviour
 
     public void loadStageComplete()
     {
-        if (GameController.stage == 4)
-        {
-            stage4Complete = true;
-        }
         fadeToLevel("StageComplete");
     }
 
