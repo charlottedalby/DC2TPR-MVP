@@ -38,7 +38,9 @@ public class TutorialTextManipulator : MonoBehaviour
     public void Update()
     {
         if (GameController.stage == 0 && gameManager.enemy.difficulty == 1) {
-            stageCompleteText.text = "Kick is our strongest attack in our hand, click on the card to use the attack";
+            if (gameManager.player.deck.Count <= 9) {
+                stageCompleteText.text = "Kick is our strongest attack in our hand, click on the card to use the attack";
+            }
         }
         if (GameController.stage == 0 && gameManager.enemy.difficulty == 2) {
             if (gameManager.player.deck.Count > 0) {
