@@ -99,7 +99,12 @@ public class Menu : MonoBehaviour
             GameController.PlayerStartHealth = 100;
         }
 
-        fadeToLevel("OverworldScreen");
+        if (GameController.stage == 0){
+            fadeToLevel("TutorialOverworldScreen");
+        }
+        else {
+            fadeToLevel("OverworldScreen");
+        }
     }
     
     public void loadCardSteal()

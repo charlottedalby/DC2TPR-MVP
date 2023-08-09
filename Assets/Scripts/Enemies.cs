@@ -111,7 +111,7 @@ public class Enemies : MonoBehaviour
         bool isEnemyChosen = false;
         int enemyIndex = 0;
         while (!isEnemyChosen) {
-            enemyIndex = Random.Range(0, 30);
+            enemyIndex = Random.Range(0, 31);
             if (stageEnemies[enemyIndex].difficulty == battleDifficulty) {
                 if (stageEnemies[enemyIndex].stage == currentStage) {
                     isEnemyChosen = true;                 
