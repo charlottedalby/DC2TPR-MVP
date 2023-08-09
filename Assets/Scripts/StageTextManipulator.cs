@@ -30,8 +30,16 @@ public class StageTextManipulator : MonoBehaviour
 
     public void Start()
     {
-        string newText = "Stage " + GameController.stage;
-        stageText.text = newText;
+        if(GameController.stage > 0)
+        {
+            string newText = "Stage " + GameController.stage;
+            stageText.text = newText;
+        }
+        else
+        {
+            string newText = "Tutorial";
+            stageText.text = newText;
+        }
     }
 
 }

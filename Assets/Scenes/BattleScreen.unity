@@ -5399,6 +5399,22 @@ PrefabInstance:
       value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1357213285606136995, guid: 45774d158338b5d4a8153d08f3f1cb97, type: 3}
+      propertyPath: m_Color.b
+      value: 0.9487362
+      objectReference: {fileID: 0}
+    - target: {fileID: 1357213285606136995, guid: 45774d158338b5d4a8153d08f3f1cb97, type: 3}
+      propertyPath: m_Color.g
+      value: 0.9487362
+      objectReference: {fileID: 0}
+    - target: {fileID: 1357213285606136995, guid: 45774d158338b5d4a8153d08f3f1cb97, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9811321
+      objectReference: {fileID: 0}
+    - target: {fileID: 1357213285606136995, guid: 45774d158338b5d4a8153d08f3f1cb97, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1357213285606136995, guid: 45774d158338b5d4a8153d08f3f1cb97, type: 3}
       propertyPath: m_FontData.m_Font
       value: 
       objectReference: {fileID: 12800000, guid: 81dd34204219bc04b815c7c46c275669, type: 3}
@@ -5456,11 +5472,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2056463479747748098, guid: 45774d158338b5d4a8153d08f3f1cb97, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 169
+      value: 155
       objectReference: {fileID: 0}
     - target: {fileID: 2056463479747748098, guid: 45774d158338b5d4a8153d08f3f1cb97, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 609
+      value: 595
       objectReference: {fileID: 0}
     - target: {fileID: 4901036674041969324, guid: 45774d158338b5d4a8153d08f3f1cb97, type: 3}
       propertyPath: m_Sprite
@@ -5630,7 +5646,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1357213285606136995, guid: 45774d158338b5d4a8153d08f3f1cb97, type: 3}
   m_PrefabInstance: {fileID: 555238439}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1011462512}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
@@ -10453,6 +10469,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1011462512 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2243513812435145025, guid: 45774d158338b5d4a8153d08f3f1cb97, type: 3}
+  m_PrefabInstance: {fileID: 555238439}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1011462513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011462512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 3, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1034033376
 GameObject:
   m_ObjectHideFlags: 0

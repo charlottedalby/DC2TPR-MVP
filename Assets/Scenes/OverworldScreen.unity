@@ -1527,7 +1527,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -193, y: -105}
+  m_AnchoredPosition: {x: -195, y: -99}
   m_SizeDelta: {x: 180.17224, y: 89.437195}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &512055959
@@ -1542,7 +1542,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d82a74867fdda1e4a832c62aa8553e0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
+  animator: {fileID: 1221846386}
 --- !u!114 &512055960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2327,7 +2327,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 512055959}
         m_TargetAssemblyTypeName: Menu, Scripts
-        m_MethodName: exitGame
+        m_MethodName: loadMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5550,7 +5550,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1636146666360902028, guid: 45c12af87fca514438edb82c12b1948c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4
+      value: -4.5
       objectReference: {fileID: 0}
     - target: {fileID: 1658807956246800362, guid: 45c12af87fca514438edb82c12b1948c, type: 3}
       propertyPath: menu
@@ -7365,7 +7365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
