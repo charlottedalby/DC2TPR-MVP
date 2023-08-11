@@ -57,7 +57,13 @@ public class EventManager : MonoBehaviour
     public Image ClericPage;
     public Image ScoutPage;
     public Image CardTheif;
+    public Image RoosterImage;
+    public Image MonkeyImage;
+    public Image TigerImage;
+    public Image DragonImage;
 
+    public HealthBar healthBar;
+    public Text playerHealthText;
     public Menu menu;
 
     /*
@@ -75,9 +81,11 @@ public class EventManager : MonoBehaviour
 
     void Start()
     {
+        
         GameObject menuObject = GameObject.Find("Canvas");
         menu = menuObject.GetComponent<Menu>();
-        
+        playerHealthText.text = GameController.PlayerStartHealth.ToString();
+        healthBar.setHealth(GameController.PlayerStartHealth);
         skip = false;
         generateEvents();
         Events[0].Stages = Event1 = new List<int> {1, 3, 4};
@@ -100,6 +108,11 @@ public class EventManager : MonoBehaviour
         ScoutPage = GameObject.Find("Scope Page").GetComponent<Image>();
         CardTheif = GameObject.Find("Card Thief").GetComponent<Image>();
         
+        
+        RoosterImage = GameObject.Find("Rooster").GetComponent<Image>();
+        MonkeyImage = GameObject.Find("Monkey").GetComponent<Image>();
+        TigerImage = GameObject.Find("Tiger").GetComponent<Image>();
+        DragonImage = GameObject.Find("Dragon").GetComponent<Image>();
         setAllFalse();
 
         enemies = new Enemies();
@@ -247,6 +260,7 @@ public class EventManager : MonoBehaviour
             {
                 GameController.PlayerStartHealth = (int)Math.Round(newHealth);
             }
+
             bossEnemy = enemies.selectEnemy(1, GameController.stage);
             GameController.enemyStartingDeck = bossEnemy.enemyCards;
             menu.loadCardSteal();
@@ -280,7 +294,7 @@ public class EventManager : MonoBehaviour
         else if (EventNumber == 8)
         {
             int tempStage = GameController.stage;
-            if (GameController.stage != 1)
+            if (GameController.stage > 1)
             {
                 GameController.stage -= 1;
             }
@@ -312,7 +326,6 @@ public class EventManager : MonoBehaviour
             Debug.Log(eventNumber);
         }
         while(!Events[eventNumber].Stages.Contains(GameController.stage));
-        
         if (eventNumber == 0)
         {
             InnPage.color = new Color32(255, 255, 255, 255);
@@ -347,7 +360,24 @@ public class EventManager : MonoBehaviour
         }
         else if (eventNumber == 8)
         {
+            Debug.Log(GameController.stage-1);
             BossBattle.color = new Color32(255, 255, 255, 255);
+            if(GameController.stage == 1)
+            {
+                RoosterImage.color = new Color32(255, 255, 255, 255);
+            }
+            else if(GameController.stage == 2)
+            {
+                MonkeyImage.color = new Color32(255, 255, 255, 255);
+            }
+            else if (GameController.stage ==3)
+            {
+                TigerImage.color = new Color32(255, 255, 255, 255);
+            }
+            else
+            {
+                DragonImage.color = new Color32(255, 255, 255, 255);
+            }
         }
 
         if(Events[eventNumber].Skipable == true)
@@ -400,6 +430,10 @@ public class EventManager : MonoBehaviour
         ClericPage.color = new Color32(255, 255, 255, 0);
         ScoutPage.color = new Color32(255, 255, 255, 0);
         CardTheif.color = new Color32(255, 255, 255, 0);
+        RoosterImage.color = new Color32(255, 255, 255, 0);
+        MonkeyImage.color = new Color32(255, 255, 255, 0);
+        TigerImage.color = new Color32(255, 255, 255, 0);
+        DragonImage.color = new Color32(255, 255, 255, 0);
     }
 
 }
