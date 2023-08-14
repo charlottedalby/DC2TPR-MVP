@@ -7,7 +7,6 @@ using System.Runtime.Serialization;
     
 public class MapGeneration : MonoBehaviour
 {
-    public Text playerHealthText;
     // Changeable properties
     MapPrefab mapPrefabs;
     // prefab the user can swap out
@@ -91,7 +90,7 @@ public class MapGeneration : MonoBehaviour
     public bool centerTopNodes = true;
     public bool noCrossover = false;
     
-
+    public Text playerHealthText;
     // Above this line are the properties users can change
 
     // Below this line are properties which users should not change, unless they want to edit code
