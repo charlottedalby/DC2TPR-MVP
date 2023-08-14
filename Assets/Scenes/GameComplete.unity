@@ -493,7 +493,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Pidgeon
+  m_Text: Pigeon
 --- !u!222 &76730939
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4948,7 +4948,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Lizzard
+  m_Text: Lizard
 --- !u!222 &1878771727
 CanvasRenderer:
   m_ObjectHideFlags: 0
