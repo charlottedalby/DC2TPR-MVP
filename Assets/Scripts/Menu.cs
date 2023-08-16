@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
+using UnityEditor;
 /*
     Class: Menu 
     Visibility: Public 
@@ -50,6 +50,7 @@ using UnityEngine.SceneManagement;
 public class Menu : MonoBehaviour
 {
     public Animator animator; 
+    public string message = "";
     
     public void NextBattle()
     {
@@ -81,6 +82,7 @@ public class Menu : MonoBehaviour
 
     public void exitGame()
     {
+        message = "Quitting Game";
         Application.Quit();
     }
 
@@ -165,9 +167,22 @@ public class Menu : MonoBehaviour
 
     public void fadeToLevel(string name)
     {
-        animator.SetTrigger("FadeOut");
-        SceneManager.LoadScene(name);
+        if (animator != null)
+        {
+            animator.SetTrigger("FadeOut");
+            SceneManager.LoadScene(name);
+        }
+        //Testing Purposes
+        else
+        {
+        #if UNITY_EDITOR
+        string tempName = "Assets/Scenes/";
+        string amendedNameOne = tempName + name;
+        string amendedNameTwo = amendedNameOne +".unity";
+        name = amendedNameTwo;
+        UnityEditor.SceneManagement.EditorSceneManager.OpenScene(name);
+        #endif
     }
-    
-}
+        }
+    }
 
