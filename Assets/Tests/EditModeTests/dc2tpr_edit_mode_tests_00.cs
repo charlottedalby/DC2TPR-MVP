@@ -14,6 +14,11 @@ public class dc2tpr_edit_mode_tests_00
     private GameController _GameController;
     private Enemy _enemy;
     public Enemies _enemies;
+    public Slider _slider;
+    public ArmorBar _armorBar;
+    public Card _card;
+    
+
 
     [SetUp]
     public void Setup()
@@ -25,6 +30,9 @@ public class dc2tpr_edit_mode_tests_00
         _GameController = gameObject.AddComponent<GameController>();
         _enemy = gameObject.AddComponent<Enemy>();
         _enemies = gameObject.AddComponent<Enemies>();
+        _slider = gameObject.AddComponent<Slider>();
+        _armorBar = gameObject.AddComponent<ArmorBar>();
+        _card = gameObject.AddComponent<Card>();
     }
 
     /*
@@ -116,5 +124,50 @@ public class dc2tpr_edit_mode_tests_00
         _enemy.healthText = new GameObject().AddComponent<Text>();
         _enemy.healthText.text = _enemy.health.ToString();
         Assert.AreEqual("10", _enemy.healthText.text);
+    }
+
+    [Test]
+
+    public void dc2tpr_edit_mode_test_create_new_enemy()
+    {
+        _enemy = new Enemy("testEnemy", _enemies.assignStartingEnemyCards(0), 15, 0, 1, 1);
+        Assert.AreEqual("testEnemy", _enemy.name);
+        Assert.AreEqual(4, _enemy.enemyCards.Count);
+        Assert.AreEqual(15, _enemy.health);
+        Assert.AreEqual(0, _enemy.armour);
+        Assert.AreEqual(1, _enemy.difficulty);
+        Assert.AreEqual(1, _enemy.stage);
+    }
+    [Test]
+    public void dc2tpr_edit_mode_test_create_armor_bar()
+    {
+        _armorBar.slider = _slider;
+        _armorBar.setMaxArmor(100);
+        Assert.AreEqual(100, _slider.maxValue);
+        Assert.AreEqual(100, _slider.value);
+    }
+
+    [Test]
+    public void dc2tpr_edit_mode_test_create_armor_bar_value()
+    {
+        _armorBar.slider = _slider;
+        _armorBar.setMaxArmor(100);
+        _armorBar.setArmor(200);
+        Assert.AreEqual(100, _slider.maxValue);
+        Assert.AreEqual(100, _slider.value);
+    }
+    [Test]
+    public void dc2tpr_edit_mode_test_create_new_card()
+    {
+        _card = new Card("testCard", 10, false, 0, 0, 0, 10, false, 100, 10);
+        Assert.AreEqual(10, _card.damage);
+        Assert.AreEqual(false, _card.hasBeenPlayed);
+        Assert.AreEqual(0, _card.handIndex);
+        Assert.AreEqual(0, _card.armour);
+        Assert.AreEqual(0, _card.healing);
+        Assert.AreEqual(10, _card.damageMult);
+        Assert.AreEqual(false, _card.ignoreArmour);
+        Assert.AreEqual(100, _card.hitChance);
+        Assert.AreEqual(10, _card.endOfTurnValue);
     }
 }

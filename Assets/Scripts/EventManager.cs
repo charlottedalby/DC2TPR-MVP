@@ -38,15 +38,15 @@ public class EventManager : MonoBehaviour
     public bool skip;
     int eventNumber;
 
-    List<int> Event1;
-    List<int> Event2;
-    List<int> Event3;
-    List<int> Event4;
-    List<int> Event5;
-    List<int> Event6;
-    List<int> Event7;
-    List<int> Event8;
-    List<int> Event9;
+    public List<int> Event1;
+    public List<int> Event2;
+    public List<int> Event3;
+    public List<int> Event4;
+    public List<int> Event5;
+    public List<int> Event6;
+    public List<int> Event7;
+    public List<int> Event8;
+    public List<int> Event9;
 
     public Image InnPage;
     public Image AmbushFlee;
@@ -65,6 +65,7 @@ public class EventManager : MonoBehaviour
     public HealthBar healthBar;
     public Text playerHealthText;
     public Menu menu;
+    public int chance;
 
     /*
         Method: Start()
@@ -79,7 +80,7 @@ public class EventManager : MonoBehaviour
         e. Runs the displayEvent() function which returns int
     */
 
-    void Start()
+    public void Start()
     {
         
         GameObject menuObject = GameObject.Find("Canvas");
@@ -87,6 +88,7 @@ public class EventManager : MonoBehaviour
         playerHealthText.text = GameController.PlayerStartHealth.ToString();
         healthBar.setHealth(GameController.PlayerStartHealth);
         skip = false;
+        chance = 0;
         generateEvents();
         Events[0].Stages = Event1 = new List<int> {1, 3, 4};
         Events[1].Stages = Event2 = new List<int> {2, 3, 4};
@@ -196,7 +198,7 @@ public class EventManager : MonoBehaviour
 
         else if(EventNumber == 2)
         {
-            int chance = UnityEngine.Random.Range(1, 2);
+            chance = UnityEngine.Random.Range(1, 2);
 
             if (chance == 1)
             {

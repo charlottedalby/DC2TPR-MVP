@@ -35,7 +35,7 @@ public class Event : MonoBehaviour
         a. Constructor for all Event Attributes
     */
 
-    public Event (int EventID, string Description, List<int> Stage, bool Skipable)
+    public Event (int EventID, string Description, List<int> Stages, bool Skipable)
     {
         this.EventID = EventID;
         this.Description = Description;
