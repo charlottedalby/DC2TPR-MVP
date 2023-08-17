@@ -121,11 +121,6 @@ public class Menu : MonoBehaviour
         }
     }
 
-    public void loadCardSwap()
-    {
-        fadeToLevel("CardSwap");
-    }
-
     public void LoadPlayerCardsScene()
     {
         fadeToLevel("PlayerCardStealScreen");

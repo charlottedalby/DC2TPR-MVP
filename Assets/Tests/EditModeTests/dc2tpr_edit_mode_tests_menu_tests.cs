@@ -153,4 +153,84 @@ public class dc2tpr_edit_mode_tests_menu_tests
         Scene activeScene = SceneManager.GetActiveScene();
         Assert.AreEqual("MainMenu", activeScene.name);
     }
+
+    [Test]
+    public void dc2tpr_edit_mode_test_loadPlayerCardsScene()
+    {
+        EditorSceneManager.OpenScene("Assets/Scenes/MainMenu.unity");
+        _gameController.Start();
+        _menu.LoadPlayerCardsScene();
+        Scene activeScene = SceneManager.GetActiveScene();
+        Assert.AreEqual("PlayerCardStealScreen", activeScene.name);
+    }
+
+    [Test]
+    public void dc2tpr_edit_mode_test_load_player_card_scene_2()
+    {
+        EditorSceneManager.OpenScene("Assets/Scenes/MainMenu.unity");
+        _gameController.Start();
+        _menu.loadPlayerCardCancel();
+        Scene activeScene = SceneManager.GetActiveScene();
+        Assert.AreEqual("PlayerCardStealScreen", activeScene.name);
+    }
+
+    [Test]
+    public void dc2tpr_edit_mode_test_load_game_over()
+    {
+        EditorSceneManager.OpenScene("Assets/Scenes/MainMenu.unity");
+        _gameController.Start();
+        _menu.loadGameOver();
+        Scene activeScene = SceneManager.GetActiveScene();
+        Assert.AreEqual("GameOver", activeScene.name);
+    }
+
+    public void dc2tpr_edit_mode_test_load_stage_complete()
+    {
+        EditorSceneManager.OpenScene("Assets/Scenes/MainMenu.unity");
+        _gameController.Start();
+        _menu.loadStageComplete();
+        Scene activeScene = SceneManager.GetActiveScene();
+        Assert.AreEqual("StageComplete", activeScene.name);
+    }
+
+    [Test]
+    public void dc2tpr_edit_mode_test_load_you_win()
+    {
+        EditorSceneManager.OpenScene("Assets/Scenes/MainMenu.unity");
+        _gameController.Start();
+        _menu.loadYouWin();
+        Scene activeScene = SceneManager.GetActiveScene();
+        Assert.AreEqual("YouWin", activeScene.name);
+    }
+
+    [Test]
+    public void dc2tpr_edit_mode_test_load_rest_stop()
+    {
+        EditorSceneManager.OpenScene("Assets/Scenes/MainMenu.unity");
+        _gameController.Start();
+        _menu.loadRestStop();
+        Scene activeScene = SceneManager.GetActiveScene();
+        Assert.AreEqual("RestStop", activeScene.name);
+    }
+
+    [Test]
+    public void dc2tpr_edit_mode_test_load_event_stop()
+    {
+        EditorSceneManager.OpenScene("Assets/Scenes/MainMenu.unity");
+        _gameController.Start();
+        _menu.loadEventStop();
+        Scene activeScene = SceneManager.GetActiveScene();
+        Assert.AreEqual("EventStop", activeScene.name);
+    }
+
+    [Test]
+    public void dc2tpr_edit_mode_test_load_game_complete()
+    {
+        EditorSceneManager.OpenScene("Assets/Scenes/MainMenu.unity");
+        _gameController.Start();
+        _menu.loadGameComplete();
+        Scene activeScene = SceneManager.GetActiveScene();
+        Assert.AreEqual("GameComplete", activeScene.name);
+    }
+
 }

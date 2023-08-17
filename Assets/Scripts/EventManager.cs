@@ -36,7 +36,7 @@ public class EventManager : MonoBehaviour
     public Enemies enemies;
     public Text eventText;
     public bool skip;
-    int eventNumber;
+    public int eventNumber;
 
     public List<int> Event1;
     public List<int> Event2;
@@ -280,6 +280,7 @@ public class EventManager : MonoBehaviour
             menu.NextBattle();
             GameController.stage = tempStage;
         }
+        
         else
         {
             menu.loadOverworld();

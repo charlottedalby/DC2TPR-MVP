@@ -54,46 +54,6 @@ public class Player : MonoBehaviour
     public int endOfTurnDamage;
     public int extraDamage;
     public Transform playerCardDisplay;
-
-    /*
-        Method: Awake()
-        Visibility: Public 
-        Output: N/A
-        Purpose: 
-
-        a. Check if an instance of the script already exists:
-        b. If it exists, destroy the current game object and return.
-        c. Set the Instance variable to reference the current script.
-        d. Prevent the game object from being destroyed when loading new scenes.
-        e. If Instance is still null:
-        f. Set the Instance variable to reference the current script.
-        g. If Instance is not null and it is not the current script:
-        h. Set the Instance variable to reference the current script.
-    */
-    /*
-    public void Awake()
-    { 
-        if(Instance != null)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
-        
-
-        if (Instance == null) 
-        {
-            Instance = this;
-        } 
-
-        else if (Instance != this) 
-        {
-            Instance = this;
-        }
-    }*/
-
     /*
         Method: Start()
         Visibility: Private 

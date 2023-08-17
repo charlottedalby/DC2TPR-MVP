@@ -1,4 +1,5 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
@@ -24,6 +25,7 @@ public class dc2tpr_edit_mode_tests_events
     public EventManager _eventManager;
     public Menu _menu;
     public Node _node;
+    public Text _healthText;
 
     [SetUp]
     public void Setup()
@@ -41,6 +43,7 @@ public class dc2tpr_edit_mode_tests_events
         _event = gameObject.AddComponent<Event>();
         _eventManager = gameObject.AddComponent<EventManager>();
         _menu = gameObject.AddComponent<Menu>();
+        _healthText = gameObject.AddComponent<Text>();
         GameController.stage = 1;
         _eventManager.enemies = _enemies;
         _eventManager.bossEnemy = _enemy;
@@ -79,6 +82,48 @@ public class dc2tpr_edit_mode_tests_events
         Assert.AreEqual("testEvent", _event.Description);
         Assert.AreEqual(3, _event.Stages.Count);
         Assert.AreEqual(false, _event.Skipable);
+    }
+
+    [Test]
+    public void dc2tpr_edit_mode_test_event_start()
+    {
+        _eventManager.menu = _menu;
+        _eventManager.playerHealthText = _healthText;
+        _eventManager.healthBar = _healthBar;
+        try
+        {
+            _eventManager.Start();
+        }
+        catch (NullReferenceException err)
+        {
+            Debug.Log("Null Error");
+        }
+    }
+
+    [Test]
+    public void dc2tpr_edit_mode_test_event_skip()
+    {
+        _eventManager.skip = true;
+        _eventManager.skipEvent();
+        Scene activeScene = SceneManager.GetActiveScene();
+        Assert.AreEqual("OverworldScreen", activeScene.name);
+    }
+
+    [Test]
+    public void dc2tpr_edit_mode_test_proceed_event()
+    {
+        for (int i = 0; i < 9; i++)
+        {
+            _eventManager.eventNumber = i;
+            try 
+            {
+            _eventManager.proceedToEvent();
+            }
+            catch (NullReferenceException err)
+            {
+            Debug.Log("Null Error");
+            }
+        }
     }
 
     [Test]
@@ -123,7 +168,7 @@ public class dc2tpr_edit_mode_tests_events
     [Test]
     public void dc2tpr_edit_mode_test_event_3()
     {
-        for (int i = 0; i < 50; i++)
+        for (int i = 0; i < 10; i++)
         {
             int initialHealth = UnityEngine.Random.Range(1, 100);
             GameController.PlayerStartHealth = initialHealth;

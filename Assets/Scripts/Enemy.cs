@@ -37,7 +37,7 @@ public class Enemy : MonoBehaviour
     public int health;
     public int armour;
     public Text healthText;
-    private GameManager gameManager;
+    public GameManager gameManager;
     public Text armorText;
     public int difficulty;
     public string name;
@@ -45,6 +45,7 @@ public class Enemy : MonoBehaviour
     public bool avoidAttack;
     public int endOfTurnDamage;
     public int extraDamage;
+    public Card selectedCard;
 
     /*
 	    Method: Enemy()
@@ -104,7 +105,7 @@ public class Enemy : MonoBehaviour
 
     public void attackPlayer(){
         
-        Card selectedCard = enemyCards[Random.Range(0, enemyCards.Count)];
+        selectedCard = enemyCards[Random.Range(0, enemyCards.Count)];
 
         //Tutorial code
         if (stage == 0 && difficulty != 3) {

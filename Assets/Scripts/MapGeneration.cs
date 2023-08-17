@@ -108,7 +108,7 @@ public class MapGeneration : MonoBehaviour
         mapPrefabs = GameObject.FindObjectOfType<MapPrefab>();
     }
     // Builds a new map on start
-    void Start(){
+    public void Start(){
         BuildNew();
     }
 

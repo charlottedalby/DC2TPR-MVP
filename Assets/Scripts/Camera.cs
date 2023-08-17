@@ -18,7 +18,7 @@ using UnityEngine;
 public class Camera : MonoBehaviour
 {
     public float speed = 1.5f;
-
+    
    
     /*
         Method: Update()
@@ -33,7 +33,7 @@ public class Camera : MonoBehaviour
         e. moves camera to tempVect
     */  
 
-    void Update()
+    public void Update()
     {
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");

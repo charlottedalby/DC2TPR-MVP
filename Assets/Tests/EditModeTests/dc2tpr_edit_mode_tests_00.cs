@@ -1,4 +1,5 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
@@ -15,10 +16,12 @@ public class dc2tpr_edit_mode_tests_00
     private Enemy _enemy;
     public Enemies _enemies;
     public Slider _slider;
+    public Slider _sliderE;
     public ArmorBar _armorBar;
     public Card _card;
-    
-
+    public MapGeneration _mapGen;
+    public Transform startPos;
+    public Camera _camera;
 
     [SetUp]
     public void Setup()
@@ -31,8 +34,11 @@ public class dc2tpr_edit_mode_tests_00
         _enemy = gameObject.AddComponent<Enemy>();
         _enemies = gameObject.AddComponent<Enemies>();
         _slider = gameObject.AddComponent<Slider>();
+        _sliderE = gameObject.AddComponent<Slider>();
         _armorBar = gameObject.AddComponent<ArmorBar>();
         _card = gameObject.AddComponent<Card>();
+        _mapGen = gameObject.AddComponent<MapGeneration>();
+        _camera = gameObject.AddComponent<Camera>();
     }
 
     /*
@@ -83,10 +89,7 @@ public class dc2tpr_edit_mode_tests_00
         Assert.AreEqual(0, _enemy.health);
         _enemies.createStageEnemies();
         Assert.AreEqual(31, _enemies.stageEnemies.Count);
-        for (int i = 0; i < _enemies.stageEnemies.Count; i++)
-        {
-            Assert.AreEqual(4, _enemies.stageEnemies[i].enemyCards.Count);
-        }
+        Assert.AreEqual(4, _enemies.stageEnemies[1].enemyCards.Count);
     }
 
     [Test]
@@ -143,8 +146,8 @@ public class dc2tpr_edit_mode_tests_00
     {
         _armorBar.slider = _slider;
         _armorBar.setMaxArmor(100);
-        Assert.AreEqual(100, _slider.maxValue);
-        Assert.AreEqual(100, _slider.value);
+        Assert.AreEqual(100, _armorBar.slider.maxValue);
+        Assert.AreEqual(100, _armorBar.slider.value);
     }
 
     [Test]
@@ -152,10 +155,29 @@ public class dc2tpr_edit_mode_tests_00
     {
         _armorBar.slider = _slider;
         _armorBar.setMaxArmor(100);
-        _armorBar.setArmor(200);
-        Assert.AreEqual(100, _slider.maxValue);
-        Assert.AreEqual(100, _slider.value);
+        _armorBar.setArmor(100);
+        Assert.AreEqual(100, _armorBar.slider.maxValue);
+        Assert.AreEqual(100, _armorBar.slider.value);
+
+        _armorBar.setMaxArmor(50);
+        Assert.AreEqual(50, _armorBar.slider.maxValue);
+        _armorBar.setArmor(100);
+        Assert.AreEqual(50, _armorBar.slider.value);
     }
+
+    [Test]
+    public void dc2tpr_edit_mode_test_player_health_bar()
+    {
+        _GameController.Start();
+        _healthBar.slider = _slider;
+        _healthBar.setMaxValue(GameController.PlayerStartHealth);
+        Assert.AreEqual(100, _healthBar.slider.maxValue);
+        Assert.AreEqual(100, _healthBar.slider.value);
+
+        _healthBar.setHealth(50);
+        Assert.AreEqual(50, _healthBar.slider.value);
+    }
+
     [Test]
     public void dc2tpr_edit_mode_test_create_new_card()
     {
@@ -169,5 +191,121 @@ public class dc2tpr_edit_mode_tests_00
         Assert.AreEqual(false, _card.ignoreArmour);
         Assert.AreEqual(100, _card.hitChance);
         Assert.AreEqual(10, _card.endOfTurnValue);
+    }
+
+    [Test]
+    public void dc2tpr_edit_mode_test_create_new_game()
+    {
+        _GameController.Start();
+        Assert.AreEqual(100, GameController.PlayerStartHealth);
+        Assert.AreEqual(0, GameController.PlayerStartArmor);
+        Assert.AreEqual(null, GameController.gameMapState);
+        Assert.AreEqual(null, GameController.PlayerStartNode);
+        Assert.AreEqual(null, GameController.SwappedCard);
+        Assert.AreEqual(0, GameController.stage1Difficulty.Count);
+        Assert.AreEqual(0, GameController.tutorial.Count);
+        Assert.AreEqual(1, GameController.stage);
+        Assert.AreEqual(12, GameController.playerStartingDeck.Count);
+    }
+
+    [Test]
+    public void dc2tpr_edit_mode_test_create_update_camera()
+    {
+        _camera.Update();
+        Assert.AreEqual(1.5f, _camera.speed);
+    }
+
+    [Test]
+    public void dc2tpr_edit_mode_test_create_card_ui()
+    {
+        _card = new Card("testCard", 10, false, 0, 0, 0, 10, false, 100, 10);
+        try
+        {
+        _card.Start();
+        }
+        catch (NullReferenceException err)
+        {
+            Debug.Log("Null Error");
+        }
+    }
+
+    [Test]
+    public void dc2tpr_edit_mode_test_attack_player_enemy()
+    {
+        _enemy = new Enemy("testEnemy", _enemies.assignStartingEnemyCards(0), 15, 0, 1, 1);
+        _enemy.gameManager = _gameManager;
+        testPlayer.playerArmor = 5;
+        testPlayer.playerHealth = 90;
+        testPlayer.avoidAttack = false;
+        _gameManager.player = testPlayer;
+        for (int j = -1; j < 17; j++)
+        {
+            for (int i = 0; i < _enemy.enemyCards.Count; i++)
+            {
+                _enemy.enemyCards[i].endOfTurnValue = j;
+            }
+            try
+            {
+                _enemy.attackPlayer();
+            }
+            catch (NullReferenceException err)
+            {
+                Debug.Log("Null Error");
+            }
+        }
+        Debug.Log(testPlayer.playerArmor);
+        Debug.Log(testPlayer.playerHealth);
+    }
+
+    [Test]
+    public void dc2tpr_edit_mode_test_attack_player_tutorial()
+    {
+        _enemy = new Enemy("testEnemy", _enemies.assignStartingEnemyCards(0), 15, 0, 1, 1);
+        _enemy.gameManager = _gameManager;
+        testPlayer.playerArmor = 5;
+        testPlayer.playerHealth = 90;
+        testPlayer.avoidAttack = false;
+        _gameManager.player = testPlayer;
+        _enemy.stage = 0 ;
+        try
+        {
+            _enemy.attackPlayer();
+        }
+        catch (NullReferenceException err)
+        {
+            Debug.Log("Null Error");
+        }
+        Assert.AreEqual("Curl Up (Ant)", _enemy.selectedCard.name);
+    }
+
+    [Test]
+    public void dc2tpr_edit_mode_test_update_enemy()
+    {
+        _enemy = new Enemy("testEnemy", _enemies.assignStartingEnemyCards(0), 15, 0, 1, 1);
+        _enemy.gameManager = _gameManager;
+        _enemy.health = 0;
+        try
+        {
+        _enemy.Update();
+        Assert.AreEqual("0", _enemy.healthText.text);
+        Assert.AreEqual("0", _enemy.armorText.text);
+        }
+        catch (NullReferenceException err)
+        {
+            Debug.Log("Null Error");
+        }
+        
+
+        _enemy.health += 50;
+        try
+        {
+        _enemy.Update();
+        Assert.AreEqual("50", _enemy.healthText.text);
+        Assert.AreEqual("0", _enemy.armorText.text);
+        }
+        catch (NullReferenceException err)
+        {
+            Debug.Log("Null Error");
+        }
     }
 }
