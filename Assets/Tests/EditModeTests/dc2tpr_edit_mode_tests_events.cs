@@ -4,6 +4,9 @@ using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using UnityEditor;
+using UnityEditor.SceneManagement;
 
 public class dc2tpr_edit_mode_tests_events
 {
@@ -20,6 +23,7 @@ public class dc2tpr_edit_mode_tests_events
     public Event _event;
     public EventManager _eventManager;
     public Menu _menu;
+    public Node _node;
 
     [SetUp]
     public void Setup()
@@ -37,6 +41,9 @@ public class dc2tpr_edit_mode_tests_events
         _event = gameObject.AddComponent<Event>();
         _eventManager = gameObject.AddComponent<EventManager>();
         _menu = gameObject.AddComponent<Menu>();
+        GameController.stage = 1;
+        _eventManager.enemies = _enemies;
+        _eventManager.bossEnemy = _enemy;
 
         List<int> Event1 = new List<int>{1, 2, 3};
         List<int> Event2 = new List<int>{1, 2, 3};
@@ -99,5 +106,136 @@ public class dc2tpr_edit_mode_tests_events
         GameController.PlayerStartHealth = 100;
         _eventManager.runEvents(0);
         Assert.AreEqual(100, GameController.PlayerStartHealth);
+        Scene activeScene = SceneManager.GetActiveScene();
+        Assert.AreEqual("OverworldScreen", activeScene.name);
+    }
+
+    [Test]
+    public void dc2tpr_edit_mode_test_event_2()
+    {
+        GameController.PlayerStartHealth = 100;
+        _eventManager.runEvents(1);
+        Assert.AreEqual(95, GameController.PlayerStartHealth);
+        Scene activeScene = SceneManager.GetActiveScene();
+        Assert.AreEqual("OverworldScreen", activeScene.name);
+    }
+
+    [Test]
+    public void dc2tpr_edit_mode_test_event_3()
+    {
+        for (int i = 0; i < 50; i++)
+        {
+            int initialHealth = UnityEngine.Random.Range(1, 100);
+            GameController.PlayerStartHealth = initialHealth;
+            UnityEngine.Random.InitState(123);
+            _eventManager.runEvents(2);
+            if (_eventManager.chance == 1)
+            {
+                if (GameController.PlayerStartHealth > 90)
+                {
+                    Assert.AreEqual(100, GameController.PlayerStartHealth);
+                }
+                else
+                {
+                    Assert.AreEqual(initialHealth + 10, GameController.PlayerStartHealth);
+                }
+            }
+            else
+            {
+                Assert.AreEqual(initialHealth - 10, GameController.PlayerStartHealth);
+                if(GameController.PlayerStartHealth <= 0)
+                {
+                    Scene activeScene = SceneManager.GetActiveScene();
+                    Assert.AreEqual("GameOver", activeScene.name);
+                }
+                else
+                {
+                    Scene activeScene = SceneManager.GetActiveScene();
+                    Assert.AreEqual("Overworld", activeScene.name);
+                }
+            }
+        }
+    }
+
+    [Test]
+    public void dc2tpr_edit_mode_test_event_4()
+    {
+        _eventManager.runEvents(3);
+        Assert.AreEqual("Peck (Rooster)", GameController.enemyStartingDeck[0].name);
+        Scene activeScene = SceneManager.GetActiveScene();
+        Assert.AreEqual("CardStealing", activeScene.name);
+    }
+
+    [Test]
+
+    public void dc2tpr_edit_mode_test_event_5()
+    {
+        for (int i = 0; i < 50; i++)
+        {
+            int initialHealth = UnityEngine.Random.Range(1, 100);
+            GameController.PlayerStartHealth = initialHealth;
+            UnityEngine.Random.InitState(123);
+            _eventManager.runEvents(4);
+            if (_eventManager.chance == 1)
+            {
+                Assert.AreEqual(1, _eventManager.bossEnemy.difficulty);
+                Assert.AreEqual(1, _eventManager.bossEnemy.stage);
+            }
+            else
+            {
+                Assert.AreEqual(2, _eventManager.bossEnemy.difficulty);
+                Assert.AreEqual(1, _eventManager.bossEnemy.stage);
+            }
+            Scene activeScene = SceneManager.GetActiveScene();
+            Assert.AreEqual("CardStealing", activeScene.name);
+        }
+    }
+
+    [Test]
+    public void dc2tpr_edit_mode_test_event_6()
+    {
+        int intialHealth = 100;
+        GameController.PlayerStartHealth = intialHealth;
+        _eventManager.runEvents(5);
+        Assert.AreEqual(85, GameController.PlayerStartHealth);
+        Assert.AreEqual(1, _eventManager.bossEnemy.difficulty);
+        Assert.AreEqual(1, _eventManager.bossEnemy.stage);
+        Scene activeScene = SceneManager.GetActiveScene();
+        Assert.AreEqual("CardStealing", activeScene.name);
+    }
+
+    [Test]
+    public void dc2tpr_edit_mode_test_event_7()
+    {
+        int intialHealth = 10;
+        GameController.PlayerStartHealth = intialHealth;
+        for(int i = 0; i < 3; i++)
+        {
+            _eventManager.runEvents(6);
+            Assert.AreEqual(100, GameController.PlayerStartHealth);
+        }
+        Scene activeScene = SceneManager.GetActiveScene();
+        Assert.AreEqual("OverworldScreen", activeScene.name);
+    }
+
+    [Test]
+    public void dc2tpr_edit_mode_test_event_8()
+    {
+        int intialHealth = 100;
+        GameController.PlayerStartHealth = intialHealth;
+        _eventManager.runEvents(7);
+        Assert.AreEqual(80, GameController.PlayerStartHealth);
+        Assert.AreEqual(2, _eventManager.bossEnemy.difficulty);
+        Assert.AreEqual(1, _eventManager.bossEnemy.stage);
+        Scene activeScene = SceneManager.GetActiveScene();
+        Assert.AreEqual("CardStealing", activeScene.name);
+    }
+
+    [Test]
+    public void dc2tpr_edit_mode_test_event_9()
+    {
+        _eventManager.runEvents(9);
+        Scene activeScene = SceneManager.GetActiveScene();
+        Assert.AreEqual("OverworldScreen", activeScene.name);
     }
 }

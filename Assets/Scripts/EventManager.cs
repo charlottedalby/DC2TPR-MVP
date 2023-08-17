@@ -184,22 +184,13 @@ public class EventManager : MonoBehaviour
         {
             int health = GameController.PlayerStartHealth;
             float newHealth = health * 0.95f;
-
-            if(newHealth <= 0.0f)
-            {
-                menu.loadGameOver();
-            }
-            else
-            {
-                GameController.PlayerStartHealth = (int)Math.Round(newHealth);
-                menu.loadOverworld();
-            }
+            GameController.PlayerStartHealth = (int)Math.Round(newHealth);
+            menu.loadOverworld();
         }
 
         else if(EventNumber == 2)
         {
-            chance = UnityEngine.Random.Range(1, 2);
-
+            chance = UnityEngine.Random.Range(1, 3);
             if (chance == 1)
             {
                 if(GameController.PlayerStartHealth > 90)
@@ -233,7 +224,7 @@ public class EventManager : MonoBehaviour
 
         else if(EventNumber == 4)
         {
-            int chance = UnityEngine.Random.Range(1,2);
+            chance = UnityEngine.Random.Range(1,3);
             
             if(chance == 1)
             {
@@ -253,16 +244,8 @@ public class EventManager : MonoBehaviour
         {
             int health = GameController.PlayerStartHealth;
             float newHealth = health * 0.85f;
-
-            if(newHealth <= 0.0f)
-            {
-                menu.loadGameOver();
-            }
-            else
-            {
-                GameController.PlayerStartHealth = (int)Math.Round(newHealth);
-            }
-
+            GameController.PlayerStartHealth = (int)Math.Round(newHealth);
+            
             bossEnemy = enemies.selectEnemy(1, GameController.stage);
             GameController.enemyStartingDeck = bossEnemy.enemyCards;
             menu.loadCardSteal();
@@ -279,14 +262,7 @@ public class EventManager : MonoBehaviour
             int health = GameController.PlayerStartHealth;
             float newHealth = health * 0.80f;
 
-            if(newHealth <= 0.0f)
-            {
-                menu.loadGameOver();
-            }
-            else
-            {
-                GameController.PlayerStartHealth = (int)Math.Round(newHealth);
-            }
+            GameController.PlayerStartHealth = (int)Math.Round(newHealth);
             bossEnemy = enemies.selectEnemy(2, GameController.stage);
             GameController.enemyStartingDeck = bossEnemy.enemyCards;
             menu.loadCardSteal();
@@ -303,6 +279,10 @@ public class EventManager : MonoBehaviour
             GameController.PlayerStartNode.battleStrength = 3;
             menu.NextBattle();
             GameController.stage = tempStage;
+        }
+        else
+        {
+            menu.loadOverworld();
         }
     }
 
