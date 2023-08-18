@@ -35,6 +35,7 @@ using UnityEngine.UI;
     i. healPlayer()
     j. powerUp()
     k. getStartingCards()
+    l. endTurnMechanics
 */
 
 public class Player : MonoBehaviour
@@ -292,6 +293,16 @@ public class Player : MonoBehaviour
         }
     }
 
+     /*
+	    Method: endTurnMecahnics()
+        Visibility: Public 
+        Output: N/A
+        Purpose: 
+
+        a. determines what will happen at the end of each turn depending on what card is played
+
+    */
+    
     public void endTurnMechanics(int endTurnOption){
         switch(endTurnOption){
             case 0:

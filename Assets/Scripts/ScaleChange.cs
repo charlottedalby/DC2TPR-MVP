@@ -20,9 +20,9 @@ using UnityEngine.UI;
 
 public class ScaleChange : MonoBehaviour
 {
-    private bool isHovering = false;
+    public bool isHovering = false;
     public Text text;
-    Color originalColor;
+    public Color originalColor;
 
     /*
         Method: changeColour

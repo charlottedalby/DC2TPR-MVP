@@ -26,12 +26,13 @@ using UnityEngine.UI;
 
     Methods: 
 
-    a. Awake()
-    b. Start()
-    c. Card()
-    d. OnMouseDown()
-    e. MoveToDiscardPile()
-    f. assignCardUI()
+    a. Start()
+    b. Card()
+    c. OnMouseDown()
+    d. OnMouseEnter()
+    e. OnMouseExit()
+    f. MoveToDiscardPile()
+    g. assignCardUI()
 */
 
 public class Card : MonoBehaviour
@@ -39,7 +40,7 @@ public class Card : MonoBehaviour
     public int damage;
     public bool hasBeenPlayed;
     public int handIndex;
-    private GameManager gameManager;
+    public GameManager gameManager;
     public Player player;
     public int armour;
     public int healing;
@@ -50,6 +51,7 @@ public class Card : MonoBehaviour
     public int endOfTurnValue;
     public Vector3 tranformPos;
     bool yes;
+    
     /*
         Method: Start()
         Visibility: Public 
@@ -123,9 +125,11 @@ public class Card : MonoBehaviour
         k. Start Enemy Attack sequence 
     */
 
-    void OnMouseDown(){
+    public void OnMouseDown(){
+        Debug.Log("Your Out");
         if(hasBeenPlayed == false)
         {
+            Debug.Log("Your In");
             hasBeenPlayed = true;
             gameManager.player.attackEnemy(damage, ignoreArmour, hitChance);
             gameManager.player.raiseArmor(armour);
@@ -142,6 +146,16 @@ public class Card : MonoBehaviour
         }
     }
 
+    /*
+        Method: OnMouseEnter()
+        Visibility: Private 
+        Output: N/A
+        Purpose: 
+
+        a. When a Player Hovers over Card 
+        b. Card's Position is moved up
+    */
+
     void OnMouseEnter()
     {
         tranformPos = transform.position;
@@ -151,6 +165,16 @@ public class Card : MonoBehaviour
             yes = true;
         }
     }
+
+    /*
+        Method: OnMouseExit()
+        Visibility: Private 
+        Output: N/A
+        Purpose: 
+
+        a. When a Player UnHovers over Card 
+        b. Card's Position is moved back to original
+    */
 
     void OnMouseExit()
     {

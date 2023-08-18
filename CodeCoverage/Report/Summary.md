@@ -1,38 +1,40 @@
 ﻿# Summary
 |||
 |:---|:---|
-| Generated on: | 17/08/2023 - 12:48:22 |
+| Generated on: | 18/08/2023 - 10:44:03 |
 | Parser: | MultiReportParser (4x OpenCoverParser) |
-| Assemblies: | 2 |
-| Classes: | 15 |
-| Files: | 15 |
-| Covered lines: | 600 |
-| Uncovered lines: | 521 |
-| Coverable lines: | 1121 |
-| Total lines: | 2805 |
-| Line coverage: | 53.5% (600 of 1121) |
+| Assemblies: | 1 |
+| Classes: | 18 |
+| Files: | 18 |
+| Covered lines: | 847 |
+| Uncovered lines: | 351 |
+| Coverable lines: | 1198 |
+| Total lines: | 2998 |
+| Line coverage: | 70.7% (847 of 1198) |
 | Covered branches: | 0 |
 | Total branches: | 0 |
-| Covered methods: | 54 |
-| Total methods: | 83 |
-| Method coverage: | 65% (54 of 83) |
+| Covered methods: | 84 |
+| Total methods: | 103 |
+| Method coverage: | 81.5% (84 of 103) |
 
 |**Name**|**Covered**|**Uncovered**|**Coverable**|**Total**|**Line coverage**|**Covered**|**Total**|**Branch coverage**|**Covered**|**Total**|**Method coverage**|
 |:---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-|**Assembly-CSharp**|**0**|**4**|**4**|**18**|**0%**|**0**|**0**|****|**0**|**2**|**0%**|
-|RestStopChanger|0|4|4|18|0%|0|0||0|2|0%|
-|**Scripts**|**600**|**517**|**1117**|**2787**|**53.7%**|**0**|**0**|****|**54**|**81**|**66.6%**|
+|**Scripts**|**847**|**351**|**1198**|**2998**|**70.7%**|**0**|**0**|****|**84**|**103**|**81.5%**|
 |ArmorBar|8|3|11|60|72.7%|0|0||2|2|100%|
 |Camera|8|0|8|45|100%|0|0||2|2|100%|
-|Card|25|52|77|373|32.4%|0|0||3|7|42.8%|
+|Card|29|63|92|375|31.5%|0|0||4|11|36.3%|
+|CardStealing|20|0|20|69|100%|0|0||3|3|100%|
 |Enemies|206|6|212|478|97.1%|0|0||4|4|100%|
-|Enemy|108|57|165|358|65.4%|0|0||7|9|77.7%|
+|Enemy|121|44|165|358|73.3%|0|0||7|9|77.7%|
 |Event|11|0|11|45|100%|0|0||9|9|100%|
 |EventManager|114|121|235|422|48.5%|0|0||6|8|75%|
 |GameController|27|4|31|128|87%|0|0||2|3|66.6%|
 |HealthBar|7|0|7|55|100%|0|0||2|2|100%|
-|Menu|83|10|93|188|89.2%|0|0||16|18|88.8%|
-|OverworldPlayerHealth|0|3|3|14|0%|0|0||0|1|0%|
-|Player|3|236|239|529|1.2%|0|0||1|14|7.1%|
-|StageCompleteTextManipulator|0|14|14|47|0%|0|0||0|1|0%|
-|StageTextManipulator|0|11|11|45|0%|0|0||0|1|0%|
+|LevelChanger|8|0|8|21|100%|0|0||1|1|100%|
+|Menu|90|9|99|183|90.9%|0|0||25|27|92.5%|
+|OverworldPlayerHealth|3|0|3|14|100%|0|0||1|1|100%|
+|Player|138|101|239|529|57.7%|0|0||9|14|64.2%|
+|ScaleChange|11|0|11|56|100%|0|0||2|2|100%|
+|StageCompleteTextManipulator|14|0|14|47|100%|0|0||1|1|100%|
+|StageTextManipulator|11|0|11|45|100%|0|0||1|1|100%|
+|ViewCardsUI|21|0|21|68|100%|0|0||3|3|100%|

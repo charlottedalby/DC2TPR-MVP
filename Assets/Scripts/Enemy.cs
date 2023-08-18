@@ -19,6 +19,10 @@ using UnityEngine.UI;
     h. difficulty: Enemy difficulty 
     i. name: Enemy name
     j. stage: Enemy Stage 
+    k. avoidAttack: Allows ennmy to avoid attack;
+    l. endOfTurnDamage: Enemies end of turn damage, happens throughout battle;
+    m. extraDamage: Any extra damage they have accumalated from a card;
+    n. selectedCard: enemies selected card they will play;
 
     Methods: 
 
@@ -27,6 +31,9 @@ using UnityEngine.UI;
     c. attackPlayer()
     d. Update()
     e. getEnemyStartingCards()
+    f. hitPlayer()
+    g. FadeImage()
+    h. endTurnMecahnics()
 
 */
 
@@ -139,6 +146,16 @@ public class Enemy : MonoBehaviour
         StartCoroutine(MoveAfterWait(selectedCard, initialPosition));
     }
 
+    /*
+	    Method: hitPlayer()
+        Visibility: Public 
+        Output: N/A
+        Purpose: 
+
+        a. hitd player with damage and ignore armour if set
+
+    */
+
     public void hitPlayer(int damage, bool ignoreArmour){
         if (gameManager.player.playerArmor > 0 && ignoreArmour != true && gameManager.player.avoidAttack != true)
         {
@@ -165,6 +182,16 @@ public class Enemy : MonoBehaviour
         }
 
     }
+
+    /*
+	    Method: endTurnMecahnics()
+        Visibility: Public 
+        Output: N/A
+        Purpose: 
+
+        a. determines what will happen at the end of each turn depending on what card is played
+
+    */
 
     public void endTurnMechanics(int endTurnOption){
         switch(endTurnOption){

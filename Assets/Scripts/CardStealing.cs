@@ -32,7 +32,7 @@ public class CardStealing : MonoBehaviour
         a. Run AssignEnemyCards()
     */
 
-    void Start()
+    public void Start()
     {
         AssignEnemyCards();
     }

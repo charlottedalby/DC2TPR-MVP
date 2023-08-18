@@ -12,39 +12,9 @@ using UnityEditor;
 
     a. N/A
 
-    Methods: 
+    Purpose: 
 
-    a. NextBattle()
-        i. Unlocks Player Cursor
-        ii. Loads Battle Scene 
-
-    b. loadOverworld()
-        i. Loads Overworld Scene
-
-    c. exitGame()
-        i. Quits Application
-
-    d. loadMainMenu()
-        i. GameController PlayerStartNode is set to null
-        ii. Loads Main Menu Scene 
-
-    e. loadOverworld20HP()
-        i. GameController playerStartHealth is increased by 20
-        ii. If GameController playerStartHealth is greater than 100
-        iii. GameController playerStartHealth equals 100
-        iv. Loads Overworld Scene
-
-    f. loadCardSteal()
-        i. Loads Card Stealing Scene 
-
-    g. loadCardSwap()
-        i. Loads Card Swap Scene
-
-    h. loadPlayerCardsScene()
-        i. Loads Player Card Steal Scene
-
-    i. loadPlayerCardCancel()
-        i. Loads Player Card Steal Scene
+    a. Loads each scene (Fades in)
 */
 
 public class Menu : MonoBehaviour

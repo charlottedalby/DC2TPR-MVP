@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<coverage version="1.0" date="2023-08-17_15-50-13" tag="">
+  <assembly name="Scripts">
+    <class name="ArmorBar" coveredlines="8" coverablelines="11" totallines="60" coveredbranches="0" totalbranches="0" />
+    <class name="Camera" coveredlines="8" coverablelines="8" totallines="45" coveredbranches="0" totalbranches="0" />
+    <class name="Card" coveredlines="25" coverablelines="77" totallines="373" coveredbranches="0" totalbranches="0" />
+    <class name="Enemies" coveredlines="206" coverablelines="212" totallines="478" coveredbranches="0" totalbranches="0" />
+    <class name="Enemy" coveredlines="121" coverablelines="165" totallines="358" coveredbranches="0" totalbranches="0" />
+    <class name="Event" coveredlines="11" coverablelines="11" totallines="45" coveredbranches="0" totalbranches="0" />
+    <class name="EventManager" coveredlines="114" coverablelines="235" totallines="422" coveredbranches="0" totalbranches="0" />
+    <class name="GameController" coveredlines="27" coverablelines="31" totallines="128" coveredbranches="0" totalbranches="0" />
+    <class name="HealthBar" coveredlines="7" coverablelines="7" totallines="55" coveredbranches="0" totalbranches="0" />
+    <class name="Menu" coveredlines="90" coverablelines="99" totallines="183" coveredbranches="0" totalbranches="0" />
+    <class name="OverworldPlayerHealth" coveredlines="3" coverablelines="3" totallines="14" coveredbranches="0" totalbranches="0" />
+    <class name="Player" coveredlines="86" coverablelines="239" totallines="529" coveredbranches="0" totalbranches="0" />
+    <class name="StageCompleteTextManipulator" coveredlines="14" coverablelines="14" totallines="47" coveredbranches="0" totalbranches="0" />
+    <class name="StageTextManipulator" coveredlines="11" coverablelines="11" totallines="45" coveredbranches="0" totalbranches="0" />
+  </assembly>
+</coverage>

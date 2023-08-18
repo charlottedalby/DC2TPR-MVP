@@ -28,6 +28,7 @@ using UnityEngine.SceneManagement;
     b. Update()
     c. GameOver()
     d. displayEnemy()
+    e. setGameBackground()
 
 */
 
@@ -218,7 +219,6 @@ public class GameManager : MonoBehaviour
         d. Declare currentEnemy which is each enemy in list 
         e. If currentEnemy name is not null 
         g. Set Enemy Image based off name. 
-
     */
 
     public void displayEnemy()
@@ -240,6 +240,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    /*
+	    Method: setGameBackground()
+        Visibility: Public  
+        Output: N/A
+        Purpose: 
+
+        a. sets game backkground dependant on stage
+    */
     public void setGameBackground()
     {
         stage1Background = GameObject.Find("Stage1Background").GetComponent<Image>().sprite;
