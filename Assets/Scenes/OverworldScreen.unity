@@ -522,6 +522,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1221846386}
+  message: 
 --- !u!21 &146891350
 Material:
   serializedVersion: 8
@@ -1543,6 +1544,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1221846386}
+  message: 
 --- !u!114 &512055960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1555,7 +1557,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47252dfabb33a8440a0c6e547ea30049, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isHovering: 0
   text: {fileID: 340492700}
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!21 &580830774
 Material:
   serializedVersion: 8
@@ -7306,7 +7310,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 844, y: -470}
+  m_AnchoredPosition: {x: 859, y: -472}
   m_SizeDelta: {x: 317.83, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!21 &1767807326

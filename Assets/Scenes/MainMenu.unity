@@ -379,7 +379,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47252dfabb33a8440a0c6e547ea30049, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isHovering: 0
   text: {fileID: 1360781401}
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &94892183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -406,6 +408,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1659706134}
+  message: 
 --- !u!114 &94892185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -651,7 +654,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47252dfabb33a8440a0c6e547ea30049, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isHovering: 0
   text: {fileID: 605772439}
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &314825801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -665,6 +670,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1659706134}
+  message: 
 --- !u!114 &314825802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -824,7 +830,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47252dfabb33a8440a0c6e547ea30049, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isHovering: 0
   text: {fileID: 2108307702}
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &375855218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -838,6 +846,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1659706134}
+  message: 
 --- !u!114 &375855219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1360,7 +1369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.5882353}
+  m_Color: {r: 0.047169805, g: 0.043832317, b: 0.043832317, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1853,7 +1862,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47252dfabb33a8440a0c6e547ea30049, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isHovering: 0
   text: {fileID: 84813543}
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1774714946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1867,6 +1878,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
+  message: 
 --- !u!1 &2089638213
 GameObject:
   m_ObjectHideFlags: 0
