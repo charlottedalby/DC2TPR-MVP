@@ -85,7 +85,7 @@ public class Enemies : MonoBehaviour
         stageEnemies.Add(new Enemy("Turtle", assignStartingEnemyCards(13), 35, 0, 1, 2));
 
         //Placeholder Stage 3 enemies
-        stageEnemies.Add(new Enemy("Box Jellyfish", assignStartingEnemyCards(14), 30, 0, 1, 3));
+        stageEnemies.Add(new Enemy("Jellyfish", assignStartingEnemyCards(14), 30, 0, 1, 3));
         stageEnemies.Add(new Enemy("Eagle", assignStartingEnemyCards(15), 30, 0, 1, 3));
         stageEnemies.Add(new Enemy("Goat", assignStartingEnemyCards(16), 60, 0, 2, 3));
         stageEnemies.Add(new Enemy("Hornet", assignStartingEnemyCards(17), 25, 0, 1, 3)); 
@@ -97,7 +97,7 @@ public class Enemies : MonoBehaviour
         stageEnemies.Add(new Enemy("Shark", assignStartingEnemyCards(21), 35, 0, 1, 4));
         stageEnemies.Add(new Enemy("Ox", assignStartingEnemyCards(22), 50, 0, 2, 4));
         stageEnemies.Add(new Enemy("Lion", assignStartingEnemyCards(23), 35, 0, 1, 4));
-        stageEnemies.Add(new Enemy("Grizzly Bear", assignStartingEnemyCards(24), 40, 0, 1, 4)); 
+        stageEnemies.Add(new Enemy("Bear", assignStartingEnemyCards(24), 40, 0, 1, 4)); 
         stageEnemies.Add(new Enemy("Elephant", assignStartingEnemyCards(25), 50, 0, 1, 4));
         stageEnemies.Add(new Enemy("Dragon", assignStartingEnemyCards(26), 70, 0, 3, 4));
         stageEnemies.Add(new Enemy("Snake", assignStartingEnemyCards(27), 40, 0, 2, 4));

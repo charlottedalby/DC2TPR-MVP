@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CoverageReport scope="Summary">
   <Summary>
-    <Generatedon>18/08/2023 - 10:44:03</Generatedon>
+    <Generatedon>22/08/2023 - 15:46:51</Generatedon>
     <Parser>MultiReportParser (4x OpenCoverParser)</Parser>
     <Assemblies>1</Assemblies>
     <Classes>18</Classes>
@@ -9,7 +9,7 @@
     <Coveredlines>847</Coveredlines>
     <Uncoveredlines>351</Uncoveredlines>
     <Coverablelines>1198</Coverablelines>
-    <Totallines>2998</Totallines>
+    <Totallines>2932</Totallines>
     <Linecoverage>70.7</Linecoverage>
     <Coveredbranches>0</Coveredbranches>
     <Totalbranches>0</Totalbranches>
@@ -18,21 +18,21 @@
     <Methodcoverage>81.5</Methodcoverage>
   </Summary>
   <Coverage>
-    <Assembly name="Scripts" classes="18" coverage="70.7" coveredlines="847" coverablelines="1198" totallines="2998" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="84" totalmethods="103" methodcoverage="81.5">
+    <Assembly name="Scripts" classes="18" coverage="70.7" coveredlines="847" coverablelines="1198" totallines="2932" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="84" totalmethods="103" methodcoverage="81.5">
       <Class name="ArmorBar" coverage="72.7" coveredlines="8" coverablelines="11" totallines="60" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="2" totalmethods="2" methodcoverage="100" />
       <Class name="Camera" coverage="100" coveredlines="8" coverablelines="8" totallines="45" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="2" totalmethods="2" methodcoverage="100" />
-      <Class name="Card" coverage="31.5" coveredlines="29" coverablelines="92" totallines="375" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="4" totalmethods="11" methodcoverage="36.3" />
+      <Class name="Card" coverage="31.5" coveredlines="29" coverablelines="92" totallines="397" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="4" totalmethods="11" methodcoverage="36.3" />
       <Class name="CardStealing" coverage="100" coveredlines="20" coverablelines="20" totallines="69" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="3" totalmethods="3" methodcoverage="100" />
-      <Class name="Enemies" coverage="97.1" coveredlines="206" coverablelines="212" totallines="478" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="4" totalmethods="4" methodcoverage="100" />
-      <Class name="Enemy" coverage="73.3" coveredlines="121" coverablelines="165" totallines="358" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="7" totalmethods="9" methodcoverage="77.7" />
+      <Class name="Enemies" coverage="97.1" coveredlines="206" coverablelines="212" totallines="358" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="4" totalmethods="4" methodcoverage="100" />
+      <Class name="Enemy" coverage="73.3" coveredlines="121" coverablelines="165" totallines="385" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="7" totalmethods="9" methodcoverage="77.7" />
       <Class name="Event" coverage="100" coveredlines="11" coverablelines="11" totallines="45" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="9" totalmethods="9" methodcoverage="100" />
       <Class name="EventManager" coverage="48.5" coveredlines="114" coverablelines="235" totallines="422" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="6" totalmethods="8" methodcoverage="75" />
       <Class name="GameController" coverage="87" coveredlines="27" coverablelines="31" totallines="128" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="2" totalmethods="3" methodcoverage="66.6" />
       <Class name="HealthBar" coverage="100" coveredlines="7" coverablelines="7" totallines="55" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="2" totalmethods="2" methodcoverage="100" />
-      <Class name="LevelChanger" coverage="100" coveredlines="8" coverablelines="8" totallines="21" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="1" totalmethods="1" methodcoverage="100" />
-      <Class name="Menu" coverage="90.9" coveredlines="90" coverablelines="99" totallines="183" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="25" totalmethods="27" methodcoverage="92.5" />
-      <Class name="OverworldPlayerHealth" coverage="100" coveredlines="3" coverablelines="3" totallines="14" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="1" totalmethods="1" methodcoverage="100" />
-      <Class name="Player" coverage="57.7" coveredlines="138" coverablelines="239" totallines="529" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="9" totalmethods="14" methodcoverage="64.2" />
+      <Class name="LevelChanger" coverage="100" coveredlines="8" coverablelines="8" totallines="34" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="1" totalmethods="1" methodcoverage="100" />
+      <Class name="Menu" coverage="90.9" coveredlines="90" coverablelines="99" totallines="153" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="25" totalmethods="27" methodcoverage="92.5" />
+      <Class name="OverworldPlayerHealth" coverage="100" coveredlines="3" coverablelines="3" totallines="25" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="1" totalmethods="1" methodcoverage="100" />
+      <Class name="Player" coverage="57.7" coveredlines="138" coverablelines="239" totallines="540" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="9" totalmethods="14" methodcoverage="64.2" />
       <Class name="ScaleChange" coverage="100" coveredlines="11" coverablelines="11" totallines="56" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="2" totalmethods="2" methodcoverage="100" />
       <Class name="StageCompleteTextManipulator" coverage="100" coveredlines="14" coverablelines="14" totallines="47" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="1" totalmethods="1" methodcoverage="100" />
       <Class name="StageTextManipulator" coverage="100" coveredlines="11" coverablelines="11" totallines="45" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="1" totalmethods="1" methodcoverage="100" />
