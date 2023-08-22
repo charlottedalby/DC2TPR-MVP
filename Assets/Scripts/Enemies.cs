@@ -285,46 +285,46 @@ public class Enemies : MonoBehaviour
                 enemyStartingDeck.Add(new Card("Crunch (Tiger)", 0, false, 0, 0, 0, 1, false, 0, 10));
                 return enemyStartingDeck;
             case 21:
-                enemyStartingDeck.Add(new Card("Sense Blood (Shark)", 0, false, 5, 5, 0, 1, false, 0, 0));
+                enemyStartingDeck.Add(new Card("Sense Blood (Shark)", 0, false, 0, 5, 0, 1, false, 0, 0));
                 enemyStartingDeck.Add(new Card("Bite (Shark)", 6, false, 0, 0, 0, 1, false, 0, 0));
                 enemyStartingDeck.Add(new Card("Crunch (Shark)", 11, false, 0, 0, 0, 1, false, 0, 0));
                 enemyStartingDeck.Add(new Card("Rough Skin (Shark)", 0, false, 0, 0, 0, 1, false, 0, 11));
                 return enemyStartingDeck;
             case 22:
                 enemyStartingDeck.Add(new Card("Ram (Ox)", 0, false, 0, 0, 0, 1, false, 0, 12));
-                enemyStartingDeck.Add(new Card("Gore (Ox)", 0, false, 5, 0, 0, 1, false, 0, 13));
+                enemyStartingDeck.Add(new Card("Gore (Ox)", 0, false, 0, 5, 0, 1, false, 0, 13));
                 enemyStartingDeck.Add(new Card("Stampede (Ox)", 10, false, 0, 0, 0, 1, false, 100, 0));
-                enemyStartingDeck.Add(new Card("Stomp (Ox)", 3, false, 9, 0, 0, 1, false, 0, 0));
+                enemyStartingDeck.Add(new Card("Stomp (Ox)", 3, false, 0, 9, 0, 1, false, 0, 0));
                 return enemyStartingDeck;
             case 23:
-                enemyStartingDeck.Add(new Card("Roar (Lion)", 0, false, 3, 0, 0, 2, false, 0, 0));
+                enemyStartingDeck.Add(new Card("Roar (Lion)", 0, false, 0, 3, 0, 2, false, 0, 0));
                 enemyStartingDeck.Add(new Card("Crunch (Lion)", 10, false, 0, 0, 0, 1, false, 0, 0));
-                enemyStartingDeck.Add(new Card("Pounce (Lion)", 5, false, 6, 0, 0, 1, false, 0, 0));
+                enemyStartingDeck.Add(new Card("Pounce (Lion)", 5, false, 0, 6, 0, 1, false, 0, 0));
                 enemyStartingDeck.Add(new Card("Tear Apart (Lion)", 8, false, 0, 0, 0, 0, false, 0, 0));
                 return enemyStartingDeck;
             case 24:
                 enemyStartingDeck.Add(new Card("Maul (Bear)", 8, false, 0, 0, 0, 1, false, 0, 0));
                 enemyStartingDeck.Add(new Card("Bite (Bear)", 7, false, 0, 0, 0, 1, false, 0, 0));
-                enemyStartingDeck.Add(new Card("Chase Down (Bear)", 0, false, 5, 0, 0, 1, false, 0, 15));
+                enemyStartingDeck.Add(new Card("Chase Down (Bear)", 0, false, 0, 5, 0, 1, false, 0, 15));
                 enemyStartingDeck.Add(new Card("Knock Down (Bear)", 6, false, 0, 0, 0, 1, false, 0, 0));
                 return enemyStartingDeck;
             case 25:
                 enemyStartingDeck.Add(new Card("Tusk Spear (Elephant)", 10, false, 0, 0, 0, 1, false, 0, 0));
-                enemyStartingDeck.Add(new Card("Stomp (Elephant)", 3, false, 8, 0, 0, 1, false, 0, 0));
+                enemyStartingDeck.Add(new Card("Stomp (Elephant)", 3, false, 0, 8, 0, 1, false, 0, 0));
                 enemyStartingDeck.Add(new Card("Throw Weight (Elephant)", 0, false, 0, 0, 0, 1, false, 0, 12));
-                enemyStartingDeck.Add(new Card("Trunk Slam (Elephant)", 2, false, 10, 0, 0, 1, false, 0, 0));
+                enemyStartingDeck.Add(new Card("Trunk Slam (Elephant)", 2, false, 0, 10, 0, 1, false, 0, 0));
                 return enemyStartingDeck;
 
             case 26:
                 enemyStartingDeck.Add(new Card("Ascent (Dragon)", 10, false, 0, 0, 0, 1, true, 0, 0));
                 enemyStartingDeck.Add(new Card("Tail Strike (Dragon)", 13, false, 0, 0, 0, 1, false, 0, 0));
-                enemyStartingDeck.Add(new Card("Gather Energy (Dragon)", 0, false, 10, 0, 0, 1, false, 0, 0));
-                enemyStartingDeck.Add(new Card("Zodiac Blast (Dragon)", 4, false, 4, 4, 0, 1, false, 0, 3));
+                enemyStartingDeck.Add(new Card("Gather Energy (Dragon)", 0, false, 0, 10, 0, 1, false, 0, 0));
+                enemyStartingDeck.Add(new Card("Zodiac Blast (Dragon)", 4, false, 0, 4, 0, 1, false, 0, 3));
                 return enemyStartingDeck;
 
             case 27:
                 enemyStartingDeck.Add(new Card("Envenom (Snake)", 0, false, 0, 0, 0, 1, false, 0, 3));
-                enemyStartingDeck.Add(new Card("Wrap (Snake)", 7, false, 7, 0, 0, 1, false, 0, 0));
+                enemyStartingDeck.Add(new Card("Wrap (Snake)", 7, false, 0, 7, 0, 1, false, 0, 0));
                 enemyStartingDeck.Add(new Card("Bite (Snake)", 9, false, 0, 0, 0, 1, false, 0, 0));
                 enemyStartingDeck.Add(new Card("Spit Poison (Snake)", 0, false, 0, 0, 0, 1, false, 0, 14));
                 return enemyStartingDeck;

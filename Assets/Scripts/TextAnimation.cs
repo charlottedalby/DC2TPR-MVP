@@ -2,6 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+/*
+    Class: TextAnimation
+    Visibility: Public 
+    Output: N/A
+    Attributes: N/A
+
+    Methods: 
+
+    a. Start()
+    b. Update()
+    c. FadeFull()
+    d. FadeZero()
+
+    Purpose:
+    
+    a. Fade Turotial Text in and Out
+
+*/
 
 public class TextAnimation : MonoBehaviour
 {

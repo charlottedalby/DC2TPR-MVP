@@ -376,7 +376,7 @@ public class Card : MonoBehaviour
             {"Envenom (Snake)", "Envenom (Snake)"},
             {"Wrap (Snake)", "Wrap (Snake)"}, 
             {"Bite (Snake)", "Bite (Snake)"},
-            {"Spit Poison", "Spit Poison"},
+            {"Spit Poison (Snake)", "Spit Poison (Snake)"},
         };
 
         GameObject[] cards = GameObject.FindGameObjectsWithTag("Card");
