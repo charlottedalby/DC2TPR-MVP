@@ -689,6 +689,16 @@ MonoBehaviour:
   enemies: {fileID: 0}
   eventText: {fileID: 0}
   skip: 0
+  eventNumber: 0
+  Event1: 
+  Event2: 
+  Event3: 
+  Event4: 
+  Event5: 
+  Event6: 
+  Event7: 
+  Event8: 
+  Event9: 
   InnPage: {fileID: 170052714}
   AmbushFlee: {fileID: 869605260}
   PotionMaster: {fileID: 431402419}
@@ -705,6 +715,8 @@ MonoBehaviour:
   healthBar: {fileID: 879721260}
   playerHealthText: {fileID: 1376212415}
   menu: {fileID: 259071609}
+  chance: 0
+  skipButton: {fileID: 0}
 --- !u!114 &259071609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -718,6 +730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 141708464}
+  message: 
 --- !u!1 &325852498
 GameObject:
   m_ObjectHideFlags: 0
@@ -2781,6 +2794,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
+  message: 
 --- !u!114 &2040524459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2798,6 +2812,16 @@ MonoBehaviour:
   enemies: {fileID: 0}
   eventText: {fileID: 0}
   skip: 0
+  eventNumber: 0
+  Event1: 
+  Event2: 
+  Event3: 
+  Event4: 
+  Event5: 
+  Event6: 
+  Event7: 
+  Event8: 
+  Event9: 
   InnPage: {fileID: 170052716}
   AmbushFlee: {fileID: 869605262}
   PotionMaster: {fileID: 431402421}
@@ -2814,6 +2838,8 @@ MonoBehaviour:
   healthBar: {fileID: 879721260}
   playerHealthText: {fileID: 1376212415}
   menu: {fileID: 0}
+  chance: 0
+  skipButton: {fileID: 1469017745}
 --- !u!1 &2071629385
 GameObject:
   m_ObjectHideFlags: 0

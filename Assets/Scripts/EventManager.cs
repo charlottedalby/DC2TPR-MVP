@@ -66,6 +66,7 @@ public class EventManager : MonoBehaviour
     public Text playerHealthText;
     public Menu menu;
     public int chance;
+    public GameObject skipButton;
 
     /*
         Method: Start()
@@ -140,7 +141,7 @@ public class EventManager : MonoBehaviour
 
         Events.Add(new Event(3, "Merchant Boss - Swap Card out for a card from the boss stage", Event4, false));
 
-        Events.Add(new Event(4, "Merchant Lucky Dip  - Swap of enemy worst card or best card of enemy", Event5, false));
+        Events.Add(new Event(4, "Merchant Lucky Dip  - Swap of enemy worst card or best card of enemy", Event5, true));
 
         Events.Add(new Event(5, "Ambush - Take 15% current health damage but steal a card (Easy Enemy)", Event6, false));
 
@@ -366,6 +367,10 @@ public class EventManager : MonoBehaviour
         if(Events[eventNumber].Skipable == true)
         {
             skip = true;
+        }
+        else if(Events[eventNumber].Skipable == false)
+        {
+            skipButton.gameObject.SetActive(false);
         }
         return eventNumber;
     }
